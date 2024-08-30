@@ -86,7 +86,7 @@
   <ItemGroup>
     <Folder Include="Aplicacion\" />
     <Folder Include="Dominio\" />
-    <Folder Include="Presentacion\" />
+    <Folder Include="Presentacion\Login\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg.jpg" />
