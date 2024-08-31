@@ -1,5 +1,4 @@
-﻿using FL_FARMACIAS.Presentacion.Admin;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS
+namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class Form1 : Form
+    public partial class MenuAdmin : Form
     {
-        public Form1()
+        public MenuAdmin()
         {
             InitializeComponent();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new MenuAdmin().Show();
         }
     }
 }
