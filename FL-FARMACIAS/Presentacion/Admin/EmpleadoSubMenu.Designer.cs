@@ -43,7 +43,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUESTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACCIONES = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ACCIONES0old = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ACCIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,11 +73,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.TELEFONO,
             this.PUESTO,
             this.SALARIO,
+            this.ACCIONES0old,
             this.ACCIONES});
             this.dataGridView1.Location = new System.Drawing.Point(24, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 471);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -152,6 +154,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.SALARIO.ReadOnly = true;
             this.SALARIO.Width = 150;
             // 
+            // ACCIONES0old
+            // 
+            this.ACCIONES0old.HeaderText = "ACCIONESOLD";
+            this.ACCIONES0old.MinimumWidth = 8;
+            this.ACCIONES0old.Name = "ACCIONES0old";
+            this.ACCIONES0old.ReadOnly = true;
+            this.ACCIONES0old.Width = 150;
+            // 
             // ACCIONES
             // 
             this.ACCIONES.HeaderText = "ACCIONES";
@@ -174,13 +184,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+
             this.dataGridView1.CellPainting += DataGridView_CellPainting;
             this.dataGridView1.CellClick += DataGridView_CellClick;
 
 
             dataGridView1.Rows.Add("1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Cajero", "30000");
             dataGridView1.Rows.Add("2", "Ana", "Gómez", "F", "87654321", "27-87654321-5", "555-5678", "Vendedora", "32000");
-
 
         }
 
@@ -189,32 +199,74 @@ namespace FL_FARMACIAS.Presentacion.Admin
             int indexActionsButton = dataGridView1.Columns["ACCIONES"].Index;
             if (e.ColumnIndex == indexActionsButton && e.RowIndex >= 0) // Columna de "Actions"
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                //e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                e.PaintBackground(e.CellBounds, true);
 
-                // Calcular la posición y tamaño de los botones
-                int buttonWidth = (e.CellBounds.Width - 10) / 2;
-                Rectangle modifyButton = new Rectangle(e.CellBounds.Left + 5, e.CellBounds.Top + 5, buttonWidth, e.CellBounds.Height - 10);
-                Rectangle deleteButton = new Rectangle(e.CellBounds.Left + buttonWidth + 10, e.CellBounds.Top + 5, buttonWidth, e.CellBounds.Height - 10);
+                // Calcular el ancho y la altura de los botones para que ocupen todo el ancho de la celda y se alineen uno debajo del otro
+                int buttonWidth = e.CellBounds.Width - 10;
+                int buttonHeight = ( e.CellBounds.Height - 15 )  / 2;  // Espacio para dos botones
+                Rectangle modifyButton = new Rectangle(e.CellBounds.Left + 5, e.CellBounds.Top + 5, buttonWidth, buttonHeight);
+                Rectangle deleteButton = new Rectangle(e.CellBounds.Left + 5, e.CellBounds.Top + buttonHeight + 10, buttonWidth, buttonHeight);
 
-                // Dibujar los botones
-                ButtonRenderer.DrawButton(e.Graphics, modifyButton, "Modificar", this.Font, false, PushButtonState.Normal);
-                ButtonRenderer.DrawButton(e.Graphics, deleteButton, "Eliminar", this.Font, false, PushButtonState.Normal);
+                //// Verificar si el puntero está sobre uno de los botones
+                //Point mousePosition = dataGridView1.PointToClient(Cursor.Position);
+                //bool isHoveringModifyButton = modifyButton.Contains(mousePosition);
+                //bool isHoveringDeleteButton = deleteButton.Contains(mousePosition);
 
-                e.Handled = true;
+                //// Cambiar el color del botón al pasar el puntero (hover)
+                //Color modifyButtonColor = isHoveringModifyButton ? Color.LightBlue : SystemColors.Control;
+                //Color deleteButtonColor = isHoveringDeleteButton ? Color.LightCoral : SystemColors.Control;
+
+                //// Dibujar los botones con el color apropiado
+                //ButtonRenderer.DrawButton(e.Graphics, modifyButton, isHoveringModifyButton ? PushButtonState.Hot : PushButtonState.Normal);
+                //ButtonRenderer.DrawButton(e.Graphics, deleteButton, isHoveringDeleteButton ? PushButtonState.Hot : PushButtonState.Normal);
+
+                //// Dibujar el texto de los botones
+                //TextRenderer.DrawText(e.Graphics, "Modificar", this.Font, modifyButton, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                //TextRenderer.DrawText(e.Graphics, "Eliminar", this.Font, deleteButton, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+
+                // Verificar si el puntero está sobre uno de los botones
+                Point mousePosition = dataGridView1.PointToClient(Cursor.Position);
+                bool isHoveringModifyButton = modifyButton.Contains(mousePosition);
+                bool isHoveringDeleteButton = deleteButton.Contains(mousePosition);
+
+                // Cambiar el color del botón al pasar el puntero (hover)
+                Color modifyButtonColor = isHoveringModifyButton ? Color.LightBlue : SystemColors.Control;
+                Color deleteButtonColor = isHoveringDeleteButton ? Color.LightCoral : SystemColors.Control;
+
+                // Dibujar los botones sin contorno
+                using (SolidBrush brush = new SolidBrush(modifyButtonColor))
+                {
+                    e.Graphics.FillRectangle(brush, modifyButton);
+                }
+
+                using (SolidBrush brush = new SolidBrush(deleteButtonColor))
+                {
+                    e.Graphics.FillRectangle(brush, deleteButton);
+                }
+
+                // Dibujar el texto de los botones
+                TextRenderer.DrawText(e.Graphics, "Modificar", this.Font, modifyButton, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                TextRenderer.DrawText(e.Graphics, "Eliminar", this.Font, deleteButton, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+
+                e.Handled = true;   
             }
         }
 
-        private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexActionsButton = dataGridView1.Columns["ACCIONES"].Index;
-            if (e.ColumnIndex == indexActionsButton && e.RowIndex >= 0) // Columna de "Actions"
+            private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+            {
+                int indexActionsButton = dataGridView1.Columns["ACCIONES"].Index;
+                if (e.ColumnIndex == indexActionsButton && e.RowIndex >= 0) // Columna de "Actions"
             {
                 DataGridView dataGridView = sender as DataGridView;
                 Rectangle cellBounds = dataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
 
-                int buttonWidth = (cellBounds.Width - 10) / 2;
-                Rectangle modifyButton = new Rectangle(cellBounds.Left + 5, cellBounds.Top + 5, buttonWidth, cellBounds.Height - 10);
-                Rectangle deleteButton = new Rectangle(cellBounds.Left + buttonWidth + 10, cellBounds.Top + 5, buttonWidth, cellBounds.Height - 10);
+                int buttonWidth = cellBounds.Width - 10;
+                int buttonHeight = (cellBounds.Height - 15) / 2;
+                Rectangle modifyButton = new Rectangle(cellBounds.Left + 5, cellBounds.Top + 5, buttonWidth, buttonHeight);
+                Rectangle deleteButton = new Rectangle(cellBounds.Left + 5, cellBounds.Top + buttonHeight + 10, buttonWidth, buttonHeight);
 
                 Point clickPosition = dataGridView.PointToClient(Cursor.Position);
 
@@ -227,20 +279,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
                     MessageBox.Show($"Eliminar fila {e.RowIndex}");
                 }
             }
-        }
+            }
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SEXO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PUESTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SALARIO;
-        private System.Windows.Forms.DataGridViewButtonColumn ACCIONES;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn NOMBRE;
+        private DataGridViewTextBoxColumn APELLIDO;
+        private DataGridViewTextBoxColumn SEXO;
+        private DataGridViewTextBoxColumn DNI;
+        private DataGridViewTextBoxColumn CUIL;
+        private DataGridViewTextBoxColumn TELEFONO;
+        private DataGridViewTextBoxColumn PUESTO;
+        private DataGridViewTextBoxColumn SALARIO;
+        private DataGridViewButtonColumn ACCIONES0old;
+        private DataGridViewTextBoxColumn ACCIONES;
     }
 }
