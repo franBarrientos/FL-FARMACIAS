@@ -61,8 +61,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(285, 197);
             this.button2.TabIndex = 2;
-            this.button2.Text = "MENU 2";
+            this.button2.Text = "SUPERVISOR MENU";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -70,8 +71,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(270, 197);
             this.button3.TabIndex = 3;
-            this.button3.Text = "MENU 3";
+            this.button3.Text = "FARMACEUTICO MENU";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 

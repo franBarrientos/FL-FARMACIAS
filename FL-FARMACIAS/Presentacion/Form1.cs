@@ -1,4 +1,6 @@
 ﻿using FL_FARMACIAS.Presentacion.Admin;
+using FL_FARMACIAS.Presentacion.Farmaceutico;
+using FL_FARMACIAS.Presentacion.Supervisor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +24,16 @@ namespace FL_FARMACIAS
         private void button1_Click(object sender, EventArgs e)
         {
             new MenuAdmin().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new MenuSupervisor().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new MenuFarmaceutico().Show();
         }
     }
 }

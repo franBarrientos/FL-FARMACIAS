@@ -1,6 +1,6 @@
-﻿namespace FL_FARMACIAS.Presentacion.Admin
+﻿namespace FL_FARMACIAS.Presentacion.Supervisor
 {
-    partial class MenuAdmin
+    partial class MenuSupervisor
     {
         /// <summary>
         /// Required designer variable.
@@ -26,11 +26,11 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
- 
-            private void InitializeComponent()
-            {
+
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuSupervisor));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,7 +70,6 @@
             this.button1.Text = "        EMPLEADOS";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -168,7 +167,7 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
-            // MenuAdmin
+            // MenuSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,9 +186,9 @@
             this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(1176, 815);
             this.MinimumSize = new System.Drawing.Size(1176, 815);
-            this.Name = "MenuAdmin";
+            this.Name = "MenuSupervisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Administrador";
+            this.Text = "Menu Supervisor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -198,7 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
-            }
+        }
 
         #endregion
 

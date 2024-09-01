@@ -50,11 +50,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.Designer.cs">
+      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.Designer.cs">
+      <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Form1.cs">
       <SubType>Form</SubType>
@@ -62,13 +74,28 @@
     <Compile Include="Presentacion\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Supervisor\MenuSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Supervisor\MenuSupervisor.Designer.cs">
+      <DependentUpon>MenuSupervisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
+      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
+      <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Supervisor\MenuSupervisor.resx">
+      <DependentUpon>MenuSupervisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,7 +126,6 @@
   <ItemGroup>
     <Folder Include="Aplicacion\" />
     <Folder Include="Dominio\" />
-    <Folder Include="Presentacion\Login\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg.jpg" />

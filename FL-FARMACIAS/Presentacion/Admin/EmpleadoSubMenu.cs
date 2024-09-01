@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class MenuAdmin : Form
+    public partial class EmpleadoSubMenu : Form
     {
-        public MenuAdmin()
+        public EmpleadoSubMenu()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new EmpleadoSubMenu().Show();
         }
     }
 }

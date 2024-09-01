@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS.Presentacion.Admin
+namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class MenuAdmin : Form
+    public partial class MenuFarmaceutico : Form
     {
-        public MenuAdmin()
+        public MenuFarmaceutico()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new EmpleadoSubMenu().Show();
+
         }
     }
 }
