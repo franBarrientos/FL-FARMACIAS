@@ -32,8 +32,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3w = new System.Windows.Forms.Button();
+            this.label3w = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,21 +50,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUESTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACCIONES0old = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ACCIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USUARIO = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FL_FARMACIAS.Properties.Resources.Copia_de_f;
-            this.pictureBox1.Location = new System.Drawing.Point(818, 595);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -73,14 +71,106 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.TELEFONO,
             this.PUESTO,
             this.SALARIO,
-            this.ACCIONES0old,
-            this.ACCIONES});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 118);
+            this.FECHAINGRESO,
+            this.USUARIO,
+            this.ELIMINAR,
+            this.MODIFICAR});
+            this.dataGridView1.Location = new System.Drawing.Point(24, 240);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 471);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(468, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(224, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "EMPLEADOS";
+            // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(24, 184);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(314, 26);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "INGRESE DNI O APELLIDO";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TabIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.converTextBlack);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(801, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 50);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "BUSCAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(972, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 50);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "LIMPIAR";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Todos",
+            "Farmaceutico",
+            "Supervisor",
+            "Gerente"});
+            this.comboBox1.Location = new System.Drawing.Point(503, 182);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(158, 28);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "Todos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(423, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "PUESTO";
+            // 
+            // button3w
+            // 
+            this.button3w.Location = new System.Drawing.Point(80, 51);
+            this.button3w.Name = "button3w";
+            this.button3w.Size = new System.Drawing.Size(176, 78);
+            this.button3w.TabIndex = 8;
+            this.button3w.Text = "DAR DE ALTA NUEVO EMPLEADO";
+            this.button3w.UseVisualStyleBackColor = true;
+            // 
+            // label3w
+            // 
+            this.label3w.AutoSize = true;
+            this.label3w.BackColor = System.Drawing.Color.Transparent;
+            this.label3w.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3w.ForeColor = System.Drawing.Color.Black;
+            this.label3w.Location = new System.Drawing.Point(527, 122);
+            this.label3w.Name = "label3w";
+            this.label3w.Size = new System.Drawing.Size(110, 26);
+            this.label3w.TabIndex = 9;
+            this.label3w.Text = "FILTROS";
             // 
             // ID
             // 
@@ -154,21 +244,37 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.SALARIO.ReadOnly = true;
             this.SALARIO.Width = 150;
             // 
-            // ACCIONES0old
+            // FECHAINGRESO
             // 
-            this.ACCIONES0old.HeaderText = "ACCIONESOLD";
-            this.ACCIONES0old.MinimumWidth = 8;
-            this.ACCIONES0old.Name = "ACCIONES0old";
-            this.ACCIONES0old.ReadOnly = true;
-            this.ACCIONES0old.Width = 150;
+            this.FECHAINGRESO.HeaderText = "FECHA INGRESO";
+            this.FECHAINGRESO.MinimumWidth = 8;
+            this.FECHAINGRESO.Name = "FECHAINGRESO";
+            this.FECHAINGRESO.ReadOnly = true;
+            this.FECHAINGRESO.Width = 150;
             // 
-            // ACCIONES
+            // USUARIO
             // 
-            this.ACCIONES.HeaderText = "ACCIONES";
-            this.ACCIONES.MinimumWidth = 8;
-            this.ACCIONES.Name = "ACCIONES";
-            this.ACCIONES.ReadOnly = true;
-            this.ACCIONES.Width = 150;
+            this.USUARIO.HeaderText = "USUARIO";
+            this.USUARIO.MinimumWidth = 8;
+            this.USUARIO.Name = "USUARIO";
+            this.USUARIO.ReadOnly = true;
+            this.USUARIO.Width = 150;
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Width = 150;
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
             // 
             // EmpleadoSubMenu
             // 
@@ -176,21 +282,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1154, 759);
+            this.Controls.Add(this.label3w);
+            this.Controls.Add(this.button3w);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "EmpleadoSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Menu Empleados Admin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-
-            this.dataGridView1.CellPainting += DataGridView_CellPainting;
-            this.dataGridView1.CellClick += DataGridView_CellClick;
-
-
-            dataGridView1.Rows.Add("1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Cajero", "30000");
-            dataGridView1.Rows.Add("2", "Ana", "Gómez", "F", "87654321", "27-87654321-5", "555-5678", "Vendedora", "32000");
+            this.PerformLayout();
 
         }
 
@@ -281,9 +387,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
             }
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Label label1;
+        private TextBox textBox1;
+        private Button button1;
+        private Button button2;
+        private ComboBox comboBox1;
+        private Label label2;
+        private Button button3w;
+        private Label label3w;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn APELLIDO;
@@ -293,7 +405,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridViewTextBoxColumn TELEFONO;
         private DataGridViewTextBoxColumn PUESTO;
         private DataGridViewTextBoxColumn SALARIO;
-        private DataGridViewButtonColumn ACCIONES0old;
-        private DataGridViewTextBoxColumn ACCIONES;
+        private DataGridViewTextBoxColumn FECHAINGRESO;
+        private DataGridViewButtonColumn USUARIO;
+        private DataGridViewButtonColumn ELIMINAR;
+        private DataGridViewButtonColumn MODIFICAR;
     }
 }
