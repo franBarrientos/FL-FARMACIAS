@@ -50,6 +50,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
+      <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\CategoriaAdmi.Designer.cs">
+      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +73,18 @@
     </Compile>
     <Compile Include="Presentacion\Admin\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarProductoAdmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarProductoAdmi.Designer.cs">
+      <DependentUpon>ModificarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\altacliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\altacliente.Designer.cs">
+      <DependentUpon>altacliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
       <SubType>Form</SubType>
@@ -88,11 +112,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
+      <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
+      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
       <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarProductoAdmi.resx">
+      <DependentUpon>ModificarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\altacliente.resx">
+      <DependentUpon>altacliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
