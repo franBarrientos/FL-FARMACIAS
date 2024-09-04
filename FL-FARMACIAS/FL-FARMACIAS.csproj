@@ -80,11 +80,11 @@
     <Compile Include="Presentacion\Admin\ModificarProductoAdmi.Designer.cs">
       <DependentUpon>ModificarProductoAdmi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Farmaceutico\altacliente.cs">
+    <Compile Include="Presentacion\Farmaceutico\AltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Farmaceutico\altacliente.Designer.cs">
-      <DependentUpon>altacliente.cs</DependentUpon>
+    <Compile Include="Presentacion\Farmaceutico\AltaCliente.Designer.cs">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="Presentacion\Admin\ModificarProductoAdmi.resx">
       <DependentUpon>ModificarProductoAdmi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Farmaceutico\altacliente.resx">
-      <DependentUpon>altacliente.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\AltaCliente.resx">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>

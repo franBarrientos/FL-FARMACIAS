@@ -1,6 +1,6 @@
 ﻿namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    partial class altacliente
+    partial class AltaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(altacliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
             this.DFalta_obrasocial = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();

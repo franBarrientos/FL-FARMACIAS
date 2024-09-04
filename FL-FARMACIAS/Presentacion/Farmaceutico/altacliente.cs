@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class altacliente : Form
+    public partial class AltaCliente : Form
     {
-        public altacliente()
+        public AltaCliente()
         {
             InitializeComponent();
         }
