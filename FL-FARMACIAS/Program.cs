@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FL_FARMACIAS.Presentacion.Admin;
+using FL_FARMACIAS.Presentacion.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,8 @@ namespace FL_FARMACIAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+           Application.Run(new productoSubMenu());
         }
     }
 }

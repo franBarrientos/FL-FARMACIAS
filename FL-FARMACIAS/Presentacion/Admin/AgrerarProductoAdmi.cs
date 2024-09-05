@@ -8,15 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+ 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class AgrerarProductoAdmi : Form
     {
-        public AgrerarProductoAdmi()
+        private productoSubMenu productoSubMenu;
+        public AgrerarProductoAdmi(productoSubMenu productoSubMenu)
         {
             InitializeComponent();
+            this.productoSubMenu = productoSubMenu;
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.productoSubMenu.insertProduct(new object[] { 6, "P006", "Producto 6", 10.5, 100, "Perfumeria", true, });
+        }
     }
 }

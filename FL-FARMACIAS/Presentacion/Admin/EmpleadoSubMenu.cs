@@ -58,6 +58,39 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var dataGridView = sender as DataGridView;
+
+                if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                {
+                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Eliminar"
+                    MessageBox.Show($"Eliminar fila {e.RowIndex}");
+                    // Ejemplo: eliminar la fila
+                    dataGridView.Rows.RemoveAt(e.RowIndex);
+                }
+                // Verifica si la columna clicada es "Modificar"
+                else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
+                {
+                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Modificar"
+                    MessageBox.Show($"Modificar fila {e.RowIndex}");
+                    // Ejemplo: mostrar detalles para modificar
+                    var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
+                    var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
+                    // Aquí podrías abrir un formulario de edición con estos datos, por ejemplo.
+                }
+                else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
+                {
+                    new CrearCuentaModal().Show();
+                   
+                }
+            }
+
+        }
+
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text == "INGRESE DNI O APELLIDO")

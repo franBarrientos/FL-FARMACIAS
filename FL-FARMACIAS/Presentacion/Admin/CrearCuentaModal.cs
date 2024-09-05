@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class MenuAdmin : Form
+    public partial class CrearCuentaModal : Form
     {
-        public MenuAdmin()
+        public CrearCuentaModal()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
-            new EmpleadoSubMenu().Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new productoSubMenu().Show();
+            
         }
     }
 }

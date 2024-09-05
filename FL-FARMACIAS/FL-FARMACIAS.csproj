@@ -62,6 +62,18 @@
     <Compile Include="Presentacion\Admin\CategoriaAdmi.Designer.cs">
       <DependentUpon>CategoriaAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\CrearCuentaModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\CrearCuentaModal.Designer.cs">
+      <DependentUpon>CrearCuentaModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ProductoSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
+      <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
       <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\CrearCuentaModal.resx">
+      <DependentUpon>CrearCuentaModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
+      <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
       <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
