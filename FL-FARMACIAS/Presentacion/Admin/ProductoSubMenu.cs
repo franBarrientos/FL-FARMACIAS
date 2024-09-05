@@ -21,6 +21,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             new object[] { 5, "P005", "Producto 5", 5.0, 300, "Medicamentos" , false,}
         };
 
+        private List<object[]> orgCategories = new List<object[]>
+        {
+            new object[]{ 1, "Permuferia", true },
+            new object[]{ 1, "Medicamentos", true }
+        };
+
         public void insertProduct(object[] p)
         {
             this.dataGridView1.Rows.Add(p);
@@ -35,6 +41,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
                      this.dataGridView1.Rows.Add(row);
 
                  }
+
+                foreach (var row in this.orgCategories)
+                {
+                    this.dataGridView2.Rows.Add(row);
+                }
 
         }
 
@@ -88,6 +99,33 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (textBox1.Text == "")
             {
                 textBox1.Text = "INGRESE DNI O APELLIDO";
+                textBox1.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "INGRESE ID O DESCRIPCION")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void converTextBlack2(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE ID O DESCRIPCION")
+            {
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "INGRESE ID O DESCRIPCION";
                 textBox1.ForeColor = Color.Gray;
             }
         }
@@ -154,6 +192,39 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void button3w_Click(object sender, EventArgs e)
         {
             new AgrerarProductoAdmi(this).Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            object[][] matched;
+            if (textBox2.Text != "INGRESE ID O DESCRIPCION")
+            {
+                matched = this.orgCategories
+                    .Where(x => x[0].ToString().Contains(textBox2.Text)
+                    || x[1].ToString().Contains(textBox2.Text))
+                           .ToArray(); // Convertir a un array de object[][]
+            }
+            else
+            {
+                matched = this.orgCategories
+                       .ToArray(); // Convertir a un array de object[][]
+            }
+
+
+            this.dataGridView2.Rows.Clear();
+
+            foreach (var row in matched)
+            {
+                this.dataGridView2.Rows.Add(row);
+            }
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new CategoriaAdmi().Show();
         }
     }
 }
