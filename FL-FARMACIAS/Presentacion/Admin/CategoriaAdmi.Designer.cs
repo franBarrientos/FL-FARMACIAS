@@ -65,10 +65,10 @@
             // CC_inactivo
             // 
             this.CC_inactivo.AutoSize = true;
-            this.CC_inactivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CC_inactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CC_inactivo.Location = new System.Drawing.Point(159, 180);
             this.CC_inactivo.Name = "CC_inactivo";
-            this.CC_inactivo.Size = new System.Drawing.Size(77, 19);
+            this.CC_inactivo.Size = new System.Drawing.Size(84, 17);
             this.CC_inactivo.TabIndex = 4;
             this.CC_inactivo.Text = "INACTIVO";
             this.CC_inactivo.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // CC_activo
             // 
             this.CC_activo.AutoSize = true;
-            this.CC_activo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CC_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CC_activo.Location = new System.Drawing.Point(20, 180);
             this.CC_activo.Name = "CC_activo";
-            this.CC_activo.Size = new System.Drawing.Size(66, 19);
+            this.CC_activo.Size = new System.Drawing.Size(71, 17);
             this.CC_activo.TabIndex = 3;
             this.CC_activo.Text = "ACTIVO";
             this.CC_activo.UseVisualStyleBackColor = true;
@@ -89,11 +89,11 @@
             this.LAS_cate_estado.AutoSize = true;
             this.LAS_cate_estado.BackColor = System.Drawing.Color.Silver;
             this.LAS_cate_estado.CausesValidation = false;
-            this.LAS_cate_estado.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_estado.ForeColor = System.Drawing.Color.White;
             this.LAS_cate_estado.Location = new System.Drawing.Point(81, 128);
             this.LAS_cate_estado.Name = "LAS_cate_estado";
-            this.LAS_cate_estado.Size = new System.Drawing.Size(96, 28);
+            this.LAS_cate_estado.Size = new System.Drawing.Size(101, 29);
             this.LAS_cate_estado.TabIndex = 2;
             this.LAS_cate_estado.Text = "Estado:";
             // 
@@ -102,11 +102,11 @@
             this.LAS_cate_descrip.AutoSize = true;
             this.LAS_cate_descrip.BackColor = System.Drawing.Color.Silver;
             this.LAS_cate_descrip.CausesValidation = false;
-            this.LAS_cate_descrip.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_descrip.ForeColor = System.Drawing.Color.White;
             this.LAS_cate_descrip.Location = new System.Drawing.Point(56, 41);
             this.LAS_cate_descrip.Name = "LAS_cate_descrip";
-            this.LAS_cate_descrip.Size = new System.Drawing.Size(157, 28);
+            this.LAS_cate_descrip.Size = new System.Drawing.Size(159, 29);
             this.LAS_cate_descrip.TabIndex = 1;
             this.LAS_cate_descrip.Text = "Descripcion:";
             // 
@@ -115,11 +115,11 @@
             this.LAS_cate_titulo.AutoSize = true;
             this.LAS_cate_titulo.BackColor = System.Drawing.Color.Silver;
             this.LAS_cate_titulo.CausesValidation = false;
-            this.LAS_cate_titulo.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_titulo.ForeColor = System.Drawing.Color.White;
             this.LAS_cate_titulo.Location = new System.Drawing.Point(35, 9);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
-            this.LAS_cate_titulo.Size = new System.Drawing.Size(313, 36);
+            this.LAS_cate_titulo.Size = new System.Drawing.Size(351, 33);
             this.LAS_cate_titulo.TabIndex = 0;
             this.LAS_cate_titulo.Text = "ALTA DE CATEGORIAS";
             // 
@@ -127,7 +127,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(107, 286);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 50);
+            this.button1.Size = new System.Drawing.Size(188, 50);
             this.button1.TabIndex = 6;
             this.button1.Text = "AGREGAR CATEGORIA";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -22,7 +22,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.productoSubMenu.insertProduct(new object[] { 6, "P006", "Producto 6", 10.5, 100, "Perfumeria", true, });
+            this.productoSubMenu.insertProduct(new Dominio.ProductoDominio( 6, "P006", "Producto 6", 10.5, 100, new Dominio.CategoriaDominio(2, "Perfumeria", true), true ));
         }
     }
 }

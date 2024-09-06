@@ -65,18 +65,16 @@
             this.panel1.Controls.Add(this.LP_precioproduc);
             this.panel1.Controls.Add(this.LP_descirpproduc);
             this.panel1.Controls.Add(this.LP_nombreproduc);
-            this.panel1.Location = new System.Drawing.Point(64, 88);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Location = new System.Drawing.Point(32, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 846);
+            this.panel1.Size = new System.Drawing.Size(413, 440);
             this.panel1.TabIndex = 0;
             // 
             // TP_codproducto
             // 
-            this.TP_codproducto.Location = new System.Drawing.Point(450, 102);
-            this.TP_codproducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TP_codproducto.Location = new System.Drawing.Point(225, 53);
             this.TP_codproducto.Name = "TP_codproducto";
-            this.TP_codproducto.Size = new System.Drawing.Size(366, 31);
+            this.TP_codproducto.Size = new System.Drawing.Size(185, 20);
             this.TP_codproducto.TabIndex = 15;
             // 
             // LP_codigoproduc
@@ -86,10 +84,9 @@
             this.LP_codigoproduc.CausesValidation = false;
             this.LP_codigoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_codigoproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_codigoproduc.Location = new System.Drawing.Point(6, 102);
-            this.LP_codigoproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_codigoproduc.Location = new System.Drawing.Point(3, 53);
             this.LP_codigoproduc.Name = "LP_codigoproduc";
-            this.LP_codigoproduc.Size = new System.Drawing.Size(412, 55);
+            this.LP_codigoproduc.Size = new System.Drawing.Size(217, 29);
             this.LP_codigoproduc.TabIndex = 14;
             this.LP_codigoproduc.Text = "Codigo Producto:";
             // 
@@ -97,10 +94,9 @@
             // 
             this.CBP_inactivo.AutoSize = true;
             this.CBP_inactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBP_inactivo.Location = new System.Drawing.Point(408, 737);
-            this.CBP_inactivo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CBP_inactivo.Location = new System.Drawing.Point(204, 383);
             this.CBP_inactivo.Name = "CBP_inactivo";
-            this.CBP_inactivo.Size = new System.Drawing.Size(155, 30);
+            this.CBP_inactivo.Size = new System.Drawing.Size(84, 17);
             this.CBP_inactivo.TabIndex = 13;
             this.CBP_inactivo.Text = "INACTIVO";
             this.CBP_inactivo.UseVisualStyleBackColor = true;
@@ -109,10 +105,9 @@
             // 
             this.CBP_activo.AutoSize = true;
             this.CBP_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBP_activo.Location = new System.Drawing.Point(144, 737);
-            this.CBP_activo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CBP_activo.Location = new System.Drawing.Point(72, 383);
             this.CBP_activo.Name = "CBP_activo";
-            this.CBP_activo.Size = new System.Drawing.Size(131, 30);
+            this.CBP_activo.Size = new System.Drawing.Size(71, 17);
             this.CBP_activo.TabIndex = 12;
             this.CBP_activo.Text = "ACTIVO";
             this.CBP_activo.UseVisualStyleBackColor = true;
@@ -124,34 +119,30 @@
             "Perfumeria",
             "Limpieza",
             "Drogueria"});
-            this.CB_productocat.Location = new System.Drawing.Point(346, 346);
-            this.CB_productocat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CB_productocat.Location = new System.Drawing.Point(173, 180);
             this.CB_productocat.Name = "CB_productocat";
-            this.CB_productocat.Size = new System.Drawing.Size(470, 33);
+            this.CB_productocat.Size = new System.Drawing.Size(237, 21);
             this.CB_productocat.TabIndex = 11;
             // 
             // TP_stock
             // 
-            this.TP_stock.Location = new System.Drawing.Point(344, 563);
-            this.TP_stock.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TP_stock.Location = new System.Drawing.Point(172, 293);
             this.TP_stock.Name = "TP_stock";
-            this.TP_stock.Size = new System.Drawing.Size(472, 31);
+            this.TP_stock.Size = new System.Drawing.Size(238, 20);
             this.TP_stock.TabIndex = 10;
             // 
             // TP_precio
             // 
-            this.TP_precio.Location = new System.Drawing.Point(344, 469);
-            this.TP_precio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TP_precio.Location = new System.Drawing.Point(172, 244);
             this.TP_precio.Name = "TP_precio";
-            this.TP_precio.Size = new System.Drawing.Size(472, 31);
+            this.TP_precio.Size = new System.Drawing.Size(238, 20);
             this.TP_precio.TabIndex = 9;
             // 
             // TP_nombre
             // 
-            this.TP_nombre.Location = new System.Drawing.Point(350, 227);
-            this.TP_nombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TP_nombre.Location = new System.Drawing.Point(175, 118);
             this.TP_nombre.Name = "TP_nombre";
-            this.TP_nombre.Size = new System.Drawing.Size(466, 31);
+            this.TP_nombre.Size = new System.Drawing.Size(235, 20);
             this.TP_nombre.TabIndex = 7;
             // 
             // LP_estadoproduc
@@ -161,10 +152,9 @@
             this.LP_estadoproduc.CausesValidation = false;
             this.LP_estadoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_estadoproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_estadoproduc.Location = new System.Drawing.Point(256, 629);
-            this.LP_estadoproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_estadoproduc.Location = new System.Drawing.Point(128, 327);
             this.LP_estadoproduc.Name = "LP_estadoproduc";
-            this.LP_estadoproduc.Size = new System.Drawing.Size(194, 55);
+            this.LP_estadoproduc.Size = new System.Drawing.Size(101, 29);
             this.LP_estadoproduc.TabIndex = 6;
             this.LP_estadoproduc.Text = "Estado:";
             // 
@@ -175,10 +165,9 @@
             this.LP_stockproduc.CausesValidation = false;
             this.LP_stockproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_stockproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_stockproduc.Location = new System.Drawing.Point(6, 563);
-            this.LP_stockproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_stockproduc.Location = new System.Drawing.Point(3, 293);
             this.LP_stockproduc.Name = "LP_stockproduc";
-            this.LP_stockproduc.Size = new System.Drawing.Size(163, 55);
+            this.LP_stockproduc.Size = new System.Drawing.Size(85, 29);
             this.LP_stockproduc.TabIndex = 5;
             this.LP_stockproduc.Text = "Stock:";
             // 
@@ -189,10 +178,9 @@
             this.LP_precioproduc.CausesValidation = false;
             this.LP_precioproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_precioproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_precioproduc.Location = new System.Drawing.Point(6, 454);
-            this.LP_precioproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_precioproduc.Location = new System.Drawing.Point(3, 236);
             this.LP_precioproduc.Name = "LP_precioproduc";
-            this.LP_precioproduc.Size = new System.Drawing.Size(180, 55);
+            this.LP_precioproduc.Size = new System.Drawing.Size(96, 29);
             this.LP_precioproduc.TabIndex = 4;
             this.LP_precioproduc.Text = "Precio:";
             // 
@@ -203,10 +191,9 @@
             this.LP_descirpproduc.CausesValidation = false;
             this.LP_descirpproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_descirpproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_descirpproduc.Location = new System.Drawing.Point(6, 333);
-            this.LP_descirpproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_descirpproduc.Location = new System.Drawing.Point(3, 173);
             this.LP_descirpproduc.Name = "LP_descirpproduc";
-            this.LP_descirpproduc.Size = new System.Drawing.Size(300, 55);
+            this.LP_descirpproduc.Size = new System.Drawing.Size(159, 29);
             this.LP_descirpproduc.TabIndex = 3;
             this.LP_descirpproduc.Text = "Descripcion:";
             // 
@@ -217,10 +204,9 @@
             this.LP_nombreproduc.CausesValidation = false;
             this.LP_nombreproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LP_nombreproduc.ForeColor = System.Drawing.Color.White;
-            this.LP_nombreproduc.Location = new System.Drawing.Point(6, 212);
-            this.LP_nombreproduc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LP_nombreproduc.Location = new System.Drawing.Point(3, 110);
             this.LP_nombreproduc.Name = "LP_nombreproduc";
-            this.LP_nombreproduc.Size = new System.Drawing.Size(216, 55);
+            this.LP_nombreproduc.Size = new System.Drawing.Size(114, 29);
             this.LP_nombreproduc.TabIndex = 2;
             this.LP_nombreproduc.Text = "Nombre:";
             // 
@@ -231,20 +217,18 @@
             this.LAS_cate_titulo.CausesValidation = false;
             this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_titulo.ForeColor = System.Drawing.Color.White;
-            this.LAS_cate_titulo.Location = new System.Drawing.Point(196, 56);
-            this.LAS_cate_titulo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LAS_cate_titulo.Location = new System.Drawing.Point(69, 19);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
-            this.LAS_cate_titulo.Size = new System.Drawing.Size(673, 67);
+            this.LAS_cate_titulo.Size = new System.Drawing.Size(346, 33);
             this.LAS_cate_titulo.TabIndex = 1;
             this.LAS_cate_titulo.Text = "ALTA DE PRODUCTOS";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(282, 938);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Location = new System.Drawing.Point(117, 488);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(482, 119);
+            this.button1.Size = new System.Drawing.Size(265, 62);
             this.button1.TabIndex = 2;
             this.button1.Text = "AGREGAR PRODUCTO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -254,25 +238,25 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(302, 946);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(126, 492);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // AgrerarProductoAdmi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(962, 1081);
+            this.ClientSize = new System.Drawing.Size(472, 569);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LAS_cate_titulo);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "AgrerarProductoAdmi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgrerarProductoAdmi";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FL_FARMACIAS.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class ModificarProductoAdmi : Form
     {
-        public ModificarProductoAdmi()
+        public ModificarProductoAdmi(ProductoDominio p)
         {
             InitializeComponent();
+            this.TPM_codproducto.Text = p.CodProducto;
+            this.TPM_nombre.Text = p.Nombre;
+            this.TPM_precio.Text = p.Precio.ToString();
+            this.TPM_stock.Text = p.Stock.ToString();
+            this.CBM_activo.Checked = p.Estado;
+
         }
     }
 }

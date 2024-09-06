@@ -18,8 +18,9 @@ namespace FL_FARMACIAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-           Application.Run(new productoSubMenu());
+            Application.Run(new Form1());
+            //Application.Run(new productoSubMenu());
+           //Application.Run(new EmpleadoSubMenu());
         }
     }
 }

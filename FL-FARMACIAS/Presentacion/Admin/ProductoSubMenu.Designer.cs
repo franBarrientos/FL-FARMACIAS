@@ -87,7 +87,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINAR,
             this.MODIFICAR});
             this.dataGridView1.Location = new System.Drawing.Point(56, 153);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 60;
@@ -187,7 +187,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
             this.textBox1.Location = new System.Drawing.Point(100, 114);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 19);
             this.textBox1.TabIndex = 3;
@@ -200,7 +200,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(596, 106);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 31);
             this.button1.TabIndex = 4;
@@ -211,7 +211,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(710, 106);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 31);
             this.button2.TabIndex = 5;
@@ -224,9 +224,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Todos",
-            "Perfumeria"});
+            "Perfumeria",
+            "Medicamentos"});
             this.comboBox1.Location = new System.Drawing.Point(437, 114);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(106, 21);
             this.comboBox1.TabIndex = 6;
@@ -246,7 +247,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button3w
             // 
             this.button3w.Location = new System.Drawing.Point(33, 20);
-            this.button3w.Margin = new System.Windows.Forms.Padding(2);
+            this.button3w.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3w.Name = "button3w";
             this.button3w.Size = new System.Drawing.Size(118, 49);
             this.button3w.TabIndex = 8;
@@ -272,7 +273,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRODUCTOS.Controls.Add(this.prodTab);
             this.PRODUCTOS.Controls.Add(this.catTab);
             this.PRODUCTOS.Location = new System.Drawing.Point(28, 23);
-            this.PRODUCTOS.Margin = new System.Windows.Forms.Padding(2);
+            this.PRODUCTOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PRODUCTOS.Name = "PRODUCTOS";
             this.PRODUCTOS.SelectedIndex = 0;
             this.PRODUCTOS.Size = new System.Drawing.Size(1005, 563);
@@ -293,9 +294,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.prodTab.Controls.Add(this.button1);
             this.prodTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodTab.Location = new System.Drawing.Point(4, 22);
-            this.prodTab.Margin = new System.Windows.Forms.Padding(2);
+            this.prodTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.prodTab.Name = "prodTab";
-            this.prodTab.Padding = new System.Windows.Forms.Padding(2);
+            this.prodTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.prodTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.prodTab.Size = new System.Drawing.Size(997, 537);
             this.prodTab.TabIndex = 0;
@@ -314,9 +315,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.catTab.Controls.Add(this.button4);
             this.catTab.Controls.Add(this.button5);
             this.catTab.Location = new System.Drawing.Point(4, 22);
-            this.catTab.Margin = new System.Windows.Forms.Padding(2);
+            this.catTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.catTab.Name = "catTab";
-            this.catTab.Padding = new System.Windows.Forms.Padding(2);
+            this.catTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.catTab.Size = new System.Drawing.Size(997, 537);
             this.catTab.TabIndex = 1;
             this.catTab.Text = "CATEGORIAS";
@@ -338,7 +339,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(79, 42);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 49);
             this.button3.TabIndex = 17;
@@ -370,7 +371,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn2,
             this.dataGridViewButtonColumn3});
             this.dataGridView2.Location = new System.Drawing.Point(302, 146);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 60;
@@ -421,7 +422,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
             this.textBox2.Location = new System.Drawing.Point(274, 112);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(210, 20);
             this.textBox2.TabIndex = 12;
@@ -434,7 +435,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(634, 104);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 31);
             this.button4.TabIndex = 14;
@@ -444,7 +445,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(520, 104);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 31);
             this.button5.TabIndex = 13;
@@ -454,12 +455,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // productoSubMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(1057, 587);
+            this.ClientSize = new System.Drawing.Size(1060, 597);
             this.Controls.Add(this.PRODUCTOS);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "productoSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Productos y Categorias Admin";

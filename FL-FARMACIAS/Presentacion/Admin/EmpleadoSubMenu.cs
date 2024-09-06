@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
@@ -49,12 +45,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public EmpleadoSubMenu()
         {
             InitializeComponent();
-          
-                 foreach (var row in this.orgEmployess)
-                 {
-                     this.dataGridView1.Rows.Add(row);
 
-                 }
+            foreach (var row in this.orgEmployess)
+            {
+                this.dataGridView1.Rows.Add(row);
+
+            }
 
         }
 
@@ -84,7 +80,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
                     new CrearCuentaModal().Show();
-                   
+
                 }
             }
 
@@ -120,7 +116,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-             object[][] matched;
+            object[][] matched;
             if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text == "Todos")
             {
                 matched = this.orgEmployess
@@ -164,17 +160,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             {
                 this.dataGridView1.Rows.Add(row);
             }
-                    
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           this.dataGridView1.Rows.Clear ();
-           
+            this.dataGridView1.Rows.Clear();
+
             foreach (var row in this.orgEmployess)
             {
                 this.dataGridView1.Rows.Add(row);
             }
+        }
+
+        private void button3w_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
