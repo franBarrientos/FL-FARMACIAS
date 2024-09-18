@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion.Admin;
+using FL_FARMACIAS.Presentacion.Farmaceutico;
+using FL_FARMACIAS.Presentacion.Supervisor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +16,50 @@ namespace FL_FARMACIAS.Presentacion.Login
 {
     public partial class LoginForm : Form
     {
+        private List<UsuarioDominio> defaultUsers = new List<UsuarioDominio>()
+        {
+            new UsuarioDominio("admin", "admin", Rol.Admin),
+            new UsuarioDominio("supervisor", "supervisor", Rol.Supervisor),
+            new UsuarioDominio("farmaceutico", "farmaceutico", Rol.Farmaceutico),
+        };
+        
+
         public LoginForm()
         {
             InitializeComponent();
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string usuario = textBox1.Text;
+            string clave = textBox2.Text;
+
+            UsuarioDominio usuarioEncontrado = this.defaultUsers.FirstOrDefault(x => x.usuario.Equals(usuario) && x.clave.Equals(clave));
+
+            if (usuarioEncontrado == null)
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (usuarioEncontrado.rol == Rol.Admin)
+            {
+                new MenuAdmin().Show(this);
+                return;
+            }
+
+            if (usuarioEncontrado.rol == Rol.Farmaceutico)
+            {
+                new MenuFarmaceutico().Show(this);
+                return;
+            }
+
+            if (usuarioEncontrado.rol == Rol.Supervisor)
+            {
+                new MenuSupervisor().Show(this);
+                return;
+            }
+
+        }
     }
 }

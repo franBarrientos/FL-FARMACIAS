@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS.Presentacion.Admin
+namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class EmpleadoSubMenu : Form
+    public partial class ClienteSubMenu : Form
     {
         private object[][] orgEmployess = new object[][]
                 {
@@ -42,7 +42,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
                 };
 
-        public EmpleadoSubMenu()
+        public ClienteSubMenu()
         {
             InitializeComponent();
 
@@ -79,7 +79,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    new CrearCuentaModal().Show();
+                   // new CrearCuentaModal().Show();
 
                 }
             }
@@ -175,7 +175,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button3w_Click(object sender, EventArgs e)
         {
-            
+            new AltaCliente().Show();
         }
     }
 }

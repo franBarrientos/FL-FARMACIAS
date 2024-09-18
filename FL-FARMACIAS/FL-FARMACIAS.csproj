@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\ProductoDominio.cs" />
+    <Compile Include="Dominio\UsuarioDominio.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\AltaCliente.Designer.cs">
       <DependentUpon>AltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\ClienteSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\ClienteSubMenu.Designer.cs">
+      <DependentUpon>ClienteSubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
       <SubType>Form</SubType>
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\ClienteSubMenu.resx">
+      <DependentUpon>ClienteSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>

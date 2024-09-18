@@ -20,9 +20,10 @@ namespace FL_FARMACIAS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new TEST());
+            //Application.Run(new TEST());
             //Application.Run(new productoSubMenu());
-           //Application.Run(new EmpleadoSubMenu());
+            //Application.Run(new EmpleadoSubMenu());
+            Application.Run(new LoginForm());
         }
     }
 }

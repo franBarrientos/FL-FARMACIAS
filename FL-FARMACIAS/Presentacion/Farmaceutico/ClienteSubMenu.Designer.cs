@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace FL_FARMACIAS.Presentacion.Admin
+namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    partial class EmpleadoSubMenu
+    partial class ClienteSubMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -197,9 +197,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1.Location = new System.Drawing.Point(460, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 26);
+            this.label1.Size = new System.Drawing.Size(127, 26);
             this.label1.TabIndex = 2;
-            this.label1.Text = "EMPLEADOS";
+            this.label1.Text = "CLIENTES";
             // 
             // textBox1
             // 
@@ -287,7 +287,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label3w.TabIndex = 9;
             this.label3w.Text = "FILTROS";
             // 
-            // EmpleadoSubMenu
+            // ClienteSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,7 +307,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.Margin = new System.Windows.Forms.Padding(64);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EmpleadoSubMenu";
+            this.Name = "ClienteSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Empleados Admin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
