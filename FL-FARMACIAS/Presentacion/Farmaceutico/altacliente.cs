@@ -17,6 +17,70 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             InitializeComponent();
         }
 
-       
+        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
+        {
+            String nombre = Tnombre_cliente.Text.Trim();
+            String apellido = Tapellido_cliente.Text.Trim();
+            String dni = Tdni_cliente.Text.Trim();
+            String obrasocial = DFalta_obrasocial.Text.Trim();
+            String telefono = Ttelefono_cliente.Text.Trim();
+
+            if (nombre == "" || apellido == "" || dni == "" || telefono == "" || obrasocial == "")
+            {
+                MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!dni.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dni.Length != 8)
+            {
+                MessageBox.Show("Por favor, ingrese un DNI de 8 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!telefono.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (telefono.Length != 10)
+            {
+                MessageBox.Show("Por favor, ingrese un numero de telefono de 10 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!nombre.All(char.IsLetter))
+            {
+                MessageBox.Show("Por favor, ingrese solo letras en el campo Nombre.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!apellido.All(char.IsLetter))
+            {
+                MessageBox.Show("Por favor, ingrese solo letras en el campo Apellido.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (nombre != "" && apellido != "" && dni != "" && telefono != "" && DFalta_obrasocial.Text != "")
+            {
+                MessageBox.Show("El cliente " + nombre + " " + apellido + " " + "numero de DNI: " + dni + "obra social: " + DFalta_obrasocial.Text + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void BFalta_vaciarcampos_Click(object sender, EventArgs e)
+        {
+            Tnombre_cliente.Clear();
+            Tapellido_cliente.Clear();
+            Tdni_cliente.Clear();
+            Ttelefono_cliente.Clear();
+            DFalta_obrasocial.Text = " ";
+        }
     }
 }

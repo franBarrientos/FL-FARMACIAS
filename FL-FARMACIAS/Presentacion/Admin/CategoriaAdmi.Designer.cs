@@ -36,7 +36,7 @@
             this.LAS_cate_estado = new System.Windows.Forms.Label();
             this.LAS_cate_descrip = new System.Windows.Forms.Label();
             this.LAS_cate_titulo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Bagregar_categoria = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +65,9 @@
             // CC_inactivo
             // 
             this.CC_inactivo.AutoSize = true;
-            this.CC_inactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CC_inactivo.Checked = true;
+            this.CC_inactivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CC_inactivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CC_inactivo.Location = new System.Drawing.Point(159, 180);
             this.CC_inactivo.Name = "CC_inactivo";
             this.CC_inactivo.Size = new System.Drawing.Size(84, 17);
@@ -123,15 +125,16 @@
             this.LAS_cate_titulo.TabIndex = 0;
             this.LAS_cate_titulo.Text = "ALTA DE CATEGORIAS";
             // 
-            // button1
+            // Bagregar_categoria
             // 
-            this.button1.Location = new System.Drawing.Point(107, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 50);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "AGREGAR CATEGORIA";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Bagregar_categoria.Location = new System.Drawing.Point(107, 286);
+            this.Bagregar_categoria.Name = "Bagregar_categoria";
+            this.Bagregar_categoria.Size = new System.Drawing.Size(181, 50);
+            this.Bagregar_categoria.TabIndex = 6;
+            this.Bagregar_categoria.Text = "AGREGAR CATEGORIA";
+            this.Bagregar_categoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bagregar_categoria.UseVisualStyleBackColor = true;
+            this.Bagregar_categoria.Click += new System.EventHandler(this.Bagregar_categoria_Click);
             // 
             // pictureBox1
             // 
@@ -151,7 +154,7 @@
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(385, 365);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Bagregar_categoria);
             this.Controls.Add(this.LAS_cate_titulo);
             this.Controls.Add(this.panel1);
             this.Name = "CategoriaAdmi";
@@ -172,7 +175,7 @@
         private System.Windows.Forms.CheckBox CC_inactivo;
         private System.Windows.Forms.CheckBox CC_activo;
         private System.Windows.Forms.Label LAS_cate_estado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Bagregar_categoria;
         private System.Windows.Forms.TextBox TC_descripcion;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
