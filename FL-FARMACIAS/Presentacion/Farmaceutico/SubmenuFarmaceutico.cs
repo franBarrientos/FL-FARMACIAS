@@ -6,15 +6,15 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class EmpleadoSubMenu : Form
+    public partial class SubmenuFarmaceutico : Form
     {
         private object[][] orgEmployess = new object[][]
                 {
         new object[] { "1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Farmaceutico", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "1", "Juan", "Pérez", "F", "87654321", "27-87654321-5", "555-5678", "Farmaceutico", "32000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "1", "Juan", "Pérez", "M", "11223344", "20-11223344-0", "555-6789", "Farmaceutico", "50000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "1", "Juan", "Pérez", "F", "22334455", "27-22334455-8", "555-7890", "Farmaceutico", "45000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "1", "Juan", "Pérez", "M", "33445566", "20-33445566-1", "555-8901", "Farmaceutico", "31000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
+        new object[] { "2", "Ana", "Gómez", "F", "87654321", "27-87654321-5", "555-5678", "Farmaceutico", "32000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
+        new object[] { "3", "Carlos", "Martínez", "M", "11223344", "20-11223344-0", "555-6789", "Farmaceutico", "50000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
+        new object[] { "4", "Laura", "Rodríguez", "F", "22334455", "27-22334455-8", "555-7890", "Farmaceutico", "45000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
+        new object[] { "5", "Miguel", "López", "M", "33445566", "20-33445566-1", "555-8901", "Farmaceutico", "31000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
         new object[] { "6", "Lucía", "Hernández", "F", "44556677", "27-44556677-3", "555-9012", "Farmaceutico", "29000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
         new object[] { "7", "Roberto", "González", "M", "55667788", "20-55667788-5", "555-0123", "Farmaceutico", "38000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
         new object[] { "8", "Sofía", "Fernández", "F", "66778899", "27-66778899-7", "555-1235", "Farmaceutico", "27000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
@@ -42,7 +42,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
                 };
 
-        public EmpleadoSubMenu()
+        public SubmenuFarmaceutico()
         {
             InitializeComponent();
 
@@ -79,7 +79,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    new EmpleadoSubMenu().Show();
+                    //new CrearCuentaModal().Show();
 
                 }
             }

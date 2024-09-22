@@ -126,6 +126,12 @@
     <Compile Include="Presentacion\Farmaceutico\ClienteSubMenu.Designer.cs">
       <DependentUpon>ClienteSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.Designer.cs">
+      <DependentUpon>SubmenuFarmaceutico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\ClienteSubMenu.resx">
       <DependentUpon>ClienteSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.resx">
+      <DependentUpon>SubmenuFarmaceutico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
