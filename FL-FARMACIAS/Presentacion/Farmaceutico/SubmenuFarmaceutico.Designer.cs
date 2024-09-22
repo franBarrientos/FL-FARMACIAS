@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace FL_FARMACIAS.Presentacion.Admin
+namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    partial class EmpleadoSubMenu
+    partial class SubmenuFarmaceutico
     {
         /// <summary>
         /// Required designer variable.
@@ -268,7 +268,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w.Location = new System.Drawing.Point(30, 73);
             this.button3w.Margin = new System.Windows.Forms.Padding(64);
             this.button3w.Name = "button3w";
-            this.button3w.Size = new System.Drawing.Size(270, 35);
+            this.button3w.Size = new System.Drawing.Size(270, 33);
             this.button3w.TabIndex = 8;
             this.button3w.Text = "DAR DE ALTA NUEVO EMPLEADO";
             this.button3w.UseVisualStyleBackColor = true;
@@ -316,8 +316,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
-       
-   
+
+
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private Label label1;

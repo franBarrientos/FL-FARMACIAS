@@ -252,7 +252,7 @@
             this.LAS_cate_titulo.Size = new System.Drawing.Size(346, 33);
             this.LAS_cate_titulo.TabIndex = 1;
             this.LAS_cate_titulo.Text = "ALTA DE PRODUCTOS";
-            this.LAS_cate_titulo.Click += new System.EventHandler(this.LAS_cate_titulo_Click);
+            // this.LAS_cate_titulo.Click += new System.EventHandler(this.LAS_cate_titulo_Click);
             // 
             // botonAgregarProducto
             // 

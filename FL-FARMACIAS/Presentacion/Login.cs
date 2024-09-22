@@ -30,10 +30,10 @@ namespace FL_FARMACIAS.Presentacion.Login
             contraseña_login.UseSystemPasswordChar = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Bingresar_login_Click(object sender, EventArgs e)
         {
-            string usuario = textBox1.Text;
-            string clave = textBox2.Text;
+            string usuario = usuario_login.Text;
+            string clave = contraseña_login.Text;
 
             UsuarioDominio usuarioEncontrado = this.defaultUsers.FirstOrDefault(x => x.usuario.Equals(usuario) && x.clave.Equals(clave));
 
@@ -62,18 +62,7 @@ namespace FL_FARMACIAS.Presentacion.Login
             }
 
         }
-        private void Bingresar_login_Click(object sender, EventArgs e)
-        {
-            String usuario = usuario_login.Text.Trim();
-            String contraseña = contraseña_login.Text.Trim();
-           
-
-            if (usuario == "" || contraseña == "")
-            {
-                MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
+        
 
         private void Beliminar_login_Click(object sender, EventArgs e)
         {
