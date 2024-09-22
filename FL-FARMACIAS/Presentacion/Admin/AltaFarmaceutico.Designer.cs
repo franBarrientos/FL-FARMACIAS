@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaFarmaceutico));
             this.Lnombre_farmaceutico = new System.Windows.Forms.Label();
             this.Lapellido_farmaceutico = new System.Windows.Forms.Label();
             this.Ldni_farmaceutico = new System.Windows.Forms.Label();
@@ -51,121 +52,162 @@
             this.fotoempleado = new System.Windows.Forms.PictureBox();
             this.fecha_ingreso = new System.Windows.Forms.DateTimePicker();
             this.Lfechaingreso = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Ltitulo_nuevofarma = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fotoempleado)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lnombre_farmaceutico
             // 
             this.Lnombre_farmaceutico.AutoSize = true;
-            this.Lnombre_farmaceutico.Location = new System.Drawing.Point(27, 29);
+            this.Lnombre_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lnombre_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lnombre_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lnombre_farmaceutico.Location = new System.Drawing.Point(12, 81);
             this.Lnombre_farmaceutico.Name = "Lnombre_farmaceutico";
-            this.Lnombre_farmaceutico.Size = new System.Drawing.Size(44, 13);
+            this.Lnombre_farmaceutico.Size = new System.Drawing.Size(69, 20);
             this.Lnombre_farmaceutico.TabIndex = 0;
-            this.Lnombre_farmaceutico.Text = "Nombre";
+            this.Lnombre_farmaceutico.Text = "Nombre:";
             // 
             // Lapellido_farmaceutico
             // 
             this.Lapellido_farmaceutico.AutoSize = true;
-            this.Lapellido_farmaceutico.Location = new System.Drawing.Point(29, 70);
+            this.Lapellido_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lapellido_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lapellido_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lapellido_farmaceutico.Location = new System.Drawing.Point(12, 44);
             this.Lapellido_farmaceutico.Name = "Lapellido_farmaceutico";
-            this.Lapellido_farmaceutico.Size = new System.Drawing.Size(43, 13);
+            this.Lapellido_farmaceutico.Size = new System.Drawing.Size(69, 20);
             this.Lapellido_farmaceutico.TabIndex = 1;
-            this.Lapellido_farmaceutico.Text = "apellido";
+            this.Lapellido_farmaceutico.Text = "Apellido:";
             // 
             // Ldni_farmaceutico
             // 
             this.Ldni_farmaceutico.AutoSize = true;
-            this.Ldni_farmaceutico.Location = new System.Drawing.Point(37, 161);
+            this.Ldni_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Ldni_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ldni_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Ldni_farmaceutico.Location = new System.Drawing.Point(12, 120);
             this.Ldni_farmaceutico.Name = "Ldni_farmaceutico";
-            this.Ldni_farmaceutico.Size = new System.Drawing.Size(21, 13);
+            this.Ldni_farmaceutico.Size = new System.Drawing.Size(49, 20);
             this.Ldni_farmaceutico.TabIndex = 3;
-            this.Ldni_farmaceutico.Text = "dni";
+            this.Ldni_farmaceutico.Text = "D.N.I:";
             // 
             // Lsexo_farmaceutico
             // 
             this.Lsexo_farmaceutico.AutoSize = true;
-            this.Lsexo_farmaceutico.Location = new System.Drawing.Point(29, 119);
+            this.Lsexo_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lsexo_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lsexo_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lsexo_farmaceutico.Location = new System.Drawing.Point(12, 287);
             this.Lsexo_farmaceutico.Name = "Lsexo_farmaceutico";
-            this.Lsexo_farmaceutico.Size = new System.Drawing.Size(29, 13);
+            this.Lsexo_farmaceutico.Size = new System.Drawing.Size(49, 20);
             this.Lsexo_farmaceutico.TabIndex = 2;
-            this.Lsexo_farmaceutico.Text = "sexo";
+            this.Lsexo_farmaceutico.Text = "Sexo:";
+            this.Lsexo_farmaceutico.Click += new System.EventHandler(this.Lsexo_farmaceutico_Click);
             // 
             // Ltelefono_farmaceutico
             // 
             this.Ltelefono_farmaceutico.AutoSize = true;
-            this.Ltelefono_farmaceutico.Location = new System.Drawing.Point(27, 254);
+            this.Ltelefono_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Ltelefono_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltelefono_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Ltelefono_farmaceutico.Location = new System.Drawing.Point(15, 192);
             this.Ltelefono_farmaceutico.Name = "Ltelefono_farmaceutico";
-            this.Ltelefono_farmaceutico.Size = new System.Drawing.Size(45, 13);
+            this.Ltelefono_farmaceutico.Size = new System.Drawing.Size(75, 20);
             this.Ltelefono_farmaceutico.TabIndex = 5;
-            this.Ltelefono_farmaceutico.Text = "telefono";
+            this.Ltelefono_farmaceutico.Text = "Telefono:";
             // 
             // Lcuil_farmaceutico
             // 
             this.Lcuil_farmaceutico.AutoSize = true;
-            this.Lcuil_farmaceutico.Location = new System.Drawing.Point(29, 207);
+            this.Lcuil_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lcuil_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcuil_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lcuil_farmaceutico.Location = new System.Drawing.Point(15, 153);
             this.Lcuil_farmaceutico.Name = "Lcuil_farmaceutico";
-            this.Lcuil_farmaceutico.Size = new System.Drawing.Size(23, 13);
+            this.Lcuil_farmaceutico.Size = new System.Drawing.Size(50, 20);
             this.Lcuil_farmaceutico.TabIndex = 4;
-            this.Lcuil_farmaceutico.Text = "cuil";
+            this.Lcuil_farmaceutico.Text = "CUIL:";
             // 
             // Lsalario_farmaceutico
             // 
             this.Lsalario_farmaceutico.AutoSize = true;
-            this.Lsalario_farmaceutico.Location = new System.Drawing.Point(21, 335);
+            this.Lsalario_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lsalario_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lsalario_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lsalario_farmaceutico.Location = new System.Drawing.Point(15, 256);
             this.Lsalario_farmaceutico.Name = "Lsalario_farmaceutico";
-            this.Lsalario_farmaceutico.Size = new System.Drawing.Size(37, 13);
+            this.Lsalario_farmaceutico.Size = new System.Drawing.Size(62, 20);
             this.Lsalario_farmaceutico.TabIndex = 7;
-            this.Lsalario_farmaceutico.Text = "salario";
+            this.Lsalario_farmaceutico.Text = "Salario:";
             // 
             // Lpuesto_farmaceutico
             // 
             this.Lpuesto_farmaceutico.AutoSize = true;
-            this.Lpuesto_farmaceutico.Location = new System.Drawing.Point(27, 290);
+            this.Lpuesto_farmaceutico.BackColor = System.Drawing.Color.Silver;
+            this.Lpuesto_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lpuesto_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lpuesto_farmaceutico.Location = new System.Drawing.Point(15, 224);
             this.Lpuesto_farmaceutico.Name = "Lpuesto_farmaceutico";
-            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(39, 13);
+            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(63, 20);
             this.Lpuesto_farmaceutico.TabIndex = 6;
-            this.Lpuesto_farmaceutico.Text = "puesto";
+            this.Lpuesto_farmaceutico.Text = "Puesto:";
             // 
             // Tnombre_emple
             // 
-            this.Tnombre_emple.Location = new System.Drawing.Point(127, 26);
+            this.Tnombre_emple.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tnombre_emple.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tnombre_emple.Location = new System.Drawing.Point(149, 81);
             this.Tnombre_emple.Name = "Tnombre_emple";
-            this.Tnombre_emple.Size = new System.Drawing.Size(100, 20);
+            this.Tnombre_emple.Size = new System.Drawing.Size(281, 19);
             this.Tnombre_emple.TabIndex = 8;
             // 
             // Tcuil_emple
             // 
-            this.Tcuil_emple.Location = new System.Drawing.Point(127, 204);
+            this.Tcuil_emple.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tcuil_emple.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tcuil_emple.Location = new System.Drawing.Point(149, 154);
             this.Tcuil_emple.Name = "Tcuil_emple";
-            this.Tcuil_emple.Size = new System.Drawing.Size(100, 20);
+            this.Tcuil_emple.Size = new System.Drawing.Size(281, 19);
             this.Tcuil_emple.TabIndex = 9;
             // 
             // Tsalario_empleado
             // 
-            this.Tsalario_empleado.Location = new System.Drawing.Point(127, 332);
+            this.Tsalario_empleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tsalario_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tsalario_empleado.Location = new System.Drawing.Point(149, 256);
             this.Tsalario_empleado.Name = "Tsalario_empleado";
-            this.Tsalario_empleado.Size = new System.Drawing.Size(100, 20);
+            this.Tsalario_empleado.Size = new System.Drawing.Size(281, 19);
             this.Tsalario_empleado.TabIndex = 11;
             // 
             // Tdni_emple
             // 
-            this.Tdni_emple.Location = new System.Drawing.Point(127, 158);
+            this.Tdni_emple.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tdni_emple.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tdni_emple.Location = new System.Drawing.Point(149, 121);
             this.Tdni_emple.Name = "Tdni_emple";
-            this.Tdni_emple.Size = new System.Drawing.Size(100, 20);
+            this.Tdni_emple.Size = new System.Drawing.Size(281, 19);
             this.Tdni_emple.TabIndex = 10;
             // 
             // Ttelefono_empleado
             // 
-            this.Ttelefono_empleado.Location = new System.Drawing.Point(127, 251);
+            this.Ttelefono_empleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Ttelefono_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ttelefono_empleado.Location = new System.Drawing.Point(149, 192);
             this.Ttelefono_empleado.Name = "Ttelefono_empleado";
-            this.Ttelefono_empleado.Size = new System.Drawing.Size(100, 20);
+            this.Ttelefono_empleado.Size = new System.Drawing.Size(281, 19);
             this.Ttelefono_empleado.TabIndex = 13;
             // 
             // Tapellido_emple
             // 
-            this.Tapellido_emple.Location = new System.Drawing.Point(127, 70);
+            this.Tapellido_emple.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tapellido_emple.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tapellido_emple.Location = new System.Drawing.Point(149, 44);
             this.Tapellido_emple.Name = "Tapellido_emple";
-            this.Tapellido_emple.Size = new System.Drawing.Size(100, 20);
+            this.Tapellido_emple.Size = new System.Drawing.Size(281, 19);
             this.Tapellido_emple.TabIndex = 12;
             // 
             // Cmasculino
@@ -173,7 +215,7 @@
             this.Cmasculino.AutoSize = true;
             this.Cmasculino.Checked = true;
             this.Cmasculino.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Cmasculino.Location = new System.Drawing.Point(88, 115);
+            this.Cmasculino.Location = new System.Drawing.Point(149, 287);
             this.Cmasculino.Name = "Cmasculino";
             this.Cmasculino.Size = new System.Drawing.Size(89, 17);
             this.Cmasculino.TabIndex = 14;
@@ -183,7 +225,7 @@
             // Cmujer
             // 
             this.Cmujer.AutoSize = true;
-            this.Cmujer.Location = new System.Drawing.Point(203, 119);
+            this.Cmujer.Location = new System.Drawing.Point(348, 287);
             this.Cmujer.Name = "Cmujer";
             this.Cmujer.Size = new System.Drawing.Size(82, 17);
             this.Cmujer.TabIndex = 15;
@@ -196,29 +238,39 @@
             this.Cpuesto_empleado.Items.AddRange(new object[] {
             "Farmacuetico",
             "Supervisor"});
-            this.Cpuesto_empleado.Location = new System.Drawing.Point(127, 287);
+            this.Cpuesto_empleado.Location = new System.Drawing.Point(149, 223);
             this.Cpuesto_empleado.Name = "Cpuesto_empleado";
-            this.Cpuesto_empleado.Size = new System.Drawing.Size(121, 21);
+            this.Cpuesto_empleado.Size = new System.Drawing.Size(281, 21);
             this.Cpuesto_empleado.TabIndex = 16;
             // 
             // Bagregar_empleado
             // 
-            this.Bagregar_empleado.Location = new System.Drawing.Point(520, 381);
+            this.Bagregar_empleado.BackColor = System.Drawing.Color.Silver;
+            this.Bagregar_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bagregar_empleado.Image = ((System.Drawing.Image)(resources.GetObject("Bagregar_empleado.Image")));
+            this.Bagregar_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Bagregar_empleado.Location = new System.Drawing.Point(304, 421);
             this.Bagregar_empleado.Name = "Bagregar_empleado";
-            this.Bagregar_empleado.Size = new System.Drawing.Size(194, 45);
+            this.Bagregar_empleado.Size = new System.Drawing.Size(233, 70);
             this.Bagregar_empleado.TabIndex = 17;
-            this.Bagregar_empleado.Text = "agregar empleado";
-            this.Bagregar_empleado.UseVisualStyleBackColor = true;
+            this.Bagregar_empleado.Text = "Agregar Empleado";
+            this.Bagregar_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bagregar_empleado.UseVisualStyleBackColor = false;
             this.Bagregar_empleado.Click += new System.EventHandler(this.Bagregar_empleado_Click);
             // 
             // agregarimagenempleado
             // 
-            this.agregarimagenempleado.Location = new System.Drawing.Point(404, 251);
+            this.agregarimagenempleado.BackColor = System.Drawing.Color.Silver;
+            this.agregarimagenempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarimagenempleado.Image = ((System.Drawing.Image)(resources.GetObject("agregarimagenempleado.Image")));
+            this.agregarimagenempleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.agregarimagenempleado.Location = new System.Drawing.Point(538, 257);
             this.agregarimagenempleado.Name = "agregarimagenempleado";
-            this.agregarimagenempleado.Size = new System.Drawing.Size(189, 51);
+            this.agregarimagenempleado.Size = new System.Drawing.Size(188, 58);
             this.agregarimagenempleado.TabIndex = 18;
-            this.agregarimagenempleado.Text = "AGREGAR IMAGEN";
-            this.agregarimagenempleado.UseVisualStyleBackColor = true;
+            this.agregarimagenempleado.Text = "Agregar imagen";
+            this.agregarimagenempleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.agregarimagenempleado.UseVisualStyleBackColor = false;
             this.agregarimagenempleado.Click += new System.EventHandler(this.agregarimagenempleado_Click);
             // 
             // openFileDialog1
@@ -227,60 +279,105 @@
             // 
             // fotoempleado
             // 
-            this.fotoempleado.Location = new System.Drawing.Point(385, 12);
+            this.fotoempleado.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.fotoempleado.Location = new System.Drawing.Point(490, 26);
             this.fotoempleado.Name = "fotoempleado";
-            this.fotoempleado.Size = new System.Drawing.Size(245, 195);
+            this.fotoempleado.Size = new System.Drawing.Size(281, 219);
             this.fotoempleado.TabIndex = 19;
             this.fotoempleado.TabStop = false;
+            this.fotoempleado.Tag = "";
             // 
             // fecha_ingreso
             // 
-            this.fecha_ingreso.Location = new System.Drawing.Point(112, 381);
+            this.fecha_ingreso.Location = new System.Drawing.Point(149, 319);
             this.fecha_ingreso.Name = "fecha_ingreso";
-            this.fecha_ingreso.Size = new System.Drawing.Size(158, 20);
+            this.fecha_ingreso.Size = new System.Drawing.Size(281, 20);
             this.fecha_ingreso.TabIndex = 20;
             // 
             // Lfechaingreso
             // 
             this.Lfechaingreso.AutoSize = true;
-            this.Lfechaingreso.Location = new System.Drawing.Point(21, 388);
+            this.Lfechaingreso.BackColor = System.Drawing.Color.Silver;
+            this.Lfechaingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lfechaingreso.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Lfechaingreso.Location = new System.Drawing.Point(12, 320);
             this.Lfechaingreso.Name = "Lfechaingreso";
-            this.Lfechaingreso.Size = new System.Drawing.Size(71, 13);
+            this.Lfechaingreso.Size = new System.Drawing.Size(116, 20);
             this.Lfechaingreso.TabIndex = 21;
-            this.Lfechaingreso.Text = "fecha ingreso";
+            this.Lfechaingreso.Text = "Fecha Ingreso:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.Ltitulo_nuevofarma);
+            this.panel1.Controls.Add(this.Cpuesto_empleado);
+            this.panel1.Controls.Add(this.Lfechaingreso);
+            this.panel1.Controls.Add(this.Lpuesto_farmaceutico);
+            this.panel1.Controls.Add(this.fecha_ingreso);
+            this.panel1.Controls.Add(this.Cmasculino);
+            this.panel1.Controls.Add(this.Cmujer);
+            this.panel1.Controls.Add(this.Lsexo_farmaceutico);
+            this.panel1.Controls.Add(this.Lsalario_farmaceutico);
+            this.panel1.Controls.Add(this.Tsalario_empleado);
+            this.panel1.Controls.Add(this.Ldni_farmaceutico);
+            this.panel1.Controls.Add(this.Tdni_emple);
+            this.panel1.Controls.Add(this.Ttelefono_empleado);
+            this.panel1.Controls.Add(this.Ltelefono_farmaceutico);
+            this.panel1.Controls.Add(this.Tcuil_emple);
+            this.panel1.Controls.Add(this.Lcuil_farmaceutico);
+            this.panel1.Controls.Add(this.Tapellido_emple);
+            this.panel1.Controls.Add(this.Tnombre_emple);
+            this.panel1.Controls.Add(this.Lnombre_farmaceutico);
+            this.panel1.Controls.Add(this.Lapellido_farmaceutico);
+            this.panel1.Location = new System.Drawing.Point(12, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(444, 382);
+            this.panel1.TabIndex = 22;
+            // 
+            // Ltitulo_nuevofarma
+            // 
+            this.Ltitulo_nuevofarma.AutoSize = true;
+            this.Ltitulo_nuevofarma.BackColor = System.Drawing.Color.Silver;
+            this.Ltitulo_nuevofarma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltitulo_nuevofarma.ForeColor = System.Drawing.Color.White;
+            this.Ltitulo_nuevofarma.Location = new System.Drawing.Point(76, 6);
+            this.Ltitulo_nuevofarma.Name = "Ltitulo_nuevofarma";
+            this.Ltitulo_nuevofarma.Size = new System.Drawing.Size(259, 25);
+            this.Ltitulo_nuevofarma.TabIndex = 22;
+            this.Ltitulo_nuevofarma.Text = "NUEVO FARMACEUTICO";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(538, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(188, 50);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Eliminar imagen";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AltaFarmaceutico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 450);
-            this.Controls.Add(this.Lfechaingreso);
-            this.Controls.Add(this.fecha_ingreso);
+            this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
+            this.ClientSize = new System.Drawing.Size(783, 497);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.fotoempleado);
             this.Controls.Add(this.agregarimagenempleado);
             this.Controls.Add(this.Bagregar_empleado);
-            this.Controls.Add(this.Cpuesto_empleado);
-            this.Controls.Add(this.Cmujer);
-            this.Controls.Add(this.Cmasculino);
-            this.Controls.Add(this.Ttelefono_empleado);
-            this.Controls.Add(this.Tapellido_emple);
-            this.Controls.Add(this.Tsalario_empleado);
-            this.Controls.Add(this.Tdni_emple);
-            this.Controls.Add(this.Tcuil_emple);
-            this.Controls.Add(this.Tnombre_emple);
-            this.Controls.Add(this.Lsalario_farmaceutico);
-            this.Controls.Add(this.Lpuesto_farmaceutico);
-            this.Controls.Add(this.Ltelefono_farmaceutico);
-            this.Controls.Add(this.Lcuil_farmaceutico);
-            this.Controls.Add(this.Ldni_farmaceutico);
-            this.Controls.Add(this.Lsexo_farmaceutico);
-            this.Controls.Add(this.Lapellido_farmaceutico);
-            this.Controls.Add(this.Lnombre_farmaceutico);
             this.Name = "AltaFarmaceutico";
             this.Text = "AltaFarmaceutico";
             ((System.ComponentModel.ISupportInitialize)(this.fotoempleado)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -309,5 +406,8 @@
         private System.Windows.Forms.PictureBox fotoempleado;
         private System.Windows.Forms.DateTimePicker fecha_ingreso;
         private System.Windows.Forms.Label Lfechaingreso;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Ltitulo_nuevofarma;
+        private System.Windows.Forms.Button button1;
     }
 }

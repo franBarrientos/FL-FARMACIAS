@@ -107,5 +107,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             }
         }
+
+        private void Lsexo_farmaceutico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fotoempleado.Image = null;
+        }
     }
 }
