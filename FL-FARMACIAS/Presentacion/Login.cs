@@ -27,6 +27,7 @@ namespace FL_FARMACIAS.Presentacion.Login
         public LoginForm()
         {
             InitializeComponent();
+            contraseña_login.UseSystemPasswordChar = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +61,24 @@ namespace FL_FARMACIAS.Presentacion.Login
                 return;
             }
 
+        }
+        private void Bingresar_login_Click(object sender, EventArgs e)
+        {
+            String usuario = usuario_login.Text.Trim();
+            String contraseña = contraseña_login.Text.Trim();
+           
+
+            if (usuario == "" || contraseña == "")
+            {
+                MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void Beliminar_login_Click(object sender, EventArgs e)
+        {
+            usuario_login.Clear();
+            contraseña_login.Clear();
         }
     }
 }

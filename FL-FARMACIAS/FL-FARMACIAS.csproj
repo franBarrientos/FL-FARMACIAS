@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\AltaProveedor.Designer.cs">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
+          </Compile>
+    <Compile Include="Presentacion\Admin\AltaFarmaceutico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaFarmaceutico.Designer.cs">
+      <DependentUpon>AltaFarmaceutico.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
       <SubType>Form</SubType>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaFarmaceutico.resx">
+      <DependentUpon>AltaFarmaceutico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
       <DependentUpon>CategoriaAdmi.cs</DependentUpon>
