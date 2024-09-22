@@ -21,10 +21,20 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             new EmpleadoSubMenu().Show();
         }
-
+    
+       
         private void button2_Click(object sender, EventArgs e)
         {
             new productoSubMenu().Show();
         }
+
+        private void p_Click(object sender, EventArgs e)
+        {
+            new ProveedoresSubMenu().Show();
+        }
+
+    
+
+  
     }
 }

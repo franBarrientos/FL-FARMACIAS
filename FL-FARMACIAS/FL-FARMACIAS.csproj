@@ -52,12 +52,19 @@
   <ItemGroup>
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\ProductoDominio.cs" />
+    <Compile Include="Dominio\Shared.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaProveedor.Designer.cs">
+      <DependentUpon>AltaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
       <SubType>Form</SubType>
@@ -70,6 +77,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\CrearCuentaModal.Designer.cs">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ProveedoresSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ProveedoresSubMenu.Designer.cs">
+      <DependentUpon>ProveedoresSubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\ProductoSubMenu.cs">
       <SubType>Form</SubType>
@@ -131,22 +144,22 @@
     <Compile Include="Presentacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\TEST.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\TEST.Designer.cs">
-      <DependentUpon>TEST.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaProveedor.resx">
+      <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
       <DependentUpon>CategoriaAdmi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CrearCuentaModal.resx">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ProveedoresSubMenu.resx">
+      <DependentUpon>ProveedoresSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
@@ -177,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\TEST.resx">
-      <DependentUpon>TEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
