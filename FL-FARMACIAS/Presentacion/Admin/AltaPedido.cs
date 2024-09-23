@@ -9,20 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS.Presentacion.Farmaceutico
+namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class AltaProveedor : Form
+    public partial class AltaPedido : Form
     {
 
         public Dictionary<string, List<string>> provArr = BD.provinciasYLocalidades;
 
-        public AltaProveedor()
+        public AltaPedido()
         {
             InitializeComponent();
-            foreach (var prov in provArr)
-            {
-                comboBox1.Items.Add(prov.Key);
-            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

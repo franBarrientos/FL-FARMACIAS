@@ -34,22 +34,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         public void insertProduct(ProductoDominio p)
         {
-            this.dataGridView1.Rows.Add(p.Id, p.CodProducto, p.Nombre, p.Precio, p.Stock, p.Categoria.Descripcion, p.Estado == true ? "ACTIVO" : "NO ACTIVO");
+            this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
             this.orgProducts.Add(p);
         }
         public productoSubMenu()
         {
             InitializeComponent();
           
-                 foreach (var row in this.orgProducts)
+                 foreach (var p in this.orgProducts)
                  {
-                     this.dataGridView1.Rows.Add(row.Id, row.CodProducto, row.Nombre, row.Precio, row.Stock, row.Categoria.Descripcion, row.Estado == true ? "ACTIVO" : "NO ACTIVO");
+                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
 
-                 }
+            }
 
-                foreach (var row in this.orgCategories)
+            foreach (var row in this.orgCategories)
                 {
-                    this.dataGridView2.Rows.Add(row.Id, row.Descripcion, row.Estado == true ? "ACTIVO" : "NO ACTIVO");
+                    this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
                 }
 
         }
@@ -62,7 +62,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 string productName = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
                 string idName = dataGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString();
 
-                ProductoDominio product = this.orgProducts.Where(x => x.Id.ToString() == idName).FirstOrDefault();
+                ProductoDominio product = this.orgProducts.Where(x => x.id.ToString() == idName).FirstOrDefault();
 
                 if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
                 {
@@ -156,22 +156,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             else if (textBox1.Text == "INGRESE NOMBRE O COD PRODUCTO" && comboBox1.Text != "Todos")
             {
                 matched = this.orgProducts
-                           .Where(x => x.Categoria.Descripcion.ToString() == comboBox1.Text)
+                           .Where(x => x.categoria.descripcion.ToString() == comboBox1.Text)
                            .ToArray(); // Convertir a un array de object[][]
             }
             else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE NOMBRE O COD PRODUCTO"))
             {
                 matched = this.orgProducts
-                       .Where(x => x.Nombre.ToString().Contains(textBox1.Text) ||
-                                   x.CodProducto.ToString().Contains(textBox1.Text))
+                       .Where(x => x.nombre.ToString().Contains(textBox1.Text) ||
+                                   x.codProducto.ToString().Contains(textBox1.Text))
                            .ToArray(); // Convertir a un array de object[][]
             }
             else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE NOMBRE O COD PRODUCTO"))
             {
                 matched = this.orgProducts
-                       .Where(x => x.CodProducto.ToString().Contains(textBox1.Text) ||
-                                   x.Nombre.ToString().Contains(textBox1.Text) &&
-                                    x.Categoria.Descripcion.ToString() == comboBox1.Text)
+                       .Where(x => x.codProducto.ToString().Contains(textBox1.Text) ||
+                                   x.nombre.ToString().Contains(textBox1.Text) &&
+                                    x.categoria.descripcion.ToString() == comboBox1.Text)
                            .ToArray(); // Convertir a un array de object[][]
             }
             else
@@ -185,7 +185,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             foreach (var p in matched)
             {
-                this.dataGridView1.Rows.Add(p.Id, p.CodProducto, p.Nombre, p.Precio, p.Stock, p.Categoria.Descripcion, p.Estado == true ? "ACTIVO" : "NO ACTIVO");
+                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
             }
 
         }
@@ -196,7 +196,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             foreach (var p in this.orgProducts)
             {
-                this.dataGridView1.Rows.Add(p.Id, p.CodProducto, p.Nombre, p.Precio, p.Stock, p.Categoria.Descripcion, p.Estado == true ? "ACTIVO" : "NO ACTIVO");
+                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
             }
         }
 
@@ -212,8 +212,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (textBox2.Text != "INGRESE ID O DESCRIPCION")
             {
                 matched = this.orgCategories
-                    .Where(x => x.Id.ToString().Contains(textBox2.Text)
-                    || x.Descripcion.ToString().Contains(textBox2.Text))
+                    .Where(x => x.id.ToString().Contains(textBox2.Text)
+                    || x.descripcion.ToString().Contains(textBox2.Text))
                            .ToArray();
             }
             else

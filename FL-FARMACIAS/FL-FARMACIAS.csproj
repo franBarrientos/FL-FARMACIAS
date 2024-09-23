@@ -51,8 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\CategoriaDominio.cs" />
+    <Compile Include="Dominio\DescuentoDominio.cs" />
     <Compile Include="Dominio\ProductoDominio.cs" />
-    <Compile Include="Dominio\Shared.cs" />
+    <Compile Include="Dominio\BD.cs" />
+    <Compile Include="Dominio\ProveedorDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
@@ -60,12 +62,24 @@
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\AltaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaPedido.Designer.cs">
+      <DependentUpon>AltaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaDescuentos.Designer.cs">
+      <DependentUpon>AltaDescuentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\AltaProveedor.Designer.cs">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
-          </Compile>
+    </Compile>
     <Compile Include="Presentacion\Admin\AltaFarmaceutico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +98,12 @@
     <Compile Include="Presentacion\Admin\CrearCuentaModal.Designer.cs">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\DescuentosSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\DescuentosSubMenu.Designer.cs">
+      <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\ProveedoresSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +116,11 @@
     <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
+    <Compile Include="Presentacion\Farmaceutico\VentasSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.Designer.cs">
-      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
+    <Compile Include="Presentacion\Farmaceutico\VentasSubMenu.Designer.cs">
+      <DependentUpon>VentasSubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\MenuAdmin.cs">
       <SubType>Form</SubType>
@@ -126,11 +146,11 @@
     <Compile Include="Presentacion\Farmaceutico\ClienteSubMenu.Designer.cs">
       <DependentUpon>ClienteSubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.cs">
+    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.Designer.cs">
-      <DependentUpon>SubmenuFarmaceutico.cs</DependentUpon>
+    <Compile Include="Presentacion\Admin\EmpleadoSubMenu.Designer.cs">
+      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.cs">
       <SubType>Form</SubType>
@@ -156,10 +176,19 @@
     <Compile Include="Presentacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\TBPlaceHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaPedido.resx">
+      <DependentUpon>AltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaDescuentos.resx">
+      <DependentUpon>AltaDescuentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
@@ -173,14 +202,17 @@
     <EmbeddedResource Include="Presentacion\Admin\CrearCuentaModal.resx">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\DescuentosSubMenu.resx">
+      <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProveedoresSubMenu.resx">
       <DependentUpon>ProveedoresSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
-      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\VentasSubMenu.resx">
+      <DependentUpon>VentasSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
@@ -194,8 +226,8 @@
     <EmbeddedResource Include="Presentacion\Farmaceutico\ClienteSubMenu.resx">
       <DependentUpon>ClienteSubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.resx">
-      <DependentUpon>SubmenuFarmaceutico.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
+      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>

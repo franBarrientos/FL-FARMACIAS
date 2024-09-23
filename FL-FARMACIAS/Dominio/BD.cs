@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FL_FARMACIAS.Dominio
 {
-    public class Shared
+    public class BD
     {
         public static Dictionary<string, List<string>> provinciasYLocalidades { get; set; } = new Dictionary<string, List<string>>()
         {
@@ -35,5 +35,15 @@ namespace FL_FARMACIAS.Dominio
             { "Tierra del Fuego, Antártida e Islas del Atlántico Sur", new List<string> { "Ushuaia", "Río Grande", "Tolhuin" } },
             { "Tucumán", new List<string> { "San Miguel de Tucumán", "Tafí Viejo", "Yerba Buena", "Concepción" } }
         };
+
+        public static List<DescuentoDominio> descuentos { get; set; } = new List<DescuentoDominio>()
+        {
+                new DescuentoDominio(1, "Descuento OSDE", 15.0, true),
+                new DescuentoDominio(2, "Descuento Swiss Medical", 12.5, true),
+                new DescuentoDominio(3, "Descuento Galeno", 10.0, true),
+                new DescuentoDominio(4, "Descuento Medicus", 20.0, true),
+                new DescuentoDominio(5, "Descuento SPS", 18.0, true)
+         };
+
     }
 }

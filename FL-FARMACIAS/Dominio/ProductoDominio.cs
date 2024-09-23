@@ -8,23 +8,23 @@ namespace FL_FARMACIAS.Dominio
 {
     public class ProductoDominio
     {
-        public int Id { get; set; }
-        public string CodProducto { get; set; }
-        public string Nombre { get; set; }
-        public double Precio { get; set; }
-        public int Stock { get; set; }
-        public CategoriaDominio Categoria { get; set; }
-        public bool Estado { get; set; }
+        public int id { get; set; }
+        public string codProducto { get; set; }
+        public string nombre { get; set; }
+        public double precio { get; set; }
+        public int stock { get; set; }
+        public CategoriaDominio categoria { get; set; }
+        public bool estado { get; set; }
 
         public ProductoDominio(int id, string codProducto, string nombre, double precio, int stock, CategoriaDominio categoria, bool estado)
         {
-            Id = id;
-            CodProducto = codProducto;
-            Nombre = nombre;
-            Precio = precio;
-            Stock = stock;
-            Categoria = categoria;
-            Estado = estado;
+            this.id = id;
+            this.codProducto = codProducto;
+            this.nombre = nombre;         
+            this.precio = precio;
+            this.stock = stock;
+            this.categoria = categoria;
+            this.estado = estado;
         }
     }
 

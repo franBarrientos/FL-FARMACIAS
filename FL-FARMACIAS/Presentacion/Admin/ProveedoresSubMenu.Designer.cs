@@ -55,8 +55,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -303,8 +301,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.tabPage2.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.textBox2);
@@ -324,7 +320,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(478, 109);
+            this.label3.Location = new System.Drawing.Point(485, 107);
             this.label3.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 18);
@@ -333,7 +329,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(30, 83);
+            this.button3.Location = new System.Drawing.Point(38, 80);
             this.button3.Margin = new System.Windows.Forms.Padding(64);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(227, 30);
@@ -342,35 +338,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(423, 164);
-            this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "PUESTO";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Todos",
-            "Farmaceutico",
-            "Supervisor",
-            "Gerente"});
-            this.comboBox2.Location = new System.Drawing.Point(495, 161);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(64);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(143, 21);
-            this.comboBox2.TabIndex = 24;
-            this.comboBox2.Text = "Todos";
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(871, 161);
+            this.button4.Location = new System.Drawing.Point(819, 161);
             this.button4.Margin = new System.Windows.Forms.Padding(64);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
@@ -380,7 +350,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(721, 161);
+            this.button5.Location = new System.Drawing.Point(669, 161);
             this.button5.Margin = new System.Windows.Forms.Padding(64);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 28);
@@ -391,7 +361,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // textBox2
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(14, 161);
+            this.textBox2.Location = new System.Drawing.Point(311, 161);
             this.textBox2.Margin = new System.Windows.Forms.Padding(64);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(330, 20);
@@ -558,8 +528,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private TabPage tabPage2;
         private Label label3;
         private Button button3;
-        private Label label4;
-        private ComboBox comboBox2;
         private Button button4;
         private Button button5;
         private TextBox textBox2;

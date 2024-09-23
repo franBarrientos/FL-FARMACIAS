@@ -16,11 +16,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public ModificarProductoAdmi(ProductoDominio p)
         {
             InitializeComponent();
-            this.TPM_codproducto.Text = p.CodProducto;
-            this.TPM_nombre.Text = p.Nombre;
-            this.TPM_precio.Text = p.Precio.ToString();
-            this.TPM_stock.Text = p.Stock.ToString();
-            this.CBM_activo.Checked = p.Estado;
+            this.TPM_codproducto.Text = p.codProducto;
+            this.TPM_nombre.Text = p.codProducto;
+            this.TPM_precio.Text = p.precio.ToString();
+            this.TPM_stock.Text = p.stock.ToString();
+            this.CBM_activo.Checked = p.estado;
 
         }
     }

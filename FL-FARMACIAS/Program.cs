@@ -23,7 +23,8 @@ namespace FL_FARMACIAS
             //Application.Run(new TEST());
             //Application.Run(new productoSubMenu());
             //Application.Run(new EmpleadoSubMenu());
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
+            Application.Run(new DescuentosSubMenu());
         }
     }
 }
