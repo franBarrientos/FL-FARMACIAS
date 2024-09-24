@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace FL_FARMACIAS.Presentacion.Farmaceutico
+namespace FL_FARMACIAS.Presentacion.Admin
 {
-    partial class EmpleadoSubMenu
+    partial class VentasFarmaceuticos
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,21 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadoSubMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasFarmaceuticos));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IDEMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEXOEMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUIL_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CARGOEMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SALARIO_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,18 +54,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label2 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIOTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CANTIDADPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCTOS_VENDIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OBRASOCIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAALTACLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,18 +64,19 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.PRECIOTOTAL,
-            this.CANTIDADPRODUCTO,
-            this.PRODUCTOS_VENDIDOS,
+            this.IDEMPLEADO,
             this.NOMBRE,
             this.APELLIDO,
+            this.SEXOEMPLEADO,
             this.DNI,
-            this.OBRASOCIAL,
+            this.CUIL_EMPLEADO,
             this.TELEFONO,
-            this.FECHAALTACLIENTE,
-            this.ELIMINAR,
-            this.MODIFICAR});
+            this.CARGOEMPLEADO,
+            this.SALARIO_EMPLEADO,
+            this.FECHAINGRESO,
+            this.USUARIO,
+            this.MODIFICAR,
+            this.ELIMINAR});
             this.dataGridView1.Location = new System.Drawing.Point(14, 218);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
             this.dataGridView1.Name = "dataGridView1";
@@ -83,6 +85,92 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Size = new System.Drawing.Size(1037, 364);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // IDEMPLEADO
+            // 
+            this.IDEMPLEADO.HeaderText = "ID_EMPLEADO";
+            this.IDEMPLEADO.Name = "IDEMPLEADO";
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.MinimumWidth = 8;
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            this.NOMBRE.Width = 150;
+            // 
+            // APELLIDO
+            // 
+            this.APELLIDO.HeaderText = "APELLIDO";
+            this.APELLIDO.MinimumWidth = 8;
+            this.APELLIDO.Name = "APELLIDO";
+            this.APELLIDO.ReadOnly = true;
+            this.APELLIDO.Width = 150;
+            // 
+            // SEXOEMPLEADO
+            // 
+            this.SEXOEMPLEADO.HeaderText = "SEXO";
+            this.SEXOEMPLEADO.Name = "SEXOEMPLEADO";
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.MinimumWidth = 8;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Width = 150;
+            // 
+            // CUIL_EMPLEADO
+            // 
+            this.CUIL_EMPLEADO.HeaderText = "CUIL";
+            this.CUIL_EMPLEADO.Name = "CUIL_EMPLEADO";
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "TELEFONO";
+            this.TELEFONO.MinimumWidth = 8;
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            this.TELEFONO.Width = 150;
+            // 
+            // CARGOEMPLEADO
+            // 
+            this.CARGOEMPLEADO.HeaderText = "CARGO";
+            this.CARGOEMPLEADO.Name = "CARGOEMPLEADO";
+            // 
+            // SALARIO_EMPLEADO
+            // 
+            this.SALARIO_EMPLEADO.HeaderText = "SALARIO";
+            this.SALARIO_EMPLEADO.Name = "SALARIO_EMPLEADO";
+            // 
+            // FECHAINGRESO
+            // 
+            this.FECHAINGRESO.HeaderText = "FECHA INGRESO";
+            this.FECHAINGRESO.MinimumWidth = 8;
+            this.FECHAINGRESO.Name = "FECHAINGRESO";
+            this.FECHAINGRESO.ReadOnly = true;
+            this.FECHAINGRESO.Width = 150;
+            // 
+            // USUARIO
+            // 
+            this.USUARIO.HeaderText = "USUARIO";
+            this.USUARIO.Name = "USUARIO";
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Width = 150;
             // 
             // textBox1
             // 
@@ -144,9 +232,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Pami",
-            "SPS",
-            "Galeno"});
+            "Farmaceutico",
+            "Supervisor",
+            "Ninguno"});
             this.comboBox1.Location = new System.Drawing.Point(515, 146);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(64);
             this.comboBox1.Name = "comboBox1";
@@ -157,14 +245,15 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.Silver;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(389, 149);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(444, 151);
             this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "OBRA SOCIAL";
+            this.label2.Text = "Cargo";
             // 
             // label3w
             // 
@@ -177,9 +266,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w.Location = new System.Drawing.Point(14, 89);
             this.label3w.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label3w.Name = "label3w";
-            this.label3w.Size = new System.Drawing.Size(331, 31);
+            this.label3w.Size = new System.Drawing.Size(362, 31);
             this.label3w.TabIndex = 9;
-            this.label3w.Text = "BUSQUEDA DE CLIENTES";
+            this.label3w.Text = "BUSQUEDA DE EMPLEADOS";
             // 
             // label1
             // 
@@ -192,95 +281,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label1.Location = new System.Drawing.Point(376, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 57);
+            this.label1.Size = new System.Drawing.Size(334, 57);
             this.label1.TabIndex = 10;
-            this.label1.Text = "MIS VENTAS";
+            this.label1.Text = "EMPLEADOS";
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // PRECIOTOTAL
-            // 
-            this.PRECIOTOTAL.HeaderText = "PRECIO TOTAL $";
-            this.PRECIOTOTAL.Name = "PRECIOTOTAL";
-            // 
-            // CANTIDADPRODUCTO
-            // 
-            this.CANTIDADPRODUCTO.HeaderText = "CANTIDAD PRODUCTOS";
-            this.CANTIDADPRODUCTO.Name = "CANTIDADPRODUCTO";
-            // 
-            // PRODUCTOS_VENDIDOS
-            // 
-            this.PRODUCTOS_VENDIDOS.HeaderText = "PRODUCTOS_VENDIDOS";
-            this.PRODUCTOS_VENDIDOS.Name = "PRODUCTOS_VENDIDOS";
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Width = 150;
-            // 
-            // APELLIDO
-            // 
-            this.APELLIDO.HeaderText = "APELLIDO";
-            this.APELLIDO.MinimumWidth = 8;
-            this.APELLIDO.Name = "APELLIDO";
-            this.APELLIDO.ReadOnly = true;
-            this.APELLIDO.Width = 150;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.MinimumWidth = 8;
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Width = 150;
-            // 
-            // OBRASOCIAL
-            // 
-            this.OBRASOCIAL.HeaderText = "OBRA SOCIAL";
-            this.OBRASOCIAL.Name = "OBRASOCIAL";
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.MinimumWidth = 8;
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            this.TELEFONO.Width = 150;
-            // 
-            // FECHAALTACLIENTE
-            // 
-            this.FECHAALTACLIENTE.HeaderText = "FECHA ALTA";
-            this.FECHAALTACLIENTE.MinimumWidth = 8;
-            this.FECHAALTACLIENTE.Name = "FECHAALTACLIENTE";
-            this.FECHAALTACLIENTE.ReadOnly = true;
-            this.FECHAALTACLIENTE.Width = 150;
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
-            // 
-            // EmpleadoSubMenu
+            // VentasFarmaceuticos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,9 +303,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.Margin = new System.Windows.Forms.Padding(64);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EmpleadoSubMenu";
+            this.Name = "VentasFarmaceuticos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mis ventas";
+            this.Text = "Busqueda de empleados";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -318,17 +323,18 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Label label2;
         private Label label3w;
         private Label label1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn PRECIOTOTAL;
-        private DataGridViewTextBoxColumn CANTIDADPRODUCTO;
-        private DataGridViewTextBoxColumn PRODUCTOS_VENDIDOS;
+        private DataGridViewTextBoxColumn IDEMPLEADO;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn APELLIDO;
+        private DataGridViewTextBoxColumn SEXOEMPLEADO;
         private DataGridViewTextBoxColumn DNI;
-        private DataGridViewTextBoxColumn OBRASOCIAL;
+        private DataGridViewTextBoxColumn CUIL_EMPLEADO;
         private DataGridViewTextBoxColumn TELEFONO;
-        private DataGridViewTextBoxColumn FECHAALTACLIENTE;
-        private DataGridViewButtonColumn ELIMINAR;
+        private DataGridViewTextBoxColumn CARGOEMPLEADO;
+        private DataGridViewTextBoxColumn SALARIO_EMPLEADO;
+        private DataGridViewTextBoxColumn FECHAINGRESO;
+        private DataGridViewTextBoxColumn USUARIO;
         private DataGridViewButtonColumn MODIFICAR;
+        private DataGridViewButtonColumn ELIMINAR;
     }
 }

@@ -23,5 +23,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.CBM_activo.Checked = p.Estado;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

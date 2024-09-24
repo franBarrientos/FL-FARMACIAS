@@ -102,11 +102,25 @@ namespace FL_FARMACIAS.Presentacion.Admin
         }
         private void vaciar_productos_Click(object sender, EventArgs e)
         {
-            TP_nombre.Clear();
-            TP_codproducto.Clear();
-            TP_stock.Clear();
-            TP_descripcion.Clear();
-            TP_precio.Clear();
+            String nombre = TP_nombre.Text.Trim();
+            String codigo = TP_codproducto.Text.Trim();
+            String categoria = CB_productocat.Text.Trim();
+            String stock = TP_stock.Text.Trim();
+            String descripcion = TP_descripcion.Text.Trim();
+            String precio = TP_precio.Text.Trim();
+            if (nombre != "" || codigo != "" || descripcion != "" || stock != "" || categoria != "" || precio != "")
+            {
+                TP_nombre.Clear();
+                TP_codproducto.Clear();
+                TP_stock.Clear();
+                TP_descripcion.Clear();
+                TP_precio.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }

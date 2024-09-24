@@ -115,7 +115,46 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fotoempleado.Image = null;
+            // Verificar si hay una imagen en el PictureBox
+            if (fotoempleado.Image != null)
+            {
+                // Vaciar el PictureBox
+                fotoempleado.Image = null;
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna imagen para vaciar.");
+            }
+        }
+
+        private void Vaciar_campos_nuevo_farmaceutico_Click(object sender, EventArgs e)
+        {
+            String nombre = Tnombre_emple.Text.Trim();
+            String apellido = Tapellido_emple.Text.Trim();
+            String dni = Tdni_emple.Text.Trim();
+            String cuil = Tcuil_emple.Text.Trim();
+            String telefono = Ttelefono_empleado.Text.Trim();
+            String puesto = Cpuesto_empleado.Text.Trim();
+            String salario = Tsalario_empleado.Text.Trim();
+
+            if (nombre != " " || apellido != " " || dni != " " || cuil != " " || telefono != "" || salario != " " )
+            {
+                Tnombre_emple.Clear();
+                Tapellido_emple.Clear();
+                Tdni_emple.Clear();
+                Tcuil_emple.Clear();
+                Ttelefono_empleado.Clear();
+                Tsalario_empleado.Clear();
+                Cmasculino.Checked = false;
+                Cmujer.Checked = false;
+                Cpuesto_empleado.Text = "Ninguno";
+
+            }
+            else
+            {
+                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }
