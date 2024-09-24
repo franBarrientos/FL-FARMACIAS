@@ -62,6 +62,12 @@
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\ModificarDescuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarDescuentas.Designer.cs">
+      <DependentUpon>ModificarDescuentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\AltaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarDescuentas.resx">
+      <DependentUpon>ModificarDescuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AltaPedido.resx">
       <DependentUpon>AltaPedido.cs</DependentUpon>

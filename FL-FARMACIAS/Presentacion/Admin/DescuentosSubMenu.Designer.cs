@@ -38,15 +38,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.placeholderTextBox1 = new PlaceholderTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,12 +93,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
+            this.ID,
+            this.DESCRIPCION,
+            this.ESTADO,
             this.PORCENTAJE_DESCUENTO,
-            this.dataGridViewButtonColumn3,
-            this.dataGridViewButtonColumn2});
+            this.MODIFICAR,
+            this.ELIMINAR});
             this.dataGridView2.Location = new System.Drawing.Point(70, 189);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
@@ -105,10 +106,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.RowTemplate.Height = 60;
             this.dataGridView2.Size = new System.Drawing.Size(918, 374);
             this.dataGridView2.TabIndex = 19;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(726, 137);
+            this.button4.Location = new System.Drawing.Point(670, 145);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 31);
@@ -118,7 +120,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(593, 137);
+            this.button5.Location = new System.Drawing.Point(564, 145);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 31);
@@ -126,29 +128,70 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.Text = "BUSCAR";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // checkBox1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(404, 153);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(65, 17);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "ACTIVO";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // dataGridViewTextBoxColumn8
+            // checkBox2
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(475, 153);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 17);
+            this.checkBox2.TabIndex = 27;
+            this.checkBox2.Text = "NO ACTIVO";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // dataGridViewTextBoxColumn9
+            // label1
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "ESTADO";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 150;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(346, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "ESTADO";
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE ID";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
+            this.placeholderTextBox1.TabIndex = 28;
+            this.placeholderTextBox1.Text = "INGRESE ID";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 150;
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.MinimumWidth = 8;
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
+            this.DESCRIPCION.Width = 150;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.MinimumWidth = 8;
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Width = 150;
             // 
             // PORCENTAJE_DESCUENTO
             // 
@@ -156,49 +199,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PORCENTAJE_DESCUENTO.Name = "PORCENTAJE_DESCUENTO";
             this.PORCENTAJE_DESCUENTO.ReadOnly = true;
             // 
-            // dataGridViewButtonColumn3
+            // MODIFICAR
             // 
-            this.dataGridViewButtonColumn3.HeaderText = "MODIFICAR";
-            this.dataGridViewButtonColumn3.MinimumWidth = 8;
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.ReadOnly = true;
-            this.dataGridViewButtonColumn3.Width = 150;
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
             // 
-            // dataGridViewButtonColumn2
+            // ELIMINAR
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "ELIMINAR";
-            this.dataGridViewButtonColumn2.MinimumWidth = 8;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Width = 150;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(327, 145);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(412, 145);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 27;
-            this.checkBox2.Text = "No Activo";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.Location = new System.Drawing.Point(95, 145);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE ID";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(175, 20);
-            this.placeholderTextBox1.TabIndex = 28;
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Width = 150;
             // 
             // DescuentosSubMenu
             // 
@@ -206,6 +221,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1060, 597);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.placeholderTextBox1);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -235,14 +251,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridView dataGridView2;
         private Button button4;
         private Button button5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn PORCENTAJE_DESCUENTO;
-        private DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private CheckBox checkBox1;
         private CheckBox checkBox2;
         private PlaceholderTextBox placeholderTextBox1;
+        private Label label1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn DESCRIPCION;
+        private DataGridViewTextBoxColumn ESTADO;
+        private DataGridViewTextBoxColumn PORCENTAJE_DESCUENTO;
+        private DataGridViewButtonColumn MODIFICAR;
+        private DataGridViewButtonColumn ELIMINAR;
     }
 }
