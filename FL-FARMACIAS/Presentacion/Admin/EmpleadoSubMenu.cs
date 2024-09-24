@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class EmpleadoSubMenu : Form
+    public partial class VentasFarmaceuticos : Form
     {
         private object[][] orgEmployess = new object[][]
                 {
@@ -42,7 +42,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
                 };
 
-        public EmpleadoSubMenu()
+        public VentasFarmaceuticos()
         {
             InitializeComponent();
 
@@ -116,6 +116,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (textBox1.Text == " " && comboBox1.Text == " ")
+            {
+                MessageBox.Show("Por favor, ingrese el DNI o Apellido del empleado que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             object[][] matched;
             if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text == "Todos")
             {

@@ -76,11 +76,26 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void BFalta_vaciarcampos_Click(object sender, EventArgs e)
         {
-            Tnombre_cliente.Clear();
+            String nombre = Tnombre_cliente.Text.Trim();
+            String apellido = Tapellido_cliente.Text.Trim();
+            String dni = Tdni_cliente.Text.Trim();
+            String obrasocial = DFalta_obrasocial.Text.Trim();
+            String telefono = Ttelefono_cliente.Text.Trim();
+
+            if (nombre != "" || apellido != "" || dni != "" || telefono != "" || obrasocial != "")
+            {
+              Tnombre_cliente.Clear();
             Tapellido_cliente.Clear();
             Tdni_cliente.Clear();
             Ttelefono_cliente.Clear();
             DFalta_obrasocial.Text = " ";
+            }
+            else
+            {
+                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
         }
     }
 }

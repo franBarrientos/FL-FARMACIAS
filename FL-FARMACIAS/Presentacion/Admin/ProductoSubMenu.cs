@@ -147,7 +147,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-             ProductoDominio[] matched;
+            if (textBox1.Text == " " && comboBox1.Text == " ")
+            {
+                MessageBox.Show("Por favor, ingrese el Nombre del producto o Cod_producto que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ProductoDominio[] matched;
             if (textBox1.Text == "INGRESE NOMBRE O COD PRODUCTO" && comboBox1.Text == "Todos")
             {
                 matched = this.orgProducts
@@ -207,6 +213,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text == " ")
+            {
+                MessageBox.Show("Por favor, ingrese el ID o Descripcion que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             CategoriaDominio[] matched;
             if (textBox2.Text != "INGRESE ID O DESCRIPCION")

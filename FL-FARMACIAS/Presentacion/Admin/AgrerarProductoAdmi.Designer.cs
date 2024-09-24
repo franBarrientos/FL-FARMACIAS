@@ -53,6 +53,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.TP_descripcion);
             this.panel1.Controls.Add(this.LP_categoria);
             this.panel1.Controls.Add(this.LAS_cate_titulo);
@@ -86,10 +87,10 @@
             // LP_categoria
             // 
             this.LP_categoria.AutoSize = true;
-            this.LP_categoria.BackColor = System.Drawing.Color.Silver;
+            this.LP_categoria.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_categoria.CausesValidation = false;
             this.LP_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_categoria.ForeColor = System.Drawing.Color.White;
+            this.LP_categoria.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_categoria.Location = new System.Drawing.Point(37, 201);
             this.LP_categoria.Name = "LP_categoria";
             this.LP_categoria.Size = new System.Drawing.Size(92, 20);
@@ -99,10 +100,10 @@
             // LAS_cate_titulo
             // 
             this.LAS_cate_titulo.AutoSize = true;
-            this.LAS_cate_titulo.BackColor = System.Drawing.Color.Silver;
+            this.LAS_cate_titulo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LAS_cate_titulo.CausesValidation = false;
             this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAS_cate_titulo.ForeColor = System.Drawing.Color.White;
+            this.LAS_cate_titulo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LAS_cate_titulo.Location = new System.Drawing.Point(90, 9);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
             this.LAS_cate_titulo.Size = new System.Drawing.Size(346, 33);
@@ -121,10 +122,10 @@
             // LP_codigoproduc
             // 
             this.LP_codigoproduc.AutoSize = true;
-            this.LP_codigoproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_codigoproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_codigoproduc.CausesValidation = false;
             this.LP_codigoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_codigoproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_codigoproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_codigoproduc.Location = new System.Drawing.Point(37, 65);
             this.LP_codigoproduc.Name = "LP_codigoproduc";
             this.LP_codigoproduc.Size = new System.Drawing.Size(147, 20);
@@ -198,10 +199,10 @@
             // LP_estadoproduc
             // 
             this.LP_estadoproduc.AutoSize = true;
-            this.LP_estadoproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_estadoproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_estadoproduc.CausesValidation = false;
             this.LP_estadoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_estadoproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_estadoproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_estadoproduc.Location = new System.Drawing.Point(37, 348);
             this.LP_estadoproduc.Name = "LP_estadoproduc";
             this.LP_estadoproduc.Size = new System.Drawing.Size(71, 20);
@@ -211,10 +212,10 @@
             // LP_stockproduc
             // 
             this.LP_stockproduc.AutoSize = true;
-            this.LP_stockproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_stockproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_stockproduc.CausesValidation = false;
             this.LP_stockproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_stockproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_stockproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_stockproduc.Location = new System.Drawing.Point(37, 288);
             this.LP_stockproduc.Name = "LP_stockproduc";
             this.LP_stockproduc.Size = new System.Drawing.Size(60, 20);
@@ -224,10 +225,10 @@
             // LP_precioproduc
             // 
             this.LP_precioproduc.AutoSize = true;
-            this.LP_precioproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_precioproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_precioproduc.CausesValidation = false;
             this.LP_precioproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_precioproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_precioproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_precioproduc.Location = new System.Drawing.Point(37, 242);
             this.LP_precioproduc.Name = "LP_precioproduc";
             this.LP_precioproduc.Size = new System.Drawing.Size(64, 20);
@@ -237,10 +238,10 @@
             // LP_descirpproduc
             // 
             this.LP_descirpproduc.AutoSize = true;
-            this.LP_descirpproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_descirpproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_descirpproduc.CausesValidation = false;
             this.LP_descirpproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_descirpproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_descirpproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_descirpproduc.Location = new System.Drawing.Point(37, 152);
             this.LP_descirpproduc.Name = "LP_descirpproduc";
             this.LP_descirpproduc.Size = new System.Drawing.Size(108, 20);
@@ -250,10 +251,10 @@
             // LP_nombreproduc
             // 
             this.LP_nombreproduc.AutoSize = true;
-            this.LP_nombreproduc.BackColor = System.Drawing.Color.Silver;
+            this.LP_nombreproduc.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LP_nombreproduc.CausesValidation = false;
             this.LP_nombreproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LP_nombreproduc.ForeColor = System.Drawing.Color.White;
+            this.LP_nombreproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LP_nombreproduc.Location = new System.Drawing.Point(37, 108);
             this.LP_nombreproduc.Name = "LP_nombreproduc";
             this.LP_nombreproduc.Size = new System.Drawing.Size(76, 20);
@@ -262,12 +263,12 @@
             // 
             // botonAgregarProducto
             // 
-            this.botonAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("botonAgregarProducto.Image")));
             this.botonAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonAgregarProducto.Location = new System.Drawing.Point(296, 449);
+            this.botonAgregarProducto.Location = new System.Drawing.Point(326, 449);
             this.botonAgregarProducto.Name = "botonAgregarProducto";
-            this.botonAgregarProducto.Size = new System.Drawing.Size(260, 53);
+            this.botonAgregarProducto.Size = new System.Drawing.Size(230, 53);
             this.botonAgregarProducto.TabIndex = 2;
             this.botonAgregarProducto.Text = "AGREGAR PRODUCTO";
             this.botonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -276,12 +277,12 @@
             // 
             // vaciar_productos
             // 
-            this.vaciar_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaciar_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaciar_productos.Image = ((System.Drawing.Image)(resources.GetObject("vaciar_productos.Image")));
             this.vaciar_productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.vaciar_productos.Location = new System.Drawing.Point(37, 449);
             this.vaciar_productos.Name = "vaciar_productos";
-            this.vaciar_productos.Size = new System.Drawing.Size(223, 53);
+            this.vaciar_productos.Size = new System.Drawing.Size(186, 53);
             this.vaciar_productos.TabIndex = 4;
             this.vaciar_productos.Text = "VACIAR CAMPOS";
             this.vaciar_productos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -52,7 +52,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3w = new System.Windows.Forms.Button();
             this.label3w = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -263,17 +262,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label2.TabIndex = 7;
             this.label2.Text = "PUESTO";
             // 
-            // button3w
-            // 
-            this.button3w.Location = new System.Drawing.Point(30, 73);
-            this.button3w.Margin = new System.Windows.Forms.Padding(64);
-            this.button3w.Name = "button3w";
-            this.button3w.Size = new System.Drawing.Size(270, 33);
-            this.button3w.TabIndex = 8;
-            this.button3w.Text = "DAR DE ALTA NUEVO EMPLEADO";
-            this.button3w.UseVisualStyleBackColor = true;
-            this.button3w.Click += new System.EventHandler(this.button3w_Click);
-            // 
             // label3w
             // 
             this.label3w.AutoSize = true;
@@ -294,7 +282,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1060, 597);
             this.Controls.Add(this.label3w);
-            this.Controls.Add(this.button3w);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
@@ -325,7 +312,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Button button2;
         private ComboBox comboBox1;
         private Label label2;
-        private Button button3w;
         private Label label3w;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NOMBRE;

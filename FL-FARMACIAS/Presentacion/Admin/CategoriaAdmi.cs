@@ -35,5 +35,20 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             }
         }
+
+        private void Vaciar_campos_categoria_Click(object sender, EventArgs e)
+        {
+            String descripcion = TC_descripcion.Text.Trim();
+            if (descripcion != "" || CC_inactivo.Checked != false || CC_activo.Checked != false)
+            {
+                TC_descripcion.Clear();
+                CC_inactivo.Checked = false;
+                CC_activo.Checked = false;
+            }else
+            {
+                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
     }
 }
