@@ -44,7 +44,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -53,6 +52,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRODUCTOS = new System.Windows.Forms.TabControl();
             this.prodTab = new System.Windows.Forms.TabPage();
             this.catTab = new System.Windows.Forms.TabPage();
+            this.textBox2 = new PlaceholderTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,9 +62,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
@@ -184,21 +184,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1.TabIndex = 2;
             this.label1.Text = "PRODUCTOS";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(47, 107);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "INGRESE NOMBRE O COD PRODUCTO";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TabIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TextChanged += new System.EventHandler(this.converTextBlack);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
@@ -290,10 +275,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // prodTab
             // 
             this.prodTab.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
+            this.prodTab.Controls.Add(this.textBox1);
             this.prodTab.Controls.Add(this.label1);
             this.prodTab.Controls.Add(this.button3w);
             this.prodTab.Controls.Add(this.dataGridView1);
-            this.prodTab.Controls.Add(this.textBox1);
             this.prodTab.Controls.Add(this.label2);
             this.prodTab.Controls.Add(this.button2);
             this.prodTab.Controls.Add(this.comboBox1);
@@ -313,11 +298,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.catTab.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.catTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.catTab.Controls.Add(this.textBox2);
             this.catTab.Controls.Add(this.label3);
             this.catTab.Controls.Add(this.button3);
             this.catTab.Controls.Add(this.label4);
             this.catTab.Controls.Add(this.dataGridView2);
-            this.catTab.Controls.Add(this.textBox2);
             this.catTab.Controls.Add(this.button4);
             this.catTab.Controls.Add(this.button5);
             this.catTab.Location = new System.Drawing.Point(4, 22);
@@ -328,6 +313,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.catTab.TabIndex = 1;
             this.catTab.Text = "CATEGORIAS";
             this.catTab.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.ForeColor = System.Drawing.Color.Gray;
+            this.textBox2.Location = new System.Drawing.Point(302, 107);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Placeholder = "INGRESE ID O DESCRIPCION";
+            this.textBox2.Size = new System.Drawing.Size(221, 20);
+            this.textBox2.TabIndex = 19;
+            this.textBox2.Text = "INGRESE ID O DESCRIPCION";
             // 
             // label3
             // 
@@ -430,21 +425,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Width = 150;
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(299, 93);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 29);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "INGRESE ID O DESCRIPCION";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.TabIndexChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.TextChanged += new System.EventHandler(this.converTextBlack2);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
-            // 
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
@@ -471,6 +451,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(56, 109);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Placeholder = "INGRESE NOMBRE O COD PRODUCTO";
+            this.textBox1.Size = new System.Drawing.Size(294, 19);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "INGRESE NOMBRE O COD PRODUCTO";
             // 
             // productoSubMenu
             // 
@@ -499,7 +489,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private Label label1;
-        private TextBox textBox1;
         private Button button1;
         private Button button2;
         private ComboBox comboBox1;
@@ -512,7 +501,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private Button button3;
         private Label label4;
         private DataGridView dataGridView2;
-        private TextBox textBox2;
         private Button button4;
         private Button button5;
         private DataGridViewTextBoxColumn ID;
@@ -529,5 +517,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private PlaceholderTextBox textBox2;
+        private PlaceholderTextBox textBox1;
     }
 }

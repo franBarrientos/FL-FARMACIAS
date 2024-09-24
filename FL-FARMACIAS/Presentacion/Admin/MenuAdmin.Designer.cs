@@ -53,7 +53,7 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::FL_FARMACIAS.Properties.Resources.Copia_de_f;
-            this.pictureBox1.Location = new System.Drawing.Point(516, 341);
+            this.pictureBox1.Location = new System.Drawing.Point(518, 381);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 51);
@@ -63,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(98, 20);
+            this.button1.Location = new System.Drawing.Point(100, 60);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 128);
@@ -75,7 +75,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(14, 194);
+            this.button2.Location = new System.Drawing.Point(16, 234);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(190, 128);
@@ -87,7 +87,7 @@
             // 
             // p
             // 
-            this.p.Location = new System.Drawing.Point(414, 20);
+            this.p.Location = new System.Drawing.Point(416, 60);
             this.p.Margin = new System.Windows.Forms.Padding(2);
             this.p.Name = "p";
             this.p.Size = new System.Drawing.Size(188, 128);
@@ -103,7 +103,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(208, 38);
+            this.pictureBox2.Location = new System.Drawing.Point(210, 78);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 91);
@@ -115,7 +115,7 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(124, 217);
+            this.pictureBox3.Location = new System.Drawing.Point(126, 257);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 91);
@@ -128,7 +128,7 @@
             // 
             this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(516, 38);
+            this.pictureBox4.Location = new System.Drawing.Point(518, 78);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(78, 93);
@@ -138,7 +138,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(258, 194);
+            this.button3.Location = new System.Drawing.Point(253, 234);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(198, 128);
@@ -150,7 +150,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(500, 194);
+            this.button4.Location = new System.Drawing.Point(502, 234);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 128);
@@ -163,7 +163,7 @@
             // 
             this.pictureBox5.Enabled = false;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(382, 217);
+            this.pictureBox5.Location = new System.Drawing.Point(377, 257);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 91);
@@ -175,7 +175,7 @@
             // 
             this.pictureBox6.Enabled = false;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(624, 217);
+            this.pictureBox6.Location = new System.Drawing.Point(626, 257);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(66, 91);

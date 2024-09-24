@@ -27,7 +27,6 @@ namespace FL_FARMACIAS.Presentacion.Login
         public LoginForm()
         {
             InitializeComponent();
-            contraseña_login.UseSystemPasswordChar = true;
         }
 
         private void Bingresar_login_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class VentasFarmaceuticos : Form
+    public partial class EmpleadoSubMenu : Form
     {
         private object[][] orgEmployess = new object[][]
                 {
@@ -42,7 +42,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
                 };
 
-        public VentasFarmaceuticos()
+        public EmpleadoSubMenu()
         {
             InitializeComponent();
 
@@ -79,7 +79,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    //new CrearCuentaModal().Show();
+                    new CrearCuentaModal().Show();
 
                 }
             }
@@ -87,32 +87,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "INGRESE DNI O APELLIDO")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void converTextBlack(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE DNI O APELLIDO")
-            {
-                textBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "INGRESE DNI O APELLIDO";
-                textBox1.ForeColor = Color.Gray;
-            }
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -124,18 +99,18 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
 
             object[][] matched;
-            if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text == "Todos")
+            if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text == "Todos")
             {
                 matched = this.orgEmployess
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text != "Todos")
+            else if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text != "Todos")
             {
                 matched = this.orgEmployess
                            .Where(x => x[7].ToString() == comboBox1.Text)
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
+            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != ""))
             {
                 matched = this.orgEmployess
                        .Where(x => x[0].ToString().Contains(textBox1.Text) ||
@@ -144,7 +119,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                                    x[4].ToString().Contains(textBox1.Text))
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
+            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != "") )
             {
                 matched = this.orgEmployess
                        .Where(x => x[0].ToString().Contains(textBox1.Text) ||
@@ -172,17 +147,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Rows.Clear();
-
-            foreach (var row in this.orgEmployess)
-            {
-                this.dataGridView1.Rows.Add(row);
-            }
+            textBox1.Text = "";
+            comboBox1.Text = "Todos";
         }
 
-        private void button3w_Click(object sender, EventArgs e)
+ 
+        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
-            
+            new AltaEmpleado().Show();
+
         }
     }
 }

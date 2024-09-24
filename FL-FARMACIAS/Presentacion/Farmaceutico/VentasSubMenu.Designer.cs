@@ -32,7 +32,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubmenuFarmaceutico));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasSubMenu));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -270,7 +270,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1060, 597);
-            this.Controls.Add(this.label1);
+            //this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label3w);
             this.Controls.Add(this.label2);
@@ -314,6 +314,5 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
         private Label label3;
-        private Label label1;
     }
 }

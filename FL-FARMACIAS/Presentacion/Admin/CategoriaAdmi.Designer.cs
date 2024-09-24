@@ -65,12 +65,10 @@
             // CC_inactivo
             // 
             this.CC_inactivo.AutoSize = true;
-            this.CC_inactivo.Checked = true;
-            this.CC_inactivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CC_inactivo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CC_inactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CC_inactivo.Location = new System.Drawing.Point(245, 212);
             this.CC_inactivo.Name = "CC_inactivo";
-            this.CC_inactivo.Size = new System.Drawing.Size(77, 19);
+            this.CC_inactivo.Size = new System.Drawing.Size(84, 17);
             this.CC_inactivo.TabIndex = 4;
             this.CC_inactivo.Text = "INACTIVO";
             this.CC_inactivo.UseVisualStyleBackColor = true;
@@ -91,6 +89,8 @@
             // CC_activo
             // 
             this.CC_activo.AutoSize = true;
+            this.CC_activo.Checked = true;
+            this.CC_activo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CC_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CC_activo.Location = new System.Drawing.Point(38, 212);
             this.CC_activo.Name = "CC_activo";

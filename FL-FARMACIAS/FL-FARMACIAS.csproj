@@ -63,6 +63,12 @@
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\EstadisticasSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\EstadisticasSubMenu.Designer.cs">
+      <DependentUpon>EstadisticasSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\ModificarDescuentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +93,11 @@
     <Compile Include="Presentacion\Admin\AltaProveedor.Designer.cs">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\AltaFarmaceutico.cs">
+    <Compile Include="Presentacion\Admin\AltaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\AltaFarmaceutico.Designer.cs">
-      <DependentUpon>AltaFarmaceutico.cs</DependentUpon>
+    <Compile Include="Presentacion\Admin\AltaEmpleado.Designer.cs">
+      <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
       <SubType>Form</SubType>
@@ -159,9 +165,6 @@
     <Compile Include="Presentacion\Farmaceutico\EstadisticosFarmaceutico.Designer.cs">
       <DependentUpon>EstadisticosFarmaceutico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.cs">
-		<SubType>Form</SubType>
-	</Compile>
     <Compile Include="Presentacion\Admin\EmpleadoSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +203,12 @@
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
+      <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\EstadisticasSubMenu.resx">
+      <DependentUpon>EstadisticasSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ModificarDescuentas.resx">
       <DependentUpon>ModificarDescuentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,8 +221,8 @@
     <EmbeddedResource Include="Presentacion\Admin\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\AltaFarmaceutico.resx">
-      <DependentUpon>AltaFarmaceutico.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\AltaEmpleado.resx">
+      <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
       <DependentUpon>CategoriaAdmi.cs</DependentUpon>
@@ -247,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\EstadisticosFarmaceutico.resx">
       <DependentUpon>EstadisticosFarmaceutico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Farmaceutico\SubmenuFarmaceutico.resx">
-      <DependentUpon>SubmenuFarmaceutico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>

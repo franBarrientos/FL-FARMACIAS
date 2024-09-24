@@ -90,61 +90,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "INGRESE DNI O APELLIDO")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void converTextBlack(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE DNI O APELLIDO")
-            {
-                textBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "INGRESE DNI O APELLIDO";
-                textBox1.ForeColor = Color.Gray;
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "INGRESE ID O DESCRIPCION")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void converTextBlack2(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE ID O DESCRIPCION")
-            {
-                textBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "INGRESE ID O DESCRIPCION";
-                textBox1.ForeColor = Color.Gray;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == " " && comboBox1.Text == " ")

@@ -15,6 +15,7 @@ public class PlaceholderTextBox : TextBox
         this.LostFocus += PlaceholderTextBox_LostFocus;
         this.Enter += PlaceholderTextBox_Enter;
         this.Leave += PlaceholderTextBox_Leave;
+      
     }
 
     [Browsable(true)]
@@ -41,15 +42,6 @@ public class PlaceholderTextBox : TextBox
         }
     }
 
-    protected override void OnPaint(PaintEventArgs e)
-    {
-        base.OnPaint(e);
-        if (string.IsNullOrEmpty(this.Text))
-        {
-            // Dibuja el placeholder
-            TextRenderer.DrawText(e.Graphics, _placeholder, this.Font, this.ClientRectangle, _placeholderColor);
-        }
-    }
 
     private void PlaceholderTextBox_GotFocus(object sender, EventArgs e)
     {
@@ -69,6 +61,7 @@ public class PlaceholderTextBox : TextBox
         {
             this.Text = _placeholder;
             this.ForeColor = _placeholderColor; // Cambia el color del placeholder
+           
         }
     }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class AltaFarmaceutico : Form
+    public partial class AltaEmpleado : Form
     {
-        public AltaFarmaceutico()
+        public AltaEmpleado()
         {
             InitializeComponent();
         }
@@ -154,6 +154,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             {
                 MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+        }
+
+        private void Cmujer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Cmasculino.Checked)
+            {
+                Cmasculino.Checked = false;
+            }
+        }
+
+        private void Cmasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Cmujer.Checked)
+            {
+                Cmujer.Checked = false;
             }
         }
     }

@@ -51,18 +51,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FL_FARMACIAS.Properties.Resources.Copia_de_f;
-            this.pictureBox1.Location = new System.Drawing.Point(818, 595);
+            this.pictureBox1.Location = new System.Drawing.Point(545, 387);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(192, 107);
+            this.button1.Location = new System.Drawing.Point(128, 70);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(299, 197);
+            this.button1.Size = new System.Drawing.Size(199, 128);
             this.button1.TabIndex = 0;
             this.button1.Text = "        CLIENTES";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,9 +73,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(192, 366);
+            this.button2.Location = new System.Drawing.Point(128, 238);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(285, 197);
+            this.button2.Size = new System.Drawing.Size(190, 128);
             this.button2.TabIndex = 2;
             this.button2.Text = "          VENTAS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -81,9 +84,10 @@
             // 
             // p
             // 
-            this.p.Location = new System.Drawing.Point(666, 107);
+            this.p.Location = new System.Drawing.Point(444, 70);
+            this.p.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(282, 197);
+            this.p.Size = new System.Drawing.Size(188, 128);
             this.p.TabIndex = 3;
             this.p.Text = "  PROVEEDORES\n   PEDIDOS";
             this.p.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -97,39 +101,46 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(356, 135);
+            this.pictureBox2.Location = new System.Drawing.Point(237, 88);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 143);
+            this.pictureBox2.Size = new System.Drawing.Size(67, 93);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(358, 401);
+            this.pictureBox3.Location = new System.Drawing.Point(239, 261);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(106, 140);
+            this.pictureBox3.Size = new System.Drawing.Size(71, 91);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(818, 135);
+            this.pictureBox4.Location = new System.Drawing.Point(545, 88);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(118, 143);
+            this.pictureBox4.Size = new System.Drawing.Size(79, 93);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(666, 366);
+            this.button4.Location = new System.Drawing.Point(444, 238);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(285, 197);
+            this.button4.Size = new System.Drawing.Size(190, 128);
             this.button4.TabIndex = 8;
             this.button4.Text = "          ESTADISTICAS \n          BACKUPS";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,20 +148,22 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Enabled = false;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(837, 401);
+            this.pictureBox6.Location = new System.Drawing.Point(558, 261);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(98, 140);
+            this.pictureBox6.Size = new System.Drawing.Size(65, 91);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
             // MenuFarmaceutico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(1154, 759);
+            this.ClientSize = new System.Drawing.Size(773, 493);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox4);
@@ -160,8 +173,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.MaximumSize = new System.Drawing.Size(1176, 815);
-            this.MinimumSize = new System.Drawing.Size(1176, 815);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(789, 543);
+            this.MinimumSize = new System.Drawing.Size(789, 525);
             this.Name = "MenuFarmaceutico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Farmaceutico";
