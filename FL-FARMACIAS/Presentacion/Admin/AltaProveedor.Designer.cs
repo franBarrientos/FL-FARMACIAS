@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaProveedor));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
+            this.correo_proveedor = new System.Windows.Forms.TextBox();
+            this.localidad_proveedor = new System.Windows.Forms.ComboBox();
+            this.provincia_proveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.telefono_proveedor = new System.Windows.Forms.TextBox();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.direccion_proveedor = new System.Windows.Forms.TextBox();
+            this.dni_proveedor = new System.Windows.Forms.TextBox();
+            this.Tcuit_proveedor = new System.Windows.Forms.TextBox();
+            this.Tnombre_pedido = new System.Windows.Forms.TextBox();
             this.LFalta_telefono = new System.Windows.Forms.Label();
             this.LFalta_obrasocial = new System.Windows.Forms.Label();
             this.LFalta_direccion = new System.Windows.Forms.Label();
@@ -49,11 +51,9 @@
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.Pfarm_altacliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Pfarm_altacliente
@@ -61,18 +61,18 @@
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Pfarm_altacliente.Controls.Add(this.pictureBox1);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
-            this.Pfarm_altacliente.Controls.Add(this.textBox6);
-            this.Pfarm_altacliente.Controls.Add(this.comboBox2);
-            this.Pfarm_altacliente.Controls.Add(this.comboBox1);
+            this.Pfarm_altacliente.Controls.Add(this.correo_proveedor);
+            this.Pfarm_altacliente.Controls.Add(this.localidad_proveedor);
+            this.Pfarm_altacliente.Controls.Add(this.provincia_proveedor);
             this.Pfarm_altacliente.Controls.Add(this.label2);
             this.Pfarm_altacliente.Controls.Add(this.label1);
             this.Pfarm_altacliente.Controls.Add(this.pictureBox3);
-            this.Pfarm_altacliente.Controls.Add(this.textBox5);
+            this.Pfarm_altacliente.Controls.Add(this.telefono_proveedor);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
-            this.Pfarm_altacliente.Controls.Add(this.textBox4);
-            this.Pfarm_altacliente.Controls.Add(this.textBox3);
-            this.Pfarm_altacliente.Controls.Add(this.textBox2);
-            this.Pfarm_altacliente.Controls.Add(this.textBox1);
+            this.Pfarm_altacliente.Controls.Add(this.direccion_proveedor);
+            this.Pfarm_altacliente.Controls.Add(this.dni_proveedor);
+            this.Pfarm_altacliente.Controls.Add(this.Tcuit_proveedor);
+            this.Pfarm_altacliente.Controls.Add(this.Tnombre_pedido);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_telefono);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_obrasocial);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_direccion);
@@ -85,48 +85,71 @@
             this.Pfarm_altacliente.Size = new System.Drawing.Size(504, 556);
             this.Pfarm_altacliente.TabIndex = 0;
             // 
-            // textBox6
+            // pictureBox1
             // 
-            this.textBox6.Location = new System.Drawing.Point(156, 389);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(308, 20);
-            this.textBox6.TabIndex = 20;
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 487);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
-            // comboBox2
+            // BFalta_ingresarcli
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(156, 298);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(308, 21);
-            this.comboBox2.TabIndex = 19;
-            this.comboBox2.Click += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(26, 478);
+            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(200, 62);
+            this.BFalta_ingresarcli.TabIndex = 29;
+            this.BFalta_ingresarcli.Text = "AGREGAR PROVEEDOR";
+            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
+            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
             // 
-            // comboBox1
+            // correo_proveedor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(156, 252);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(308, 21);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.onChangeSelectedProv);
+            this.correo_proveedor.Location = new System.Drawing.Point(156, 389);
+            this.correo_proveedor.Name = "correo_proveedor";
+            this.correo_proveedor.Size = new System.Drawing.Size(308, 20);
+            this.correo_proveedor.TabIndex = 20;
+            // 
+            // localidad_proveedor
+            // 
+            this.localidad_proveedor.FormattingEnabled = true;
+            this.localidad_proveedor.Location = new System.Drawing.Point(156, 298);
+            this.localidad_proveedor.Name = "localidad_proveedor";
+            this.localidad_proveedor.Size = new System.Drawing.Size(308, 21);
+            this.localidad_proveedor.TabIndex = 19;
+            this.localidad_proveedor.Click += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // provincia_proveedor
+            // 
+            this.provincia_proveedor.FormattingEnabled = true;
+            this.provincia_proveedor.Location = new System.Drawing.Point(156, 252);
+            this.provincia_proveedor.Name = "provincia_proveedor";
+            this.provincia_proveedor.Size = new System.Drawing.Size(308, 21);
+            this.provincia_proveedor.TabIndex = 18;
+            this.provincia_proveedor.SelectedIndexChanged += new System.EventHandler(this.onChangeSelectedProv);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 295);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 24);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Localidad:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 24);
+            this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Provincia:";
             // 
@@ -141,12 +164,12 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox5
+            // telefono_proveedor
             // 
-            this.textBox5.Location = new System.Drawing.Point(156, 432);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(308, 20);
-            this.textBox5.TabIndex = 12;
+            this.telefono_proveedor.Location = new System.Drawing.Point(156, 432);
+            this.telefono_proveedor.Name = "telefono_proveedor";
+            this.telefono_proveedor.Size = new System.Drawing.Size(308, 20);
+            this.telefono_proveedor.TabIndex = 12;
             // 
             // BFalta_vaciarcampos
             // 
@@ -158,94 +181,95 @@
             this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
             this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_vaciarcampos.UseVisualStyleBackColor = true;
+            this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
             // 
-            // textBox4
+            // direccion_proveedor
             // 
-            this.textBox4.Location = new System.Drawing.Point(156, 340);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(308, 20);
-            this.textBox4.TabIndex = 11;
+            this.direccion_proveedor.Location = new System.Drawing.Point(156, 340);
+            this.direccion_proveedor.Name = "direccion_proveedor";
+            this.direccion_proveedor.Size = new System.Drawing.Size(308, 20);
+            this.direccion_proveedor.TabIndex = 11;
             // 
-            // textBox3
+            // dni_proveedor
             // 
-            this.textBox3.Location = new System.Drawing.Point(156, 204);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(308, 20);
-            this.textBox3.TabIndex = 10;
+            this.dni_proveedor.Location = new System.Drawing.Point(156, 204);
+            this.dni_proveedor.Name = "dni_proveedor";
+            this.dni_proveedor.Size = new System.Drawing.Size(308, 20);
+            this.dni_proveedor.TabIndex = 10;
             // 
-            // textBox2
+            // Tcuit_proveedor
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(156, 155);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(308, 20);
-            this.textBox2.TabIndex = 9;
+            this.Tcuit_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Tcuit_proveedor.Location = new System.Drawing.Point(156, 155);
+            this.Tcuit_proveedor.Name = "Tcuit_proveedor";
+            this.Tcuit_proveedor.Size = new System.Drawing.Size(308, 20);
+            this.Tcuit_proveedor.TabIndex = 9;
             // 
-            // textBox1
+            // Tnombre_pedido
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(156, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 20);
-            this.textBox1.TabIndex = 8;
+            this.Tnombre_pedido.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Tnombre_pedido.Location = new System.Drawing.Point(156, 101);
+            this.Tnombre_pedido.Name = "Tnombre_pedido";
+            this.Tnombre_pedido.Size = new System.Drawing.Size(308, 20);
+            this.Tnombre_pedido.TabIndex = 8;
             // 
             // LFalta_telefono
             // 
             this.LFalta_telefono.AutoSize = true;
-            this.LFalta_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_telefono.Location = new System.Drawing.Point(22, 428);
             this.LFalta_telefono.Name = "LFalta_telefono";
-            this.LFalta_telefono.Size = new System.Drawing.Size(90, 24);
+            this.LFalta_telefono.Size = new System.Drawing.Size(84, 20);
             this.LFalta_telefono.TabIndex = 7;
             this.LFalta_telefono.Text = "Telefono:";
             // 
             // LFalta_obrasocial
             // 
             this.LFalta_obrasocial.AutoSize = true;
-            this.LFalta_obrasocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_obrasocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_obrasocial.Location = new System.Drawing.Point(22, 385);
             this.LFalta_obrasocial.Name = "LFalta_obrasocial";
-            this.LFalta_obrasocial.Size = new System.Drawing.Size(73, 24);
+            this.LFalta_obrasocial.Size = new System.Drawing.Size(68, 20);
             this.LFalta_obrasocial.TabIndex = 6;
             this.LFalta_obrasocial.Text = "Correo:";
             // 
             // LFalta_direccion
             // 
             this.LFalta_direccion.AutoSize = true;
-            this.LFalta_direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_direccion.Location = new System.Drawing.Point(20, 340);
             this.LFalta_direccion.Name = "LFalta_direccion";
-            this.LFalta_direccion.Size = new System.Drawing.Size(95, 24);
+            this.LFalta_direccion.Size = new System.Drawing.Size(89, 20);
             this.LFalta_direccion.TabIndex = 5;
             this.LFalta_direccion.Text = "Direccion:";
             // 
             // LFalta_dni
             // 
             this.LFalta_dni.AutoSize = true;
-            this.LFalta_dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_dni.Location = new System.Drawing.Point(22, 204);
             this.LFalta_dni.Name = "LFalta_dni";
-            this.LFalta_dni.Size = new System.Drawing.Size(46, 24);
+            this.LFalta_dni.Size = new System.Drawing.Size(45, 20);
             this.LFalta_dni.TabIndex = 4;
             this.LFalta_dni.Text = "DNI:";
             // 
             // LFalta_apellido
             // 
             this.LFalta_apellido.AutoSize = true;
-            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_apellido.Location = new System.Drawing.Point(20, 155);
             this.LFalta_apellido.Name = "LFalta_apellido";
-            this.LFalta_apellido.Size = new System.Drawing.Size(57, 24);
+            this.LFalta_apellido.Size = new System.Drawing.Size(55, 20);
             this.LFalta_apellido.TabIndex = 3;
             this.LFalta_apellido.Text = "CUIT:";
             // 
             // LFalta_nombre
             // 
             this.LFalta_nombre.AutoSize = true;
-            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_nombre.Location = new System.Drawing.Point(22, 101);
             this.LFalta_nombre.Name = "LFalta_nombre";
-            this.LFalta_nombre.Size = new System.Drawing.Size(84, 24);
+            this.LFalta_nombre.Size = new System.Drawing.Size(76, 20);
             this.LFalta_nombre.TabIndex = 2;
             this.LFalta_nombre.Text = "Nombre:";
             // 
@@ -261,28 +285,6 @@
             this.Lfarm_tituloalt.Text = "ALTA DE PROVEEDOR";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(103, 487);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BFalta_ingresarcli
-            // 
-            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(94, 478);
-            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(132, 62);
-            this.BFalta_ingresarcli.TabIndex = 29;
-            this.BFalta_ingresarcli.Text = "ACEPTAR";
-            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
-            // 
             // AltaProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,8 +298,8 @@
             this.Text = "Alta Proveedor";
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,16 +314,16 @@
         private System.Windows.Forms.Label LFalta_direccion;
         private System.Windows.Forms.Label LFalta_dni;
         private System.Windows.Forms.Label LFalta_apellido;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox telefono_proveedor;
+        private System.Windows.Forms.TextBox direccion_proveedor;
+        private System.Windows.Forms.TextBox dni_proveedor;
+        private System.Windows.Forms.TextBox Tcuit_proveedor;
+        private System.Windows.Forms.TextBox Tnombre_pedido;
         private System.Windows.Forms.Button BFalta_vaciarcampos;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox correo_proveedor;
+        private System.Windows.Forms.ComboBox localidad_proveedor;
+        private System.Windows.Forms.ComboBox provincia_proveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

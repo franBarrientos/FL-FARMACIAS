@@ -30,7 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgrerarProductoAdmi));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Tlaboratorio_prod = new System.Windows.Forms.TextBox();
+            this.Tmarca_produ = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.vaciar_productos = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TP_descripcion = new System.Windows.Forms.TextBox();
+            this.botonAgregarProducto = new System.Windows.Forms.Button();
             this.LP_categoria = new System.Windows.Forms.Label();
             this.LAS_cate_titulo = new System.Windows.Forms.Label();
             this.TP_codproducto = new System.Windows.Forms.TextBox();
@@ -46,14 +54,6 @@
             this.LP_precioproduc = new System.Windows.Forms.Label();
             this.LP_descirpproduc = new System.Windows.Forms.Label();
             this.LP_nombreproduc = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.vaciar_productos = new System.Windows.Forms.Button();
-            this.botonAgregarProducto = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,10 +62,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Tlaboratorio_prod);
+            this.panel1.Controls.Add(this.Tmarca_produ);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.vaciar_productos);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -91,6 +91,85 @@
             this.panel1.Size = new System.Drawing.Size(542, 550);
             this.panel1.TabIndex = 0;
             // 
+            // Tlaboratorio_prod
+            // 
+            this.Tlaboratorio_prod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tlaboratorio_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tlaboratorio_prod.Location = new System.Drawing.Point(225, 288);
+            this.Tlaboratorio_prod.Name = "Tlaboratorio_prod";
+            this.Tlaboratorio_prod.Size = new System.Drawing.Size(253, 19);
+            this.Tlaboratorio_prod.TabIndex = 31;
+            // 
+            // Tmarca_produ
+            // 
+            this.Tmarca_produ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tmarca_produ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tmarca_produ.Location = new System.Drawing.Point(225, 244);
+            this.Tmarca_produ.Name = "Tmarca_produ";
+            this.Tmarca_produ.Size = new System.Drawing.Size(253, 19);
+            this.Tmarca_produ.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.CausesValidation = false;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(37, 288);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Laboratorio:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.CausesValidation = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(37, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Marca:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Enabled = false;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(294, 480);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 41);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // vaciar_productos
+            // 
+            this.vaciar_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vaciar_productos.Location = new System.Drawing.Point(284, 469);
+            this.vaciar_productos.Name = "vaciar_productos";
+            this.vaciar_productos.Size = new System.Drawing.Size(158, 62);
+            this.vaciar_productos.TabIndex = 23;
+            this.vaciar_productos.Text = "VACIAR CAMPOS";
+            this.vaciar_productos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.vaciar_productos.UseVisualStyleBackColor = true;
+            this.vaciar_productos.Click += new System.EventHandler(this.vaciar_productos_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(136, 480);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // TP_descripcion
             // 
             this.TP_descripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -99,6 +178,18 @@
             this.TP_descripcion.Name = "TP_descripcion";
             this.TP_descripcion.Size = new System.Drawing.Size(253, 19);
             this.TP_descripcion.TabIndex = 17;
+            // 
+            // botonAgregarProducto
+            // 
+            this.botonAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonAgregarProducto.Location = new System.Drawing.Point(126, 469);
+            this.botonAgregarProducto.Name = "botonAgregarProducto";
+            this.botonAgregarProducto.Size = new System.Drawing.Size(134, 62);
+            this.botonAgregarProducto.TabIndex = 22;
+            this.botonAgregarProducto.Text = "ACEPTAR";
+            this.botonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.botonAgregarProducto.UseVisualStyleBackColor = true;
+            this.botonAgregarProducto.Click += new System.EventHandler(this.botonAgregarProducto_Click);
             // 
             // LP_categoria
             // 
@@ -277,102 +368,6 @@
             this.LP_nombreproduc.TabIndex = 2;
             this.LP_nombreproduc.Text = "Nombre:";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Enabled = false;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(294, 480);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(136, 480);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
-            // vaciar_productos
-            // 
-            this.vaciar_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vaciar_productos.Location = new System.Drawing.Point(284, 469);
-            this.vaciar_productos.Name = "vaciar_productos";
-            this.vaciar_productos.Size = new System.Drawing.Size(158, 62);
-            this.vaciar_productos.TabIndex = 23;
-            this.vaciar_productos.Text = "VACIAR CAMPOS";
-            this.vaciar_productos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.vaciar_productos.UseVisualStyleBackColor = true;
-            // 
-            // botonAgregarProducto
-            // 
-            this.botonAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonAgregarProducto.Location = new System.Drawing.Point(126, 469);
-            this.botonAgregarProducto.Name = "botonAgregarProducto";
-            this.botonAgregarProducto.Size = new System.Drawing.Size(134, 62);
-            this.botonAgregarProducto.TabIndex = 22;
-            this.botonAgregarProducto.Text = "ACEPTAR";
-            this.botonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botonAgregarProducto.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(37, 243);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Marca:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Perfumeria",
-            "Limpieza",
-            "Drogueria"});
-            this.comboBox1.Location = new System.Drawing.Point(225, 235);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 24);
-            this.comboBox1.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.CausesValidation = false;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(37, 288);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Laboratorio:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Perfumeria",
-            "Limpieza",
-            "Drogueria"});
-            this.comboBox2.Location = new System.Drawing.Point(225, 280);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(253, 24);
-            this.comboBox2.TabIndex = 28;
-            // 
             // AgrerarProductoAdmi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,8 +410,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button botonAgregarProducto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox Tmarca_produ;
+        private System.Windows.Forms.TextBox Tlaboratorio_prod;
     }
 }

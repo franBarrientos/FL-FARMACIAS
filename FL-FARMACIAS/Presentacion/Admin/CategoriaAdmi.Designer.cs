@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vaciar_campos_categoria));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TC_descripcion = new System.Windows.Forms.TextBox();
+            this.Bagregar_categoria = new System.Windows.Forms.Button();
             this.CC_inactivo = new System.Windows.Forms.CheckBox();
             this.LAS_cate_titulo = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.CC_activo = new System.Windows.Forms.CheckBox();
             this.LAS_cate_estado = new System.Windows.Forms.Label();
-            this.LAS_cate_descrip = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Bagregar_categoria = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
+            this.LAS_cate_descrip = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,12 +63,35 @@
             this.panel1.Size = new System.Drawing.Size(380, 334);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(38, 257);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // TC_descripcion
             // 
             this.TC_descripcion.Location = new System.Drawing.Point(38, 105);
             this.TC_descripcion.Name = "TC_descripcion";
             this.TC_descripcion.Size = new System.Drawing.Size(311, 20);
             this.TC_descripcion.TabIndex = 5;
+            // 
+            // Bagregar_categoria
+            // 
+            this.Bagregar_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bagregar_categoria.Location = new System.Drawing.Point(28, 250);
+            this.Bagregar_categoria.Name = "Bagregar_categoria";
+            this.Bagregar_categoria.Size = new System.Drawing.Size(133, 62);
+            this.Bagregar_categoria.TabIndex = 33;
+            this.Bagregar_categoria.Text = "ACEPTAR";
+            this.Bagregar_categoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bagregar_categoria.UseVisualStyleBackColor = true;
+            this.Bagregar_categoria.Click += new System.EventHandler(this.Bagregar_categoria_Click_1);
             // 
             // CC_inactivo
             // 
@@ -86,13 +109,24 @@
             this.LAS_cate_titulo.AutoSize = true;
             this.LAS_cate_titulo.BackColor = System.Drawing.Color.Transparent;
             this.LAS_cate_titulo.CausesValidation = false;
-            this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_titulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_titulo.Location = new System.Drawing.Point(49, 12);
+            this.LAS_cate_titulo.Location = new System.Drawing.Point(12, 9);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
-            this.LAS_cate_titulo.Size = new System.Drawing.Size(290, 29);
+            this.LAS_cate_titulo.Size = new System.Drawing.Size(351, 33);
             this.LAS_cate_titulo.TabIndex = 0;
             this.LAS_cate_titulo.Text = "ALTA DE CATEGORIAS";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Enabled = false;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(199, 257);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
             // 
             // CC_activo
             // 
@@ -112,59 +146,13 @@
             this.LAS_cate_estado.AutoSize = true;
             this.LAS_cate_estado.BackColor = System.Drawing.Color.Transparent;
             this.LAS_cate_estado.CausesValidation = false;
-            this.LAS_cate_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_estado.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_estado.Location = new System.Drawing.Point(126, 154);
+            this.LAS_cate_estado.Location = new System.Drawing.Point(127, 154);
             this.LAS_cate_estado.Name = "LAS_cate_estado";
-            this.LAS_cate_estado.Size = new System.Drawing.Size(101, 29);
+            this.LAS_cate_estado.Size = new System.Drawing.Size(71, 20);
             this.LAS_cate_estado.TabIndex = 2;
             this.LAS_cate_estado.Text = "Estado:";
-            // 
-            // LAS_cate_descrip
-            // 
-            this.LAS_cate_descrip.AutoSize = true;
-            this.LAS_cate_descrip.BackColor = System.Drawing.Color.Transparent;
-            this.LAS_cate_descrip.CausesValidation = false;
-            this.LAS_cate_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAS_cate_descrip.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_descrip.Location = new System.Drawing.Point(105, 60);
-            this.LAS_cate_descrip.Name = "LAS_cate_descrip";
-            this.LAS_cate_descrip.Size = new System.Drawing.Size(159, 29);
-            this.LAS_cate_descrip.TabIndex = 1;
-            this.LAS_cate_descrip.Text = "Descripcion:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 257);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Bagregar_categoria
-            // 
-            this.Bagregar_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bagregar_categoria.Location = new System.Drawing.Point(28, 250);
-            this.Bagregar_categoria.Name = "Bagregar_categoria";
-            this.Bagregar_categoria.Size = new System.Drawing.Size(133, 62);
-            this.Bagregar_categoria.TabIndex = 33;
-            this.Bagregar_categoria.Text = "ACEPTAR";
-            this.Bagregar_categoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bagregar_categoria.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Enabled = false;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(199, 257);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 32;
-            this.pictureBox3.TabStop = false;
             // 
             // BFalta_vaciarcampos
             // 
@@ -177,6 +165,19 @@
             this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_vaciarcampos.UseVisualStyleBackColor = true;
             this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
+            // 
+            // LAS_cate_descrip
+            // 
+            this.LAS_cate_descrip.AutoSize = true;
+            this.LAS_cate_descrip.BackColor = System.Drawing.Color.Transparent;
+            this.LAS_cate_descrip.CausesValidation = false;
+            this.LAS_cate_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_descrip.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LAS_cate_descrip.Location = new System.Drawing.Point(127, 65);
+            this.LAS_cate_descrip.Name = "LAS_cate_descrip";
+            this.LAS_cate_descrip.Size = new System.Drawing.Size(108, 20);
+            this.LAS_cate_descrip.TabIndex = 1;
+            this.LAS_cate_descrip.Text = "Descripcion:";
             // 
             // Vaciar_campos_categoria
             // 

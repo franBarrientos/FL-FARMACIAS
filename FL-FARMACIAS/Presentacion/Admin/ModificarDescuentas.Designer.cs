@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarDescuentas));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
+            this.id_descuento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,13 +39,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
             this.BFalta_ingresarcli = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.porcentaje_edit_descuentos = new System.Windows.Forms.TextBox();
+            this.descripcion_edit_descuentos = new System.Windows.Forms.TextBox();
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Pfarm_altacliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,7 +52,7 @@
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Pfarm_altacliente.Controls.Add(this.textBox3);
+            this.Pfarm_altacliente.Controls.Add(this.id_descuento);
             this.Pfarm_altacliente.Controls.Add(this.label2);
             this.Pfarm_altacliente.Controls.Add(this.checkBox2);
             this.Pfarm_altacliente.Controls.Add(this.checkBox1);
@@ -61,8 +61,8 @@
             this.Pfarm_altacliente.Controls.Add(this.pictureBox2);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
-            this.Pfarm_altacliente.Controls.Add(this.textBox2);
-            this.Pfarm_altacliente.Controls.Add(this.textBox1);
+            this.Pfarm_altacliente.Controls.Add(this.porcentaje_edit_descuentos);
+            this.Pfarm_altacliente.Controls.Add(this.descripcion_edit_descuentos);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_apellido);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_nombre);
             this.Pfarm_altacliente.Controls.Add(this.Lfarm_tituloalt);
@@ -70,6 +70,25 @@
             this.Pfarm_altacliente.Name = "Pfarm_altacliente";
             this.Pfarm_altacliente.Size = new System.Drawing.Size(490, 349);
             this.Pfarm_altacliente.TabIndex = 0;
+            // 
+            // id_descuento
+            // 
+            this.id_descuento.Enabled = false;
+            this.id_descuento.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.id_descuento.Location = new System.Drawing.Point(156, 73);
+            this.id_descuento.Name = "id_descuento";
+            this.id_descuento.Size = new System.Drawing.Size(308, 20);
+            this.id_descuento.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 24);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Id:";
             // 
             // checkBox2
             // 
@@ -137,6 +156,7 @@
             this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
             this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_vaciarcampos.UseVisualStyleBackColor = true;
+            this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
             // 
             // BFalta_ingresarcli
             // 
@@ -148,22 +168,23 @@
             this.BFalta_ingresarcli.Text = "EDITAR DESCUENTO";
             this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
+            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
             // 
-            // textBox2
+            // porcentaje_edit_descuentos
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(156, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(308, 20);
-            this.textBox2.TabIndex = 9;
+            this.porcentaje_edit_descuentos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.porcentaje_edit_descuentos.Location = new System.Drawing.Point(156, 177);
+            this.porcentaje_edit_descuentos.Name = "porcentaje_edit_descuentos";
+            this.porcentaje_edit_descuentos.Size = new System.Drawing.Size(308, 20);
+            this.porcentaje_edit_descuentos.TabIndex = 9;
             // 
-            // textBox1
+            // descripcion_edit_descuentos
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(156, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 20);
-            this.textBox1.TabIndex = 8;
+            this.descripcion_edit_descuentos.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.descripcion_edit_descuentos.Location = new System.Drawing.Point(156, 113);
+            this.descripcion_edit_descuentos.Name = "descripcion_edit_descuentos";
+            this.descripcion_edit_descuentos.Size = new System.Drawing.Size(308, 20);
+            this.descripcion_edit_descuentos.TabIndex = 8;
             // 
             // LFalta_apellido
             // 
@@ -197,25 +218,6 @@
             this.Lfarm_tituloalt.Text = "EDITAR DE DESCUENTO";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(156, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(308, 20);
-            this.textBox3.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 24);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Id:";
-            // 
             // ModificarDescuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,8 +243,8 @@
         private System.Windows.Forms.Label Lfarm_tituloalt;
         private System.Windows.Forms.Label LFalta_nombre;
         private System.Windows.Forms.Label LFalta_apellido;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox porcentaje_edit_descuentos;
+        private System.Windows.Forms.TextBox descripcion_edit_descuentos;
         private System.Windows.Forms.Button BFalta_ingresarcli;
         private System.Windows.Forms.Button BFalta_vaciarcampos;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -250,7 +252,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox id_descuento;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -68,11 +68,11 @@
             // 
             this.Lnombre_farmaceutico.AutoSize = true;
             this.Lnombre_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lnombre_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lnombre_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnombre_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lnombre_farmaceutico.Location = new System.Drawing.Point(12, 81);
             this.Lnombre_farmaceutico.Name = "Lnombre_farmaceutico";
-            this.Lnombre_farmaceutico.Size = new System.Drawing.Size(69, 20);
+            this.Lnombre_farmaceutico.Size = new System.Drawing.Size(76, 20);
             this.Lnombre_farmaceutico.TabIndex = 0;
             this.Lnombre_farmaceutico.Text = "Nombre:";
             // 
@@ -80,11 +80,11 @@
             // 
             this.Lapellido_farmaceutico.AutoSize = true;
             this.Lapellido_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lapellido_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lapellido_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lapellido_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lapellido_farmaceutico.Location = new System.Drawing.Point(12, 44);
             this.Lapellido_farmaceutico.Name = "Lapellido_farmaceutico";
-            this.Lapellido_farmaceutico.Size = new System.Drawing.Size(69, 20);
+            this.Lapellido_farmaceutico.Size = new System.Drawing.Size(78, 20);
             this.Lapellido_farmaceutico.TabIndex = 1;
             this.Lapellido_farmaceutico.Text = "Apellido:";
             // 
@@ -92,11 +92,11 @@
             // 
             this.Ldni_farmaceutico.AutoSize = true;
             this.Ldni_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Ldni_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ldni_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ldni_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Ldni_farmaceutico.Location = new System.Drawing.Point(12, 120);
             this.Ldni_farmaceutico.Name = "Ldni_farmaceutico";
-            this.Ldni_farmaceutico.Size = new System.Drawing.Size(49, 20);
+            this.Ldni_farmaceutico.Size = new System.Drawing.Size(55, 20);
             this.Ldni_farmaceutico.TabIndex = 3;
             this.Ldni_farmaceutico.Text = "D.N.I:";
             // 
@@ -104,11 +104,11 @@
             // 
             this.Lsexo_farmaceutico.AutoSize = true;
             this.Lsexo_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lsexo_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lsexo_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lsexo_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lsexo_farmaceutico.Location = new System.Drawing.Point(12, 287);
             this.Lsexo_farmaceutico.Name = "Lsexo_farmaceutico";
-            this.Lsexo_farmaceutico.Size = new System.Drawing.Size(49, 20);
+            this.Lsexo_farmaceutico.Size = new System.Drawing.Size(54, 20);
             this.Lsexo_farmaceutico.TabIndex = 2;
             this.Lsexo_farmaceutico.Text = "Sexo:";
             this.Lsexo_farmaceutico.Click += new System.EventHandler(this.Lsexo_farmaceutico_Click);
@@ -117,11 +117,11 @@
             // 
             this.Ltelefono_farmaceutico.AutoSize = true;
             this.Ltelefono_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Ltelefono_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltelefono_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltelefono_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Ltelefono_farmaceutico.Location = new System.Drawing.Point(15, 192);
             this.Ltelefono_farmaceutico.Name = "Ltelefono_farmaceutico";
-            this.Ltelefono_farmaceutico.Size = new System.Drawing.Size(75, 20);
+            this.Ltelefono_farmaceutico.Size = new System.Drawing.Size(84, 20);
             this.Ltelefono_farmaceutico.TabIndex = 5;
             this.Ltelefono_farmaceutico.Text = "Telefono:";
             // 
@@ -129,11 +129,11 @@
             // 
             this.Lcuil_farmaceutico.AutoSize = true;
             this.Lcuil_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lcuil_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcuil_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lcuil_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lcuil_farmaceutico.Location = new System.Drawing.Point(15, 153);
             this.Lcuil_farmaceutico.Name = "Lcuil_farmaceutico";
-            this.Lcuil_farmaceutico.Size = new System.Drawing.Size(50, 20);
+            this.Lcuil_farmaceutico.Size = new System.Drawing.Size(55, 20);
             this.Lcuil_farmaceutico.TabIndex = 4;
             this.Lcuil_farmaceutico.Text = "CUIL:";
             // 
@@ -141,11 +141,11 @@
             // 
             this.Lsalario_farmaceutico.AutoSize = true;
             this.Lsalario_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lsalario_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lsalario_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lsalario_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lsalario_farmaceutico.Location = new System.Drawing.Point(15, 256);
             this.Lsalario_farmaceutico.Name = "Lsalario_farmaceutico";
-            this.Lsalario_farmaceutico.Size = new System.Drawing.Size(62, 20);
+            this.Lsalario_farmaceutico.Size = new System.Drawing.Size(70, 20);
             this.Lsalario_farmaceutico.TabIndex = 7;
             this.Lsalario_farmaceutico.Text = "Salario:";
             // 
@@ -153,11 +153,11 @@
             // 
             this.Lpuesto_farmaceutico.AutoSize = true;
             this.Lpuesto_farmaceutico.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lpuesto_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lpuesto_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lpuesto_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lpuesto_farmaceutico.Location = new System.Drawing.Point(15, 224);
             this.Lpuesto_farmaceutico.Name = "Lpuesto_farmaceutico";
-            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(63, 20);
+            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(70, 20);
             this.Lpuesto_farmaceutico.TabIndex = 6;
             this.Lpuesto_farmaceutico.Text = "Puesto:";
             // 
@@ -290,11 +290,11 @@
             // 
             this.Lfechaingreso.AutoSize = true;
             this.Lfechaingreso.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Lfechaingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lfechaingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lfechaingreso.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lfechaingreso.Location = new System.Drawing.Point(12, 320);
             this.Lfechaingreso.Name = "Lfechaingreso";
-            this.Lfechaingreso.Size = new System.Drawing.Size(116, 20);
+            this.Lfechaingreso.Size = new System.Drawing.Size(130, 20);
             this.Lfechaingreso.TabIndex = 21;
             this.Lfechaingreso.Text = "Fecha Ingreso:";
             // 
@@ -331,11 +331,11 @@
             // 
             this.Ltitulo_nuevofarma.AutoSize = true;
             this.Ltitulo_nuevofarma.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Ltitulo_nuevofarma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltitulo_nuevofarma.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltitulo_nuevofarma.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Ltitulo_nuevofarma.Location = new System.Drawing.Point(120, 9);
+            this.Ltitulo_nuevofarma.Location = new System.Drawing.Point(70, 0);
             this.Ltitulo_nuevofarma.Name = "Ltitulo_nuevofarma";
-            this.Ltitulo_nuevofarma.Size = new System.Drawing.Size(209, 25);
+            this.Ltitulo_nuevofarma.Size = new System.Drawing.Size(300, 33);
             this.Ltitulo_nuevofarma.TabIndex = 22;
             this.Ltitulo_nuevofarma.Text = "NUEVO EMPLEADO";
             // 
@@ -386,6 +386,7 @@
             this.Vaciar_campos_nuevo_farmaceutico.Text = "VACIAR CAMPOS";
             this.Vaciar_campos_nuevo_farmaceutico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Vaciar_campos_nuevo_farmaceutico.UseVisualStyleBackColor = true;
+            this.Vaciar_campos_nuevo_farmaceutico.Click += new System.EventHandler(this.Vaciar_campos_nuevo_farmaceutico_Click_1);
             // 
             // Bagregar_empleado
             // 
@@ -397,6 +398,7 @@
             this.Bagregar_empleado.Text = "ACEPTAR";
             this.Bagregar_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Bagregar_empleado.UseVisualStyleBackColor = true;
+            this.Bagregar_empleado.Click += new System.EventHandler(this.Bagregar_empleado_Click_1);
             // 
             // AltaEmpleado
             // 

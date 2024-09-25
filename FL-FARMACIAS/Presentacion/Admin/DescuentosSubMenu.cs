@@ -83,5 +83,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 checkBox1.Checked = false;
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

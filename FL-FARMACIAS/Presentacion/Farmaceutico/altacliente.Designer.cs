@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
             this.DFalta_obrasocial = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Ttelefono_cliente = new System.Windows.Forms.TextBox();
             this.Tdni_cliente = new System.Windows.Forms.TextBox();
             this.Tapellido_cliente = new System.Windows.Forms.TextBox();
@@ -43,9 +44,10 @@
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
             this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pfarm_altacliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pfarm_altacliente
@@ -79,6 +81,16 @@
             this.DFalta_obrasocial.Name = "DFalta_obrasocial";
             this.DFalta_obrasocial.Size = new System.Drawing.Size(308, 21);
             this.DFalta_obrasocial.TabIndex = 13;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(402, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(74, 66);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // Ttelefono_cliente
             // 
@@ -211,7 +223,6 @@
             this.BFalta_vaciarcampos.BackColor = System.Drawing.Color.Ivory;
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFalta_vaciarcampos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BFalta_vaciarcampos.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_vaciarcampos.Image")));
             this.BFalta_vaciarcampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BFalta_vaciarcampos.Location = new System.Drawing.Point(381, 428);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
@@ -222,15 +233,16 @@
             this.BFalta_vaciarcampos.UseVisualStyleBackColor = false;
             this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(402, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 66);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(397, 438);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // AltaCliente
             // 
@@ -238,6 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(617, 514);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BFalta_vaciarcampos);
             this.Controls.Add(this.BFalta_ingresarcli);
             this.Controls.Add(this.Pfarm_altacliente);
@@ -246,6 +259,7 @@
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +281,6 @@
         private System.Windows.Forms.Button BFalta_vaciarcampos;
         private System.Windows.Forms.ComboBox DFalta_obrasocial;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
