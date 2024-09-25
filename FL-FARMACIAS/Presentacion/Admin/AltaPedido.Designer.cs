@@ -132,6 +132,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(277, 499);
             this.pictureBox3.Name = "pictureBox3";
@@ -142,6 +143,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(47, 499);
             this.pictureBox2.Name = "pictureBox2";

@@ -37,5 +37,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             new DescuentosSubMenu().Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new EstadisticasSubMenu().Show();
+        }
     }
 }

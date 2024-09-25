@@ -51,6 +51,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w = new System.Windows.Forms.Button();
             this.PRODUCTOS = new System.Windows.Forms.TabControl();
             this.prodTab = new System.Windows.Forms.TabPage();
+            this.textBox1 = new PlaceholderTextBox();
             this.catTab = new System.Windows.Forms.TabPage();
             this.textBox2 = new PlaceholderTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
@@ -294,6 +294,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.prodTab.Text = "PRODUCTOS";
             this.prodTab.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(56, 109);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Placeholder = "INGRESE NOMBRE O COD PRODUCTO";
+            this.textBox1.Size = new System.Drawing.Size(294, 19);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "INGRESE NOMBRE O COD PRODUCTO";
+            // 
             // catTab
             // 
             this.catTab.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
@@ -437,6 +447,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button4.Text = "LIMPIAR";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -451,16 +462,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(56, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Placeholder = "INGRESE NOMBRE O COD PRODUCTO";
-            this.textBox1.Size = new System.Drawing.Size(294, 19);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "INGRESE NOMBRE O COD PRODUCTO";
             // 
             // productoSubMenu
             // 

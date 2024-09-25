@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaDescuentos));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -40,8 +42,6 @@
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.Pfarm_altacliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,6 +67,30 @@
             this.Pfarm_altacliente.Size = new System.Drawing.Size(492, 346);
             this.Pfarm_altacliente.TabIndex = 0;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(277, 212);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(73, 17);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "No Activo";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(156, 212);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(56, 17);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Activo";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,9 +105,9 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(309, 273);
+            this.pictureBox3.Location = new System.Drawing.Point(269, 273);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox3.Size = new System.Drawing.Size(45, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -92,9 +116,9 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(29, 273);
+            this.pictureBox2.Location = new System.Drawing.Point(81, 273);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(56, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -102,9 +126,9 @@
             // BFalta_vaciarcampos
             // 
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(299, 264);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(260, 264);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
-            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(165, 62);
+            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(158, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
             this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
             this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -113,11 +137,11 @@
             // BFalta_ingresarcli
             // 
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(17, 264);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(69, 264);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(241, 62);
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(134, 62);
             this.BFalta_ingresarcli.TabIndex = 2;
-            this.BFalta_ingresarcli.Text = "AGREGAR DESCUENTO";
+            this.BFalta_ingresarcli.Text = "ACEPTAR";
             this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
             // 
@@ -168,30 +192,6 @@
             this.Lfarm_tituloalt.TabIndex = 1;
             this.Lfarm_tituloalt.Text = "ALTA DE DESCUENTO";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(156, 212);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(277, 212);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "No Activo";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // AltaDescuentos
             // 

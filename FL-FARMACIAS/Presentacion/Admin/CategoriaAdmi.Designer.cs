@@ -166,6 +166,7 @@
             this.Controls.Add(this.Bagregar_categoria);
             this.Controls.Add(this.panel1);
             this.Name = "CategoriaAdmi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoriaAdmi";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

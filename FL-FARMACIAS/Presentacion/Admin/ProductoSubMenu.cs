@@ -143,12 +143,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Rows.Clear ();
+            this.textBox1.Text = "";
+            this.comboBox1.Text = "Todos";
+            this.dataGridView1.Rows.Clear();
 
             foreach (var p in this.orgProducts)
             {
                 this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
             }
+
         }
 
         private void button3w_Click(object sender, EventArgs e)
@@ -192,6 +195,18 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void button3_Click(object sender, EventArgs e)
         {
             new CategoriaAdmi().Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.textBox2.Text = "";
+            this.dataGridView2.Rows.Clear();
+
+            foreach (var row in this.orgCategories)
+            {
+                this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
+            }
+
         }
     }
 }
