@@ -36,11 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -51,25 +49,27 @@
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.Pfarm_altacliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Pfarm_altacliente.Controls.Add(this.pictureBox1);
+            this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
             this.Pfarm_altacliente.Controls.Add(this.textBox6);
             this.Pfarm_altacliente.Controls.Add(this.comboBox2);
             this.Pfarm_altacliente.Controls.Add(this.comboBox1);
             this.Pfarm_altacliente.Controls.Add(this.label2);
             this.Pfarm_altacliente.Controls.Add(this.label1);
             this.Pfarm_altacliente.Controls.Add(this.pictureBox3);
-            this.Pfarm_altacliente.Controls.Add(this.pictureBox2);
             this.Pfarm_altacliente.Controls.Add(this.textBox5);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
             this.Pfarm_altacliente.Controls.Add(this.textBox4);
-            this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
             this.Pfarm_altacliente.Controls.Add(this.textBox3);
             this.Pfarm_altacliente.Controls.Add(this.textBox2);
             this.Pfarm_altacliente.Controls.Add(this.textBox1);
@@ -82,7 +82,7 @@
             this.Pfarm_altacliente.Controls.Add(this.Lfarm_tituloalt);
             this.Pfarm_altacliente.Location = new System.Drawing.Point(12, 13);
             this.Pfarm_altacliente.Name = "Pfarm_altacliente";
-            this.Pfarm_altacliente.Size = new System.Drawing.Size(513, 581);
+            this.Pfarm_altacliente.Size = new System.Drawing.Size(504, 556);
             this.Pfarm_altacliente.TabIndex = 0;
             // 
             // textBox6
@@ -134,23 +134,12 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(277, 499);
+            this.pictureBox3.Location = new System.Drawing.Point(277, 487);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(47, 499);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // textBox5
             // 
@@ -162,7 +151,7 @@
             // BFalta_vaciarcampos
             // 
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(267, 490);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(267, 478);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
             this.BFalta_vaciarcampos.Size = new System.Drawing.Size(166, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
@@ -176,17 +165,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(308, 20);
             this.textBox4.TabIndex = 11;
-            // 
-            // BFalta_ingresarcli
-            // 
-            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(35, 490);
-            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(200, 62);
-            this.BFalta_ingresarcli.TabIndex = 2;
-            this.BFalta_ingresarcli.Text = "AGREGAR PROVEEDOR";
-            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
@@ -283,13 +261,35 @@
             this.Lfarm_tituloalt.Text = "ALTA DE PROVEEDOR";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(103, 487);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BFalta_ingresarcli
+            // 
+            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(94, 478);
+            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(132, 62);
+            this.BFalta_ingresarcli.TabIndex = 29;
+            this.BFalta_ingresarcli.Text = "ACEPTAR";
+            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
+            // 
             // AltaProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(541, 606);
+            this.ClientSize = new System.Drawing.Size(528, 581);
             this.Controls.Add(this.Pfarm_altacliente);
             this.Name = "AltaProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -297,7 +297,7 @@
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,14 +317,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button BFalta_ingresarcli;
         private System.Windows.Forms.Button BFalta_vaciarcampos;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BFalta_ingresarcli;
     }
 }

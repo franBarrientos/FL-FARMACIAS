@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class CategoriaAdmi : Form
+    public partial class Vaciar_campos_categoria : Form
     {
-        public CategoriaAdmi()
+        public Vaciar_campos_categoria()
         {
             InitializeComponent();
         }
@@ -49,6 +49,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void BFalta_vaciarcampos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -194,7 +194,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new CategoriaAdmi().Show();
+            new Vaciar_campos_categoria().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

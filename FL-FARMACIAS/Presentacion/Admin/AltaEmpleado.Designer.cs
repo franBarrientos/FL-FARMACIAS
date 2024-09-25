@@ -46,7 +46,6 @@
             this.Cmasculino = new System.Windows.Forms.CheckBox();
             this.Cmujer = new System.Windows.Forms.CheckBox();
             this.Cpuesto_empleado = new System.Windows.Forms.ComboBox();
-            this.Bagregar_empleado = new System.Windows.Forms.Button();
             this.agregarimagenempleado = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.fotoempleado = new System.Windows.Forms.PictureBox();
@@ -55,9 +54,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Ltitulo_nuevofarma = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Vaciar_campos_nuevo_farmaceutico = new System.Windows.Forms.Button();
+            this.Bagregar_empleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fotoempleado)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Lnombre_farmaceutico
@@ -244,32 +248,17 @@
             this.Cpuesto_empleado.Size = new System.Drawing.Size(281, 21);
             this.Cpuesto_empleado.TabIndex = 16;
             // 
-            // Bagregar_empleado
-            // 
-            this.Bagregar_empleado.BackColor = System.Drawing.Color.Silver;
-            this.Bagregar_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bagregar_empleado.Image = ((System.Drawing.Image)(resources.GetObject("Bagregar_empleado.Image")));
-            this.Bagregar_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Bagregar_empleado.Location = new System.Drawing.Point(12, 395);
-            this.Bagregar_empleado.Name = "Bagregar_empleado";
-            this.Bagregar_empleado.Size = new System.Drawing.Size(205, 65);
-            this.Bagregar_empleado.TabIndex = 17;
-            this.Bagregar_empleado.Text = "Agregar Empleado";
-            this.Bagregar_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bagregar_empleado.UseVisualStyleBackColor = false;
-            this.Bagregar_empleado.Click += new System.EventHandler(this.Bagregar_empleado_Click);
-            // 
             // agregarimagenempleado
             // 
-            this.agregarimagenempleado.BackColor = System.Drawing.Color.Silver;
-            this.agregarimagenempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarimagenempleado.BackColor = System.Drawing.SystemColors.Control;
+            this.agregarimagenempleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarimagenempleado.Image = ((System.Drawing.Image)(resources.GetObject("agregarimagenempleado.Image")));
             this.agregarimagenempleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarimagenempleado.Location = new System.Drawing.Point(519, 257);
             this.agregarimagenempleado.Name = "agregarimagenempleado";
             this.agregarimagenempleado.Size = new System.Drawing.Size(170, 71);
             this.agregarimagenempleado.TabIndex = 18;
-            this.agregarimagenempleado.Text = "Agregar imagen";
+            this.agregarimagenempleado.Text = "AGREGAR IMAGEN";
             this.agregarimagenempleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.agregarimagenempleado.UseVisualStyleBackColor = false;
             this.agregarimagenempleado.Click += new System.EventHandler(this.agregarimagenempleado_Click);
@@ -352,33 +341,62 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(519, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 66);
             this.button1.TabIndex = 24;
-            this.button1.Text = "Eliminar imagen";
+            this.button1.Text = "ELIMINAR IMAGEN";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Enabled = false;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(259, 412);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 41);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(71, 412);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
             // Vaciar_campos_nuevo_farmaceutico
             // 
-            this.Vaciar_campos_nuevo_farmaceutico.BackColor = System.Drawing.Color.Silver;
-            this.Vaciar_campos_nuevo_farmaceutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vaciar_campos_nuevo_farmaceutico.Image = ((System.Drawing.Image)(resources.GetObject("Vaciar_campos_nuevo_farmaceutico.Image")));
-            this.Vaciar_campos_nuevo_farmaceutico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Vaciar_campos_nuevo_farmaceutico.Location = new System.Drawing.Point(268, 394);
+            this.Vaciar_campos_nuevo_farmaceutico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Vaciar_campos_nuevo_farmaceutico.Location = new System.Drawing.Point(250, 403);
             this.Vaciar_campos_nuevo_farmaceutico.Name = "Vaciar_campos_nuevo_farmaceutico";
-            this.Vaciar_campos_nuevo_farmaceutico.Size = new System.Drawing.Size(188, 65);
-            this.Vaciar_campos_nuevo_farmaceutico.TabIndex = 25;
-            this.Vaciar_campos_nuevo_farmaceutico.Text = "Vaciar campos";
+            this.Vaciar_campos_nuevo_farmaceutico.Size = new System.Drawing.Size(158, 62);
+            this.Vaciar_campos_nuevo_farmaceutico.TabIndex = 27;
+            this.Vaciar_campos_nuevo_farmaceutico.Text = "VACIAR CAMPOS";
             this.Vaciar_campos_nuevo_farmaceutico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Vaciar_campos_nuevo_farmaceutico.UseVisualStyleBackColor = false;
-            this.Vaciar_campos_nuevo_farmaceutico.Click += new System.EventHandler(this.Vaciar_campos_nuevo_farmaceutico_Click);
+            this.Vaciar_campos_nuevo_farmaceutico.UseVisualStyleBackColor = true;
+            // 
+            // Bagregar_empleado
+            // 
+            this.Bagregar_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bagregar_empleado.Location = new System.Drawing.Point(59, 403);
+            this.Bagregar_empleado.Name = "Bagregar_empleado";
+            this.Bagregar_empleado.Size = new System.Drawing.Size(134, 62);
+            this.Bagregar_empleado.TabIndex = 26;
+            this.Bagregar_empleado.Text = "ACEPTAR";
+            this.Bagregar_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bagregar_empleado.UseVisualStyleBackColor = true;
             // 
             // AltaEmpleado
             // 
@@ -386,18 +404,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(767, 479);
-            this.Controls.Add(this.Vaciar_campos_nuevo_farmaceutico);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Vaciar_campos_nuevo_farmaceutico);
+            this.Controls.Add(this.Bagregar_empleado);
             this.Controls.Add(this.fotoempleado);
             this.Controls.Add(this.agregarimagenempleado);
-            this.Controls.Add(this.Bagregar_empleado);
             this.Name = "AltaEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.fotoempleado)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +443,6 @@
         private System.Windows.Forms.CheckBox Cmasculino;
         private System.Windows.Forms.CheckBox Cmujer;
         private System.Windows.Forms.ComboBox Cpuesto_empleado;
-        private System.Windows.Forms.Button Bagregar_empleado;
         private System.Windows.Forms.Button agregarimagenempleado;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox fotoempleado;
@@ -430,6 +451,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Ltitulo_nuevofarma;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Vaciar_campos_nuevo_farmaceutico;
+        private System.Windows.Forms.Button Bagregar_empleado;
     }
 }
