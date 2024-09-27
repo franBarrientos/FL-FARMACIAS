@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaPedido));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.correo_pedido = new System.Windows.Forms.TextBox();
             this.localidad_pedido = new System.Windows.Forms.ComboBox();
             this.provincia_pedido = new System.Windows.Forms.ComboBox();
@@ -49,11 +51,9 @@
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.Pfarm_altacliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Pfarm_altacliente
@@ -84,6 +84,29 @@
             this.Pfarm_altacliente.Name = "Pfarm_altacliente";
             this.Pfarm_altacliente.Size = new System.Drawing.Size(513, 581);
             this.Pfarm_altacliente.TabIndex = 0;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Enabled = false;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(59, 499);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(52, 41);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // BFalta_ingresarcli
+            // 
+            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(53, 490);
+            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(169, 62);
+            this.BFalta_ingresarcli.TabIndex = 26;
+            this.BFalta_ingresarcli.Text = "AGREGAR PEDIDO";
+            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
+            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click_1);
             // 
             // correo_pedido
             // 
@@ -255,35 +278,12 @@
             this.Lfarm_tituloalt.AutoSize = true;
             this.Lfarm_tituloalt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Lfarm_tituloalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lfarm_tituloalt.Location = new System.Drawing.Point(57, 23);
+            this.Lfarm_tituloalt.Location = new System.Drawing.Point(80, 45);
             this.Lfarm_tituloalt.Name = "Lfarm_tituloalt";
             this.Lfarm_tituloalt.Size = new System.Drawing.Size(375, 39);
             this.Lfarm_tituloalt.TabIndex = 1;
             this.Lfarm_tituloalt.Text = "REGISTRAR PEDIDO";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Enabled = false;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(59, 499);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(52, 41);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // BFalta_ingresarcli
-            // 
-            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(53, 490);
-            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(169, 62);
-            this.BFalta_ingresarcli.TabIndex = 26;
-            this.BFalta_ingresarcli.Text = "AGREGAR PEDIDO";
-            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
-            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click_1);
             // 
             // AltaPedido
             // 
@@ -298,8 +298,8 @@
             this.Text = "Alta Proveedor";
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -50,8 +50,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w = new System.Windows.Forms.Button();
             this.PRODUCTOS = new System.Windows.Forms.TabControl();
             this.prodTab = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new PlaceholderTextBox();
             this.catTab = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new PlaceholderTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,16 +67,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
-            this.catTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.catTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -242,7 +242,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3w.Image = ((System.Drawing.Image)(resources.GetObject("button3w.Image")));
             this.button3w.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3w.Location = new System.Drawing.Point(33, 20);
+            this.button3w.Location = new System.Drawing.Point(42, 45);
             this.button3w.Margin = new System.Windows.Forms.Padding(2);
             this.button3w.Name = "button3w";
             this.button3w.Size = new System.Drawing.Size(266, 59);
@@ -286,6 +286,32 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.prodTab.Text = "PRODUCTOS";
             this.prodTab.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(811, 92);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(374, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 44);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "PRODUCTOS";
+            // 
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
@@ -317,6 +343,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.catTab.Text = "CATEGORIAS";
             this.catTab.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(648, 92);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // textBox2
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
@@ -347,7 +384,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(22, 37);
+            this.button3.Location = new System.Drawing.Point(23, 68);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(265, 59);
@@ -434,10 +471,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(639, 92);
+            this.button4.Location = new System.Drawing.Point(639, 81);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 49);
+            this.button4.Size = new System.Drawing.Size(115, 60);
             this.button4.TabIndex = 14;
             this.button4.Text = "LIMPIAR";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -450,52 +487,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(530, 92);
+            this.button5.Location = new System.Drawing.Point(530, 81);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 49);
+            this.button5.Size = new System.Drawing.Size(102, 60);
             this.button5.TabIndex = 13;
             this.button5.Text = "BUSCAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(374, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 44);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "PRODUCTOS";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(811, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(639, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
             // 
             // productoSubMenu
             // 
@@ -512,11 +512,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRODUCTOS.ResumeLayout(false);
             this.prodTab.ResumeLayout(false);
             this.prodTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.catTab.ResumeLayout(false);
             this.catTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -278,7 +278,7 @@
             this.Lfarm_tituloalt.AutoSize = true;
             this.Lfarm_tituloalt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Lfarm_tituloalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lfarm_tituloalt.Location = new System.Drawing.Point(57, 23);
+            this.Lfarm_tituloalt.Location = new System.Drawing.Point(39, 45);
             this.Lfarm_tituloalt.Name = "Lfarm_tituloalt";
             this.Lfarm_tituloalt.Size = new System.Drawing.Size(407, 39);
             this.Lfarm_tituloalt.TabIndex = 1;

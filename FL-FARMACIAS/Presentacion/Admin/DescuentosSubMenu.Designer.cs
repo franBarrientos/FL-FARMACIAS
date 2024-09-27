@@ -47,9 +47,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -208,16 +208,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1.TabIndex = 29;
             this.label1.Text = "ESTADO";
             // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE ID";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
-            this.placeholderTextBox1.TabIndex = 28;
-            this.placeholderTextBox1.Text = "INGRESE ID";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -243,6 +233,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.pictureBox2.Size = new System.Drawing.Size(42, 39);
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE ID";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
+            this.placeholderTextBox1.TabIndex = 28;
+            this.placeholderTextBox1.Text = "INGRESE ID";
             // 
             // DescuentosSubMenu
             // 

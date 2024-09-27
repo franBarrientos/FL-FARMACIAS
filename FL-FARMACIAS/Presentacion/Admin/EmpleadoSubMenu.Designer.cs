@@ -290,7 +290,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
             this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(34, 46);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(99, 61);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
             this.BFalta_ingresarcli.Size = new System.Drawing.Size(180, 62);
             this.BFalta_ingresarcli.TabIndex = 12;

@@ -9,6 +9,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class ProveedoresSubMenu : Form
     {
+        private AltaProveedor AltaProveedor = null;
+
         private object[][] orgEmployess = new object[][]
                 {
         new object[] { "1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Farmaceutico", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
@@ -179,9 +181,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             
         }
 
+        private void ShowAltaproveedor()
+        {
+            if (AltaProveedor == null || AltaProveedor.IsDisposed)
+            {
+                AltaProveedor = new AltaProveedor();
+                AltaProveedor.Show();
+            }
+            else
+            {
+                AltaProveedor.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-            new AltaProveedor().Show();
+            ShowAltaproveedor();
+            //new AltaProveedor().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -195,6 +210,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3w_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -41,6 +41,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cerrar_sesion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,38 +64,44 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(100, 60);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 128);
+            this.button1.Size = new System.Drawing.Size(214, 128);
             this.button1.TabIndex = 0;
             this.button1.Text = "        EMPLEADOS";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(16, 234);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 128);
+            this.button2.Size = new System.Drawing.Size(208, 128);
             this.button2.TabIndex = 2;
             this.button2.Text = "          PRODUCTOS \n          CATEGORIAS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // p
             // 
+            this.p.BackColor = System.Drawing.Color.White;
+            this.p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p.Location = new System.Drawing.Point(416, 60);
             this.p.Margin = new System.Windows.Forms.Padding(2);
             this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(188, 128);
+            this.p.Size = new System.Drawing.Size(216, 128);
             this.p.TabIndex = 3;
             this.p.Text = "  PROVEEDORES\n   PEDIDOS";
             this.p.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.p.UseVisualStyleBackColor = true;
+            this.p.UseVisualStyleBackColor = false;
             this.p.Click += new System.EventHandler(this.p_Click);
             // 
             // pictureBox2
@@ -103,7 +110,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(210, 78);
+            this.pictureBox2.Location = new System.Drawing.Point(220, 78);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 91);
@@ -115,7 +122,7 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(126, 257);
+            this.pictureBox3.Location = new System.Drawing.Point(144, 257);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 91);
@@ -128,7 +135,7 @@
             // 
             this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(518, 78);
+            this.pictureBox4.Location = new System.Drawing.Point(544, 78);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(78, 93);
@@ -138,33 +145,37 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(253, 234);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(198, 128);
+            this.button3.Size = new System.Drawing.Size(219, 128);
             this.button3.TabIndex = 7;
             this.button3.Text = "       DESCUENTOS \n       OBRAS SOCIALES";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(502, 234);
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(483, 234);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 128);
+            this.button4.Size = new System.Drawing.Size(228, 128);
             this.button4.TabIndex = 8;
             this.button4.Text = "          ESTADISTICAS \n          BACKUPS";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Enabled = false;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(377, 257);
+            this.pictureBox5.Location = new System.Drawing.Point(400, 257);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 91);
@@ -184,6 +195,22 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
+            // cerrar_sesion
+            // 
+            this.cerrar_sesion.BackColor = System.Drawing.Color.White;
+            this.cerrar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrar_sesion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cerrar_sesion.Image = ((System.Drawing.Image)(resources.GetObject("cerrar_sesion.Image")));
+            this.cerrar_sesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrar_sesion.Location = new System.Drawing.Point(12, 393);
+            this.cerrar_sesion.Name = "cerrar_sesion";
+            this.cerrar_sesion.Size = new System.Drawing.Size(143, 39);
+            this.cerrar_sesion.TabIndex = 11;
+            this.cerrar_sesion.Text = "CERRAR SESION";
+            this.cerrar_sesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cerrar_sesion.UseVisualStyleBackColor = false;
+            this.cerrar_sesion.Click += new System.EventHandler(this.cerrar_sesion_Click);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +218,7 @@
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(722, 458);
+            this.Controls.Add(this.cerrar_sesion);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button4);
@@ -231,5 +259,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button cerrar_sesion;
     }
 }

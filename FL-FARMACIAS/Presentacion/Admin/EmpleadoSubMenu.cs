@@ -8,7 +8,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class EmpleadoSubMenu : Form
     {
-       
+        private AltaEmpleado altaEmpleado = null;
 
         private object[][] orgEmployess = new object[][]
                 {
@@ -153,10 +153,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             comboBox1.Text = "Todos";
         }
 
- 
+        private void ShowAltaEmpleado()
+        {
+            if (altaEmpleado == null || altaEmpleado.IsDisposed)
+            {
+                altaEmpleado = new AltaEmpleado();
+                altaEmpleado.Show();
+            }
+            else
+            {
+                altaEmpleado.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
         private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
-            new AltaEmpleado().Show();
+            ShowAltaEmpleado();
+            //new AltaEmpleado().Show();
 
         }
     }

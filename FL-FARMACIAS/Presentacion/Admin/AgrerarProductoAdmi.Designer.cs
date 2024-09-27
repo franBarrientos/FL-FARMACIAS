@@ -211,7 +211,7 @@
             this.LAS_cate_titulo.CausesValidation = false;
             this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_titulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_titulo.Location = new System.Drawing.Point(90, 9);
+            this.LAS_cate_titulo.Location = new System.Drawing.Point(147, 4);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
             this.LAS_cate_titulo.Size = new System.Drawing.Size(346, 33);
             this.LAS_cate_titulo.TabIndex = 1;

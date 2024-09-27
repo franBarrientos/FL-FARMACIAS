@@ -15,6 +15,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class productoSubMenu : Form
     {
+        private AgrerarProductoAdmi AltaProducto = null;
+        private Vaciar_campos_categoria AltaCategoria = null;
+
         private List<CategoriaDominio> orgCategories = new List<CategoriaDominio>
         {
             new CategoriaDominio( 1, "Perfumeria", true ),
@@ -154,9 +157,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
+        private void ShowAltaProducto()
+        {
+            if (AltaProducto == null || AltaProducto.IsDisposed)
+            {
+                AltaProducto = new AgrerarProductoAdmi(this);
+                AltaProducto.Show();
+            }
+            else
+            {
+                AltaProducto.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
         private void button3w_Click(object sender, EventArgs e)
         {
-            new AgrerarProductoAdmi(this).Show();
+            ShowAltaProducto();
+           // new AgrerarProductoAdmi(this).Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -192,9 +208,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
+        private void ShowAltaCategoria()
+        {
+            if (AltaCategoria == null || AltaCategoria.IsDisposed)
+            {
+                AltaCategoria = new Vaciar_campos_categoria();
+                AltaCategoria.Show();
+            }
+            else
+            {
+                AltaCategoria.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-            new Vaciar_campos_categoria().Show();
+            ShowAltaCategoria();
+            //new Vaciar_campos_categoria().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
