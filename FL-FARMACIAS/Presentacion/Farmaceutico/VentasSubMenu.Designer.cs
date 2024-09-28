@@ -804,6 +804,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Label label1;
         private TabControl tabControl1;
         private TabPage tabPage1;
+        private GroupBox groupBox4;
         private TabPage tabPage2;
         private PictureBox pictureBox2;
         private Label label3;
@@ -826,6 +827,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn MODIFICAR;
         private Label label4;
         private DataGridView dataGridView2;
+
+        public Button Bagregar_categoria { get; private set; }
+
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private PlaceholderTextBox placeholderTextBox2;
@@ -855,5 +859,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewTextBoxColumn PRECIOP;
         private DataGridViewTextBoxColumn STOCKP;
         private DataGridViewButtonColumn ESCOJERP;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private PictureBox pictureBox1;
     }
 }
