@@ -49,7 +49,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!descripcion.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(descripcion) || !descripcion.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras el campo de descripcion.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

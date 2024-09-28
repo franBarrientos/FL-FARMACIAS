@@ -50,13 +50,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w = new System.Windows.Forms.Button();
             this.PRODUCTOS = new System.Windows.Forms.TabControl();
             this.prodTab = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new PlaceholderTextBox();
             this.catTab = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new PlaceholderTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new PlaceholderTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -70,9 +68,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.catTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,14 +174,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(640, 86);
+            this.button1.Location = new System.Drawing.Point(672, 99);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 52);
+            this.button1.Size = new System.Drawing.Size(98, 39);
             this.button1.TabIndex = 4;
             this.button1.Text = "BUSCAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -195,13 +192,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(801, 86);
+            this.button2.Location = new System.Drawing.Point(801, 99);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 52);
+            this.button2.Size = new System.Drawing.Size(96, 39);
             this.button2.TabIndex = 5;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -238,14 +237,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button3w
             // 
             this.button3w.BackColor = System.Drawing.Color.White;
-            this.button3w.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3w.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3w.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3w.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3w.Image = ((System.Drawing.Image)(resources.GetObject("button3w.Image")));
             this.button3w.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3w.Location = new System.Drawing.Point(42, 45);
             this.button3w.Margin = new System.Windows.Forms.Padding(2);
             this.button3w.Name = "button3w";
-            this.button3w.Size = new System.Drawing.Size(266, 59);
+            this.button3w.Size = new System.Drawing.Size(242, 59);
             this.button3w.TabIndex = 8;
             this.button3w.Text = "DAR DE ALTA NUEVO PRODUCTO";
             this.button3w.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +266,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // prodTab
             // 
             this.prodTab.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.prodTab.Controls.Add(this.pictureBox2);
             this.prodTab.Controls.Add(this.label1);
             this.prodTab.Controls.Add(this.textBox1);
             this.prodTab.Controls.Add(this.button3w);
@@ -285,17 +284,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.prodTab.TabIndex = 0;
             this.prodTab.Text = "PRODUCTOS";
             this.prodTab.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(811, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
+            this.prodTab.Click += new System.EventHandler(this.prodTab_Click);
             // 
             // label1
             // 
@@ -303,18 +292,19 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(374, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 44);
+            this.label1.Size = new System.Drawing.Size(249, 41);
             this.label1.TabIndex = 11;
             this.label1.Text = "PRODUCTOS";
             // 
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.IsPassword = false;
             this.textBox1.Location = new System.Drawing.Point(56, 109);
             this.textBox1.Name = "textBox1";
             this.textBox1.Placeholder = "INGRESE NOMBRE O COD PRODUCTO";
@@ -326,9 +316,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.catTab.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.catTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.catTab.Controls.Add(this.pictureBox1);
-            this.catTab.Controls.Add(this.textBox2);
             this.catTab.Controls.Add(this.label3);
+            this.catTab.Controls.Add(this.textBox2);
             this.catTab.Controls.Add(this.button3);
             this.catTab.Controls.Add(this.label4);
             this.catTab.Controls.Add(this.dataGridView2);
@@ -343,20 +332,25 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.catTab.Text = "CATEGORIAS";
             this.catTab.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(648, 92);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(377, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(255, 41);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "CATEGORIAS";
             // 
             // textBox2
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
+            this.textBox2.IsPassword = false;
             this.textBox2.Location = new System.Drawing.Point(302, 107);
             this.textBox2.Name = "textBox2";
             this.textBox2.Placeholder = "INGRESE ID O DESCRIPCION";
@@ -364,30 +358,18 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.textBox2.TabIndex = 19;
             this.textBox2.Text = "INGRESE ID O DESCRIPCION";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(379, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 39);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "CATEGORIAS";
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(23, 68);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(265, 59);
+            this.button3.Size = new System.Drawing.Size(248, 59);
             this.button3.TabIndex = 17;
             this.button3.Text = "DAR DE ALTA NUEVA CATEGORIA";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -469,12 +451,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(639, 81);
+            this.button4.Location = new System.Drawing.Point(666, 102);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 60);
+            this.button4.Size = new System.Drawing.Size(88, 40);
             this.button4.TabIndex = 14;
             this.button4.Text = "LIMPIAR";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -484,13 +468,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(530, 81);
+            this.button5.Location = new System.Drawing.Point(572, 103);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 60);
+            this.button5.Size = new System.Drawing.Size(90, 39);
             this.button5.TabIndex = 13;
             this.button5.Text = "BUSCAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -512,10 +497,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRODUCTOS.ResumeLayout(false);
             this.prodTab.ResumeLayout(false);
             this.prodTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.catTab.ResumeLayout(false);
             this.catTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -533,7 +516,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private TabPage prodTab;
         private TabPage catTab;
         private TabControl PRODUCTOS;
-        private Label label3;
         private Button button3;
         private Label label4;
         private DataGridView dataGridView2;
@@ -556,7 +538,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private PlaceholderTextBox textBox2;
         private PlaceholderTextBox textBox1;
         private Label label1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private Label label3;
     }
 }

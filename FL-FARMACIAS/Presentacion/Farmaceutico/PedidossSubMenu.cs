@@ -230,5 +230,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 altaPedido.BringToFront(); // Trae el formulario existente al frente
             }
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

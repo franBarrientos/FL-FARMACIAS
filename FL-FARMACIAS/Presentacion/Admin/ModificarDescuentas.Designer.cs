@@ -52,6 +52,7 @@
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Pfarm_altacliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pfarm_altacliente.Controls.Add(this.id_descuento);
             this.Pfarm_altacliente.Controls.Add(this.label2);
             this.Pfarm_altacliente.Controls.Add(this.checkBox2);
@@ -83,10 +84,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(97, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 24);
+            this.label2.Size = new System.Drawing.Size(27, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Id:";
             // 
@@ -117,10 +118,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(76, 256);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 24);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Estado:";
             // 
@@ -189,20 +190,20 @@
             // LFalta_apellido
             // 
             this.LFalta_apellido.AutoSize = true;
-            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_apellido.Location = new System.Drawing.Point(39, 183);
             this.LFalta_apellido.Name = "LFalta_apellido";
-            this.LFalta_apellido.Size = new System.Drawing.Size(135, 48);
+            this.LFalta_apellido.Size = new System.Drawing.Size(116, 40);
             this.LFalta_apellido.TabIndex = 3;
             this.LFalta_apellido.Text = "Porcentaje \r\nDe Descuento:";
             // 
             // LFalta_nombre
             // 
             this.LFalta_nombre.AutoSize = true;
-            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_nombre.Location = new System.Drawing.Point(41, 147);
             this.LFalta_nombre.Name = "LFalta_nombre";
-            this.LFalta_nombre.Size = new System.Drawing.Size(115, 24);
+            this.LFalta_nombre.Size = new System.Drawing.Size(96, 20);
             this.LFalta_nombre.TabIndex = 2;
             this.LFalta_nombre.Text = "Descripcion:";
             // 
@@ -211,7 +212,7 @@
             this.Lfarm_tituloalt.AutoSize = true;
             this.Lfarm_tituloalt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Lfarm_tituloalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lfarm_tituloalt.Location = new System.Drawing.Point(38, 46);
+            this.Lfarm_tituloalt.Location = new System.Drawing.Point(26, 22);
             this.Lfarm_tituloalt.Name = "Lfarm_tituloalt";
             this.Lfarm_tituloalt.Size = new System.Drawing.Size(445, 39);
             this.Lfarm_tituloalt.TabIndex = 1;

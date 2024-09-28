@@ -58,7 +58,8 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(153, 558);
@@ -85,6 +86,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.desactivar_prod);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.laboratorio_prod_mod);
@@ -136,21 +138,21 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.CausesValidation = false;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(12, 411);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 30;
             this.label3.Text = "Laboratorio:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Categoria:";
             // 
@@ -166,10 +168,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(15, 318);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 17;
             this.label1.Text = "Marca:";
             // 
@@ -209,11 +211,11 @@
             this.LPM_codigoproduc.AutoSize = true;
             this.LPM_codigoproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_codigoproduc.CausesValidation = false;
-            this.LPM_codigoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_codigoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_codigoproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_codigoproduc.Location = new System.Drawing.Point(15, 128);
             this.LPM_codigoproduc.Name = "LPM_codigoproduc";
-            this.LPM_codigoproduc.Size = new System.Drawing.Size(147, 20);
+            this.LPM_codigoproduc.Size = new System.Drawing.Size(131, 20);
             this.LPM_codigoproduc.TabIndex = 14;
             this.LPM_codigoproduc.Text = "Codigo Producto:";
             // 
@@ -273,11 +275,11 @@
             this.LPM_estadoproduc.AutoSize = true;
             this.LPM_estadoproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_estadoproduc.CausesValidation = false;
-            this.LPM_estadoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_estadoproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_estadoproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_estadoproduc.Location = new System.Drawing.Point(15, 508);
             this.LPM_estadoproduc.Name = "LPM_estadoproduc";
-            this.LPM_estadoproduc.Size = new System.Drawing.Size(71, 20);
+            this.LPM_estadoproduc.Size = new System.Drawing.Size(64, 20);
             this.LPM_estadoproduc.TabIndex = 6;
             this.LPM_estadoproduc.Text = "Estado:";
             // 
@@ -286,11 +288,11 @@
             this.LPM_stockproduc.AutoSize = true;
             this.LPM_stockproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_stockproduc.CausesValidation = false;
-            this.LPM_stockproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_stockproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_stockproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_stockproduc.Location = new System.Drawing.Point(15, 464);
             this.LPM_stockproduc.Name = "LPM_stockproduc";
-            this.LPM_stockproduc.Size = new System.Drawing.Size(60, 20);
+            this.LPM_stockproduc.Size = new System.Drawing.Size(54, 20);
             this.LPM_stockproduc.TabIndex = 5;
             this.LPM_stockproduc.Text = "Stock:";
             // 
@@ -299,11 +301,11 @@
             this.LPM_precioproduc.AutoSize = true;
             this.LPM_precioproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_precioproduc.CausesValidation = false;
-            this.LPM_precioproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_precioproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_precioproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_precioproduc.Location = new System.Drawing.Point(15, 367);
             this.LPM_precioproduc.Name = "LPM_precioproduc";
-            this.LPM_precioproduc.Size = new System.Drawing.Size(64, 20);
+            this.LPM_precioproduc.Size = new System.Drawing.Size(57, 20);
             this.LPM_precioproduc.TabIndex = 4;
             this.LPM_precioproduc.Text = "Precio:";
             // 
@@ -312,11 +314,11 @@
             this.LPM_descirpproduc.AutoSize = true;
             this.LPM_descirpproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_descirpproduc.CausesValidation = false;
-            this.LPM_descirpproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_descirpproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_descirpproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_descirpproduc.Location = new System.Drawing.Point(15, 213);
             this.LPM_descirpproduc.Name = "LPM_descirpproduc";
-            this.LPM_descirpproduc.Size = new System.Drawing.Size(108, 20);
+            this.LPM_descirpproduc.Size = new System.Drawing.Size(96, 20);
             this.LPM_descirpproduc.TabIndex = 3;
             this.LPM_descirpproduc.Text = "Descripcion:";
             // 
@@ -325,11 +327,11 @@
             this.LPM_nombreproduc.AutoSize = true;
             this.LPM_nombreproduc.BackColor = System.Drawing.Color.Transparent;
             this.LPM_nombreproduc.CausesValidation = false;
-            this.LPM_nombreproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPM_nombreproduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPM_nombreproduc.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LPM_nombreproduc.Location = new System.Drawing.Point(15, 170);
             this.LPM_nombreproduc.Name = "LPM_nombreproduc";
-            this.LPM_nombreproduc.Size = new System.Drawing.Size(76, 20);
+            this.LPM_nombreproduc.Size = new System.Drawing.Size(69, 20);
             this.LPM_nombreproduc.TabIndex = 2;
             this.LPM_nombreproduc.Text = "Nombre:";
             // 

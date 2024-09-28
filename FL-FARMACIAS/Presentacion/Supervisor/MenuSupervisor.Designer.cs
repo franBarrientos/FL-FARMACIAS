@@ -65,6 +65,8 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(128, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -72,11 +74,13 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "        EMPLEADOS";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(43, 244);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -84,11 +88,13 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "          PRODUCTOS \n          CATEGORIAS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // p
             // 
+            this.p.BackColor = System.Drawing.Color.White;
+            this.p.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p.Location = new System.Drawing.Point(444, 70);
             this.p.Margin = new System.Windows.Forms.Padding(2);
             this.p.Name = "p";
@@ -96,7 +102,7 @@
             this.p.TabIndex = 3;
             this.p.Text = "  PROVEEDORES\n   PEDIDOS";
             this.p.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.p.UseVisualStyleBackColor = true;
+            this.p.UseVisualStyleBackColor = false;
             this.p.Click += new System.EventHandler(this.p_Click);
             // 
             // notifyIcon1
@@ -143,6 +149,8 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(288, 244);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -150,11 +158,13 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "       DESCUENTOS \n       OBRAS SOCIALES";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(530, 244);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
@@ -162,7 +172,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "          ESTADISTICAS \n          BACKUPS";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox5
@@ -192,7 +202,8 @@
             // cerrar_sesion
             // 
             this.cerrar_sesion.BackColor = System.Drawing.Color.White;
-            this.cerrar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrar_sesion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cerrar_sesion.Image = ((System.Drawing.Image)(resources.GetObject("cerrar_sesion.Image")));
             this.cerrar_sesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
