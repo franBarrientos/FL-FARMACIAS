@@ -72,7 +72,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String descripcion = TC_descripcion.Text.Trim();
 
 
-            if (descripcion == "" || (CC_inactivo.Checked == false && CC_activo.Checked == false))
+            if (descripcion == "" || (CC_inactivo.Checked == false && CC_activo.Checked == false) || (CC_inactivo.Checked == true && CC_activo.Checked == true))
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

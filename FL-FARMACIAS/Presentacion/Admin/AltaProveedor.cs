@@ -53,7 +53,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             String direccion = direccion_proveedor.Text.Trim();
             String correo = correo_proveedor.Text.Trim();
             String telefono = telefono_proveedor.Text.Trim();
-            if (nombre == " " || cuit == " " || dni == " " || provincia == " " || localidad == "" || direccion == " " || correo == " " || telefono == " ")
+            
+            if (nombre == "" || cuit == "" || dni == "" || provincia == "" || localidad == "" || direccion == "" || correo == "" || telefono == "")
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -73,7 +74,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             if (cuit.Length != 11)
             {
-                MessageBox.Show("Por favor, ingrese un numero de cuil de 10 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese un numero de cuil de 11 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -105,7 +106,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 MessageBox.Show("El correo no es válido. Asegúrate de que sea un correo de Gmail.");
             }
 
-            if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "")
+            if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "" && provincia != "" && localidad != "" && direccion != "" && ValidarGmail_proveedor(correo))
             {
                 MessageBox.Show("El proveedor " + nombre + "," + "D.N.I:" + dni + "CUIT: " + cuit + "CORREO:" + correo + "TELEFONO:" + telefono + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

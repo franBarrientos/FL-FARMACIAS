@@ -43,7 +43,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String descripcion = descripcion_descuento.Text.Trim();
             String porcentaje = porcentaje_descuento.Text.Trim();
 
-            if (descripcion == " " || porcentaje == " "  || (activo_descuento.Checked == false && inactivo_descuento.Checked == false))
+            if (descripcion == "" || porcentaje == "" || (activo_descuento.Checked == false && inactivo_descuento.Checked == false))
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -51,13 +51,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             if (!descripcion.All(char.IsLetter))
             {
-                MessageBox.Show("Por favor, ingrese solo letras el campo de Nombre.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo letras el campo de descripcion.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!porcentaje.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo porcentaje.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
