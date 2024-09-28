@@ -55,7 +55,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String direccion = direccion_pedido.Text.Trim();
             String correo = correo_pedido.Text.Trim();
             String telefono = telefono_pedido.Text.Trim();
-            if (nombre == " " || cuit == " " || dni == " " || provincia == " " || localidad == "" || direccion == " " || correo == " " || telefono == " ")
+            if (nombre == "" || cuit == "" || dni == "" || provincia == "" || localidad == "" || direccion == "" || correo == "" || telefono == "")
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -69,13 +69,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             if (!cuit.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo cuil en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo cuil en el campo cuit.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cuit.Length != 11)
             {
-                MessageBox.Show("Por favor, ingrese un numero de cuil de 10 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese un numero de cuil de 11 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
             if (!telefono.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo telefono.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -107,7 +107,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 MessageBox.Show("El correo no es válido. Asegúrate de que sea un correo de Gmail.");
             }
 
-            if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "")
+            if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "" && ValidarGmail_proveedor(correo) && provincia != "" && localidad != "" && direccion != "")
             {
                 MessageBox.Show("El pedido" + nombre + "," + "D.N.I:" + dni + "CUIT: " + cuit + "CORREO:" + correo  +"TELEFONO:" + telefono + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

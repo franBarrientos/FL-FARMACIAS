@@ -64,11 +64,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             int numero;
             float numeroprecio;
             // Intenta convertir el texto a un número entero
-            bool espositivo = int.TryParse(stock, out numero) && numero > 0;
+            bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
             bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
 
 
-            if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false))
+            if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -113,17 +113,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             if (!espositivo)
             {
-                MessageBox.Show("Por favor, ingrese solo números positivos .", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números positivos en el campo stock.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!preciopositivo)
             {
-                MessageBox.Show("Por favor, ingrese solo números positivos .", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números positivos en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (nombre != "" && codigo != "" && categoria != "" && precio != "" && marca != "")
+            if (nombre != "" && codigo != "" && categoria != "" && precio != "" && marca != "" && descripcion != "" && laboratorio != "" && stock != "")
             {
                 MessageBox.Show("El prducto " + nombre + "Marca:"+ marca + "con el codigo " + codigo + " " + "de categoria: " + categoria + "precio: $ " + precio + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

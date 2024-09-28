@@ -33,7 +33,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             float numerosalario;
             bool preciopositivo = float.TryParse(salario, out numerosalario) && numerosalario > 0;
 
-            if (nombre == " " || apellido == " " || dni == " " || cuil == " " || telefono == "" || puesto == " " || salario == " " || (Cmasculino.Checked == false && Cmujer.Checked == false))
+            if (nombre == "" || apellido == "" || dni == "" || cuil == "" || telefono == "" || puesto == "" || salario == "" || (Cmasculino.Checked == false && Cmujer.Checked == false))
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -64,19 +64,19 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
             if (!cuil.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo cuil en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo cuil.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cuil.Length != 11)
             {
-                MessageBox.Show("Por favor, ingrese un numero de cuil de 10 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese un numero de cuil de 11 digitos en el campo cuil.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!telefono.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo telefono.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -139,7 +139,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String puesto = Cpuesto_empleado.Text.Trim();
             String salario = Tsalario_empleado.Text.Trim();
 
-            if (nombre != " " || apellido != " " || dni != " " || cuil != " " || telefono != "" || salario != " " )
+            if (nombre != "" || apellido != "" || dni != "" || cuil != "" || telefono != "" || salario != "" )
             {
                 Tnombre_emple.Clear();
                 Tapellido_emple.Clear();
@@ -189,7 +189,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             float numerosalario;
             bool preciopositivo = float.TryParse(salario, out numerosalario) && numerosalario > 0;
 
-            if (nombre == " " || apellido == " " || dni == " " || cuil == " " || telefono == "" || puesto == " " || salario == " " || (Cmasculino.Checked == false && Cmujer.Checked == false))
+            if (nombre == "" || apellido == "" || dni == "" || cuil == "" || telefono == "" || puesto == "" || salario == "" || (Cmasculino.Checked == false && Cmujer.Checked == false) || (Cmasculino.Checked == true && Cmujer.Checked == true) || fotoempleado.Image == null)
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -201,9 +201,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!apellido.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(char.IsLetter))
             {
-                MessageBox.Show("Por favor, ingrese solo letras el campo de Apellido.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo letras el campo de Apellido o no deje vacio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -220,19 +220,19 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
             if (!cuil.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo cuil en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo cuil.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cuil.Length != 11)
             {
-                MessageBox.Show("Por favor, ingrese un numero de cuil de 10 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese un numero de cuil de 11 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!telefono.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo TELEFONO.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -248,7 +248,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (nombre != "" && apellido != "" && dni != "" && cuil != "" && puesto != "")
+            // Verificar si hay una imagen en el PictureBox
+            if (fotoempleado.Image == null)
+            {
+               
+                MessageBox.Show("No hay ninguna imagen para vaciar.");
+            }
+
+            if (nombre != "" && apellido != "" && dni != "" && cuil != "" && puesto != "" && fotoempleado.Image != null && telefono != "" && salario != "")
             {
                 MessageBox.Show("El empleado " + nombre + ","+ apellido + "D.N.I:" + dni + "CUIL: " +cuil  +"PUESTO:"+ puesto+" ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -265,7 +272,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String puesto = Cpuesto_empleado.Text.Trim();
             String salario = Tsalario_empleado.Text.Trim();
 
-            if (nombre != " " || apellido != " " || dni != " " || cuil != " " || telefono != "" || salario != " ")
+            if (nombre != "" || apellido != "" || dni != "" || cuil != "" || telefono != "" || salario != "" || fotoempleado.Image != null)
             {
                 Tnombre_emple.Clear();
                 Tapellido_emple.Clear();
@@ -276,6 +283,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 Cmasculino.Checked = false;
                 Cmujer.Checked = false;
                 Cpuesto_empleado.Text = "Ninguno";
+                fotoempleado.Image = null;
 
             }
             else
