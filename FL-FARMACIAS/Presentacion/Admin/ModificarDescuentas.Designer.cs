@@ -75,7 +75,7 @@
             // 
             this.id_descuento.Enabled = false;
             this.id_descuento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.id_descuento.Location = new System.Drawing.Point(175, 107);
+            this.id_descuento.Location = new System.Drawing.Point(175, 111);
             this.id_descuento.Name = "id_descuento";
             this.id_descuento.Size = new System.Drawing.Size(308, 20);
             this.id_descuento.TabIndex = 18;
@@ -84,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 107);
+            this.label2.Location = new System.Drawing.Point(43, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 24);
             this.label2.TabIndex = 17;
@@ -93,7 +93,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(333, 263);
+            this.checkBox2.Location = new System.Drawing.Point(296, 261);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(73, 17);
             this.checkBox2.TabIndex = 16;
@@ -106,7 +106,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(212, 263);
+            this.checkBox1.Location = new System.Drawing.Point(175, 261);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(56, 17);
             this.checkBox1.TabIndex = 15;
@@ -118,7 +118,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 256);
+            this.label1.Location = new System.Drawing.Point(39, 254);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 24);
             this.label1.TabIndex = 14;
@@ -128,7 +128,7 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(343, 325);
+            this.pictureBox3.Location = new System.Drawing.Point(297, 325);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +149,7 @@
             // BFalta_vaciarcampos
             // 
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(333, 315);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(287, 315);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
             this.BFalta_vaciarcampos.Size = new System.Drawing.Size(165, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
@@ -163,9 +163,9 @@
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFalta_ingresarcli.Location = new System.Drawing.Point(52, 315);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(214, 62);
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(170, 62);
             this.BFalta_ingresarcli.TabIndex = 2;
-            this.BFalta_ingresarcli.Text = "EDITAR DESCUENTO";
+            this.BFalta_ingresarcli.Text = "ACEPTAR";
             this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_ingresarcli.UseVisualStyleBackColor = true;
             this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
@@ -181,7 +181,7 @@
             // descripcion_edit_descuentos
             // 
             this.descripcion_edit_descuentos.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.descripcion_edit_descuentos.Location = new System.Drawing.Point(175, 147);
+            this.descripcion_edit_descuentos.Location = new System.Drawing.Point(175, 152);
             this.descripcion_edit_descuentos.Name = "descripcion_edit_descuentos";
             this.descripcion_edit_descuentos.Size = new System.Drawing.Size(308, 20);
             this.descripcion_edit_descuentos.TabIndex = 8;
