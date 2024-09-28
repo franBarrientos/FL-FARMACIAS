@@ -90,5 +90,16 @@ namespace FL_FARMACIAS.Presentacion.Login
         {
             Application.Exit();
         }
+
+        private void enter(object sender, KeyEventArgs e)
+        {
+            
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.Bingresar_login_Click(sender, e);
+                }
+        }
+
+        
     }
 }

@@ -33,7 +33,7 @@
             this.Beliminar_login = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.usuario_login = new PlaceholderTextBox();
-            this.contraseña_login = new PlaceholderTextBox(true);
+            this.contraseña_login = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             // 
             this.usuario_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuario_login.ForeColor = System.Drawing.Color.Gray;
+            this.usuario_login.IsPassword = false;
             this.usuario_login.Location = new System.Drawing.Point(46, 206);
             this.usuario_login.Name = "usuario_login";
             this.usuario_login.Placeholder = "NOMBRE DE USUARIO";
@@ -105,11 +106,14 @@
             // 
             this.contraseña_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contraseña_login.ForeColor = System.Drawing.Color.Gray;
+            this.contraseña_login.IsPassword = true;
             this.contraseña_login.Location = new System.Drawing.Point(46, 245);
             this.contraseña_login.Name = "contraseña_login";
             this.contraseña_login.Placeholder = "CLAVE";
             this.contraseña_login.Size = new System.Drawing.Size(414, 26);
             this.contraseña_login.TabIndex = 8;
+            this.contraseña_login.Text = "CLAVE";
+            this.contraseña_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter);
             // 
             // LoginForm
             // 

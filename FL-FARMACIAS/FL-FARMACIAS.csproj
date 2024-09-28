@@ -56,6 +56,7 @@
     <Compile Include="Dominio\ProductoDominio.cs" />
     <Compile Include="Dominio\BD.cs" />
     <Compile Include="Dominio\ProveedorDominio.cs" />
+    <Compile Include="Dominio\ClienteDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
