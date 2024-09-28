@@ -53,8 +53,11 @@
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Pfarm_altacliente.Controls.Add(this.pictureBox1);
             this.Pfarm_altacliente.Controls.Add(this.DFalta_obrasocial);
+            this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
             this.Pfarm_altacliente.Controls.Add(this.pictureBox2);
+            this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
             this.Pfarm_altacliente.Controls.Add(this.Ttelefono_cliente);
             this.Pfarm_altacliente.Controls.Add(this.Tdni_cliente);
             this.Pfarm_altacliente.Controls.Add(this.Tapellido_cliente);
@@ -65,9 +68,9 @@
             this.Pfarm_altacliente.Controls.Add(this.LFalta_apellido);
             this.Pfarm_altacliente.Controls.Add(this.LFalta_nombre);
             this.Pfarm_altacliente.Controls.Add(this.Lfarm_tituloalt);
-            this.Pfarm_altacliente.Location = new System.Drawing.Point(41, 29);
+            this.Pfarm_altacliente.Location = new System.Drawing.Point(12, 12);
             this.Pfarm_altacliente.Name = "Pfarm_altacliente";
-            this.Pfarm_altacliente.Size = new System.Drawing.Size(513, 384);
+            this.Pfarm_altacliente.Size = new System.Drawing.Size(513, 435);
             this.Pfarm_altacliente.TabIndex = 0;
             // 
             // DFalta_obrasocial
@@ -204,12 +207,12 @@
             // 
             // BFalta_ingresarcli
             // 
-            this.BFalta_ingresarcli.BackColor = System.Drawing.Color.Ivory;
+            this.BFalta_ingresarcli.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
             this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(41, 428);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(54, 344);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
             this.BFalta_ingresarcli.Size = new System.Drawing.Size(173, 62);
             this.BFalta_ingresarcli.TabIndex = 2;
@@ -220,11 +223,11 @@
             // 
             // BFalta_vaciarcampos
             // 
-            this.BFalta_vaciarcampos.BackColor = System.Drawing.Color.Ivory;
+            this.BFalta_vaciarcampos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFalta_vaciarcampos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BFalta_vaciarcampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(381, 428);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(281, 344);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
             this.BFalta_vaciarcampos.Size = new System.Drawing.Size(173, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
@@ -238,7 +241,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(397, 438);
+            this.pictureBox1.Location = new System.Drawing.Point(297, 354);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 42);
             this.pictureBox1.TabIndex = 29;
@@ -249,12 +252,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(617, 514);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BFalta_vaciarcampos);
-            this.Controls.Add(this.BFalta_ingresarcli);
+            this.ClientSize = new System.Drawing.Size(541, 467);
             this.Controls.Add(this.Pfarm_altacliente);
             this.Name = "AltaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "altacliente";
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();

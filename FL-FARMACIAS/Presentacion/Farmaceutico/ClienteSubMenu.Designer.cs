@@ -55,6 +55,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -279,9 +280,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(894, 153);
+            this.pictureBox2.Location = new System.Drawing.Point(894, 157);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 
@@ -300,12 +302,30 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3.TabIndex = 30;
             this.label3.Text = "CLIENTES";
             // 
+            // BFalta_ingresarcli
+            // 
+            this.BFalta_ingresarcli.BackColor = System.Drawing.Color.White;
+            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
+            this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(36, 43);
+            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(257, 62);
+            this.BFalta_ingresarcli.TabIndex = 31;
+            this.BFalta_ingresarcli.Text = "DAR DE ALTA NUEVO CLIENTE";
+            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
+            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
+            // 
             // ClienteSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1060, 597);
+            this.Controls.Add(this.BFalta_ingresarcli);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3w);
@@ -354,5 +374,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn MODIFICAR;
         private PictureBox pictureBox2;
         private Label label3;
+        private Button BFalta_ingresarcli;
     }
 }

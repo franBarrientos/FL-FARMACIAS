@@ -197,7 +197,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.button2.AllowDrop = true;
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(853, 129);
@@ -275,6 +275,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.IsPassword = false;
             this.textBox1.Location = new System.Drawing.Point(14, 151);
             this.textBox1.Name = "textBox1";
             this.textBox1.Placeholder = "INGRESE DNI O APELLIDO";
@@ -286,15 +287,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.BFalta_ingresarcli.BackColor = System.Drawing.Color.White;
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BFalta_ingresarcli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
             this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(99, 61);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(38, 61);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(180, 62);
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(272, 62);
             this.BFalta_ingresarcli.TabIndex = 12;
-            this.BFalta_ingresarcli.Text = "AGREGAR EMPLEADO";
+            this.BFalta_ingresarcli.Text = "DAR DE ALTA NUEVO EMPLEADO";
             this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
             this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
@@ -304,9 +305,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(853, 134);
+            this.pictureBox2.Location = new System.Drawing.Point(853, 129);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 

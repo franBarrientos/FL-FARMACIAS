@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FL_FARMACIAS.Presentacion.Admin;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
     public partial class ClienteSubMenu : Form
     {
+
+        private AltaCliente altaCliente;
+
         private object[][] orgEmployess = new object[][]
                 {
         new object[] { "1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Farmaceutico", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
@@ -173,9 +177,19 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             }
         }
 
-        private void button3w_Click(object sender, EventArgs e)
+      
+
+        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
-            new AltaCliente().Show();
+            if (altaCliente == null || altaCliente.IsDisposed)
+            {
+                altaCliente = new AltaCliente();
+                altaCliente.Show();
+            }
+            else
+            {
+                altaCliente.BringToFront(); // Trae el formulario existente al frente
+            }
         }
     }
 }

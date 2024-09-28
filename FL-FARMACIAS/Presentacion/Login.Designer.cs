@@ -33,7 +33,7 @@
             this.Beliminar_login = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.usuario_login = new PlaceholderTextBox();
-            this.contraseña_login = new PlaceholderTextBox();
+            this.contraseña_login = new PlaceholderTextBox(true);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +110,6 @@
             this.contraseña_login.Placeholder = "CLAVE";
             this.contraseña_login.Size = new System.Drawing.Size(414, 26);
             this.contraseña_login.TabIndex = 8;
-            this.contraseña_login.Text = "CLAVE";
             // 
             // LoginForm
             // 

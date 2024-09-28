@@ -129,6 +129,12 @@
     <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Farmaceutico\PedidossSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\PedidossSubMenu.Designer.cs">
+      <DependentUpon>PedidossSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Farmaceutico\VentasSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +182,6 @@
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\MenuFarmaceutico.Designer.cs">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Login.cs">
       <SubType>Form</SubType>
@@ -239,6 +239,9 @@
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\PedidossSubMenu.resx">
+      <DependentUpon>PedidossSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\VentasSubMenu.resx">
       <DependentUpon>VentasSubMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\MenuFarmaceutico.resx">
       <DependentUpon>MenuFarmaceutico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Supervisor\MenuSupervisor.resx">
       <DependentUpon>MenuSupervisor.cs</DependentUpon>

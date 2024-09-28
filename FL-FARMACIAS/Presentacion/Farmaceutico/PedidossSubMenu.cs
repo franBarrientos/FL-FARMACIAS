@@ -1,15 +1,19 @@
-﻿using FL_FARMACIAS.Presentacion.Login;
+﻿using FL_FARMACIAS.Presentacion.Admin;
+using FL_FARMACIAS.Presentacion.Farmaceutico;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS.Presentacion.Admin
+namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class EmpleadoSubMenu : Form
+    public partial class PedidossSubMenu : Form
     {
-        private AltaEmpleado altaEmpleado = null;
+        private AltaProveedor AltaProveedor = null;
+        private AltaPedido altaPedido = null;
+
+
 
         private object[][] orgEmployess = new object[][]
                 {
@@ -45,7 +49,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
                 };
 
-        public EmpleadoSubMenu()
+        public PedidossSubMenu()
         {
             InitializeComponent();
 
@@ -53,11 +57,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             {
                 this.dataGridView1.Rows.Add(row);
 
-            }
-
-            if (LoginForm.user.rol == Dominio.Rol.Admin)
-            {
-                BFalta_ingresarcli.Hide();
             }
 
         }
@@ -87,7 +86,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    new CrearCuentaModal().Show();
+                    //new CrearCuentaModal().Show();
 
                 }
             }
@@ -95,30 +94,48 @@ namespace FL_FARMACIAS.Presentacion.Admin
         }
 
 
-      
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "INGRESE DNI O APELLIDO")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void converTextBlack(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE DNI O APELLIDO")
+            {
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "INGRESE DNI O APELLIDO";
+                textBox1.ForeColor = Color.Gray;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text == " " && comboBox1.Text == " ")
-            {
-                MessageBox.Show("Por favor, ingrese el DNI o Apellido del empleado que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             object[][] matched;
-            if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text == "Todos")
+            if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text == "Todos")
             {
                 matched = this.orgEmployess
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text != "Todos")
+            else if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text != "Todos")
             {
                 matched = this.orgEmployess
                            .Where(x => x[7].ToString() == comboBox1.Text)
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != ""))
+            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
             {
                 matched = this.orgEmployess
                        .Where(x => x[0].ToString().Contains(textBox1.Text) ||
@@ -127,7 +144,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                                    x[4].ToString().Contains(textBox1.Text))
                            .ToArray(); // Convertir a un array de object[][]
             }
-            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != "") )
+            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
             {
                 matched = this.orgEmployess
                        .Where(x => x[0].ToString().Contains(textBox1.Text) ||
@@ -155,27 +172,63 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            comboBox1.Text = "Todos";
+            this.dataGridView1.Rows.Clear();
+
+            foreach (var row in this.orgEmployess)
+            {
+                this.dataGridView1.Rows.Add(row);
+            }
         }
 
-        private void ShowAltaEmpleado()
+        private void button3w_Click(object sender, EventArgs e)
         {
-            if (altaEmpleado == null || altaEmpleado.IsDisposed)
+            
+        }
+
+        private void ShowAltaproveedor()
+        {
+            if (AltaProveedor == null || AltaProveedor.IsDisposed)
             {
-                altaEmpleado = new AltaEmpleado();
-                altaEmpleado.Show();
+                AltaProveedor = new AltaProveedor();
+                AltaProveedor.Show();
             }
             else
             {
-                altaEmpleado.BringToFront(); // Trae el formulario existente al frente
+                AltaProveedor.BringToFront(); // Trae el formulario existente al frente
             }
         }
-        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            ShowAltaEmpleado();
-            //new AltaEmpleado().Show();
+            ShowAltaproveedor();
+            //new AltaProveedor().Show();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3w_Click_1(object sender, EventArgs e)
+        {
+            if (altaPedido == null || altaPedido.IsDisposed)
+            {
+                altaPedido = new AltaPedido();
+                altaPedido.Show();
+            }
+            else
+            {
+                altaPedido.BringToFront(); // Trae el formulario existente al frente
+            }
         }
     }
 }

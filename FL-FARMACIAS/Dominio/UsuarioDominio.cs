@@ -13,7 +13,7 @@ namespace FL_FARMACIAS.Dominio
         Admin
     }
 
-    internal class UsuarioDominio
+    public class UsuarioDominio
     {
         public string usuario { set; get; }
         public string clave { set; get; }

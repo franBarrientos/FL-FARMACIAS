@@ -1,4 +1,5 @@
 ﻿using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,19 +44,27 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public productoSubMenu()
         {
             InitializeComponent();
-          
-                 foreach (var p in this.orgProducts)
-                 {
+
+            foreach (var p in this.orgProducts)
+            {
                 this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
 
             }
 
             foreach (var row in this.orgCategories)
-                {
-                    this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
-                }
+            {
+                this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
+            }
 
+
+            if (LoginForm.user.rol == Rol.Supervisor)
+            {
+                button3w.Hide();
+                button3.Hide();
+            }
         }
+
+
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

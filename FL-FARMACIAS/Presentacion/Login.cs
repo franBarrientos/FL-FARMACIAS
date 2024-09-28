@@ -17,7 +17,9 @@ namespace FL_FARMACIAS.Presentacion.Login
 {
     public partial class LoginForm : Form
     {
-        private LoginForm loginmenu = null;
+        //        private LoginForm loginmenu = null;
+
+        public static UsuarioDominio user { get; set; }
 
         private List<UsuarioDominio> defaultUsers = new List<UsuarioDominio>()
         {
@@ -31,16 +33,13 @@ namespace FL_FARMACIAS.Presentacion.Login
         {
             InitializeComponent();
         }
-
        
         private void Bingresar_login_Click(object sender, EventArgs e)
         {
             string usuario = usuario_login.Text;
             string clave = contraseña_login.Text;
-
-           
-               
-                this.Hide();//oculta el formulario login
+     
+            this.Hide();//oculta el formulario login
               
             UsuarioDominio usuarioEncontrado = this.defaultUsers.FirstOrDefault(x => x.usuario.Equals(usuario) && x.clave.Equals(clave));
 
@@ -50,26 +49,32 @@ namespace FL_FARMACIAS.Presentacion.Login
                 return;
             }
 
+            LoginForm.user = usuarioEncontrado;
+
             if (usuarioEncontrado.rol == Rol.Admin)
             {
-                new MenuAdmin().Show(this);
+                new MenuAdmin(this).Show(this);
+                this.Beliminar_login_Click(sender, e);
+                this.Hide();
                 return;
                
             }
 
             if (usuarioEncontrado.rol == Rol.Farmaceutico)
             {
-                new MenuFarmaceutico().Show(this);
+                new MenuFarmaceutico(this).Show(this);
+                this.Beliminar_login_Click(sender, e);
+                this.Hide();
                 return;
             }
 
             if (usuarioEncontrado.rol == Rol.Supervisor)
             {
-                new MenuSupervisor().Show(this);
+                new MenuSupervisor(this).Show(this);
+                this.Beliminar_login_Click(sender, e);
+                this.Hide();
                 return;
             }
-            this.Close();
-
 
         }
         

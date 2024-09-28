@@ -2,192 +2,93 @@
 using FL_FARMACIAS.Presentacion.Login;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-   
     public partial class MenuAdmin : Form
     {
-        private EmpleadoSubMenu empleadoSubMenu = null;
-        private productoSubMenu productoSubMenu = null;
-        private ProveedoresSubMenu proveedoresSubMenu = null;
-        private DescuentosSubMenu descuentosSubMenu = null;
-        private EstadisticasSubMenu estadisticosSubMenu = null;
-        private LoginForm sesioninicio = new LoginForm();
+        // Diccionario para almacenar las instancias de los subformularios
+        private Dictionary<Type, Form> subFormularios = new Dictionary<Type, Form>();
 
-        //fijarse porque no se cierra cuando se presiona cerrar sesion
-        private AltaEmpleado altaEmpleado = null;
-        private AgrerarProductoAdmi AltaProducto = null;
-        private Vaciar_campos_categoria AltaCategoria = null;
-        private AltaProveedor AltaProveedor = null;
-        private void ShowEmpleadoSubMenu()
-        {
-            if (empleadoSubMenu == null || empleadoSubMenu.IsDisposed)
-            {
-                empleadoSubMenu = new EmpleadoSubMenu();
-                empleadoSubMenu.Show();
-            }
-            else
-            {
-                empleadoSubMenu.BringToFront(); // Trae el formulario existente al frente
-            }
-        }
+        private LoginForm loginForm { get; set; }
 
-        private void ShowproductoSubMenu()
-        {
-            if (productoSubMenu == null || productoSubMenu.IsDisposed)
-            {
-                productoSubMenu = new productoSubMenu();
-                productoSubMenu.Show();
-            }
-            else
-            {
-                productoSubMenu.BringToFront(); // Trae el formulario existente al frente
-            }
-        }
-
-        private void ShowproveedoresSubMenu()
-        {
-            if (proveedoresSubMenu == null || proveedoresSubMenu.IsDisposed)
-            {
-                proveedoresSubMenu = new ProveedoresSubMenu();
-                proveedoresSubMenu.Show();
-            }
-            else
-            {
-                proveedoresSubMenu.BringToFront(); 
-            }
-        }
-
-        private void ShowdescuentosSubMenu()
-        {
-            if (descuentosSubMenu == null || descuentosSubMenu.IsDisposed)
-            {
-                descuentosSubMenu = new DescuentosSubMenu();
-                descuentosSubMenu.Show();
-            }
-            else
-            {
-                descuentosSubMenu.BringToFront(); 
-            }
-        }
-
-        private void ShowdestadisticoSubMenu()
-        {
-            if (estadisticosSubMenu == null || estadisticosSubMenu.IsDisposed)
-            {
-                estadisticosSubMenu = new EstadisticasSubMenu();
-                estadisticosSubMenu.Show();
-            }
-            else
-            {
-                estadisticosSubMenu.BringToFront();
-            }
-        }
-        public MenuAdmin()
+        public MenuAdmin(LoginForm loginForm)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
         }
 
+        // Método genérico para mostrar cualquier subformulario
+        private void ShowSubMenu<T>() where T : Form, new()
+        {
+            Form subForm;
+
+            // Si el formulario ya existe en el diccionario y no está cerrado, lo trae al frente
+            if (subFormularios.TryGetValue(typeof(T), out subForm) && !subForm.IsDisposed)
+            {
+                subForm.BringToFront();
+            }
+            else
+            {
+                // Si no existe, crea una nueva instancia y la añade al diccionario
+                subForm = new T();
+                subFormularios[typeof(T)] = subForm;
+                subForm.Show();
+            }
+        }
+
+        // Evento de los botones que muestran los submenús
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowEmpleadoSubMenu();
+            ShowSubMenu<EmpleadoSubMenu>();
         }
-        
-       
+
         private void button2_Click(object sender, EventArgs e)
         {
-            ShowproductoSubMenu();
+            ShowSubMenu<productoSubMenu>();
         }
 
         private void p_Click(object sender, EventArgs e)
         {
-            ShowproveedoresSubMenu();
+            ShowSubMenu<ProveedoresSubMenu>();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ShowdescuentosSubMenu();
+            ShowSubMenu<DescuentosSubMenu>();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ShowdestadisticoSubMenu();
+            ShowSubMenu<EstadisticasSubMenu>();
         }
 
-        //cierra la sesion cuando presiona cerrar sesion, pero los formularios que son alta producto cat empleado y proveedor no cierran
+        // Método para cerrar sesión y formularios abiertos
         private void cerrar_sesion_Click(object sender, EventArgs e)
         {
-            
-        DialogResult result = MessageBox.Show(
+            DialogResult result = MessageBox.Show(
                 "¿Estás seguro de que deseas cerrar sesión?",
                 "Confirmar cierre de sesión",
                 MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question);
-          
+                MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
-            {  // por si queda abierto algun formulario del admin
-                if (estadisticosSubMenu != null)
+            {   // Cierra todos los formularios abiertos en el diccionario
+                // Cierra todos los formularios abiertos en el diccionario
+                foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
                 {
-                    estadisticosSubMenu.Close();
+                    loginForm.Show();
+                    if (!( form is LoginForm))
+                    {
+                        form.Close();
+                    }
+
+
                 }
 
-                if (descuentosSubMenu != null)
-                {
-                    descuentosSubMenu.Close();
-                }
-
-                if (proveedoresSubMenu != null)
-                {
-
-                    proveedoresSubMenu.Close();
-                }
-
-                if (productoSubMenu != null)
-                {
-                    productoSubMenu.Close();
-                }
-
-                if (empleadoSubMenu != null)
-                {
-
-                    empleadoSubMenu.Close();
-                }
-                //REVISAR PORQUE NO SE CIERRAR....
-                if (altaEmpleado != null)
-                {
-
-                    altaEmpleado.Close();
-                }
-
-                if (AltaProducto != null && !AltaProducto.IsDisposed)
-                {
-                    AltaProducto.Close();
-                }
-
-                if (AltaCategoria != null)
-                {
-                    AltaCategoria.Close();
-                }
-
-                if (AltaProveedor != null)
-                {
-                    AltaProveedor.Close();
-                }
-                
-
-                this.Close();
-
-                sesioninicio.Show();
             }
-          
         }
-       }
+    }
 }
