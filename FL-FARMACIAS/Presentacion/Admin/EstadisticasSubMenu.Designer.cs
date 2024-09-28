@@ -88,7 +88,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Snow;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.Datos_estadisticos_farma);
             this.panel3.Location = new System.Drawing.Point(145, 32);

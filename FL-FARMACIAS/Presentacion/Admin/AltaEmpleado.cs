@@ -195,13 +195,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!nombre.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras el campo de Nombre.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras el campo de Apellido o no deje vacio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

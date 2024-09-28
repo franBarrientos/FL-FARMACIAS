@@ -55,13 +55,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
-            if (!nombre.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo Nombre.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!apellido.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo Apellido.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

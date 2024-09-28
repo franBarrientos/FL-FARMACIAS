@@ -61,7 +61,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!nombre.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras el campo de Nombre del proveedor.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

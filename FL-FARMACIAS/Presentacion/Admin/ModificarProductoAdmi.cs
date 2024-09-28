@@ -50,25 +50,25 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
 
 
-            if (!nombre.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Nombre de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!marca.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(marca) || !marca.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Marca de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!laboratorio.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(laboratorio) || !laboratorio.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Laboratorio de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!descripcion.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(descripcion) || !descripcion.All(c => char.IsLetter(c) || c == ' '))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo Descripcion del Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
