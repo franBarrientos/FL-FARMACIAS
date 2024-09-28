@@ -47,6 +47,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.TC_descripcion);
             this.panel1.Controls.Add(this.Bagregar_categoria);
@@ -60,7 +61,7 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 344);
+            this.panel1.Size = new System.Drawing.Size(417, 344);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -109,11 +110,11 @@
             this.LAS_cate_titulo.AutoSize = true;
             this.LAS_cate_titulo.BackColor = System.Drawing.Color.Transparent;
             this.LAS_cate_titulo.CausesValidation = false;
-            this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_titulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_titulo.Location = new System.Drawing.Point(25, 42);
+            this.LAS_cate_titulo.Location = new System.Drawing.Point(3, 10);
             this.LAS_cate_titulo.Name = "LAS_cate_titulo";
-            this.LAS_cate_titulo.Size = new System.Drawing.Size(351, 33);
+            this.LAS_cate_titulo.Size = new System.Drawing.Size(413, 39);
             this.LAS_cate_titulo.TabIndex = 0;
             this.LAS_cate_titulo.Text = "ALTA DE CATEGORIAS";
             // 
@@ -146,11 +147,11 @@
             this.LAS_cate_estado.AutoSize = true;
             this.LAS_cate_estado.BackColor = System.Drawing.Color.Transparent;
             this.LAS_cate_estado.CausesValidation = false;
-            this.LAS_cate_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_estado.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_estado.Location = new System.Drawing.Point(146, 187);
+            this.LAS_cate_estado.Location = new System.Drawing.Point(161, 182);
             this.LAS_cate_estado.Name = "LAS_cate_estado";
-            this.LAS_cate_estado.Size = new System.Drawing.Size(71, 20);
+            this.LAS_cate_estado.Size = new System.Drawing.Size(64, 20);
             this.LAS_cate_estado.TabIndex = 2;
             this.LAS_cate_estado.Text = "Estado:";
             // 
@@ -171,11 +172,11 @@
             this.LAS_cate_descrip.AutoSize = true;
             this.LAS_cate_descrip.BackColor = System.Drawing.Color.Transparent;
             this.LAS_cate_descrip.CausesValidation = false;
-            this.LAS_cate_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LAS_cate_descrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAS_cate_descrip.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LAS_cate_descrip.Location = new System.Drawing.Point(127, 98);
+            this.LAS_cate_descrip.Location = new System.Drawing.Point(146, 98);
             this.LAS_cate_descrip.Name = "LAS_cate_descrip";
-            this.LAS_cate_descrip.Size = new System.Drawing.Size(108, 20);
+            this.LAS_cate_descrip.Size = new System.Drawing.Size(96, 20);
             this.LAS_cate_descrip.TabIndex = 1;
             this.LAS_cate_descrip.Text = "Descripcion:";
             // 
@@ -184,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(416, 368);
+            this.ClientSize = new System.Drawing.Size(441, 368);
             this.Controls.Add(this.panel1);
             this.Name = "Vaciar_campos_categoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

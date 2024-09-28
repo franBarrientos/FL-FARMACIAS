@@ -53,11 +53,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -209,13 +207,14 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(741, 150);
+            this.button1.Location = new System.Drawing.Point(741, 157);
             this.button1.Margin = new System.Windows.Forms.Padding(64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 42);
+            this.button1.Size = new System.Drawing.Size(96, 35);
             this.button1.TabIndex = 4;
             this.button1.Text = "BUSCAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -225,11 +224,14 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(894, 153);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(894, 157);
             this.button2.Margin = new System.Windows.Forms.Padding(64);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 43);
+            this.button2.Size = new System.Drawing.Size(93, 35);
             this.button2.TabIndex = 5;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -275,30 +277,18 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w.TabIndex = 9;
             this.label3w.Text = "FILTROS";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(894, 157);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(400, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 57);
+            this.label3.Size = new System.Drawing.Size(195, 41);
             this.label3.TabIndex = 30;
             this.label3.Text = "CLIENTES";
             // 
@@ -306,13 +296,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // 
             this.BFalta_ingresarcli.BackColor = System.Drawing.Color.White;
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BFalta_ingresarcli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
             this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(36, 43);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(36, 67);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(257, 62);
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(227, 62);
             this.BFalta_ingresarcli.TabIndex = 31;
             this.BFalta_ingresarcli.Text = "DAR DE ALTA NUEVO CLIENTE";
             this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,7 +317,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ClientSize = new System.Drawing.Size(1060, 597);
             this.Controls.Add(this.BFalta_ingresarcli);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3w);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -343,7 +332,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Empleados Admin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,7 +360,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn USUARIO;
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
-        private PictureBox pictureBox2;
         private Label label3;
         private Button BFalta_ingresarcli;
     }

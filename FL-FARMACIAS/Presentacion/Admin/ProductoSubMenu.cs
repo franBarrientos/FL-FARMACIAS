@@ -246,5 +246,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
 
         }
+
+        private void prodTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

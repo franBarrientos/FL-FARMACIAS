@@ -855,15 +855,5 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewTextBoxColumn PRECIOP;
         private DataGridViewTextBoxColumn STOCKP;
         private DataGridViewButtonColumn ESCOJERP;
-        private PictureBox pictureBox1;
-        private Button Bagregar_categoria;
-        private GroupBox groupBox4;
-        private Label label17;
-        private Label label16;
-        private Label label15;
-        private Label label14;
-        private Label label11;
-        private Label label12;
-        private Label label13;
     }
 }

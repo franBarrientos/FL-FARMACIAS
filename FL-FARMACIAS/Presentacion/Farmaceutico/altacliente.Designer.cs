@@ -30,8 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DFalta_obrasocial = new System.Windows.Forms.ComboBox();
+            this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
             this.Ttelefono_cliente = new System.Windows.Forms.TextBox();
             this.Tdni_cliente = new System.Windows.Forms.TextBox();
             this.Tapellido_cliente = new System.Windows.Forms.TextBox();
@@ -42,17 +45,15 @@
             this.LFalta_apellido = new System.Windows.Forms.Label();
             this.LFalta_nombre = new System.Windows.Forms.Label();
             this.Lfarm_tituloalt = new System.Windows.Forms.Label();
-            this.BFalta_ingresarcli = new System.Windows.Forms.Button();
-            this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pfarm_altacliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Pfarm_altacliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pfarm_altacliente.Controls.Add(this.pictureBox1);
             this.Pfarm_altacliente.Controls.Add(this.DFalta_obrasocial);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
@@ -73,6 +74,17 @@
             this.Pfarm_altacliente.Size = new System.Drawing.Size(513, 435);
             this.Pfarm_altacliente.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(297, 354);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // DFalta_obrasocial
             // 
             this.DFalta_obrasocial.FormattingEnabled = true;
@@ -85,6 +97,21 @@
             this.DFalta_obrasocial.Size = new System.Drawing.Size(308, 21);
             this.DFalta_obrasocial.TabIndex = 13;
             // 
+            // BFalta_vaciarcampos
+            // 
+            this.BFalta_vaciarcampos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_vaciarcampos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BFalta_vaciarcampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(281, 344);
+            this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
+            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(173, 62);
+            this.BFalta_vaciarcampos.TabIndex = 3;
+            this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
+            this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_vaciarcampos.UseVisualStyleBackColor = false;
+            this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -94,6 +121,22 @@
             this.pictureBox2.Size = new System.Drawing.Size(74, 66);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            // 
+            // BFalta_ingresarcli
+            // 
+            this.BFalta_ingresarcli.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
+            this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(54, 344);
+            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
+            this.BFalta_ingresarcli.Size = new System.Drawing.Size(173, 62);
+            this.BFalta_ingresarcli.TabIndex = 2;
+            this.BFalta_ingresarcli.Text = "AGREGAR CLIENTE";
+            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
+            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
             // 
             // Ttelefono_cliente
             // 
@@ -205,48 +248,6 @@
             this.Lfarm_tituloalt.Text = "ALTA DE CLIENTE";
             this.Lfarm_tituloalt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // BFalta_ingresarcli
-            // 
-            this.BFalta_ingresarcli.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BFalta_ingresarcli.Image = ((System.Drawing.Image)(resources.GetObject("BFalta_ingresarcli.Image")));
-            this.BFalta_ingresarcli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(54, 344);
-            this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
-            this.BFalta_ingresarcli.Size = new System.Drawing.Size(173, 62);
-            this.BFalta_ingresarcli.TabIndex = 2;
-            this.BFalta_ingresarcli.Text = "AGREGAR CLIENTE";
-            this.BFalta_ingresarcli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
-            this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
-            // 
-            // BFalta_vaciarcampos
-            // 
-            this.BFalta_vaciarcampos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BFalta_vaciarcampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(281, 344);
-            this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
-            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(173, 62);
-            this.BFalta_vaciarcampos.TabIndex = 3;
-            this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
-            this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BFalta_vaciarcampos.UseVisualStyleBackColor = false;
-            this.BFalta_vaciarcampos.Click += new System.EventHandler(this.BFalta_vaciarcampos_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(297, 354);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            // 
             // AltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,8 +260,8 @@
             this.Text = "altacliente";
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

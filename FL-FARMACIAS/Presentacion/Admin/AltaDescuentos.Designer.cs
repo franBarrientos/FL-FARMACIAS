@@ -50,6 +50,7 @@
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Pfarm_altacliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pfarm_altacliente.Controls.Add(this.inactivo_descuento);
             this.Pfarm_altacliente.Controls.Add(this.activo_descuento);
             this.Pfarm_altacliente.Controls.Add(this.label1);
@@ -94,10 +95,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 205);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Estado:";
             // 
@@ -138,6 +139,7 @@
             // BFalta_ingresarcli
             // 
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BFalta_ingresarcli.Location = new System.Drawing.Point(69, 264);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
             this.BFalta_ingresarcli.Size = new System.Drawing.Size(134, 62);
@@ -166,20 +168,20 @@
             // LFalta_apellido
             // 
             this.LFalta_apellido.AutoSize = true;
-            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_apellido.Location = new System.Drawing.Point(23, 153);
             this.LFalta_apellido.Name = "LFalta_apellido";
-            this.LFalta_apellido.Size = new System.Drawing.Size(129, 40);
+            this.LFalta_apellido.Size = new System.Drawing.Size(116, 40);
             this.LFalta_apellido.TabIndex = 3;
             this.LFalta_apellido.Text = "Porcentaje \r\nDe Descuento:";
             // 
             // LFalta_nombre
             // 
             this.LFalta_nombre.AutoSize = true;
-            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_nombre.Location = new System.Drawing.Point(22, 101);
             this.LFalta_nombre.Name = "LFalta_nombre";
-            this.LFalta_nombre.Size = new System.Drawing.Size(108, 20);
+            this.LFalta_nombre.Size = new System.Drawing.Size(96, 20);
             this.LFalta_nombre.TabIndex = 2;
             this.LFalta_nombre.Text = "Descripcion:";
             // 
@@ -188,7 +190,7 @@
             this.Lfarm_tituloalt.AutoSize = true;
             this.Lfarm_tituloalt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Lfarm_tituloalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lfarm_tituloalt.Location = new System.Drawing.Point(50, 41);
+            this.Lfarm_tituloalt.Location = new System.Drawing.Point(40, 16);
             this.Lfarm_tituloalt.Name = "Lfarm_tituloalt";
             this.Lfarm_tituloalt.Size = new System.Drawing.Size(403, 39);
             this.Lfarm_tituloalt.TabIndex = 1;

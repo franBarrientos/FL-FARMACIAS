@@ -59,6 +59,7 @@
             // Pfarm_altacliente
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Pfarm_altacliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pfarm_altacliente.Controls.Add(this.pictureBox4);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_ingresarcli);
             this.Pfarm_altacliente.Controls.Add(this.correo_pedido);
@@ -136,20 +137,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 295);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Localidad:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 252);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Provincia:";
             // 
@@ -157,7 +158,7 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(311, 499);
+            this.pictureBox3.Location = new System.Drawing.Point(313, 499);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,9 +175,9 @@
             // BFalta_vaciarcampos
             // 
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(311, 490);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(301, 490);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
-            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(153, 62);
+            this.BFalta_vaciarcampos.Size = new System.Drawing.Size(163, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
             this.BFalta_vaciarcampos.Text = "VACIAR CAMPOS";
             this.BFalta_vaciarcampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -216,60 +217,60 @@
             // LFalta_telefono
             // 
             this.LFalta_telefono.AutoSize = true;
-            this.LFalta_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_telefono.Location = new System.Drawing.Point(22, 428);
             this.LFalta_telefono.Name = "LFalta_telefono";
-            this.LFalta_telefono.Size = new System.Drawing.Size(84, 20);
+            this.LFalta_telefono.Size = new System.Drawing.Size(75, 20);
             this.LFalta_telefono.TabIndex = 7;
             this.LFalta_telefono.Text = "Telefono:";
             // 
             // LFalta_obrasocial
             // 
             this.LFalta_obrasocial.AutoSize = true;
-            this.LFalta_obrasocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_obrasocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_obrasocial.Location = new System.Drawing.Point(22, 385);
             this.LFalta_obrasocial.Name = "LFalta_obrasocial";
-            this.LFalta_obrasocial.Size = new System.Drawing.Size(68, 20);
+            this.LFalta_obrasocial.Size = new System.Drawing.Size(61, 20);
             this.LFalta_obrasocial.TabIndex = 6;
             this.LFalta_obrasocial.Text = "Correo:";
             // 
             // LFalta_direccion
             // 
             this.LFalta_direccion.AutoSize = true;
-            this.LFalta_direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_direccion.Location = new System.Drawing.Point(20, 340);
             this.LFalta_direccion.Name = "LFalta_direccion";
-            this.LFalta_direccion.Size = new System.Drawing.Size(89, 20);
+            this.LFalta_direccion.Size = new System.Drawing.Size(79, 20);
             this.LFalta_direccion.TabIndex = 5;
             this.LFalta_direccion.Text = "Direccion:";
             // 
             // LFalta_dni
             // 
             this.LFalta_dni.AutoSize = true;
-            this.LFalta_dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_dni.Location = new System.Drawing.Point(22, 204);
             this.LFalta_dni.Name = "LFalta_dni";
-            this.LFalta_dni.Size = new System.Drawing.Size(45, 20);
+            this.LFalta_dni.Size = new System.Drawing.Size(41, 20);
             this.LFalta_dni.TabIndex = 4;
             this.LFalta_dni.Text = "DNI:";
             // 
             // LFalta_apellido
             // 
             this.LFalta_apellido.AutoSize = true;
-            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_apellido.Location = new System.Drawing.Point(20, 155);
             this.LFalta_apellido.Name = "LFalta_apellido";
-            this.LFalta_apellido.Size = new System.Drawing.Size(55, 20);
+            this.LFalta_apellido.Size = new System.Drawing.Size(50, 20);
             this.LFalta_apellido.TabIndex = 3;
             this.LFalta_apellido.Text = "CUIT:";
             // 
             // LFalta_nombre
             // 
             this.LFalta_nombre.AutoSize = true;
-            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFalta_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFalta_nombre.Location = new System.Drawing.Point(22, 101);
             this.LFalta_nombre.Name = "LFalta_nombre";
-            this.LFalta_nombre.Size = new System.Drawing.Size(76, 20);
+            this.LFalta_nombre.Size = new System.Drawing.Size(69, 20);
             this.LFalta_nombre.TabIndex = 2;
             this.LFalta_nombre.Text = "Nombre:";
             // 
@@ -278,7 +279,7 @@
             this.Lfarm_tituloalt.AutoSize = true;
             this.Lfarm_tituloalt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Lfarm_tituloalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lfarm_tituloalt.Location = new System.Drawing.Point(80, 45);
+            this.Lfarm_tituloalt.Location = new System.Drawing.Point(68, 20);
             this.Lfarm_tituloalt.Name = "Lfarm_tituloalt";
             this.Lfarm_tituloalt.Size = new System.Drawing.Size(375, 39);
             this.Lfarm_tituloalt.TabIndex = 1;

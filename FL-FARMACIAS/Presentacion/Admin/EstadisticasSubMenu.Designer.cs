@@ -88,7 +88,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Snow;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.Datos_estadisticos_farma);
             this.panel3.Location = new System.Drawing.Point(145, 32);
@@ -220,23 +220,27 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(556, 161);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(301, 136);
             this.button2.TabIndex = 1;
             this.button2.Text = "RESTABLECER BASE DE DATOS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(225, 153);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(235, 145);
             this.button1.TabIndex = 0;
             this.button1.Text = "BACKUP   ";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // EstadisticasSubMenu
             // 
