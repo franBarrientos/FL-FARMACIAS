@@ -34,20 +34,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteSubMenu));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SEXO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PUESTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USUARIO = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -55,6 +41,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BFalta_ingresarcli = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCUENTOID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,16 +63,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ID,
             this.NOMBRE,
             this.APELLIDO,
-            this.SEXO,
             this.DNI,
-            this.CUIL,
             this.TELEFONO,
-            this.PUESTO,
-            this.SALARIO,
-            this.FECHAINGRESO,
-            this.USUARIO,
-            this.ELIMINAR,
-            this.MODIFICAR});
+            this.DESCUENTOID,
+            this.DESCUENTO,
+            this.MODIFICAR,
+            this.ELIMINAR});
             this.dataGridView1.Location = new System.Drawing.Point(14, 218);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
             this.dataGridView1.Name = "dataGridView1";
@@ -85,124 +77,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Size = new System.Drawing.Size(1037, 364);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Width = 150;
-            // 
-            // APELLIDO
-            // 
-            this.APELLIDO.HeaderText = "APELLIDO";
-            this.APELLIDO.MinimumWidth = 8;
-            this.APELLIDO.Name = "APELLIDO";
-            this.APELLIDO.ReadOnly = true;
-            this.APELLIDO.Width = 150;
-            // 
-            // SEXO
-            // 
-            this.SEXO.HeaderText = "SEXO";
-            this.SEXO.MinimumWidth = 8;
-            this.SEXO.Name = "SEXO";
-            this.SEXO.ReadOnly = true;
-            this.SEXO.Width = 150;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.MinimumWidth = 8;
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Width = 150;
-            // 
-            // CUIL
-            // 
-            this.CUIL.HeaderText = "CUIL";
-            this.CUIL.MinimumWidth = 8;
-            this.CUIL.Name = "CUIL";
-            this.CUIL.ReadOnly = true;
-            this.CUIL.Width = 150;
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.MinimumWidth = 8;
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            this.TELEFONO.Width = 150;
-            // 
-            // PUESTO
-            // 
-            this.PUESTO.HeaderText = "PUESTO";
-            this.PUESTO.MinimumWidth = 8;
-            this.PUESTO.Name = "PUESTO";
-            this.PUESTO.ReadOnly = true;
-            this.PUESTO.Width = 150;
-            // 
-            // SALARIO
-            // 
-            this.SALARIO.HeaderText = "SALARIO";
-            this.SALARIO.MinimumWidth = 8;
-            this.SALARIO.Name = "SALARIO";
-            this.SALARIO.ReadOnly = true;
-            this.SALARIO.Width = 150;
-            // 
-            // FECHAINGRESO
-            // 
-            this.FECHAINGRESO.HeaderText = "FECHA INGRESO";
-            this.FECHAINGRESO.MinimumWidth = 8;
-            this.FECHAINGRESO.Name = "FECHAINGRESO";
-            this.FECHAINGRESO.ReadOnly = true;
-            this.FECHAINGRESO.Width = 150;
-            // 
-            // USUARIO
-            // 
-            this.USUARIO.HeaderText = "USUARIO";
-            this.USUARIO.MinimumWidth = 8;
-            this.USUARIO.Name = "USUARIO";
-            this.USUARIO.ReadOnly = true;
-            this.USUARIO.Width = 150;
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(14, 172);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "INGRESE DNI O APELLIDO";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TabIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.TextChanged += new System.EventHandler(this.converTextBlack);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // button1
             // 
@@ -219,7 +93,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button1.Text = "BUSCAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -242,10 +115,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Todos",
-            "Farmaceutico",
-            "Supervisor",
-            "Gerente"});
+            "Todos"});
             this.comboBox1.Location = new System.Drawing.Point(495, 172);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(64);
             this.comboBox1.Name = "comboBox1";
@@ -257,12 +127,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(437, 175);
+            this.label2.Location = new System.Drawing.Point(411, 175);
             this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "PUESTO";
+            this.label2.Text = "OBRA SOCIAL";
             // 
             // label3w
             // 
@@ -309,12 +179,92 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
             this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 150;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.MinimumWidth = 8;
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            this.NOMBRE.Width = 150;
+            // 
+            // APELLIDO
+            // 
+            this.APELLIDO.HeaderText = "APELLIDO";
+            this.APELLIDO.MinimumWidth = 8;
+            this.APELLIDO.Name = "APELLIDO";
+            this.APELLIDO.ReadOnly = true;
+            this.APELLIDO.Width = 150;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.MinimumWidth = 8;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Width = 150;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "TELEFONO";
+            this.TELEFONO.MinimumWidth = 8;
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            this.TELEFONO.Width = 150;
+            // 
+            // DESCUENTOID
+            // 
+            this.DESCUENTOID.HeaderText = "DESCUENTOID";
+            this.DESCUENTOID.Name = "DESCUENTOID";
+            this.DESCUENTOID.Visible = false;
+            // 
+            // DESCUENTO
+            // 
+            this.DESCUENTO.HeaderText = "DESCUENTO";
+            this.DESCUENTO.Name = "DESCUENTO";
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Width = 150;
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(14, 173);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(235, 20);
+            this.placeholderTextBox1.TabIndex = 32;
+            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
+            // 
             // ClienteSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(1060, 597);
+            this.Controls.Add(this.placeholderTextBox1);
             this.Controls.Add(this.BFalta_ingresarcli);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label3w);
@@ -322,7 +272,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(64);
@@ -341,26 +290,22 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
    
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private TextBox textBox1;
         private Button button1;
         private Button button2;
         private ComboBox comboBox1;
         private Label label2;
         private Label label3w;
+        private Label label3;
+        private Button BFalta_ingresarcli;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn APELLIDO;
-        private DataGridViewTextBoxColumn SEXO;
         private DataGridViewTextBoxColumn DNI;
-        private DataGridViewTextBoxColumn CUIL;
         private DataGridViewTextBoxColumn TELEFONO;
-        private DataGridViewTextBoxColumn PUESTO;
-        private DataGridViewTextBoxColumn SALARIO;
-        private DataGridViewTextBoxColumn FECHAINGRESO;
-        private DataGridViewButtonColumn USUARIO;
-        private DataGridViewButtonColumn ELIMINAR;
+        private DataGridViewTextBoxColumn DESCUENTOID;
+        private DataGridViewTextBoxColumn DESCUENTO;
         private DataGridViewButtonColumn MODIFICAR;
-        private Label label3;
-        private Button BFalta_ingresarcli;
+        private DataGridViewButtonColumn ELIMINAR;
+        private PlaceholderTextBox placeholderTextBox1;
     }
 }

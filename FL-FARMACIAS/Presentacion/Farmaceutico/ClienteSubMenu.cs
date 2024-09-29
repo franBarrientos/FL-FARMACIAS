@@ -1,6 +1,8 @@
 ﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using FL_FARMACIAS.Presentacion.Admin;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -25,7 +27,33 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             InitializeComponent();
             this.clienteApp = new ClienteAplicacion();
             this.descuentoApp = new DescuentoAplicacion();
+            fullDefaults();
+            fullFiltros();
+        }
 
+        public void fullFiltros()
+        {
+            List<DescuentoDominio> matcheds = this.descuentoApp.BuscarDescuentos(null, null, true);
+            this.comboBox1.Items.Clear();
+            this.comboBox1.Items.Add("Todos");
+            foreach (var d in matcheds)
+            {
+                this.comboBox1.Items.Add(d.descripcion);
+            }
+            this.comboBox1.SelectedIndex = 0;
+        }
+
+        public void fullDefaults()
+        {
+            List<ClienteDominio> matcheds = this.clienteApp.ObtenerTodos();
+            this.dataGridView1.Rows.Clear();
+            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
+            this.placeholderTextBox1.ForeColor = Color.Gray;
+            this.comboBox1.SelectedIndex = 0;
+
+            foreach (var c in matcheds){
+                this.dataGridView1.Rows.Add(c.id, c.nombre, c.apellido, c.dni, c.telefono,c.idDescuento, c.desc.descripcion,  "MODIFICAR", "ELIMINAR");
+            }
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,81 +89,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "INGRESE DNI O APELLIDO")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void converTextBlack(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Length > 0 && textBox1.Text != "INGRESE DNI O APELLIDO")
-            {
-                textBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "INGRESE DNI O APELLIDO";
-                textBox1.ForeColor = Color.Gray;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            object[][] matched;
-            if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text == "Todos")
-            {
-                matched = this.orgEmployess
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if (textBox1.Text == "INGRESE DNI O APELLIDO" && comboBox1.Text != "Todos")
-            {
-                matched = this.orgEmployess
-                           .Where(x => x[7].ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
-            {
-                matched = this.orgEmployess
-                       .Where(x => x[0].ToString().Contains(textBox1.Text) ||
-                                   x[1].ToString().Contains(textBox1.Text) ||
-                                   x[2].ToString().Contains(textBox1.Text) ||
-                                   x[4].ToString().Contains(textBox1.Text))
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO"))
-            {
-                matched = this.orgEmployess
-                       .Where(x => x[0].ToString().Contains(textBox1.Text) ||
-                                   x[1].ToString().Contains(textBox1.Text) ||
-                                   x[2].ToString().Contains(textBox1.Text) ||
-                                   x[4].ToString().Contains(textBox1.Text) &&
-                                    x[7].ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else
-            {
-                matched = this.orgEmployess
-                       .ToArray(); // Convertir a un array de object[][]
-            }
-
-
-            this.dataGridView1.Rows.Clear();
-
-            foreach (var row in matched)
-            {
-                this.dataGridView1.Rows.Add(row);
-            }
-
-        }
+    
 
         private void button2_Click(object sender, EventArgs e)
         {
