@@ -30,5 +30,22 @@ namespace FL_FARMACIAS.Aplicacion
                 db.SaveChanges();
             }
         }
+
+
+        public List<DescuentoDominio> BuscarDescuentos(int? id = null,
+                                                         string descripcion = null,
+                                                         bool? estado = null)
+        {
+            //haz un log
+            Console.WriteLine("ID: " + id + ", Descripción: " + descripcion + ", Estado: " + estado);
+            using (var db = new DBConnect())
+            {
+                return db.Descuento.Where(d =>
+                (!id.HasValue || d.id == id) &&
+                (string.IsNullOrEmpty(descripcion) || d.descripcion.Contains(descripcion)) &&  // Aquí está la corrección
+                (!estado.HasValue || d.estado == estado))
+                .ToList();
+            }
+        }
     }
 }

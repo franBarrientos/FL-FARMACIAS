@@ -26,8 +26,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             fullDeaults();
         }
 
-        private void fullDeaults()
+        public void fullDeaults()
         {
+            this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
+            this.checkBox1.Checked = false;
+            this.checkBox2.Checked = false;
+            dataGridView2.Rows.Clear();
             foreach (var descuento in descuentosAplicacion.ObtenerDescuentos())
             {
                 dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "Activo" : "Inactivo", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
@@ -81,7 +85,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             else
             {
                 // Si no existe, crea una nueva instancia y la añade al diccionario
-                subForm = new AltaDescuentos(this.descuentosAplicacion);
+                subForm = new AltaDescuentos(this.descuentosAplicacion, this);
                 subForm.Show();
             }
         }
@@ -104,7 +108,43 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button5_Click(object sender, EventArgs e)
         {
+            // Obtener el valor de idOrDesc y limpiar el campo si es el placeholder
+            string idOrDesc = this.placeholderTextBox1.Text;
+            if (idOrDesc == "INGRESE ID O DESCRIPCION")
+            {
+                idOrDesc = string.Empty;
+            }
 
+            // Tratar de convertir a entero, si es válido se usa como ID
+            int? id = int.TryParse(idOrDesc, out int parsedId) ? (int?)parsedId : null;
+
+            if (id > 0) {
+                idOrDesc = string.Empty;
+            }
+
+            // Determinar el estado basándose en los checkboxes
+            bool? estado = null;
+            if (checkBox1.Checked && !checkBox2.Checked)
+            {
+                estado = true;  // Activo
+            }
+            else if (!checkBox1.Checked && checkBox2.Checked)
+            {
+                estado = false; // Inactivo
+            }
+
+            // Limpiar el DataGridView antes de agregar nuevas filas
+            List<DescuentoDominio> matcheds = descuentosAplicacion.BuscarDescuentos(id, string.IsNullOrWhiteSpace(idOrDesc) ? null : idOrDesc, estado);
+            dataGridView2.Rows.Clear();
+            foreach (var descuento in matcheds)
+            {
+                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "Activo" : "Inactivo", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fullDeaults();
         }
     }
 }

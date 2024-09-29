@@ -377,7 +377,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AgrerarProductoAdmi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AgrerarProductoAdmi";
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

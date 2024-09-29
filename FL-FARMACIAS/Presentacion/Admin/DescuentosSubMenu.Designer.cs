@@ -37,12 +37,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -50,6 +44,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.placeholderTextBox1 = new PlaceholderTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,101 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(799, 135);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 39);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "LIMPIAR";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(664, 138);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(102, 39);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "BUSCAR";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Location = new System.Drawing.Point(425, 157);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(65, 17);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "ACTIVO";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.Location = new System.Drawing.Point(496, 156);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 17);
+            this.checkBox2.TabIndex = 27;
+            this.checkBox2.Text = "NO ACTIVO";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(365, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "ESTADO:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(244, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(605, 41);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "DESCUENTOS Y OBRA SOCIALES";
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE ID O DESCRIPCION";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
+            this.placeholderTextBox1.TabIndex = 28;
+            this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
+            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -130,7 +225,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // PORCENTAJE_DESCUENTO
             // 
-            this.PORCENTAJE_DESCUENTO.HeaderText = "PORCENTAJE DESCUENTO";
+            this.PORCENTAJE_DESCUENTO.HeaderText = "PORCENTAJE DESCUENTO %";
             this.PORCENTAJE_DESCUENTO.Name = "PORCENTAJE_DESCUENTO";
             this.PORCENTAJE_DESCUENTO.ReadOnly = true;
             // 
@@ -149,97 +244,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINAR.Name = "ELIMINAR";
             this.ELIMINAR.ReadOnly = true;
             this.ELIMINAR.Width = 150;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(869, 140);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 39);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "LIMPIAR";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(664, 138);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 39);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "BUSCAR";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(404, 153);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 17);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "ACTIVO";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(475, 153);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 17);
-            this.checkBox2.TabIndex = 27;
-            this.checkBox2.Text = "NO ACTIVO";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "ESTADO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(244, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 41);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "DESCUENTOS Y OBRA SOCIALES";
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE ID";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
-            this.placeholderTextBox1.TabIndex = 28;
-            this.placeholderTextBox1.Text = "INGRESE ID";
             // 
             // DescuentosSubMenu
             // 
@@ -279,12 +283,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private CheckBox checkBox2;
         private PlaceholderTextBox placeholderTextBox1;
         private Label label1;
+        private Label label2;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn DESCRIPCION;
         private DataGridViewTextBoxColumn ESTADO;
         private DataGridViewTextBoxColumn PORCENTAJE_DESCUENTO;
         private DataGridViewButtonColumn MODIFICAR;
         private DataGridViewButtonColumn ELIMINAR;
-        private Label label2;
     }
 }

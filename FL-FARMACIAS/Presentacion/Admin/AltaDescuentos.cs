@@ -18,15 +18,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
         private DescuentoAplicacion descuentosAplicacion;
+        private DescuentosSubMenu descuentosSubMenu;
 
         public AltaDescuentos()
         {
             InitializeComponent();
         }
 
-        public AltaDescuentos(DescuentoAplicacion descuentosAplicacion)
+        public AltaDescuentos(DescuentoAplicacion descuentosAplicacion, DescuentosSubMenu descuentosSubMenu)
         {
             this.descuentosAplicacion = descuentosAplicacion;
+            this.descuentosSubMenu = descuentosSubMenu;
             InitializeComponent();
         }
 
@@ -74,8 +76,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (descripcion != "" && porcentaje != "")
             {
                 this.descuentosAplicacion.AgregarDescuento(new DescuentoDominio(descripcion, Convert.ToDouble(porcentaje), activo_descuento.Checked));
-                MessageBox.Show("El descuento con la descripcion: " + descripcion + ", cuenta con un porcentaje de descuento" + porcentaje + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("El descuento con la descripcion: " + descripcion + ", cuenta con un porcentaje de descuento del" + porcentaje + "%, ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.descuentosSubMenu.fullDeaults();
+                this.Close();
             }
 
         }
@@ -96,6 +99,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
