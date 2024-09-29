@@ -67,7 +67,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!porcentaje.All(c => char.IsDigit(c) || c == '.' || c == ','))
+            if (!porcentaje.All(c => char.IsDigit(c) || c == '.') || Convert.ToDouble(porcentaje) < 0 || Convert.ToDouble(porcentaje) > 100)
             {
                 MessageBox.Show("Por favor, ingrese solo números en el campo porcentaje.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

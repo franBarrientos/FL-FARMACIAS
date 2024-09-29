@@ -16,8 +16,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class DescuentosSubMenu : Form
     { 
-        private DescuentoAplicacion descuentosAplicacion;
-        private AltaDescuentos subForm;
+        public DescuentoAplicacion descuentosAplicacion;
+        public AltaDescuentos subForm;
 
         public DescuentosSubMenu()
         {
@@ -34,7 +34,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             dataGridView2.Rows.Clear();
             foreach (var descuento in descuentosAplicacion.ObtenerDescuentos())
             {
-                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "Activo" : "Inactivo", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
+                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "ACTIVO" : "INACTIVO", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
             }
         }
 
@@ -65,11 +65,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 // Verifica si la columna clicada es "Modificar"
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Modificar"
-
-                    MessageBox.Show($"Modificar fila {e.RowIndex}");
                     var dtpModify = new DescuentoDominio(idI, descripcion, porcentajeDescuentoD, estado == "ACTIVO");
-                    new ModificarDescuentas(dtpModify).Show();                    
+                    new ModificarDescuentas(dtpModify, this).Show();                    
                 }
                 
                 
@@ -138,7 +135,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             dataGridView2.Rows.Clear();
             foreach (var descuento in matcheds)
             {
-                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "Activo" : "Inactivo", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
+                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "ACTIVO" : "INACTIVO", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
             }
         }
 

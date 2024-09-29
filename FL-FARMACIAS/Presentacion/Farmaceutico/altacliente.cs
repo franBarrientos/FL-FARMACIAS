@@ -12,11 +12,23 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
     public partial class AltaCliente : Form
     {
-        public AltaCliente()
+        public ClienteSubMenu cMenu;
+        public AltaCliente(ClienteSubMenu c)
         {
             InitializeComponent();
+            this.cMenu = c;
+            fullObraSociales();
+           
         }
 
+        public void fullObraSociales()
+        {
+            this.DFalta_obrasocial.Items.Clear();
+            foreach (var d in this.cMenu.descuentoApp.BuscarDescuentos(null, null, true))
+            {
+                this.DFalta_obrasocial.Items.Add(d.descripcion);
+            }
+        }
         private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
             String nombre = Tnombre_cliente.Text.Trim();

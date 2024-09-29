@@ -43,13 +43,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,10 +60,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(11, 55);
+            this.button3.Location = new System.Drawing.Point(70, 65);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(253, 60);
+            this.button3.Size = new System.Drawing.Size(252, 60);
             this.button3.TabIndex = 24;
             this.button3.Text = "DAR DE ALTA NUEVO DESCUENTO";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,17 +188,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label2.TabIndex = 30;
             this.label2.Text = "DESCUENTOS Y OBRA SOCIALES";
             // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE ID O DESCRIPCION";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
-            this.placeholderTextBox1.TabIndex = 28;
-            this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -244,6 +233,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINAR.Name = "ELIMINAR";
             this.ELIMINAR.ReadOnly = true;
             this.ELIMINAR.Width = 150;
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(70, 148);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE ID O DESCRIPCION";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
+            this.placeholderTextBox1.TabIndex = 28;
+            this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
             // 
             // DescuentosSubMenu
             // 

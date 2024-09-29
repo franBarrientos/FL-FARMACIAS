@@ -31,6 +31,30 @@ namespace FL_FARMACIAS.Aplicacion
             }
         }
 
+        public void ActualizarDescuento(DescuentoDominio d)
+        {
+            using (var db = new DBConnect())
+            {
+                // Buscar el descuento existente por su ID
+                var descuentoExistente = db.Descuento.FirstOrDefault(x => x.id == d.id);
+
+                if (descuentoExistente != null)
+                {
+                    // Actualizar los valores de la entidad existente
+                    descuentoExistente.descripcion = d.descripcion;
+                    descuentoExistente.porcentajeDescuento = d.porcentajeDescuento;
+                    descuentoExistente.estado = d.estado;
+
+                    // Guardar los cambios en la base de datos
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Descuento no encontrado.");
+                }
+            }
+        }
+
 
         public List<DescuentoDominio> BuscarDescuentos(int? id = null,
                                                          string descripcion = null,

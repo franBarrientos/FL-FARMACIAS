@@ -88,10 +88,6 @@
             // DFalta_obrasocial
             // 
             this.DFalta_obrasocial.FormattingEnabled = true;
-            this.DFalta_obrasocial.Items.AddRange(new object[] {
-            "Pami",
-            "SPS",
-            "Galeno"});
             this.DFalta_obrasocial.Location = new System.Drawing.Point(156, 257);
             this.DFalta_obrasocial.Name = "DFalta_obrasocial";
             this.DFalta_obrasocial.Size = new System.Drawing.Size(308, 21);
