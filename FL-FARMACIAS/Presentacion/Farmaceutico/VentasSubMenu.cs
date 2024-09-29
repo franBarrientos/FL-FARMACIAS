@@ -39,7 +39,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void fullDataGridAllProducts()
         {
             dataGridView3.Rows.Clear();
-           foreach (var p in BD.productos) { dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER"); }
+           foreach (var p in StaticBD.productos) { dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER"); }
         }
 
         private void OnProductTimerTick(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void buscarProduct(string s)
         {
             dataGridView3.Rows.Clear();
-            foreach (var p in BD.productos)
+            foreach (var p in StaticBD.productos)
             {
                 if (p.codProducto.StartsWith(s, StringComparison.OrdinalIgnoreCase) || p.nombre.ToLower().Contains(s.ToLower()))
                 {
@@ -80,7 +80,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void fullDataGridAllClients()
         {
             dataGridView2.Rows.Clear();
-            foreach (var c in BD.clientes)
+            foreach (var c in StaticBD.clientes)
             {
 
                 dataGridView2.Rows.Add(c.apellido, c.dni, c.desc.descripcion, "ESCOJER");
@@ -112,7 +112,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void buscarClientes(string s)
         {
             dataGridView2.Rows.Clear();
-            foreach (var c in BD.clientes)
+            foreach (var c in StaticBD.clientes)
             {
                 if (c.dni.StartsWith(s, StringComparison.OrdinalIgnoreCase) ||
                 c.apellido.StartsWith(s, StringComparison.OrdinalIgnoreCase) )

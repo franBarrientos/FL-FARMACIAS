@@ -1,4 +1,5 @@
-﻿using FL_FARMACIAS.Dominio;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class AltaDescuentos : Form
     {
 
-        public Dictionary<string, List<string>> provArr = BD.provinciasYLocalidades;
+        public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
+        private DescuentoAplicacion descuentosAplicacion;
 
         public AltaDescuentos()
         {
+            InitializeComponent();
+        }
+
+        public AltaDescuentos(DescuentoAplicacion descuentosAplicacion)
+        {
+            this.descuentosAplicacion = descuentosAplicacion;
             InitializeComponent();
         }
 
@@ -42,6 +50,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             String descripcion = descripcion_descuento.Text.Trim();
             String porcentaje = porcentaje_descuento.Text.Trim();
+            porcentaje = porcentaje.Replace(',', '.');
+
 
             if (descripcion == "" || porcentaje == "" || (activo_descuento.Checked == false && inactivo_descuento.Checked == false))
             {
@@ -55,7 +65,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!porcentaje.All(char.IsDigit))
+            if (!porcentaje.All(c => char.IsDigit(c) || c == '.' || c == ','))
             {
                 MessageBox.Show("Por favor, ingrese solo números en el campo porcentaje.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -63,9 +73,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             if (descripcion != "" && porcentaje != "")
             {
+                this.descuentosAplicacion.AgregarDescuento(new DescuentoDominio(descripcion, Convert.ToDouble(porcentaje), activo_descuento.Checked));
                 MessageBox.Show("El descuento con la descripcion: " + descripcion + ", cuenta con un porcentaje de descuento" + porcentaje + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+
         }
 
         private void BFalta_vaciarcampos_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class ModificarDescuentas : Form
     {
 
-        public Dictionary<string, List<string>> provArr = BD.provinciasYLocalidades;
+        public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
 
         public ModificarDescuentas(DescuentoDominio p)
         {

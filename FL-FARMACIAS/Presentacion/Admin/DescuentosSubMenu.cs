@@ -1,4 +1,5 @@
-﻿using FL_FARMACIAS.Dominio;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class DescuentosSubMenu : Form
     { 
+        private DescuentoAplicacion descuentosAplicacion;
+        private AltaDescuentos subForm;
 
         public DescuentosSubMenu()
         {
             InitializeComponent();
-            foreach (var p in BD.descuentos)
+            descuentosAplicacion = new DescuentoAplicacion();
+            fullDeaults();
+        }
+
+        private void fullDeaults()
+        {
+            foreach (var descuento in descuentosAplicacion.ObtenerDescuentos())
             {
-                dataGridView2.Rows.Add(p.id, p.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO", p.porcentajeDescuento.ToString(), "MODIFICAR", "ELIMINAR" );
+                dataGridView2.Rows.Add(descuento.id, descuento.descripcion, descuento.estado ? "Activo" : "Inactivo", descuento.porcentajeDescuento, "MODIFICAR", "ELIMINAR");
             }
         }
 
@@ -65,7 +74,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
-            new AltaDescuentos().Show();
+            if (subForm != null && !subForm.IsDisposed)
+            {
+                subForm.BringToFront();
+            }
+            else
+            {
+                // Si no existe, crea una nueva instancia y la añade al diccionario
+                subForm = new AltaDescuentos(this.descuentosAplicacion);
+                subForm.Show();
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

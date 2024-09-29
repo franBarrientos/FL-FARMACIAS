@@ -46,6 +46,8 @@ namespace FL_FARMACIAS.Presentacion.Login
             if (usuarioEncontrado == null)
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Beliminar_login_Click(sender,e);
+                this.Show();
                 return;
             }
 

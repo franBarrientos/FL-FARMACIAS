@@ -15,7 +15,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
     public partial class AltaProveedor : Form
     {
 
-        public Dictionary<string, List<string>> provArr = BD.provinciasYLocalidades;
+        public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
 
         public AltaProveedor()
         {

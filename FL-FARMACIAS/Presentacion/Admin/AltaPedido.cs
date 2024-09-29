@@ -16,7 +16,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class AltaPedido : Form
     {
 
-        public Dictionary<string, List<string>> provArr = BD.provinciasYLocalidades;
+        public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
 
         public AltaPedido()
         {

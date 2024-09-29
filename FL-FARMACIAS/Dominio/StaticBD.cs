@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FL_FARMACIAS.Dominio
 {
-    public class BD
+    public class StaticBD
     {
         public static Dictionary<string, List<string>> provinciasYLocalidades { get; set; } = new Dictionary<string, List<string>>()
         {

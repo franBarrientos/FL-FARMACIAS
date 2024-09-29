@@ -9,14 +9,18 @@ namespace FL_FARMACIAS.Dominio
 
     public class ClienteDominio
     {
+
+        public int id { set; get; }
         public string nombre { set; get; }
         public string apellido { set; get; }
         public string dni { set; get; }
         public string telefono { set; get; }
         public bool activo { set; get; }
-        public DescuentoDominio desc { set; get; }
+        public virtual DescuentoDominio desc { set; get; }
+        public int? idDescuento { set; get; }
 
 
+        public ClienteDominio() { }
         public ClienteDominio(string nombre, string apellido, string dni, string telefono, bool activo, DescuentoDominio desc)
         {
             this.nombre = nombre;
