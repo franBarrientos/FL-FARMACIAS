@@ -35,6 +35,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidossSubMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.button3w = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -69,8 +71,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,6 +107,21 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PEDIDOS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(425, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 41);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "PEDIDOS";
             // 
             // label3w
             // 
@@ -326,6 +341,21 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(390, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(297, 41);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "PROVEEDORES";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -503,36 +533,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Width = 150;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(425, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 41);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "PEDIDOS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(390, 14);
-            this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(297, 41);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "PROVEEDORES";
-            // 
             // PedidossSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,10 +544,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(64);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PedidossSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Empleados Admin";
+            this.Text = "Menu Pedidos y Proveedores";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

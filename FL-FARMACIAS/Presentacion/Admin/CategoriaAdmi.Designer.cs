@@ -187,9 +187,11 @@
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(441, 368);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Vaciar_campos_categoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CategoriaAdmi";
+            this.Text = "Alta Categoria";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

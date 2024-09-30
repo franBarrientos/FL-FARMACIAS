@@ -345,8 +345,10 @@
             this.ClientSize = new System.Drawing.Size(566, 686);
             this.Controls.Add(this.LAS_cate_titulo);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ModificarProductoAdmi";
-            this.Text = "ModificarProductoAdmi";
+            this.Text = "Modificar Producto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

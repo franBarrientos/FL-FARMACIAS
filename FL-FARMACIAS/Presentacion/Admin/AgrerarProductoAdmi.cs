@@ -20,6 +20,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public AgrerarProductoAdmi(productoSubMenu productoSubMenu)
         {
             InitializeComponent();
+            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.productoSubMenu = productoSubMenu;
         }
 
@@ -62,11 +63,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String codigocompara = @"^[A-Za-z]{3}_\d{5}$";
             String precio = TP_precio.Text.Trim();
             int numero;
-            float numeroprecio;
+            //float numeroprecio;
             // Intenta convertir el texto a un número entero
             bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
-            bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
-
+            // bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
+            precio = precio.Replace(',', '.');
 
             if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {
@@ -111,17 +112,23 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (!espositivo)
+            if (!precio.All(c => char.IsDigit(c) || c == '.') || Convert.ToDouble(precio) < 0)
             {
-                MessageBox.Show("Por favor, ingrese solo números positivos en el campo stock.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!preciopositivo)
-            {
-                MessageBox.Show("Por favor, ingrese solo números positivos en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // if (!espositivo)
+            //{
+            //  MessageBox.Show("Por favor, ingrese solo números positivos en el campo stock.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //return;
+            //}
+
+            //if (!preciopositivo)
+            //{
+            //  MessageBox.Show("Por favor, ingrese solo números positivos en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //return;
+            //}
 
             if (nombre != "" && codigo != "" && categoria != "" && precio != "" && marca != "" && descripcion != "" && laboratorio != "" && stock != "" && Regex.IsMatch(codigo, codigocompara))
             {

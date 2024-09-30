@@ -294,9 +294,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 606);
             this.Controls.Add(this.Pfarm_altacliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AltaPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta Proveedor";
+            this.Text = "Alta pedido";
             this.Pfarm_altacliente.ResumeLayout(false);
             this.Pfarm_altacliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
