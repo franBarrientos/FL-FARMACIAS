@@ -1,10 +1,6 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-
-namespace FL_FARMACIAS.Presentacion.Farmaceutico
+﻿namespace FL_FARMACIAS.Presentacion.Admin
 {
-    partial class VentasSubMenu
+    partial class pedidosAproveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +28,15 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasSubMenu));
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pedidosAproveedor));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Bagregar_categoria = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -72,30 +65,32 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button3 = new System.Windows.Forms.Button();
             this.placeholderTextBox1 = new PlaceholderTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.APELLIDO_V = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNIV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OBRASOCIALV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label3w = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nombre_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuit_proveedorDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincia_prove_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localidad_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo_proveedorDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIOTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CANTIDADPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCTOS_VENDIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.NOMBRE_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CORREO_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RECIBIDO_PEDIDO = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -109,34 +104,18 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(14, 120);
-            this.label1.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 31);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "BUSQUEDA POR CLIENTES";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(14, 12);
+            this.tabControl1.Location = new System.Drawing.Point(39, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1034, 573);
-            this.tabControl1.TabIndex = 30;
+            this.tabControl1.TabIndex = 31;
             // 
             // tabPage1
             // 
@@ -153,19 +132,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1026, 547);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "NUEVA VENTA";
+            this.tabPage1.Text = "NUEVO PEDIDO";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox4.Location = new System.Drawing.Point(540, 319);
@@ -173,25 +150,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.groupBox4.Size = new System.Drawing.Size(417, 142);
             this.groupBox4.TabIndex = 55;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "DATOS FACTURA";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(230, 76);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 13);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "DESCUENTO";
+            this.groupBox4.Text = "DATOS DE PEDIDOS";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(230, 28);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 13);
+            this.label16.Size = new System.Drawing.Size(145, 13);
             this.label16.TabIndex = 57;
-            this.label16.Text = "NOMBRE:";
+            this.label16.Text = "NOMBRE PROVEEDOR:";
             // 
             // label15
             // 
@@ -205,7 +173,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 103);
+            this.label14.Location = new System.Drawing.Point(324, 115);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 13);
             this.label14.TabIndex = 55;
@@ -225,18 +193,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(9, 52);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 13);
+            this.label12.Size = new System.Drawing.Size(214, 13);
             this.label12.TabIndex = 53;
-            this.label12.Text = "OBRA SOCIAL:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(230, 52);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 13);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "APELLIDO:";
+            this.label12.Text = "CANTIDAD PRODUCTOS PEDIDOS:";
             // 
             // pictureBox1
             // 
@@ -282,7 +241,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn2});
             this.dataGridView4.Location = new System.Drawing.Point(14, 38);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(461, 90);
+            this.dataGridView4.Size = new System.Drawing.Size(452, 90);
             this.dataGridView4.TabIndex = 49;
             // 
             // dataGridViewTextBoxColumn4
@@ -371,8 +330,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.placeholderTextBox2.Size = new System.Drawing.Size(284, 20);
             this.placeholderTextBox2.TabIndex = 49;
             this.placeholderTextBox2.Text = "INGRESE COD PRODUCTO O DESCRIPCION";
-            this.placeholderTextBox2.TextChanged += new System.EventHandler(this.txtBuscarProducto_TextChanged);
-            this.placeholderTextBox2.Leave += new System.EventHandler(this.txtBuscarProducto_TextChanged);
             // 
             // label9
             // 
@@ -397,7 +354,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(534, 90);
             this.dataGridView3.TabIndex = 48;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // CODP
             // 
@@ -439,7 +395,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.groupBox1.Size = new System.Drawing.Size(462, 220);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DATOS CLIENTE";
+            this.groupBox1.Text = "DATOS PROVEEDOR";
             // 
             // label7
             // 
@@ -455,18 +411,18 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(9, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 13);
+            this.label6.Size = new System.Drawing.Size(154, 13);
             this.label6.TabIndex = 53;
-            this.label6.Text = "OBRA SOCIAL:";
+            this.label6.Text = "CORREO ELECTRONICO:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(211, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 51;
-            this.label5.Text = "APELLIDO:";
+            this.label5.Text = "NOMBRE:";
             // 
             // button3
             // 
@@ -474,9 +430,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 23);
             this.button3.TabIndex = 50;
-            this.button3.Text = "CONSUMIDOR FINAL";
+            this.button3.Text = "PROVEEDOR FINAL";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // placeholderTextBox1
             // 
@@ -484,47 +439,29 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.placeholderTextBox1.IsPassword = false;
             this.placeholderTextBox1.Location = new System.Drawing.Point(12, 80);
             this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO ";
+            this.placeholderTextBox1.Placeholder = "INGRESE DNI O NOMBRE";
             this.placeholderTextBox1.Size = new System.Drawing.Size(220, 20);
             this.placeholderTextBox1.TabIndex = 49;
-            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO ";
-            this.placeholderTextBox1.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
-            this.placeholderTextBox1.Leave += new System.EventHandler(this.txtBuscarCliente_TextChanged);
+            this.placeholderTextBox1.Text = "INGRESE DNI O NOMBRE ";
             // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.APELLIDO_V,
-            this.DNIV,
-            this.OBRASOCIALV,
+            this.nombre_proveedor_DG,
+            this.cuit_proveedorDG,
+            this.dni_proveedor_DG,
+            this.provincia_prove_DG,
+            this.localidad_proveedor_DG,
+            this.direccion_proveedor_DG,
+            this.correo_proveedorDG,
+            this.telefono_proveedor_DG,
             this.ESCOJER});
             this.dataGridView2.Location = new System.Drawing.Point(12, 115);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(444, 90);
             this.dataGridView2.TabIndex = 48;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // APELLIDO_V
-            // 
-            this.APELLIDO_V.HeaderText = "APELLIDO";
-            this.APELLIDO_V.Name = "APELLIDO_V";
-            // 
-            // DNIV
-            // 
-            this.DNIV.HeaderText = "DNI";
-            this.DNIV.Name = "DNIV";
-            // 
-            // OBRASOCIALV
-            // 
-            this.OBRASOCIALV.HeaderText = "OBRA SOCIAL";
-            this.OBRASOCIALV.Name = "OBRASOCIALV";
-            // 
-            // ESCOJER
-            // 
-            this.ESCOJER.HeaderText = "ESCOJER";
-            this.ESCOJER.Name = "ESCOJER";
             // 
             // label4
             // 
@@ -537,18 +474,14 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label4.Location = new System.Drawing.Point(322, 13);
             this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(359, 41);
+            this.label4.Size = new System.Drawing.Size(401, 41);
             this.label4.TabIndex = 47;
-            this.label4.Text = "REGISTRAR VENTA";
+            this.label4.Text = "REGISTRAR PEDIDOS";
             // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label3w);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.textBox1);
@@ -558,19 +491,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1026, 547);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "MIS VENTAS";
+            this.tabPage2.Text = "MIS PEDIDOS";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(825, 142);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.TabIndex = 47;
-            this.pictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -583,58 +505,21 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3.Location = new System.Drawing.Point(338, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(326, 57);
+            this.label3.Size = new System.Drawing.Size(351, 57);
             this.label3.TabIndex = 46;
-            this.label3.Text = "MIS VENTAS";
-            // 
-            // label3w
-            // 
-            this.label3w.AutoSize = true;
-            this.label3w.BackColor = System.Drawing.Color.Transparent;
-            this.label3w.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3w.ForeColor = System.Drawing.Color.Black;
-            this.label3w.Location = new System.Drawing.Point(474, 104);
-            this.label3w.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label3w.Name = "label3w";
-            this.label3w.Size = new System.Drawing.Size(77, 18);
-            this.label3w.TabIndex = 45;
-            this.label3w.Text = "FILTROS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(391, 159);
-            this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "OBRA SOCIAL";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PAMI",
-            "GALENO",
-            "SOS"});
-            this.comboBox1.Location = new System.Drawing.Point(477, 156);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1.TabIndex = 43;
-            this.comboBox1.Text = "Todos";
+            this.label3.Text = "MIS PEDIDOS";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(825, 142);
             this.button2.Margin = new System.Windows.Forms.Padding(64);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 46);
+            this.button2.Size = new System.Drawing.Size(87, 46);
             this.button2.TabIndex = 42;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -643,7 +528,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,7 +549,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(328, 20);
             this.textBox1.TabIndex = 40;
-            this.textBox1.Text = "INGRESE DNI O APELLIDO";
+            this.textBox1.Text = "INGRESE NOMBRE PROVEEDOR O FECHA PEDIDO";
             // 
             // dataGridView1
             // 
@@ -675,12 +560,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ID,
             this.PRECIOTOTAL,
             this.CANTIDADPRODUCTO,
-            this.PRODUCTOS_VENDIDOS,
-            this.NOMBRE,
-            this.APELLIDO,
-            this.TELEFONO,
-            this.FECHAINGRESO,
-            this.ELIMINAR,
+            this.NOMBRE_PROVEEDOR,
+            this.DNI_PROVEEDOR,
+            this.TELEFONO_PROVEEDOR,
+            this.CORREO_PROVEEDOR,
+            this.FECHA_PEDIDO,
+            this.RECIBIDO_PEDIDO,
             this.MODIFICAR});
             this.dataGridView1.Location = new System.Drawing.Point(21, 206);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
@@ -689,6 +574,60 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(985, 329);
             this.dataGridView1.TabIndex = 39;
+            // 
+            // nombre_proveedor_DG
+            // 
+            this.nombre_proveedor_DG.HeaderText = "NOMBRE";
+            this.nombre_proveedor_DG.Name = "nombre_proveedor_DG";
+            // 
+            // cuit_proveedorDG
+            // 
+            this.cuit_proveedorDG.HeaderText = "CUIT";
+            this.cuit_proveedorDG.Name = "cuit_proveedorDG";
+            // 
+            // dni_proveedor_DG
+            // 
+            this.dni_proveedor_DG.HeaderText = "DNI";
+            this.dni_proveedor_DG.Name = "dni_proveedor_DG";
+            // 
+            // provincia_prove_DG
+            // 
+            this.provincia_prove_DG.HeaderText = "PROVINCIA";
+            this.provincia_prove_DG.Name = "provincia_prove_DG";
+            // 
+            // localidad_proveedor_DG
+            // 
+            this.localidad_proveedor_DG.HeaderText = "LOCALIDAD";
+            this.localidad_proveedor_DG.Name = "localidad_proveedor_DG";
+            // 
+            // direccion_proveedor_DG
+            // 
+            this.direccion_proveedor_DG.HeaderText = "DIRECCION";
+            this.direccion_proveedor_DG.Name = "direccion_proveedor_DG";
+            // 
+            // correo_proveedorDG
+            // 
+            this.correo_proveedorDG.HeaderText = "CORREO";
+            this.correo_proveedorDG.Name = "correo_proveedorDG";
+            // 
+            // telefono_proveedor_DG
+            // 
+            this.telefono_proveedor_DG.HeaderText = "TELEFONO";
+            this.telefono_proveedor_DG.Name = "telefono_proveedor_DG";
+            // 
+            // ESCOJER
+            // 
+            this.ESCOJER.HeaderText = "ESCOJER";
+            this.ESCOJER.Name = "ESCOJER";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "FECHA DEL PEDIDO:";
             // 
             // ID
             // 
@@ -708,50 +647,47 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.CANTIDADPRODUCTO.HeaderText = "CANTIDAD PRODUCTOS";
             this.CANTIDADPRODUCTO.Name = "CANTIDADPRODUCTO";
             // 
-            // PRODUCTOS_VENDIDOS
+            // NOMBRE_PROVEEDOR
             // 
-            this.PRODUCTOS_VENDIDOS.HeaderText = "PRODUCTOS_VENDIDOS";
-            this.PRODUCTOS_VENDIDOS.Name = "PRODUCTOS_VENDIDOS";
+            this.NOMBRE_PROVEEDOR.HeaderText = "NOMBRE PROVEEDOR";
+            this.NOMBRE_PROVEEDOR.Name = "NOMBRE_PROVEEDOR";
             // 
-            // NOMBRE
+            // DNI_PROVEEDOR
             // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Width = 150;
+            this.DNI_PROVEEDOR.HeaderText = "DNI PROVEEDOR";
+            this.DNI_PROVEEDOR.MinimumWidth = 8;
+            this.DNI_PROVEEDOR.Name = "DNI_PROVEEDOR";
+            this.DNI_PROVEEDOR.ReadOnly = true;
+            this.DNI_PROVEEDOR.Width = 150;
             // 
-            // APELLIDO
+            // TELEFONO_PROVEEDOR
             // 
-            this.APELLIDO.HeaderText = "APELLIDO";
-            this.APELLIDO.MinimumWidth = 8;
-            this.APELLIDO.Name = "APELLIDO";
-            this.APELLIDO.ReadOnly = true;
-            this.APELLIDO.Width = 150;
+            this.TELEFONO_PROVEEDOR.HeaderText = "TELEFONO PROVEEDOR";
+            this.TELEFONO_PROVEEDOR.MinimumWidth = 8;
+            this.TELEFONO_PROVEEDOR.Name = "TELEFONO_PROVEEDOR";
+            this.TELEFONO_PROVEEDOR.ReadOnly = true;
+            this.TELEFONO_PROVEEDOR.Width = 150;
             // 
-            // TELEFONO
+            // CORREO_PROVEEDOR
             // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.MinimumWidth = 8;
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            this.TELEFONO.Width = 150;
+            this.CORREO_PROVEEDOR.HeaderText = "CORREO PROVEEDOR";
+            this.CORREO_PROVEEDOR.MinimumWidth = 8;
+            this.CORREO_PROVEEDOR.Name = "CORREO_PROVEEDOR";
+            this.CORREO_PROVEEDOR.ReadOnly = true;
+            this.CORREO_PROVEEDOR.Width = 150;
             // 
-            // FECHAINGRESO
+            // FECHA_PEDIDO
             // 
-            this.FECHAINGRESO.HeaderText = "FECHA INGRESO";
-            this.FECHAINGRESO.MinimumWidth = 8;
-            this.FECHAINGRESO.Name = "FECHAINGRESO";
-            this.FECHAINGRESO.ReadOnly = true;
-            this.FECHAINGRESO.Width = 150;
+            this.FECHA_PEDIDO.HeaderText = "FECHA PEDIDO";
+            this.FECHA_PEDIDO.Name = "FECHA_PEDIDO";
             // 
-            // ELIMINAR
+            // RECIBIDO_PEDIDO
             // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
+            this.RECIBIDO_PEDIDO.HeaderText = "RECIBIDO PEDIDO";
+            this.RECIBIDO_PEDIDO.MinimumWidth = 8;
+            this.RECIBIDO_PEDIDO.Name = "RECIBIDO_PEDIDO";
+            this.RECIBIDO_PEDIDO.ReadOnly = true;
+            this.RECIBIDO_PEDIDO.Width = 150;
             // 
             // MODIFICAR
             // 
@@ -761,20 +697,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.MODIFICAR.ReadOnly = true;
             this.MODIFICAR.Width = 150;
             // 
-            // VentasSubMenu
+            // pedidosAproveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(1060, 597);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1117, 610);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(64);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "VentasSubMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mis ventas";
+            this.Name = "pedidosAproveedor";
+            this.Text = "pedidosAproveedor";
+            this.Load += new System.EventHandler(this.pedidosAproveedor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -792,80 +725,75 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
-
-
         #endregion
-        private Label label1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private GroupBox groupBox4;
-        private TabPage tabPage2;
-        private PictureBox pictureBox2;
-        private Label label3;
-        private Label label3w;
-        private Label label2;
-        private ComboBox comboBox1;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn PRECIOTOTAL;
-        private DataGridViewTextBoxColumn CANTIDADPRODUCTO;
-        private DataGridViewTextBoxColumn PRODUCTOS_VENDIDOS;
-        private DataGridViewTextBoxColumn NOMBRE;
-        private DataGridViewTextBoxColumn APELLIDO;
-        private DataGridViewTextBoxColumn TELEFONO;
-        private DataGridViewTextBoxColumn FECHAINGRESO;
-        private DataGridViewButtonColumn ELIMINAR;
-        private DataGridViewButtonColumn MODIFICAR;
-        private Label label4;
-        private DataGridView dataGridView2;
 
-        public Button Bagregar_categoria; 
-
-        private GroupBox groupBox3;
-        private GroupBox groupBox2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button Bagregar_categoria;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label8;
         private PlaceholderTextBox placeholderTextBox2;
-        private DataGridView dataGridView3;
-        private GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCPP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIOP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STOCKP;
+        private System.Windows.Forms.DataGridViewButtonColumn ESCOJERP;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
         private PlaceholderTextBox placeholderTextBox1;
-        private Button button3;
-        private Label label6;
-        private Label label5;
-        private DataGridViewTextBoxColumn APELLIDO_V;
-        private DataGridViewTextBoxColumn DNIV;
-        private DataGridViewTextBoxColumn OBRASOCIALV;
-        private DataGridViewButtonColumn ESCOJER;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Button button4;
-        private Label label10;
-        private NumericUpDown numericUpDown1;
-        private DataGridView dataGridView4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private DataGridViewTextBoxColumn CODP;
-        private DataGridViewTextBoxColumn DESCPP;
-        private DataGridViewTextBoxColumn PRECIOP;
-        private DataGridViewTextBoxColumn STOCKP;
-        private DataGridViewButtonColumn ESCOJERP;
-        private Label label17;
-        private Label label16;
-        private Label label15;
-        private Label label14;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_proveedor_DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit_proveedorDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni_proveedor_DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provincia_prove_DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn localidad_proveedor_DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion_proveedor_DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo_proveedorDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono_proveedor_DG;
+        private System.Windows.Forms.DataGridViewButtonColumn ESCOJER;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIOTOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDADPRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_PROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI_PROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO_PROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CORREO_PROVEEDOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_PEDIDO;
+        private System.Windows.Forms.DataGridViewButtonColumn RECIBIDO_PEDIDO;
+        private System.Windows.Forms.DataGridViewButtonColumn MODIFICAR;
     }
 }
