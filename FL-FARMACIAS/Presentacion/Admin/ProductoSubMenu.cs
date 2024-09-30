@@ -38,7 +38,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         public void insertProduct(ProductoDominio p)
         {
-            this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
+            this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio.ToString("F2"), p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
             this.orgProducts.Add(p);
         }
         public productoSubMenu()
