@@ -52,7 +52,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.comboBox1.SelectedIndex = 0;
 
             foreach (var c in matcheds){
-                this.dataGridView1.Rows.Add(c.id, c.nombre, c.apellido, c.dni, c.telefono,c.idDescuento, c.desc.descripcion,  "MODIFICAR", "ELIMINAR");
+                this.dataGridView1.Rows.Add(c.id, c.nombre, c.apellido, c.dni, c.telefono,c.idDescuento, c.desc.descripcion, c.activo ? "ACTIVO" : "INACTIVO" ,  "MODIFICAR", "ELIMINAR");
             }
         }
 
@@ -72,18 +72,22 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 // Verifica si la columna clicada es "Modificar"
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Modificar"
-                    MessageBox.Show($"Modificar fila {e.RowIndex}");
-                    // Ejemplo: mostrar detalles para modificar
+                   
                     var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
                     var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
-                    // Aquí podrías abrir un formulario de edición con estos datos, por ejemplo.
-                }
-                else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
-                {
-                   // new CrearCuentaModal().Show();
+                    var dni = dataGridView.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
+                    var telefono = dataGridView.Rows[e.RowIndex].Cells["TELEFONO"].Value.ToString();
+                    var idDesc = dataGridView.Rows[e.RowIndex].Cells["DESCUENTOID"].Value.ToString();
+                    var desDesc = dataGridView.Rows[e.RowIndex].Cells["DESCUENTO"].Value.ToString();
 
+                    var activo = dataGridView.Rows[e.RowIndex].Cells["ESTADO"].Value.ToString() == "ACTIVO";
+
+                    var desc = this.descuentoApp.ObtenerDescuentoPorDescripcion(desDesc);
+                    var id = int.Parse(dataGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+                    new ModificarCliente(this, new ClienteDominio(id, nombre, apellido, dni, telefono, activo, desc)).Show();
+                
                 }
+               
             }
 
         }

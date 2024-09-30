@@ -1,6 +1,7 @@
 ﻿using FL_FARMACIAS.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,18 @@ namespace FL_FARMACIAS.Aplicacion
 {
     public  class ClienteAplicacion
     {
-        private  DBConnect db;
 
 
         public ClienteAplicacion()
         {
-            db = new DBConnect();
         }
 
         public List<ClienteDominio> ObtenerTodos()
         {
-            return db.Cliente.ToList();
+            using (var db = new DBConnect())
+            {
+                return db.Cliente.Include(c => c.desc).ToList();
+            }
         }
 
         //save new 
@@ -27,6 +29,7 @@ namespace FL_FARMACIAS.Aplicacion
         {
             using (var db = new DBConnect())
             {
+                db.Entry(d.desc).State = EntityState.Unchanged;
                 db.Cliente.Add(d);
                 db.SaveChanges();
             }

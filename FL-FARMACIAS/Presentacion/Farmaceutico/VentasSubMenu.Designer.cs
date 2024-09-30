@@ -828,7 +828,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Label label4;
         private DataGridView dataGridView2;
 
-        public Button Bagregar_categoria { get; private set; }
+        public Button Bagregar_categoria;
 
         private GroupBox groupBox3;
         private GroupBox groupBox2;

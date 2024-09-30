@@ -11,14 +11,29 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class AltaCliente : Form
+    public partial class ModificarCliente : Form
     {
         public ClienteSubMenu cMenu;
-        public AltaCliente(ClienteSubMenu c)
+        public ModificarCliente(ClienteSubMenu c, ClienteDominio e)
         {
             InitializeComponent();
             this.cMenu = c;
             fullObraSociales();
+            this.textBox1.Text = e.id.ToString();
+            this.Tnombre_cliente.Text = e.nombre;
+            this.Tapellido_cliente.Text = e.apellido;
+            this.Tdni_cliente.Text = e.dni;
+            this.Ttelefono_cliente.Text = e.telefono;
+            this.DFalta_obrasocial.Text = e.desc.descripcion;
+            if (e.activo)
+            {
+                this.checkBox1.Checked = true;
+            }
+            else
+            {
+                this.checkBox1.Checked = false;
+            }
+
            
         }
 
@@ -32,6 +47,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         }
         private void BFalta_ingresarcli_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt16(textBox1.Text);
             String nombre = Tnombre_cliente.Text.Trim();
             String apellido = Tapellido_cliente.Text.Trim();
             String dni = Tdni_cliente.Text.Trim();
@@ -80,13 +96,15 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
+            
+
             if (nombre != "" && apellido != "" && dni != "" && telefono != "" && DFalta_obrasocial.Text != "")
             {
                 DescuentoDominio descuento = this.cMenu.descuentoApp.ObtenerDescuentoPorDescripcion(DFalta_obrasocial.Text);
-                this.cMenu.clienteApp.AgregarCliente(new ClienteDominio(nombre, apellido, dni, telefono, true,descuento));
+                this.cMenu.clienteApp.ActualizarCliente(new ClienteDominio(id, nombre, apellido, dni, telefono, checkBox1.Checked,descuento));
                 this.cMenu.fullDefaults();
-                MessageBox.Show("El cliente " + nombre + " " + apellido + " " + "numero de DNI: " + dni + "obra social: " + DFalta_obrasocial.Text + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("El cliente " + nombre + " " + apellido + " " + "numero de DNI: " + dni + "obra social: " + DFalta_obrasocial.Text + "  ha sido modificado con exito.", "Modificación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 
@@ -112,6 +130,22 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox1.Checked = false;
+            }
         }
     }
 }

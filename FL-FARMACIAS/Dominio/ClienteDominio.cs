@@ -29,6 +29,19 @@ namespace FL_FARMACIAS.Dominio
             this.telefono = telefono;
             this.desc = desc;
             this.activo = activo;
+            this.idDescuento = desc.id;
+        }
+
+        public ClienteDominio(int id, string nombre, string apellido, string dni, string telefono, bool activo, DescuentoDominio desc)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.telefono = telefono;
+            this.desc = desc;
+            this.activo = activo;
+            this.idDescuento = desc.id;
         }
     }
 }

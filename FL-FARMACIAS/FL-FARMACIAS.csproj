@@ -163,6 +163,12 @@
     <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Farmaceutico\ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Farmaceutico\PedidossSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\PedidossSubMenu.resx">
       <DependentUpon>PedidossSubMenu.cs</DependentUpon>

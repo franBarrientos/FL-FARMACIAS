@@ -71,5 +71,13 @@ namespace FL_FARMACIAS.Aplicacion
                 .ToList();
             }
         }
+
+        public DescuentoDominio ObtenerDescuentoPorDescripcion(string d)
+        {
+            using (var db = new DBConnect())
+            {
+                return db.Descuento.FirstOrDefault(x => x.descripcion == d || x.descripcion.Contains(d));
+            }
+        }
     }
 }

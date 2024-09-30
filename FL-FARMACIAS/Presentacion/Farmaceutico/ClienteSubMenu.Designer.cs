@@ -41,6 +41,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BFalta_ingresarcli = new System.Windows.Forms.Button();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +49,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCUENTOID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.TELEFONO,
             this.DESCUENTOID,
             this.DESCUENTO,
+            this.ESTADO,
             this.MODIFICAR,
             this.ELIMINAR});
             this.dataGridView1.Location = new System.Drawing.Point(14, 218);
@@ -179,6 +181,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.BFalta_ingresarcli.UseVisualStyleBackColor = false;
             this.BFalta_ingresarcli.Click += new System.EventHandler(this.BFalta_ingresarcli_Click);
             // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(14, 173);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(235, 20);
+            this.placeholderTextBox1.TabIndex = 32;
+            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
+            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -231,6 +244,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.DESCUENTO.HeaderText = "DESCUENTO";
             this.DESCUENTO.Name = "DESCUENTO";
             // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            // 
             // MODIFICAR
             // 
             this.MODIFICAR.HeaderText = "MODIFICAR";
@@ -246,17 +264,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ELIMINAR.Name = "ELIMINAR";
             this.ELIMINAR.ReadOnly = true;
             this.ELIMINAR.Width = 150;
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(14, 173);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(235, 20);
-            this.placeholderTextBox1.TabIndex = 32;
-            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
             // 
             // ClienteSubMenu
             // 
@@ -297,6 +304,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Label label3w;
         private Label label3;
         private Button BFalta_ingresarcli;
+        private PlaceholderTextBox placeholderTextBox1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn APELLIDO;
@@ -304,8 +312,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewTextBoxColumn TELEFONO;
         private DataGridViewTextBoxColumn DESCUENTOID;
         private DataGridViewTextBoxColumn DESCUENTO;
+        private DataGridViewTextBoxColumn ESTADO;
         private DataGridViewButtonColumn MODIFICAR;
         private DataGridViewButtonColumn ELIMINAR;
-        private PlaceholderTextBox placeholderTextBox1;
     }
 }
