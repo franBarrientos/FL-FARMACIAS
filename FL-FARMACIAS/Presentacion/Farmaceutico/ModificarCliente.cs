@@ -31,7 +31,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             }
             else
             {
-                this.checkBox1.Checked = false;
+                this.checkBox2.Checked = true;
             }
 
            

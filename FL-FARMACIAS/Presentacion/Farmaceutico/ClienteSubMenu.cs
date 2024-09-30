@@ -17,11 +17,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         public ClienteAplicacion clienteApp;
         public DescuentoAplicacion descuentoApp;
 
-        private object[][] orgEmployess = new object[][]
-                {
-        new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
-                };
-
         public ClienteSubMenu()
         {
             InitializeComponent();
@@ -29,11 +24,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.descuentoApp = new DescuentoAplicacion();
             fullDefaults();
             fullFiltros();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void fullFiltros()
         {
-            List<DescuentoDominio> matcheds = this.descuentoApp.BuscarDescuentos(null, null, true);
+            List<DescuentoDominio> matcheds = this.descuentoApp.ObtenerDescuentos();
             this.comboBox1.Items.Clear();
             this.comboBox1.Items.Add("Todos");
             foreach (var d in matcheds)
@@ -50,6 +46,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
             this.placeholderTextBox1.ForeColor = Color.Gray;
             this.comboBox1.SelectedIndex = 0;
+            this.checkBox1.Checked = false;
+            this.checkBox2.Checked = false;
 
             foreach (var c in matcheds){
                 this.dataGridView1.Rows.Add(c.id, c.nombre, c.apellido, c.dni, c.telefono,c.idDescuento, c.desc.descripcion, c.activo ? "ACTIVO" : "INACTIVO" ,  "MODIFICAR", "ELIMINAR");
@@ -97,12 +95,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Rows.Clear();
-
-            foreach (var row in this.orgEmployess)
-            {
-                this.dataGridView1.Rows.Add(row);
-            }
+           fullDefaults();
         }
 
       
@@ -117,6 +110,56 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             else
             {
                 altaCliente.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string idOrApellido = this.placeholderTextBox1.Text;
+            if (idOrApellido == "INGRESE DNI O APELLIDO")
+            {
+                idOrApellido = string.Empty;
+            }
+
+            // Tratar de convertir a entero, si es válido se usa como ID
+            bool esNumerico = !string.IsNullOrEmpty(idOrApellido) && idOrApellido.All(char.IsDigit);
+            string dni = null;
+            if (esNumerico)
+            {
+                dni = idOrApellido;
+                idOrApellido = string.Empty;
+            }
+
+            // Determinar el estado basándose en los checkboxes
+            bool? estado = null;
+            if (checkBox1.Checked && !checkBox2.Checked)
+            {
+                estado = true;  // Activo
+            }
+            else if (!checkBox1.Checked && checkBox2.Checked)
+            {
+                estado = false; // Inactivo
+            }
+
+
+            List<ClienteDominio> matched = this.clienteApp.BuscarCliente(dni, idOrApellido, estado, this.comboBox1.Text == "Todos"? null : this.comboBox1.SelectedItem.ToString());
+            this.dataGridView1.Rows.Clear();
+            foreach (var c in matched) { 
+                this.dataGridView1.Rows.Add(c.id, c.nombre, c.apellido, c.dni, c.telefono, c.idDescuento, c.desc.descripcion, c.activo ? "ACTIVO" : "INACTIVO", "MODIFICAR", "ELIMINAR"); 
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked) { 
+                checkBox1.Checked = false;}
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox2.Checked = false;
             }
         }
     }

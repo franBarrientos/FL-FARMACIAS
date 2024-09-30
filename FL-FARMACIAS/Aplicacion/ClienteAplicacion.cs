@@ -63,16 +63,18 @@ namespace FL_FARMACIAS.Aplicacion
         }
 
 
-        public List<ClienteDominio> BuscarCliente(int? dni = null,
+        public List<ClienteDominio> BuscarCliente(string dni = null,
                                                          string apellido = null,
-                                                         bool? estado = null)
+                                                         bool? estado = null,
+                                                         string desc = null)
         {
             //haz un log
             Console.WriteLine("DNI: " + dni + ", Descripción: " + apellido + ", Estado: " + estado);
             using (var db = new DBConnect())
             {
-                return db.Cliente.Where(d =>
-                (!dni.HasValue || d.id == dni) &&
+                return db.Cliente.Include(c => c.desc).Where(d =>
+                (string.IsNullOrEmpty(dni) || d.dni == dni) &&
+                (string.IsNullOrEmpty(desc) || d.desc.descripcion == desc) &&
                 (string.IsNullOrEmpty(apellido) || d.apellido.Contains(apellido)) &&  // Aquí está la corrección
                 (!estado.HasValue || d.activo == estado))
                 .ToList();
