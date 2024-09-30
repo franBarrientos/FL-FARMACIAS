@@ -20,6 +20,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public AgrerarProductoAdmi(productoSubMenu productoSubMenu)
         {
             InitializeComponent();
+            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.productoSubMenu = productoSubMenu;
         }
 
@@ -67,7 +68,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
             bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
             precio = precio.Replace(",", ".");
-
 
             if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {

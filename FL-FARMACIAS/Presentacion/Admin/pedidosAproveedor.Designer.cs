@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -65,13 +66,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.placeholderTextBox1 = new PlaceholderTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nombre_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit_proveedorDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +75,13 @@
             this.correo_proveedorDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIOTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CANTIDADPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,6 +151,15 @@
             this.groupBox4.TabIndex = 55;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS DE PEDIDOS";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "FECHA DEL PEDIDO:";
             // 
             // label16
             // 
@@ -463,6 +472,51 @@
             this.dataGridView2.Size = new System.Drawing.Size(444, 90);
             this.dataGridView2.TabIndex = 48;
             // 
+            // nombre_proveedor_DG
+            // 
+            this.nombre_proveedor_DG.HeaderText = "NOMBRE";
+            this.nombre_proveedor_DG.Name = "nombre_proveedor_DG";
+            // 
+            // cuit_proveedorDG
+            // 
+            this.cuit_proveedorDG.HeaderText = "CUIT";
+            this.cuit_proveedorDG.Name = "cuit_proveedorDG";
+            // 
+            // dni_proveedor_DG
+            // 
+            this.dni_proveedor_DG.HeaderText = "DNI";
+            this.dni_proveedor_DG.Name = "dni_proveedor_DG";
+            // 
+            // provincia_prove_DG
+            // 
+            this.provincia_prove_DG.HeaderText = "PROVINCIA";
+            this.provincia_prove_DG.Name = "provincia_prove_DG";
+            // 
+            // localidad_proveedor_DG
+            // 
+            this.localidad_proveedor_DG.HeaderText = "LOCALIDAD";
+            this.localidad_proveedor_DG.Name = "localidad_proveedor_DG";
+            // 
+            // direccion_proveedor_DG
+            // 
+            this.direccion_proveedor_DG.HeaderText = "DIRECCION";
+            this.direccion_proveedor_DG.Name = "direccion_proveedor_DG";
+            // 
+            // correo_proveedorDG
+            // 
+            this.correo_proveedorDG.HeaderText = "CORREO";
+            this.correo_proveedorDG.Name = "correo_proveedorDG";
+            // 
+            // telefono_proveedor_DG
+            // 
+            this.telefono_proveedor_DG.HeaderText = "TELEFONO";
+            this.telefono_proveedor_DG.Name = "telefono_proveedor_DG";
+            // 
+            // ESCOJER
+            // 
+            this.ESCOJER.HeaderText = "ESCOJER";
+            this.ESCOJER.Name = "ESCOJER";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -575,60 +629,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(985, 329);
             this.dataGridView1.TabIndex = 39;
             // 
-            // nombre_proveedor_DG
-            // 
-            this.nombre_proveedor_DG.HeaderText = "NOMBRE";
-            this.nombre_proveedor_DG.Name = "nombre_proveedor_DG";
-            // 
-            // cuit_proveedorDG
-            // 
-            this.cuit_proveedorDG.HeaderText = "CUIT";
-            this.cuit_proveedorDG.Name = "cuit_proveedorDG";
-            // 
-            // dni_proveedor_DG
-            // 
-            this.dni_proveedor_DG.HeaderText = "DNI";
-            this.dni_proveedor_DG.Name = "dni_proveedor_DG";
-            // 
-            // provincia_prove_DG
-            // 
-            this.provincia_prove_DG.HeaderText = "PROVINCIA";
-            this.provincia_prove_DG.Name = "provincia_prove_DG";
-            // 
-            // localidad_proveedor_DG
-            // 
-            this.localidad_proveedor_DG.HeaderText = "LOCALIDAD";
-            this.localidad_proveedor_DG.Name = "localidad_proveedor_DG";
-            // 
-            // direccion_proveedor_DG
-            // 
-            this.direccion_proveedor_DG.HeaderText = "DIRECCION";
-            this.direccion_proveedor_DG.Name = "direccion_proveedor_DG";
-            // 
-            // correo_proveedorDG
-            // 
-            this.correo_proveedorDG.HeaderText = "CORREO";
-            this.correo_proveedorDG.Name = "correo_proveedorDG";
-            // 
-            // telefono_proveedor_DG
-            // 
-            this.telefono_proveedor_DG.HeaderText = "TELEFONO";
-            this.telefono_proveedor_DG.Name = "telefono_proveedor_DG";
-            // 
-            // ESCOJER
-            // 
-            this.ESCOJER.HeaderText = "ESCOJER";
-            this.ESCOJER.Name = "ESCOJER";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 13);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "FECHA DEL PEDIDO:";
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -705,8 +705,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1117, 610);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "pedidosAproveedor";
-            this.Text = "pedidosAproveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pedidos a Proveedores";
             this.Load += new System.EventHandler(this.pedidosAproveedor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

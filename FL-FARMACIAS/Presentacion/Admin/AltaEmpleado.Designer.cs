@@ -416,6 +416,8 @@
             this.Controls.Add(this.Bagregar_empleado);
             this.Controls.Add(this.fotoempleado);
             this.Controls.Add(this.agregarimagenempleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AltaEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Empleado";

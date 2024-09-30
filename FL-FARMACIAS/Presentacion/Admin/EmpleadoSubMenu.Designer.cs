@@ -320,7 +320,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(64);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "EmpleadoSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda de empleados";

@@ -327,7 +327,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.MinimizeBox = false;
             this.Name = "ClienteSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Empleados Admin";
+            this.Text = "Menu Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
