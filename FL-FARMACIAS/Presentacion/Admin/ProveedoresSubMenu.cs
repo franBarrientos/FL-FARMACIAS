@@ -10,6 +10,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class ProveedoresSubMenu : Form
     {
         private AltaProveedor AltaProveedor = null;
+        private pedidosAproveedor pedidosproveedor = null;
 
         private object[][] orgEmployess = new object[][]
                 {
@@ -214,9 +215,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
+        private void ShowpedidosAproveedor()
+        {
+            if (pedidosproveedor == null || pedidosproveedor.IsDisposed)
+            {
+                pedidosproveedor = new pedidosAproveedor();
+                pedidosproveedor.Show();
+            }
+            else
+            {
+                pedidosproveedor.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
         private void button3w_Click_1(object sender, EventArgs e)
         {
-
+            ShowpedidosAproveedor();
         }
     }
 }
