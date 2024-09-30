@@ -222,6 +222,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(773, 486);
+            this.ControlBox = false;
             this.Controls.Add(this.cerrar_sesion);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);

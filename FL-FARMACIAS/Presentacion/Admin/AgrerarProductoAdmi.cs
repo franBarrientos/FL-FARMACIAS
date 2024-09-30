@@ -63,11 +63,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String codigocompara = @"^[A-Za-z]{3}_\d{5}$";
             String precio = TP_precio.Text.Trim();
             int numero;
-            //float numeroprecio;
+            float numeroprecio;
             // Intenta convertir el texto a un número entero
             bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
-            // bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
-            precio = precio.Replace(',', '.');
+             bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
+            precio = precio.Replace(",", ".");
 
             if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {
