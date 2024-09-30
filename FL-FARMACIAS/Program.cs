@@ -1,4 +1,9 @@
-﻿using System;
+﻿using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion;
+using FL_FARMACIAS.Presentacion.Admin;
+using FL_FARMACIAS.Presentacion.Login;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +21,15 @@ namespace FL_FARMACIAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            //Application.Run(new TEST());
+            //Application.Run(new productoSubMenu());
+            //Application.Run(new EmpleadoSubMenu());
+   
+
+            Application.Run(new LoginForm());
+
+            //Application.Run(new DescuentosSubMenu());
         }
     }
 }

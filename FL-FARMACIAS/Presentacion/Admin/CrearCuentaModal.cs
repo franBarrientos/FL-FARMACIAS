@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FL_FARMACIAS
+namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class Form1 : Form
+    public partial class CrearCuentaModal : Form
     {
-        public Form1()
+        public CrearCuentaModal()
         {
             InitializeComponent();
-
         }
 
+        private void BFalta_ingresarcli_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
