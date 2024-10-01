@@ -26,5 +26,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
 
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
