@@ -32,8 +32,25 @@ namespace FL_FARMACIAS.Presentacion.Login
         public LoginForm()
         {
             InitializeComponent();
+            WarmUpDatabaseConnection();
+
         }
-       
+
+        private void WarmUpDatabaseConnection()
+        {
+            try
+            {
+                using (var context = new DBConnect())
+                {
+                    var count = context.Cliente.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar errores si ocurren
+                MessageBox.Show("Error warming up the database: " + ex.Message);
+            }
+        }
         private void Bingresar_login_Click(object sender, EventArgs e)
         {
             string usuario = usuario_login.Text;
