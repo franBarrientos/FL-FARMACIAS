@@ -14,36 +14,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private object[][] orgEmployess = new object[][]
                 {
-        new object[] { "1", "Juan", "Pérez", "M", "12345678", "20-12345678-9", "555-1234", "Farmaceutico", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "2", "Ana", "Gómez", "F", "87654321", "27-87654321-5", "555-5678", "Farmaceutico", "32000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "3", "Carlos", "Martínez", "M", "11223344", "20-11223344-0", "555-6789", "Farmaceutico", "50000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "4", "Laura", "Rodríguez", "F", "22334455", "27-22334455-8", "555-7890", "Farmaceutico", "45000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "5", "Miguel", "López", "M", "33445566", "20-33445566-1", "555-8901", "Farmaceutico", "31000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "6", "Lucía", "Hernández", "F", "44556677", "27-44556677-3", "555-9012", "Farmaceutico", "29000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "7", "Roberto", "González", "M", "55667788", "20-55667788-5", "555-0123", "Farmaceutico", "38000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "8", "Sofía", "Fernández", "F", "66778899", "27-66778899-7", "555-1235", "Farmaceutico", "27000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "9", "Pedro", "Ramírez", "M", "77889900", "20-77889900-9", "555-2346", "Farmaceutico", "47000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "10", "Marta", "Sánchez", "F", "88990011", "27-88990011-1", "555-3457", "Farmaceutico", "36000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "11", "Diego", "Torres", "M", "99001122", "20-99001122-3", "555-4568", "Farmaceutico", "31000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "12", "María", "Cruz", "F", "00112233", "27-00112233-5", "555-5679", "Farmaceutico", "29000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "13", "Luis", "Flores", "M", "11223344", "20-11223344-6", "555-6780", "Gerente", "52000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "14", "Elena", "Morales", "F", "22334455", "27-22334455-8", "555-7891", "Farmaceutico", "28000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "15", "Javier", "Díaz", "M", "33445566", "20-33445566-0", "555-8902", "Supervisor", "39000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "16", "Carla", "Suárez", "F", "44556677", "27-44556677-2", "555-9013", "Supervisor", "29500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "17", "Alberto", "Pérez", "M", "55667788", "20-55667788-4", "555-0124", "Supervisor", "48000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "18", "Patricia", "Ramos", "F", "66778899", "27-66778899-6", "555-1236", "Supervisor", "46000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "19", "Fernando", "Herrera", "M", "77889900", "20-77889900-8", "555-2347", "Supervisor", "31500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "20", "Sandra", "Gutiérrez", "F", "88990011", "27-88990011-0", "555-3458", "Supervisor", "37000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "21", "Esteban", "Jiménez", "M", "99001122", "20-99001122-2", "555-4569", "Supervisor", "31000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "22", "Julia", "Navarro", "F", "00112233", "27-00112233-4", "555-5680", "Supervisor", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "23", "Manuel", "Mendoza", "M", "11223344", "20-11223344-5", "555-6791", "Supervisor", "53000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "24", "Verónica", "Ortiz", "F", "22334455", "27-22334455-7", "555-7892", "Supervisor", "30000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "25", "Raúl", "Castro", "M", "33445566", "20-33445566-9", "555-8903", "Supervisor", "40000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "26", "Alicia", "Blanco", "F", "44556677", "27-44556677-1", "555-9014", "Supervisor", "46500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "27", "Ignacio", "Pardo", "M", "55667788", "20-55667788-3", "555-0125", "Supervisor", "49000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "28", "Rosa", "Gil", "F", "66778899", "27-66778899-5", "555-1237", "Supervisor", "27500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "29", "Tomás", "Velázquez", "M", "77889900", "20-77889900-7", "555-2348", "Supervisor", "32000", "20/04/24" ,"Usuario", "Eliminar", "Modificar" },
-        new object[] { "30", "Silvia", "Campos", "F", "88990011", "27-88990011-9", "555-3459", "Supervisor", "37500", "20/04/24" ,"Usuario", "Eliminar", "Modificar" }
+        new object[] { "1", "2024-02-04", "proveedor1", "farmaceutico1", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+         new object[] { "2", "2024-02-13", "proveedor3", "farmaceutico4", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+          new object[] { "3", "2024-03-24", "proveedor4", "farmaceutico3", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+           new object[] { "4", "2024-11-14", "proveedor2", "farmaceutico3", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+            new object[] { "5", "2024-06-20", "proveedor12", "farmaceutico2", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+             new object[] { "6", "2024-04-22", "proveedor3", "farmaceutico12", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+              new object[] { "7", "2024-12-27", "proveedor2", "farmaceutico13", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+               new object[] { "8", "2024-01-03", "proveedor1", "farmaceutico2", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+                new object[] { "9", "2024-02-04", "proveedor6", "farmaceutico0", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" },
+                 new object[] { "10", "2024-02-04", "proveedor4", "farmaceutico10", "PRODUCTOS PEDIDOS", "activo", "APROBAR", "Eliminar", "Modificar" }
+
                 };
 
         public ProveedoresSubMenu()
@@ -230,6 +211,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void button3w_Click_1(object sender, EventArgs e)
         {
             ShowpedidosAproveedor();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
