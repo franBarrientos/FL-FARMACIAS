@@ -27,10 +27,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (p.estado == true)
             {
                 checkBox1.Checked = true;
+                //checkBox2.Checked = false;
             }
             else
             {
                 checkBox2.Checked = true;
+                //checkBox1.Checked = true;
+
             }
 
         }
@@ -79,6 +82,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (!porcentaje.All(c => char.IsDigit(c) || c == '.') || Convert.ToDouble(porcentaje) < 0 || Convert.ToDouble(porcentaje) > 100)
             {
                 MessageBox.Show("Por favor, ingrese solo números en el campo porcentaje.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(!checkBox1.Checked && !checkBox2.Checked)
+            {
+                MessageBox.Show("Por favor, seleccione el estado del descuento.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

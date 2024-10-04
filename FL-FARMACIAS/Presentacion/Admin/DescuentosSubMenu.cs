@@ -50,22 +50,39 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
                 // Extrae el valor de otras columnas (puedes usar el nombre de la columna o el índice)
                 var descripcion = row.Cells["DESCRIPCION"].Value.ToString();
-                var estado = row.Cells["ESTADO"].Value.ToString();
+                var estado = row.Cells["ESTADO"].Value.ToString().Trim();
                 var porcentajeDescuento = row.Cells["PORCENTAJE_DESCUENTO"].Value.ToString();
                 int idI = int.Parse(row.Cells["ID"].Value.ToString());
                 double porcentajeDescuentoD = double.Parse(row.Cells["PORCENTAJE_DESCUENTO"].Value.ToString());
 
+            
+
+
                 if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Eliminar"
-                    MessageBox.Show($"Eliminar fila {e.RowIndex}");
-                    // Ejemplo: eliminar la fila
-                    dataGridView.Rows.RemoveAt(e.RowIndex);
+                    if (estado == "INACTIVO")
+                    {
+                        MessageBox.Show("El descuento: " + id + " con la descripcin: " + descripcion + " ya no esta activo.", "Descuento inactivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el descuento " + descripcion + " ?",
+                                                       "Confirmar eliminación",
+                                                       MessageBoxButtons.YesNo,
+                                                       MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        this.descuentosAplicacion.ActualizarDescuento(new DescuentoDominio(int.Parse(id), descripcion, porcentajeDescuentoD, false));
+                        MessageBox.Show("El descuento" + id + "con la descripcion: " + descripcion + ", cuenta con un porcentaje de descuento del " + porcentajeDescuentoD + "% ha sido eliminado con exito.", "Eliminacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.fullDeaults();
+                    }
                 }
-                // Verifica si la columna clicada es "Modificar"
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
                 {
-                    var dtpModify = new DescuentoDominio(idI, descripcion, porcentajeDescuentoD, estado == "ACTIVO");
+                    var aux = estado == "ACTIVO" ? true : false;
+                              
+                    var dtpModify = new DescuentoDominio(idI, descripcion, porcentajeDescuentoD, aux);
                     new ModificarDescuentas(dtpModify, this).Show();                    
                 }
                 

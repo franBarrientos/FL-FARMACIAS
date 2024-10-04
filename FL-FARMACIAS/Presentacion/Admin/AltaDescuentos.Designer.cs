@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaDescuentos));
             this.Pfarm_altacliente = new System.Windows.Forms.Panel();
-            this.inactivo_descuento = new System.Windows.Forms.CheckBox();
-            this.activo_descuento = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BFalta_vaciarcampos = new System.Windows.Forms.Button();
@@ -51,9 +48,6 @@
             // 
             this.Pfarm_altacliente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Pfarm_altacliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Pfarm_altacliente.Controls.Add(this.inactivo_descuento);
-            this.Pfarm_altacliente.Controls.Add(this.activo_descuento);
-            this.Pfarm_altacliente.Controls.Add(this.label1);
             this.Pfarm_altacliente.Controls.Add(this.pictureBox3);
             this.Pfarm_altacliente.Controls.Add(this.pictureBox2);
             this.Pfarm_altacliente.Controls.Add(this.BFalta_vaciarcampos);
@@ -65,48 +59,14 @@
             this.Pfarm_altacliente.Controls.Add(this.Lfarm_tituloalt);
             this.Pfarm_altacliente.Location = new System.Drawing.Point(12, 13);
             this.Pfarm_altacliente.Name = "Pfarm_altacliente";
-            this.Pfarm_altacliente.Size = new System.Drawing.Size(492, 346);
+            this.Pfarm_altacliente.Size = new System.Drawing.Size(492, 303);
             this.Pfarm_altacliente.TabIndex = 0;
-            // 
-            // inactivo_descuento
-            // 
-            this.inactivo_descuento.AutoSize = true;
-            this.inactivo_descuento.Location = new System.Drawing.Point(277, 212);
-            this.inactivo_descuento.Name = "inactivo_descuento";
-            this.inactivo_descuento.Size = new System.Drawing.Size(73, 17);
-            this.inactivo_descuento.TabIndex = 16;
-            this.inactivo_descuento.Text = "No Activo";
-            this.inactivo_descuento.UseVisualStyleBackColor = true;
-            this.inactivo_descuento.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // activo_descuento
-            // 
-            this.activo_descuento.AutoSize = true;
-            this.activo_descuento.Checked = true;
-            this.activo_descuento.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activo_descuento.Location = new System.Drawing.Point(156, 212);
-            this.activo_descuento.Name = "activo_descuento";
-            this.activo_descuento.Size = new System.Drawing.Size(56, 17);
-            this.activo_descuento.TabIndex = 15;
-            this.activo_descuento.Text = "Activo";
-            this.activo_descuento.UseVisualStyleBackColor = true;
-            this.activo_descuento.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Estado:";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(269, 273);
+            this.pictureBox3.Location = new System.Drawing.Point(271, 225);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +77,7 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(81, 273);
+            this.pictureBox2.Location = new System.Drawing.Point(83, 225);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +88,7 @@
             // BFalta_vaciarcampos
             // 
             this.BFalta_vaciarcampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(260, 264);
+            this.BFalta_vaciarcampos.Location = new System.Drawing.Point(262, 216);
             this.BFalta_vaciarcampos.Name = "BFalta_vaciarcampos";
             this.BFalta_vaciarcampos.Size = new System.Drawing.Size(158, 62);
             this.BFalta_vaciarcampos.TabIndex = 3;
@@ -141,7 +101,7 @@
             // 
             this.BFalta_ingresarcli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFalta_ingresarcli.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BFalta_ingresarcli.Location = new System.Drawing.Point(69, 264);
+            this.BFalta_ingresarcli.Location = new System.Drawing.Point(71, 216);
             this.BFalta_ingresarcli.Name = "BFalta_ingresarcli";
             this.BFalta_ingresarcli.Size = new System.Drawing.Size(134, 62);
             this.BFalta_ingresarcli.TabIndex = 2;
@@ -204,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(514, 370);
+            this.ClientSize = new System.Drawing.Size(514, 332);
             this.Controls.Add(this.Pfarm_altacliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -231,8 +191,5 @@
         private System.Windows.Forms.Button BFalta_vaciarcampos;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox inactivo_descuento;
-        private System.Windows.Forms.CheckBox activo_descuento;
     }
 }

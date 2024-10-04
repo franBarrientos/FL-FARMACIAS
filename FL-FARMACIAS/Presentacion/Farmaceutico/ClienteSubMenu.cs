@@ -59,18 +59,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 var dataGridView = sender as DataGridView;
+                if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
+                {
 
-                if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
-                {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Eliminar"
-                    MessageBox.Show($"Eliminar fila {e.RowIndex}");
-                    // Ejemplo: eliminar la fila
-                    dataGridView.Rows.RemoveAt(e.RowIndex);
-                }
-                // Verifica si la columna clicada es "Modificar"
-                else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
-                {
-                   
                     var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
                     var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
                     var dni = dataGridView.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
@@ -83,7 +74,40 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                     var desc = this.descuentoApp.ObtenerDescuentoPorDescripcion(desDesc);
                     var id = int.Parse(dataGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
                     new ModificarCliente(this, new ClienteDominio(id, nombre, apellido, dni, telefono, activo, desc)).Show();
-                
+
+                }
+                else if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                {
+                    var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
+                    var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
+                    var dni = dataGridView.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
+                    var telefono = dataGridView.Rows[e.RowIndex].Cells["TELEFONO"].Value.ToString();
+                    var idDesc = dataGridView.Rows[e.RowIndex].Cells["DESCUENTOID"].Value.ToString();
+                    var desDesc = dataGridView.Rows[e.RowIndex].Cells["DESCUENTO"].Value.ToString();
+
+                    var activo = dataGridView.Rows[e.RowIndex].Cells["ESTADO"].Value.ToString() == "ACTIVO";
+
+                    if (!activo)
+                    {
+                        MessageBox.Show("No se puede eliminar un cliente NO activo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    var desc = this.descuentoApp.ObtenerDescuentoPorDescripcion(desDesc);
+                    var id = int.Parse(dataGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+                    DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el cliente " + apellido + " " + nombre + "?",
+                                                              "Confirmar eliminación",
+                                                              MessageBoxButtons.YesNo,
+                                                              MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        DescuentoDominio descuento = this.descuentoApp.ObtenerDescuentoPorDescripcion(desDesc);
+                        this.clienteApp.ActualizarCliente(new ClienteDominio(id, nombre, apellido, dni, telefono, false, descuento));
+                        this.fullDefaults();
+                        MessageBox.Show("Cliente eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                
             }
