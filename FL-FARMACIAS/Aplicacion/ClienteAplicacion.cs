@@ -75,7 +75,7 @@ namespace FL_FARMACIAS.Aplicacion
                 return db.Cliente.Include(c => c.desc).Where(d =>
                 (string.IsNullOrEmpty(dni) || d.dni == dni) &&
                 (string.IsNullOrEmpty(desc) || d.desc.descripcion == desc) &&
-                (string.IsNullOrEmpty(apellido) || d.apellido.Contains(apellido)) &&  // Aquí está la corrección
+                (string.IsNullOrEmpty(apellido) || d.apellido.ToLower().StartsWith(apellido.ToLower())) &&
                 (!estado.HasValue || d.activo == estado))
                 .ToList();
             }
