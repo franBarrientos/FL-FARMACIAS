@@ -250,9 +250,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(9, 76);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 13);
+            this.label15.Size = new System.Drawing.Size(110, 13);
             this.label15.TabIndex = 56;
-            this.label15.Text = "METODO DE PAGO:";
+            this.label15.Text = "MEDIO DE PAGO:";
             // 
             // label14
             // 
@@ -317,6 +317,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView4.Size = new System.Drawing.Size(622, 130);
             this.dataGridView4.TabIndex = 49;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -449,6 +450,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView3.Size = new System.Drawing.Size(600, 171);
             this.dataGridView3.TabIndex = 48;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.dataGridView3.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
             // 
             // CODP
             // 
