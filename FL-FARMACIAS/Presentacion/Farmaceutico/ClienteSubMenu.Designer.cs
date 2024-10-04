@@ -192,6 +192,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Todos"});
@@ -200,7 +201,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(187, 21);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Todos";
             // 
             // label2
             // 

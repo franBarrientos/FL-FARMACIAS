@@ -167,6 +167,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Todos",
@@ -178,7 +179,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 21);
             this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "Todos";
             // 
             // button2
             // 

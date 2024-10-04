@@ -118,6 +118,7 @@
             // 
             // localidad_proveedor
             // 
+            this.localidad_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localidad_proveedor.FormattingEnabled = true;
             this.localidad_proveedor.Location = new System.Drawing.Point(156, 298);
             this.localidad_proveedor.Name = "localidad_proveedor";
@@ -127,6 +128,7 @@
             // 
             // provincia_proveedor
             // 
+            this.provincia_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.provincia_proveedor.FormattingEnabled = true;
             this.provincia_proveedor.Location = new System.Drawing.Point(156, 252);
             this.provincia_proveedor.Name = "provincia_proveedor";
