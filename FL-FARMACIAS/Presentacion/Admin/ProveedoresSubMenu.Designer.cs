@@ -246,6 +246,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(1001, 309);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // ID
             // 
@@ -546,7 +547,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.MinimizeBox = false;
             this.Name = "ProveedoresSubMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Empleados ";
+            this.Text = "Menu Pedidos y Proveedores";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
