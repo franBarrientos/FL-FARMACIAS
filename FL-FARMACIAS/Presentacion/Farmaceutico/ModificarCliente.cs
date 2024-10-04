@@ -96,7 +96,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
-            
+            if (!checkBox1.Checked && !checkBox2.Checked)
+            {
+                MessageBox.Show("Por favor, ingrese un estado.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (nombre != "" && apellido != "" && dni != "" && telefono != "" && DFalta_obrasocial.Text != "")
             {

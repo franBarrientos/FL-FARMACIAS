@@ -69,7 +69,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             if (!cuit.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo cuil en el campo cuit.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo cuit.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

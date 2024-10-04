@@ -62,12 +62,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String descripcion = TP_descripcion.Text.Trim();
             String codigocompara = @"^[A-Za-z]{3}_\d{5}$";
             String precio = TP_precio.Text.Trim();
+            precio = precio.Replace(",", ".");
+
             int numero;
             float numeroprecio;
             // Intenta convertir el texto a un número entero
             bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
             bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
-            precio = precio.Replace(",", ".");
 
             if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {
@@ -94,11 +95,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(descripcion) || !descripcion.All(c => char.IsLetter(c) || c == ' '))
-            {
-                MessageBox.Show("Por favor, ingrese solo letras en el campo Descripcion del Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+           // if (string.IsNullOrWhiteSpace(descripcion) || !descripcion.All(c => char.IsLetter(c) || c == ' '))
+           // {
+              //  MessageBox.Show("Por favor, ingrese solo letras en el campo Descripcion del Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // return;
+            //}
 
             if (!Regex.IsMatch(codigo, codigocompara))
             {
@@ -109,6 +110,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             if (!stock.All(char.IsDigit))
             {
                 MessageBox.Show("Por favor, ingrese solo números en el campo stock del producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!precio.All(c => char.IsDigit(c) || c == '.') || Convert.ToDouble(precio) < 0)
+            {
+                MessageBox.Show("Por favor, ingrese solo números en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

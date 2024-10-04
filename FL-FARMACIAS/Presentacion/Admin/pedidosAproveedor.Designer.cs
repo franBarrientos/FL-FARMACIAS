@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pedidosAproveedor));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -42,10 +39,6 @@
             this.Bagregar_categoria = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -76,24 +69,10 @@
             this.telefono_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIOTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CANTIDADPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CORREO_PROVEEDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHA_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RECIBIDO_PEDIDO = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -103,59 +82,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(39, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1034, 573);
-            this.tabControl1.TabIndex = 31;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.Bagregar_categoria);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1026, 547);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "NUEVO PEDIDO";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.Bagregar_categoria);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox4.Location = new System.Drawing.Point(540, 319);
+            this.groupBox4.Location = new System.Drawing.Point(525, 352);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(417, 142);
-            this.groupBox4.TabIndex = 55;
+            this.groupBox4.Size = new System.Drawing.Size(560, 181);
+            this.groupBox4.TabIndex = 62;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS DE PEDIDOS";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 102);
+            this.label1.Location = new System.Drawing.Point(9, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 58;
@@ -170,19 +121,10 @@
             this.label16.TabIndex = 57;
             this.label16.Text = "NOMBRE PROVEEDOR:";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 76);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 13);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "METODO DE PAGO:";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(324, 115);
+            this.label14.Location = new System.Drawing.Point(17, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 13);
             this.label14.TabIndex = 55;
@@ -210,32 +152,33 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(839, 492);
+            this.pictureBox1.Location = new System.Drawing.Point(338, 109);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             // 
             // Bagregar_categoria
             // 
             this.Bagregar_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bagregar_categoria.Location = new System.Drawing.Point(828, 483);
+            this.Bagregar_categoria.Location = new System.Drawing.Point(327, 100);
             this.Bagregar_categoria.Name = "Bagregar_categoria";
-            this.Bagregar_categoria.Size = new System.Drawing.Size(149, 48);
-            this.Bagregar_categoria.TabIndex = 53;
+            this.Bagregar_categoria.Size = new System.Drawing.Size(158, 61);
+            this.Bagregar_categoria.TabIndex = 60;
             this.Bagregar_categoria.Text = "ACEPTAR";
             this.Bagregar_categoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Bagregar_categoria.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.dataGridView4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 319);
+            this.groupBox3.Location = new System.Drawing.Point(12, 352);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(484, 155);
-            this.groupBox3.TabIndex = 52;
+            this.groupBox3.Size = new System.Drawing.Size(502, 181);
+            this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PRODUCTOS SELECCIONADOS";
             // 
@@ -250,31 +193,12 @@
             this.dataGridViewButtonColumn2});
             this.dataGridView4.Location = new System.Drawing.Point(14, 38);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(452, 90);
+            this.dataGridView4.Size = new System.Drawing.Size(478, 123);
             this.dataGridView4.TabIndex = 49;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "COD";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "CANTIDAD";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "ESCOJER";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.numericUpDown1);
@@ -283,10 +207,10 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.dataGridView3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(474, 68);
+            this.groupBox2.Location = new System.Drawing.Point(519, 101);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(546, 220);
-            this.groupBox2.TabIndex = 51;
+            this.groupBox2.Size = new System.Drawing.Size(566, 234);
+            this.groupBox2.TabIndex = 58;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PRODUCTO";
             // 
@@ -391,6 +315,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -399,10 +324,10 @@
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(6, 68);
+            this.groupBox1.Location = new System.Drawing.Point(12, 101);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 220);
-            this.groupBox1.TabIndex = 50;
+            this.groupBox1.Size = new System.Drawing.Size(492, 234);
+            this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS PROVEEDOR";
             // 
@@ -525,195 +450,50 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(322, 13);
+            this.label4.Location = new System.Drawing.Point(366, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(401, 41);
-            this.label4.TabIndex = 47;
+            this.label4.TabIndex = 56;
             this.label4.Text = "REGISTRAR PEDIDOS";
             // 
-            // tabPage2
+            // dataGridViewTextBoxColumn4
             // 
-            this.tabPage2.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1026, 547);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "MIS PEDIDOS";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn4.HeaderText = "COD";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // label3
+            // dataGridViewTextBoxColumn5
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(338, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(351, 57);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "MIS PEDIDOS";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // button2
+            // dataGridViewTextBoxColumn6
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(825, 142);
-            this.button2.Margin = new System.Windows.Forms.Padding(64);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 46);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "LIMPIAR";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.dataGridViewTextBoxColumn6.HeaderText = "CANTIDAD";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // button1
+            // dataGridViewButtonColumn2
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(711, 142);
-            this.button1.Margin = new System.Windows.Forms.Padding(64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 46);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "BUSCAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(21, 157);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 20);
-            this.textBox1.TabIndex = 40;
-            this.textBox1.Text = "INGRESE NOMBRE PROVEEDOR O FECHA PEDIDO";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.PRECIOTOTAL,
-            this.CANTIDADPRODUCTO,
-            this.NOMBRE_PROVEEDOR,
-            this.DNI_PROVEEDOR,
-            this.TELEFONO_PROVEEDOR,
-            this.CORREO_PROVEEDOR,
-            this.FECHA_PEDIDO,
-            this.RECIBIDO_PEDIDO,
-            this.MODIFICAR});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 206);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 60;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 329);
-            this.dataGridView1.TabIndex = 39;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // PRECIOTOTAL
-            // 
-            this.PRECIOTOTAL.HeaderText = "PRECIO TOTAL $";
-            this.PRECIOTOTAL.Name = "PRECIOTOTAL";
-            // 
-            // CANTIDADPRODUCTO
-            // 
-            this.CANTIDADPRODUCTO.HeaderText = "CANTIDAD PRODUCTOS";
-            this.CANTIDADPRODUCTO.Name = "CANTIDADPRODUCTO";
-            // 
-            // NOMBRE_PROVEEDOR
-            // 
-            this.NOMBRE_PROVEEDOR.HeaderText = "NOMBRE PROVEEDOR";
-            this.NOMBRE_PROVEEDOR.Name = "NOMBRE_PROVEEDOR";
-            // 
-            // DNI_PROVEEDOR
-            // 
-            this.DNI_PROVEEDOR.HeaderText = "DNI PROVEEDOR";
-            this.DNI_PROVEEDOR.MinimumWidth = 8;
-            this.DNI_PROVEEDOR.Name = "DNI_PROVEEDOR";
-            this.DNI_PROVEEDOR.ReadOnly = true;
-            this.DNI_PROVEEDOR.Width = 150;
-            // 
-            // TELEFONO_PROVEEDOR
-            // 
-            this.TELEFONO_PROVEEDOR.HeaderText = "TELEFONO PROVEEDOR";
-            this.TELEFONO_PROVEEDOR.MinimumWidth = 8;
-            this.TELEFONO_PROVEEDOR.Name = "TELEFONO_PROVEEDOR";
-            this.TELEFONO_PROVEEDOR.ReadOnly = true;
-            this.TELEFONO_PROVEEDOR.Width = 150;
-            // 
-            // CORREO_PROVEEDOR
-            // 
-            this.CORREO_PROVEEDOR.HeaderText = "CORREO PROVEEDOR";
-            this.CORREO_PROVEEDOR.MinimumWidth = 8;
-            this.CORREO_PROVEEDOR.Name = "CORREO_PROVEEDOR";
-            this.CORREO_PROVEEDOR.ReadOnly = true;
-            this.CORREO_PROVEEDOR.Width = 150;
-            // 
-            // FECHA_PEDIDO
-            // 
-            this.FECHA_PEDIDO.HeaderText = "FECHA PEDIDO";
-            this.FECHA_PEDIDO.Name = "FECHA_PEDIDO";
-            // 
-            // RECIBIDO_PEDIDO
-            // 
-            this.RECIBIDO_PEDIDO.HeaderText = "RECIBIDO PEDIDO";
-            this.RECIBIDO_PEDIDO.MinimumWidth = 8;
-            this.RECIBIDO_PEDIDO.Name = "RECIBIDO_PEDIDO";
-            this.RECIBIDO_PEDIDO.ReadOnly = true;
-            this.RECIBIDO_PEDIDO.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
+            this.dataGridViewButtonColumn2.HeaderText = "QUITAR";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             // 
             // pedidosAproveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1117, 610);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1103, 571);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "pedidosAproveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos a Proveedores";
             this.Load += new System.EventHandler(this.pedidosAproveedor_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -726,20 +506,16 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -747,10 +523,6 @@
         public System.Windows.Forms.Button Bagregar_categoria;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label10;
@@ -771,13 +543,6 @@
         private System.Windows.Forms.Button button3;
         private PlaceholderTextBox placeholderTextBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_proveedor_DG;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit_proveedorDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni_proveedor_DG;
@@ -787,16 +552,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correo_proveedorDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono_proveedor_DG;
         private System.Windows.Forms.DataGridViewButtonColumn ESCOJER;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIOTOTAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDADPRODUCTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_PROVEEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI_PROVEEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO_PROVEEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CORREO_PROVEEDOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_PEDIDO;
-        private System.Windows.Forms.DataGridViewButtonColumn RECIBIDO_PEDIDO;
-        private System.Windows.Forms.DataGridViewButtonColumn MODIFICAR;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
     }
 }

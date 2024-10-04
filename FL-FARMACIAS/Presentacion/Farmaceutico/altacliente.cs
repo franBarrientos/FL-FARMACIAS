@@ -80,6 +80,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
+
             if (nombre != "" && apellido != "" && dni != "" && telefono != "" && DFalta_obrasocial.Text != "")
             {
                 DescuentoDominio descuento = this.cMenu.descuentoApp.ObtenerDescuentoPorDescripcion(DFalta_obrasocial.Text);

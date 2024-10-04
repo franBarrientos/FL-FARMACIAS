@@ -87,6 +87,7 @@
             // 
             // DFalta_obrasocial
             // 
+            this.DFalta_obrasocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DFalta_obrasocial.FormattingEnabled = true;
             this.DFalta_obrasocial.Location = new System.Drawing.Point(156, 257);
             this.DFalta_obrasocial.Name = "DFalta_obrasocial";

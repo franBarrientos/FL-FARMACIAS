@@ -209,6 +209,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -220,7 +221,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(106, 24);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Todos";
             // 
             // label2
             // 

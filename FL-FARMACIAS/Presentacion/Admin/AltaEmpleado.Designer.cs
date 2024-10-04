@@ -239,6 +239,7 @@
             // 
             // Cpuesto_empleado
             // 
+            this.Cpuesto_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cpuesto_empleado.FormattingEnabled = true;
             this.Cpuesto_empleado.Items.AddRange(new object[] {
             "Farmacuetico",
