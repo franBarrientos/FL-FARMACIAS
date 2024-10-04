@@ -68,7 +68,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             if (!cuit.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo cuil en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo numeros en el campo cuit.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -91,7 +91,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             }
             if (!telefono.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese solo números en el campo telefono.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

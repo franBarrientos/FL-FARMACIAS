@@ -41,15 +41,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -61,18 +67,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -121,16 +121,48 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.dateTimePicker5);
             this.groupBox3.Controls.Add(this.dateTimePicker6);
+            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.chart3);
             this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(229, 473);
+            this.groupBox3.Location = new System.Drawing.Point(229, 485);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(650, 169);
+            this.groupBox3.Size = new System.Drawing.Size(797, 157);
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Productos mas vendidos";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(360, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Fecha hasta";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(55, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Fecha desde";
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(284, 58);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(236, 20);
+            this.dateTimePicker5.TabIndex = 27;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(15, 58);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(231, 20);
+            this.dateTimePicker6.TabIndex = 26;
             // 
             // chart3
             // 
@@ -140,7 +172,7 @@
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.chart3.Legends.Add(legend1);
-            this.chart3.Location = new System.Drawing.Point(350, 19);
+            this.chart3.Location = new System.Drawing.Point(535, 19);
             this.chart3.Name = "chart3";
             this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -160,7 +192,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(193, 39);
+            this.button7.Location = new System.Drawing.Point(336, 107);
             this.button7.Margin = new System.Windows.Forms.Padding(64);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(91, 39);
@@ -176,7 +208,7 @@
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(30, 39);
+            this.button8.Location = new System.Drawing.Point(85, 95);
             this.button8.Margin = new System.Windows.Forms.Padding(64);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(94, 39);
@@ -188,59 +220,27 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(535, 399);
+            this.groupBox1.Size = new System.Drawing.Size(535, 411);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "VENTAS: cantidad productos/ Mensuales";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(435, 30);
-            this.button5.Margin = new System.Windows.Forms.Padding(64);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 39);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "LIMPIAR";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(321, 30);
-            this.button6.Margin = new System.Windows.Forms.Padding(64);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 39);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "BUSCAR";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Snow;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.chart1);
-            this.panel1.Location = new System.Drawing.Point(55, 76);
+            this.panel1.Location = new System.Drawing.Point(58, 104);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 301);
             this.panel1.TabIndex = 4;
@@ -275,10 +275,42 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(565, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(535, 399);
+            this.groupBox2.Size = new System.Drawing.Size(535, 411);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VENTAS: ingresos$ / mensual";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Fecha hasta";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Fecha desde";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(132, 67);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(237, 20);
+            this.dateTimePicker3.TabIndex = 27;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(135, 31);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(234, 20);
+            this.dateTimePicker4.TabIndex = 26;
             // 
             // button3
             // 
@@ -287,10 +319,10 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(426, 30);
+            this.button3.Location = new System.Drawing.Point(406, 60);
             this.button3.Margin = new System.Windows.Forms.Padding(64);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 39);
+            this.button3.Size = new System.Drawing.Size(86, 38);
             this.button3.TabIndex = 16;
             this.button3.Text = "LIMPIAR";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -303,10 +335,10 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(326, 30);
+            this.button4.Location = new System.Drawing.Point(405, 13);
             this.button4.Margin = new System.Windows.Forms.Padding(64);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 39);
+            this.button4.Size = new System.Drawing.Size(87, 38);
             this.button4.TabIndex = 15;
             this.button4.Text = "BUSCAR";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -317,7 +349,7 @@
             this.panel2.BackColor = System.Drawing.Color.Snow;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.chart2);
-            this.panel2.Location = new System.Drawing.Point(55, 76);
+            this.panel2.Location = new System.Drawing.Point(50, 104);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(426, 301);
             this.panel2.TabIndex = 4;
@@ -418,101 +450,69 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(192, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Fecha hasta";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 31);
+            this.label1.Location = new System.Drawing.Point(29, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Fecha desde";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Fecha hasta";
             // 
-            // dateTimePicker2
+            // label2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(174, 49);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker2.TabIndex = 27;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Fecha desde";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 49);
+            this.dateTimePicker1.Location = new System.Drawing.Point(134, 67);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker1.TabIndex = 26;
+            this.dateTimePicker1.Size = new System.Drawing.Size(237, 20);
+            this.dateTimePicker1.TabIndex = 33;
             // 
-            // label3
+            // dateTimePicker2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Fecha hasta";
+            this.dateTimePicker2.Location = new System.Drawing.Point(137, 31);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(234, 20);
+            this.dateTimePicker2.TabIndex = 32;
             // 
-            // label4
+            // button5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Fecha desde";
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(408, 60);
+            this.button5.Margin = new System.Windows.Forms.Padding(64);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(86, 38);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "LIMPIAR";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker3
+            // button6
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(182, 49);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker3.TabIndex = 27;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(19, 49);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker4.TabIndex = 26;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Fecha hasta";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Fecha desde";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(193, 109);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker5.TabIndex = 27;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Location = new System.Drawing.Point(30, 109);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker6.TabIndex = 26;
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(407, 13);
+            this.button6.Margin = new System.Windows.Forms.Padding(64);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(87, 38);
+            this.button6.TabIndex = 30;
+            this.button6.Text = "BUSCAR";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // EstadisticasSubMenu
             // 
@@ -565,8 +565,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -577,13 +575,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
