@@ -12,6 +12,13 @@ namespace FL_FARMACIAS.Dominio
         public string descripcion { get; set; }
         public bool estado { get; set; }
 
+        public CategoriaDominio() { }
+
+        public CategoriaDominio(string descp, bool estado)
+        {
+            this.descripcion = descp;
+            this.estado = estado;
+        }
         public CategoriaDominio(int id, string descp, bool estado)
         {
             this.id = id;

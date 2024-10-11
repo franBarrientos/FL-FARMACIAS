@@ -90,6 +90,24 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
 
         }
+
+        private void dataGridView2_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView2.Rows[e.RowIndex].Cells["ESTADO"].Value?.ToString();
+            if (estado != "ACTIVO")
+            {
+                dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo rojo suave
+                dataGridView2.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+            else
+            {
+                // Color de fondo y texto para filas activas
+                dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo verde suave
+                dataGridView2.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+        }
+
         private void button3_Click_1(object sender, EventArgs e)
         {
             if (subForm != null && !subForm.IsDisposed)

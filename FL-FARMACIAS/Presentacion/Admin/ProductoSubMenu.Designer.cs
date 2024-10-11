@@ -40,6 +40,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LABORATORIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACTIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -58,11 +60,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCIONC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ELIMINARC = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MODIFICARC = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -84,6 +86,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.PRECIO,
             this.STOCK,
             this.CATEGORIA,
+            this.MARCA,
+            this.LABORATORIO,
             this.ACTIVO,
             this.ELIMINAR,
             this.MODIFICAR});
@@ -95,6 +99,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView1.Size = new System.Drawing.Size(903, 364);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
             // ID
             // 
@@ -102,6 +108,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             this.ID.Width = 150;
             // 
             // CODIGO_PROD
@@ -142,6 +149,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.CATEGORIA.Name = "CATEGORIA";
             this.CATEGORIA.ReadOnly = true;
             this.CATEGORIA.Width = 200;
+            // 
+            // MARCA
+            // 
+            this.MARCA.HeaderText = "MARCA";
+            this.MARCA.Name = "MARCA";
+            // 
+            // LABORATORIO
+            // 
+            this.LABORATORIO.HeaderText = "LABORATORIO";
+            this.LABORATORIO.Name = "LABORATORIO";
             // 
             // ACTIVO
             // 
@@ -212,10 +229,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todos",
-            "Perfumeria",
-            "Medicamentos"});
             this.comboBox1.Location = new System.Drawing.Point(480, 107);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
@@ -351,12 +364,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
             this.textBox2.IsPassword = false;
-            this.textBox2.Location = new System.Drawing.Point(302, 107);
+            this.textBox2.Location = new System.Drawing.Point(339, 113);
             this.textBox2.Name = "textBox2";
             this.textBox2.Placeholder = "INGRESE ID O DESCRIPCION";
             this.textBox2.Size = new System.Drawing.Size(221, 20);
             this.textBox2.TabIndex = 19;
-            this.textBox2.Text = "INGRESE ID O DESCRIPCION";
             // 
             // button3
             // 
@@ -395,58 +407,60 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewButtonColumn3});
-            this.dataGridView2.Location = new System.Drawing.Point(302, 146);
+            this.IDC,
+            this.DESCRIPCIONC,
+            this.ESTADOC,
+            this.ELIMINARC,
+            this.MODIFICARC});
+            this.dataGridView2.Location = new System.Drawing.Point(109, 146);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 60;
-            this.dataGridView2.Size = new System.Drawing.Size(452, 374);
+            this.dataGridView2.Size = new System.Drawing.Size(818, 374);
             this.dataGridView2.TabIndex = 10;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
             // 
-            // dataGridViewTextBoxColumn1
+            // IDC
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.IDC.HeaderText = "ID";
+            this.IDC.MinimumWidth = 8;
+            this.IDC.Name = "IDC";
+            this.IDC.ReadOnly = true;
+            this.IDC.Width = 150;
             // 
-            // dataGridViewTextBoxColumn8
+            // DESCRIPCIONC
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
+            this.DESCRIPCIONC.HeaderText = "DESCRIPCION";
+            this.DESCRIPCIONC.MinimumWidth = 8;
+            this.DESCRIPCIONC.Name = "DESCRIPCIONC";
+            this.DESCRIPCIONC.ReadOnly = true;
+            this.DESCRIPCIONC.Width = 150;
             // 
-            // dataGridViewTextBoxColumn9
+            // ESTADOC
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "ESTADO";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 150;
+            this.ESTADOC.HeaderText = "ESTADO";
+            this.ESTADOC.MinimumWidth = 8;
+            this.ESTADOC.Name = "ESTADOC";
+            this.ESTADOC.ReadOnly = true;
+            this.ESTADOC.Width = 150;
             // 
-            // dataGridViewButtonColumn2
+            // ELIMINARC
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "ELIMINAR";
-            this.dataGridViewButtonColumn2.MinimumWidth = 8;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Width = 150;
+            this.ELIMINARC.HeaderText = "ELIMINAR";
+            this.ELIMINARC.MinimumWidth = 8;
+            this.ELIMINARC.Name = "ELIMINARC";
+            this.ELIMINARC.ReadOnly = true;
+            this.ELIMINARC.Width = 150;
             // 
-            // dataGridViewButtonColumn3
+            // MODIFICARC
             // 
-            this.dataGridViewButtonColumn3.HeaderText = "MODIFICAR";
-            this.dataGridViewButtonColumn3.MinimumWidth = 8;
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.ReadOnly = true;
-            this.dataGridViewButtonColumn3.Width = 150;
+            this.MODIFICARC.HeaderText = "MODIFICAR";
+            this.MODIFICARC.MinimumWidth = 8;
+            this.MODIFICARC.Name = "MODIFICARC";
+            this.MODIFICARC.ReadOnly = true;
+            this.MODIFICARC.Width = 150;
             // 
             // button4
             // 
@@ -455,7 +469,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(666, 102);
+            this.button4.Location = new System.Drawing.Point(687, 102);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 40);
@@ -472,7 +486,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(572, 103);
+            this.button5.Location = new System.Drawing.Point(593, 103);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 39);
@@ -523,23 +537,25 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridView dataGridView2;
         private Button button4;
         private Button button5;
+        private PlaceholderTextBox textBox2;
+        private PlaceholderTextBox textBox1;
+        private Label label1;
+        private Label label3;
+        private DataGridViewTextBoxColumn IDC;
+        private DataGridViewTextBoxColumn DESCRIPCIONC;
+        private DataGridViewTextBoxColumn ESTADOC;
+        private DataGridViewButtonColumn ELIMINARC;
+        private DataGridViewButtonColumn MODIFICARC;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn CODIGO_PROD;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn PRECIO;
         private DataGridViewTextBoxColumn STOCK;
         private DataGridViewTextBoxColumn CATEGORIA;
+        private DataGridViewTextBoxColumn MARCA;
+        private DataGridViewTextBoxColumn LABORATORIO;
         private DataGridViewTextBoxColumn ACTIVO;
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private PlaceholderTextBox textBox2;
-        private PlaceholderTextBox textBox1;
-        private Label label1;
-        private Label label3;
     }
 }

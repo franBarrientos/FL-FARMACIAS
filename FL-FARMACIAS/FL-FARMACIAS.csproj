@@ -76,8 +76,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\ProveedorAplicacion.cs" />
+    <Compile Include="Aplicacion\CategoriaAplicacion.cs" />
     <Compile Include="Aplicacion\DescuentoAplicacion.cs" />
     <Compile Include="Aplicacion\ClienteAplicacion.cs" />
+    <Compile Include="Aplicacion\ProductoAplicacion.cs" />
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\DBConnect.cs" />
     <Compile Include="Dominio\DescuentoDominio.cs" />
@@ -86,9 +89,17 @@
     <Compile Include="Dominio\ProveedorDominio.cs" />
     <Compile Include="Dominio\ClienteDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
-    <Compile Include="Migrations\202409282338020_Inicial.cs" />
-    <Compile Include="Migrations\202409282338020_Inicial.Designer.cs">
-      <DependentUpon>202409282338020_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\202410052057015_Start.cs" />
+    <Compile Include="Migrations\202410052057015_Start.Designer.cs">
+      <DependentUpon>202410052057015_Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410081741070_add_provedor.cs" />
+    <Compile Include="Migrations\202410081741070_add_provedor.Designer.cs">
+      <DependentUpon>202410081741070_add_provedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410082326531_add_provedor-with-state.cs" />
+    <Compile Include="Migrations\202410082326531_add_provedor-with-state.Designer.cs">
+      <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
@@ -96,6 +107,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarCategoria.Designer.cs">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EstadisticasSubMenu.cs">
       <SubType>Form</SubType>
@@ -133,11 +150,11 @@
     <Compile Include="Presentacion\Admin\AltaEmpleado.Designer.cs">
       <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
+    <Compile Include="Presentacion\Admin\AltaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\CategoriaAdmi.Designer.cs">
-      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    <Compile Include="Presentacion\Admin\AltaCategoria.Designer.cs">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\CrearCuentaModal.cs">
       <SubType>Form</SubType>
@@ -246,11 +263,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202409282338020_Inicial.resx">
-      <DependentUpon>202409282338020_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410052057015_Start.resx">
+      <DependentUpon>202410052057015_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410081741070_add_provedor.resx">
+      <DependentUpon>202410081741070_add_provedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410082326531_add_provedor-with-state.resx">
+      <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarCategoria.resx">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
       <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
@@ -273,8 +299,8 @@
     <EmbeddedResource Include="Presentacion\Admin\AltaEmpleado.resx">
       <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
-      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\AltaCategoria.resx">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CrearCuentaModal.resx">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>

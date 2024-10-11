@@ -103,6 +103,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.Size = new System.Drawing.Size(918, 374);
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
             // 
             // ID
             // 

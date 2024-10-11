@@ -82,6 +82,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Size = new System.Drawing.Size(1037, 364);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
             // ID
             // 

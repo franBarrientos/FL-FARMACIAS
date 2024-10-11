@@ -19,10 +19,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Timer searchTimer;
         private Timer productTimer;
         public ClienteAplicacion clienteApp;
+        public ProductoAplicacion productoApp;
       
         public VentasSubMenu()
         {
             this.clienteApp = new ClienteAplicacion();
+            this.productoApp = new ProductoAplicacion();
             InitializeComponent();
             fullDataGridAllClients();
             fullDataGridAllProducts();
@@ -39,8 +41,14 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void fullDataGridAllProducts()
         {
+            //dataGridView3.Rows.Clear();
+           //foreach (var p in StaticBD.productos) { dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER"); }
+            var products = this.productoApp.ObtenerTodosActivo();
             dataGridView3.Rows.Clear();
-           foreach (var p in StaticBD.productos) { dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER"); }
+            foreach (var p in products)
+            {
+                this.dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER");
+            }
         }
 
         private void OnProductTimerTick(object sender, EventArgs e)
@@ -324,7 +332,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
-            var stockAv = label18.Text.Split(':')[1];
+            var stockAv = label18.Text.Split(':')[1].Trim();
+            if (stockAv == "" || stockAv.All(char.IsDigit) == false)
+            {
+                MessageBox.Show("Por favor, seleccione un stock disponible");
+                return;
+            }
 
             if (numericUpDown1.Value > Convert.ToInt32(stockAv))
             {

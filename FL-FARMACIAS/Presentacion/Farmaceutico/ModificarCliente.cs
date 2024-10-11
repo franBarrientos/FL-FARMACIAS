@@ -24,6 +24,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.Tapellido_cliente.Text = e.apellido;
             this.Tdni_cliente.Text = e.dni;
             this.Ttelefono_cliente.Text = e.telefono;
+            if (!DFalta_obrasocial.Items.Contains(e.desc.descripcion))
+            {
+                this.DFalta_obrasocial.Items.Add(e.desc.descripcion);
+            }
             this.DFalta_obrasocial.Text = e.desc.descripcion;
             if (e.activo)
             {

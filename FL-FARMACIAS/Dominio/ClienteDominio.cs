@@ -16,7 +16,7 @@ namespace FL_FARMACIAS.Dominio
         public string dni { set; get; }
         public string telefono { set; get; }
         public bool activo { set; get; }
-        public virtual DescuentoDominio desc { set; get; }
+        public DescuentoDominio desc { set; get; }
         public int? idDescuento { set; get; }
 
 

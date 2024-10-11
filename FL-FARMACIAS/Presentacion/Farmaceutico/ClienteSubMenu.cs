@@ -186,5 +186,24 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 checkBox2.Checked = false;
             }
         }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView1.Rows[e.RowIndex].Cells["ESTADO"].Value?.ToString();
+            if (estado != "ACTIVO")
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo rojo suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+            else
+            {
+                // Color de fondo y texto para filas activas
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo verde suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+        }
+
+
     }
 }

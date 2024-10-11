@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FL_FARMACIAS.Dominio
 {
-    internal class ProveedorDominio
+    public class ProveedorDominio
     {
         public int id { set; get; }
         public string nombre { set; get; }
@@ -16,6 +16,21 @@ namespace FL_FARMACIAS.Dominio
         public string direccion { set; get; }
         public string correo { set; get; }
         public string telefono { set; get; }
+        public bool activo { set; get; }
+
+        public ProveedorDominio() { }
+
+        public ProveedorDominio(string nombre, string cuit, string provincia, string localidad, string direccion, string correo, string telefono, bool activo)
+        {
+            this.nombre = nombre;
+            this.cuit = cuit;
+            this.provincia = provincia;
+            this.localidad = localidad;
+            this.direccion = direccion;
+            this.correo = correo;
+            this.telefono = telefono;
+            this.activo = activo;
+        }
 
         public ProveedorDominio(int id, string nombre, string cuit, string provincia, string localidad, string direccion, string correo, string telefono)
         {

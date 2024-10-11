@@ -35,6 +35,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidossSubMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.placeholderTextBox2 = new PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.button3w = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,8 +71,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.placeholderTextBox2 = new PlaceholderTextBox();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,6 +107,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PEDIDOS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // placeholderTextBox2
+            // 
+            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox2.IsPassword = false;
+            this.placeholderTextBox2.Location = new System.Drawing.Point(37, 163);
+            this.placeholderTextBox2.Name = "placeholderTextBox2";
+            this.placeholderTextBox2.Placeholder = "INGRESE ID PEDIDO";
+            this.placeholderTextBox2.Size = new System.Drawing.Size(259, 20);
+            this.placeholderTextBox2.TabIndex = 20;
+            this.placeholderTextBox2.Text = "INGRESE ID PEDIDO";
             // 
             // label1
             // 
@@ -331,6 +342,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(366, 180);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(236, 20);
+            this.placeholderTextBox1.TabIndex = 29;
+            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -408,6 +430,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button5.Text = "BUSCAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView2
             // 
@@ -439,6 +462,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
@@ -513,28 +537,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Width = 150;
             // 
-            // placeholderTextBox2
-            // 
-            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox2.IsPassword = false;
-            this.placeholderTextBox2.Location = new System.Drawing.Point(37, 163);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.Placeholder = "INGRESE ID PEDIDO";
-            this.placeholderTextBox2.Size = new System.Drawing.Size(259, 20);
-            this.placeholderTextBox2.TabIndex = 20;
-            this.placeholderTextBox2.Text = "INGRESE ID PEDIDO";
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(366, 180);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(236, 20);
-            this.placeholderTextBox1.TabIndex = 29;
-            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
-            // 
             // PedidossSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,6 +590,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn APROBAR;
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
+        private Label label1;
+        private Label label4;
+        private PlaceholderTextBox placeholderTextBox1;
+        private PlaceholderTextBox placeholderTextBox2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -598,9 +604,5 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private Label label1;
-        private Label label4;
-        private PlaceholderTextBox placeholderTextBox1;
-        private PlaceholderTextBox placeholderTextBox2;
     }
 }
