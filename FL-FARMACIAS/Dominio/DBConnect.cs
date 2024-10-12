@@ -34,7 +34,7 @@ namespace FL_FARMACIAS.Dominio
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+  
             //CLIENTE
             modelBuilder.Entity<ClienteDominio>().ToTable("Clientes");
             modelBuilder.Entity<ClienteDominio>()
