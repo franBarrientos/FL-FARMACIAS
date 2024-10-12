@@ -55,7 +55,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             }
 
-            if (LoginForm.user.rol == Dominio.Rol.Admin)
+            if (LoginForm.user.rol.descripcion == "Admin")
             {
                 BFalta_ingresarcli.Hide();
             }

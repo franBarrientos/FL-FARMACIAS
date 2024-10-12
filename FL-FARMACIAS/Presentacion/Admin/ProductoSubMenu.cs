@@ -34,7 +34,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             fullProductos();
             fullCategorias();
 
-            if (LoginForm.user.rol == Rol.Supervisor)
+            if (LoginForm.user.rol.descripcion == "Supervisor")
             {
                 button3w.Hide();
                 button3.Hide();
