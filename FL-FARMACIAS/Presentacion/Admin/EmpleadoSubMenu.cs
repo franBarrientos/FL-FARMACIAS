@@ -1,15 +1,23 @@
-﻿using FL_FARMACIAS.Presentacion.Login;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion.Login;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
+using System.Web;
+using System.Net;
+
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class EmpleadoSubMenu : Form
     {
         private AltaEmpleado altaEmpleado = null;
+        public EmpleadoAplicacion empleadoApp;
 
         private object[][] orgEmployess = new object[][]
                 {
@@ -48,32 +56,76 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public EmpleadoSubMenu()
         {
             InitializeComponent();
-
-            foreach (var row in this.orgEmployess)
-            {
-                this.dataGridView1.Rows.Add(row);
-
-            }
-
-            if (LoginForm.user.rol == Dominio.Rol.Admin)
+            if (LoginForm.user.rol.descripcion == "Admin")
             {
                 BFalta_ingresarcli.Hide();
             }
+            this.empleadoApp = new EmpleadoAplicacion();
+            this.fullFiltros();
+            this.fullDefault();
+          
+        }
 
+        public void fullFiltros()
+        {
+
+            List<CargoDominio> matcheds = this.empleadoApp.ObtenerCargos();
+            this.comboBox1.Items.Clear();
+            this.comboBox1.Items.Add("Todos");
+            foreach (var e in matcheds)
+            {
+                this.comboBox1.Items.Add(e.descripcion);
+            }
+            this.comboBox1.SelectedIndex = 0;
+        }
+
+        public void fullDefault()
+        {
+
+            List<Empleadodominio> matcheds = this.empleadoApp.ObtenerTodos();
+            this.dataGridView1.Rows.Clear();
+            foreach (var e in matcheds)
+            {
+                Image defaultImage = null;
+                if (e.foto != null)
+                {
+                    using (var ms = new MemoryStream(e.foto))
+                    {
+                        defaultImage = Image.FromStream(ms);
+                    }
+                }
+                this.dataGridView1.Rows.Add(e.id, defaultImage, e.nombre, e.apellido, e.sexo == true ? "M" : "F", e.dni, e.cuil, e.telefono, e.cargo.descripcion, e.salario, e.fechaingreso, e.estado == true ? "ACTIVO" : "INACTIVO", "Usuario", "Modificar", "Eliminar");
+            }
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
+                var emp = this.empleadoApp.BuscarEmpleado(this.dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), null, null);
                 var dataGridView = sender as DataGridView;
 
                 if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Eliminar"
-                    MessageBox.Show($"Eliminar fila {e.RowIndex}");
-                    // Ejemplo: eliminar la fila
-                    dataGridView.Rows.RemoveAt(e.RowIndex);
+                    //pregunrar seguro deseas elimianr?
+                    if (!emp.estado)
+                    {
+                        MessageBox.Show("No se puede eliminar un empleado NO activo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar el empleado " + emp.apellido + " " + emp.nombre + "?",
+                                                              "Confirmar eliminación",
+                                                              MessageBoxButtons.YesNo,
+                                                              MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        this.empleadoApp.BorrarEmpleado(emp.id);
+                        this.fullDefault();
+                        MessageBox.Show("Empleado eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 // Verifica si la columna clicada es "Modificar"
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
@@ -87,68 +139,71 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    new CrearCuentaModal().Show();
-
+                    Empleadodominio ed = this.empleadoApp.BuscarEmpleado(dataGridView.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), null, null);
+                    new CrearCuentaModal(this, ed).Show();
                 }
             }
 
         }
 
 
-      
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-
-            if (textBox1.Text == " " && comboBox1.Text == " ")
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView1.Rows[e.RowIndex].Cells["ESTADO"].Value?.ToString();
+            if (estado != "ACTIVO")
             {
-                MessageBox.Show("Por favor, ingrese el DNI o Apellido del empleado que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            object[][] matched;
-            if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text == "Todos")
-            {
-                matched = this.orgEmployess
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((textBox1.Text == "INGRESE DNI O APELLIDO" || textBox1.Text == "") && comboBox1.Text != "Todos")
-            {
-                matched = this.orgEmployess
-                           .Where(x => x[7].ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != ""))
-            {
-                matched = this.orgEmployess
-                       .Where(x => x[0].ToString().Contains(textBox1.Text) ||
-                                   x[1].ToString().Contains(textBox1.Text) ||
-                                   x[2].ToString().Contains(textBox1.Text) ||
-                                   x[4].ToString().Contains(textBox1.Text))
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE DNI O APELLIDO" && textBox1.Text != "") )
-            {
-                matched = this.orgEmployess
-                       .Where(x => x[0].ToString().Contains(textBox1.Text) ||
-                                   x[1].ToString().Contains(textBox1.Text) ||
-                                   x[2].ToString().Contains(textBox1.Text) ||
-                                   x[4].ToString().Contains(textBox1.Text) &&
-                                    x[7].ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo rojo suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
             }
             else
             {
-                matched = this.orgEmployess
-                       .ToArray(); // Convertir a un array de object[][]
+                // Color de fondo y texto para filas activas
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo verde suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dni = null;
+            string apellido = null;
+            string cargo = null;
+            DateTime desde = dateTimePicker1.Value;
+            DateTime hasta = dateTimePicker2.Value;
+
+            if (!(textBox1.Text.Trim() == "INGRESE DNI O APELLIDO" || textBox1.Text.Trim() == ""))
+            {
+                if (textBox1.Text.All(char.IsDigit))
+                {
+                    dni = textBox1.Text;
+                }
+                else
+                {
+                    apellido = textBox1.Text;
+                }
             }
 
-
-            this.dataGridView1.Rows.Clear();
-
-            foreach (var row in matched)
+            if (comboBox1.Text != "Todos")
             {
-                this.dataGridView1.Rows.Add(row);
+                cargo = comboBox1.Text;
+            }
+
+            List<Empleadodominio> matcheds = this.empleadoApp.BuscarEmpleados(dni, apellido, cargo, desde, hasta); 
+            this.dataGridView1.Rows.Clear();
+            foreach (var em in matcheds)
+            {
+                Image defaultImage = null;
+                if (em.foto != null)
+                {
+                    using (var ms = new MemoryStream(em.foto))
+                    {
+                        defaultImage = Image.FromStream(ms);
+                    }
+                }
+                this.dataGridView1.Rows.Add(em.id, defaultImage, em.nombre, em.apellido, em.sexo == true ? "M" : "F", em.dni, em.cuil, em.telefono, em.cargo.descripcion, em.salario, em.fechaingreso, em.estado == true ? "ACTIVO" : "INACTIVO", "Usuario", "Modificar", "Eliminar");
             }
 
         }
@@ -157,13 +212,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             textBox1.Text = "";
             comboBox1.Text = "Todos";
+            dateTimePicker1.Value = new DateTime(1960, 1, 1);
+            dateTimePicker2.Value = DateTime.Now;
+            this.fullDefault();
         }
 
         private void ShowAltaEmpleado()
         {
             if (altaEmpleado == null || altaEmpleado.IsDisposed)
             {
-                altaEmpleado = new AltaEmpleado();
+                altaEmpleado = new AltaEmpleado(this);
                 altaEmpleado.Show();
             }
             else

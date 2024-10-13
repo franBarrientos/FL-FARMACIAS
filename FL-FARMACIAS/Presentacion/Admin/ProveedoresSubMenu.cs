@@ -64,7 +64,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
-                    new CrearCuentaModal().Show();
+                    //new CrearCuentaModal().Show();
 
                 }
             }

@@ -29,12 +29,94 @@ namespace FL_FARMACIAS.Dominio
         
         public DbSet<ProveedorDominio> Proveedor { get; set; }
 
+        public DbSet<Rol> Rol { get; set; }
+
+        public DbSet<UsuarioDominio> Usuario { get; set; }
+
+        public DbSet<Empleadodominio> Empleado { get; set; }
+
+        public DbSet<CargoDominio> Cargo { get; set; }
 
         // Configuración adicional para personalizar el mapeo
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-  
+            //ROL
+            modelBuilder.Entity<Rol>().ToTable("Roles");
+            modelBuilder.Entity<Rol>()
+            .Property(c => c.id)
+            .HasColumnName("id_rol")
+            .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            //USUARIOS
+            modelBuilder.Entity<UsuarioDominio>().ToTable("Usuarios");
+            modelBuilder.Entity<UsuarioDominio>()
+            .Property(c => c.id)
+            .HasColumnName("id_usuario")
+            .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<UsuarioDominio>()
+           .Property(c => c.rolId)
+           .HasColumnName("id_rol");
+
+            modelBuilder.Entity<UsuarioDominio>()
+             .HasRequired(c => c.rol)          // Relación opcional con 
+             .WithMany()                        // Un Descuento puede estar relacionado con muchos Clientes
+             .HasForeignKey(c => c.rolId);
+
+            //CARGOS
+            modelBuilder.Entity<CargoDominio>().ToTable("Cargos");
+            modelBuilder.Entity<CargoDominio>()
+            .Property(e => e.id)
+            .HasColumnName("id_cargo")
+            .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+
+            //EMPLEADO
+            modelBuilder.Entity<Empleadodominio>().ToTable("Empleados");
+            modelBuilder.Entity<Empleadodominio>()
+            .Property(e => e.id)
+            .HasColumnName("id_empleado")
+            .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<Empleadodominio>()
+              .Property(e => e.idUsuario)
+              .HasColumnName("id_usuario");
+
+            modelBuilder.Entity<Empleadodominio>()
+            .HasOptional(e => e.usuario)          // Relación opcional con 
+            .WithMany()                        // Un Descuento puede estar relacionado con muchos Clientes
+            .HasForeignKey(e => e.idUsuario);
+
+            modelBuilder.Entity<Empleadodominio>()
+            .Property(e => e.idCargo)
+            .HasColumnName("id_cargo");
+
+            modelBuilder.Entity<Empleadodominio>()
+            .HasRequired(e => e.cargo)          // Relación opcional con 
+            .WithMany()                        // Un Descuento puede estar relacionado con muchos Clientes
+            .HasForeignKey(e => e.idCargo);
+
+            //empleados restricciones
+
+            modelBuilder.Entity<Empleadodominio>()
+                .HasIndex(e => e.dni).IsUnique();
+
+            modelBuilder.Entity<Empleadodominio>()
+                .Property(e => e.dni)
+                .HasMaxLength(8);
+
+            modelBuilder.Entity<Empleadodominio>()
+                .HasIndex(e => e.cuil).IsUnique();
+
+            modelBuilder.Entity<Empleadodominio>()
+                .Property(e => e.cuil)
+                .HasMaxLength(11);
+
+            modelBuilder.Entity<Empleadodominio>()
+                .Property(e => e.telefono)
+                .HasMaxLength(10);
+
             //CLIENTE
             modelBuilder.Entity<ClienteDominio>().ToTable("Clientes");
             modelBuilder.Entity<ClienteDominio>()

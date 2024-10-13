@@ -76,6 +76,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\EmpleadoAplicacion.cs" />
     <Compile Include="Aplicacion\ProveedorAplicacion.cs" />
     <Compile Include="Aplicacion\CategoriaAplicacion.cs" />
     <Compile Include="Aplicacion\DescuentoAplicacion.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\DBConnect.cs" />
     <Compile Include="Dominio\DescuentoDominio.cs" />
+    <Compile Include="Dominio\Empleadodominio.cs" />
     <Compile Include="Dominio\ProductoDominio.cs" />
     <Compile Include="Dominio\StaticBD.cs" />
     <Compile Include="Dominio\ProveedorDominio.cs" />
@@ -100,6 +102,26 @@
     <Compile Include="Migrations\202410082326531_add_provedor-with-state.cs" />
     <Compile Include="Migrations\202410082326531_add_provedor-with-state.Designer.cs">
       <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410121639564_RolesDeLaMigracion.cs" />
+    <Compile Include="Migrations\202410121639564_RolesDeLaMigracion.Designer.cs">
+      <DependentUpon>202410121639564_RolesDeLaMigracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410121650517_UsuariosDeLaMigracion.cs" />
+    <Compile Include="Migrations\202410121650517_UsuariosDeLaMigracion.Designer.cs">
+      <DependentUpon>202410121650517_UsuariosDeLaMigracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410121840385_EmpleadoDeLaMigracion.cs" />
+    <Compile Include="Migrations\202410121840385_EmpleadoDeLaMigracion.Designer.cs">
+      <DependentUpon>202410121840385_EmpleadoDeLaMigracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410122308241_optionalUserv2.cs" />
+    <Compile Include="Migrations\202410122308241_optionalUserv2.Designer.cs">
+      <DependentUpon>202410122308241_optionalUserv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410132306013_addEstadoEmpleado.cs" />
+    <Compile Include="Migrations\202410132306013_addEstadoEmpleado.Designer.cs">
+      <DependentUpon>202410132306013_addEstadoEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
@@ -271,6 +293,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410082326531_add_provedor-with-state.resx">
       <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410121639564_RolesDeLaMigracion.resx">
+      <DependentUpon>202410121639564_RolesDeLaMigracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410121650517_UsuariosDeLaMigracion.resx">
+      <DependentUpon>202410121650517_UsuariosDeLaMigracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410121840385_EmpleadoDeLaMigracion.resx">
+      <DependentUpon>202410121840385_EmpleadoDeLaMigracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410122308241_optionalUserv2.resx">
+      <DependentUpon>202410122308241_optionalUserv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410132306013_addEstadoEmpleado.resx">
+      <DependentUpon>202410132306013_addEstadoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>

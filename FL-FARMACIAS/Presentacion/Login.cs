@@ -23,9 +23,9 @@ namespace FL_FARMACIAS.Presentacion.Login
 
         private List<UsuarioDominio> defaultUsers = new List<UsuarioDominio>()
         {
-            new UsuarioDominio("admin", "admin", Rol.Admin),
-            new UsuarioDominio("supervisor", "supervisor", Rol.Supervisor),
-            new UsuarioDominio("farmaceutico", "farmaceutico", Rol.Farmaceutico),
+            new UsuarioDominio(1,"admin", "admin", new Rol(1, "Admin")),
+            new UsuarioDominio(2,"supervisor", "supervisor", new Rol(2, "Supervisor")) ,
+            new UsuarioDominio(3, "farmaceutico", "farmaceutico", new Rol(3, "Farmaceutico")),
         };
         
 
@@ -70,7 +70,7 @@ namespace FL_FARMACIAS.Presentacion.Login
 
             LoginForm.user = usuarioEncontrado;
 
-            if (usuarioEncontrado.rol == Rol.Admin)
+            if (usuarioEncontrado.rol.descripcion == "Admin")
             {
                 new MenuAdmin(this).Show(this);
                 this.Beliminar_login_Click(sender, e);
@@ -79,7 +79,7 @@ namespace FL_FARMACIAS.Presentacion.Login
                
             }
 
-            if (usuarioEncontrado.rol == Rol.Farmaceutico)
+            if (usuarioEncontrado.rol.descripcion == "Farmaceutico")
             {
                 new MenuFarmaceutico(this).Show(this);
                 this.Beliminar_login_Click(sender, e);
@@ -87,7 +87,7 @@ namespace FL_FARMACIAS.Presentacion.Login
                 return;
             }
 
-            if (usuarioEncontrado.rol == Rol.Supervisor)
+            if (usuarioEncontrado.rol.descripcion == "Supervisor")
             {
                 new MenuSupervisor(this).Show(this);
                 this.Beliminar_login_Click(sender, e);
