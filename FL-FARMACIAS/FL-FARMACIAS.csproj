@@ -130,6 +130,12 @@
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarEmpleado.Designer.cs">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\ModificarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ModificarCategoria.resx">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>

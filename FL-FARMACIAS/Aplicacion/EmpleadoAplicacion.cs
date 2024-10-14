@@ -73,19 +73,14 @@ namespace FL_FARMACIAS.Aplicacion
         }
 
                 public void ActualizarEmpleado(Empleadodominio d)
-        {
+            {
             Type type = d.GetType();
             foreach (var property in type.GetProperties())
             {
                 Console.WriteLine($"{property.Name}: {property.GetValue(d)}");
             }
 
-            type = d.usuario.GetType();
-            foreach (var property in type.GetProperties())
-            {
-                Console.WriteLine($"{property.Name}: {property.GetValue(d.usuario)}");
-            }
-
+          
             using (var db = new DBConnect())
             {
 

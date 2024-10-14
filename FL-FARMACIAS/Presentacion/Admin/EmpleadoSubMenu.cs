@@ -130,12 +130,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 // Verifica si la columna clicada es "Modificar"
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Modificar"
-                    MessageBox.Show($"Modificar fila {e.RowIndex}");
-                    // Ejemplo: mostrar detalles para modificar
-                    var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
-                    var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
-                    // Aquí podrías abrir un formulario de edición con estos datos, por ejemplo.
+                    new ModificarEmpleado(this, emp).Show();
                 }
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
                 {
