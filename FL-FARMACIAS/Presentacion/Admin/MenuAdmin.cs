@@ -90,5 +90,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu<backups>();
+        }
     }
 }
