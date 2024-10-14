@@ -7,13 +7,13 @@ namespace FL_FARMACIAS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class UsuariosDeLaMigracion : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UsuariosDeLaMigracion));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410121650517_UsuariosDeLaMigracion"; }
+            get { return "202410142237488_init"; }
         }
         
         string IMigrationMetadata.Source

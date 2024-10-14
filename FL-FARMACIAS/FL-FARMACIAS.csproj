@@ -91,37 +91,9 @@
     <Compile Include="Dominio\ProveedorDominio.cs" />
     <Compile Include="Dominio\ClienteDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
-    <Compile Include="Migrations\202410052057015_Start.cs" />
-    <Compile Include="Migrations\202410052057015_Start.Designer.cs">
-      <DependentUpon>202410052057015_Start.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410081741070_add_provedor.cs" />
-    <Compile Include="Migrations\202410081741070_add_provedor.Designer.cs">
-      <DependentUpon>202410081741070_add_provedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410082326531_add_provedor-with-state.cs" />
-    <Compile Include="Migrations\202410082326531_add_provedor-with-state.Designer.cs">
-      <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410121639564_RolesDeLaMigracion.cs" />
-    <Compile Include="Migrations\202410121639564_RolesDeLaMigracion.Designer.cs">
-      <DependentUpon>202410121639564_RolesDeLaMigracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410121650517_UsuariosDeLaMigracion.cs" />
-    <Compile Include="Migrations\202410121650517_UsuariosDeLaMigracion.Designer.cs">
-      <DependentUpon>202410121650517_UsuariosDeLaMigracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410121840385_EmpleadoDeLaMigracion.cs" />
-    <Compile Include="Migrations\202410121840385_EmpleadoDeLaMigracion.Designer.cs">
-      <DependentUpon>202410121840385_EmpleadoDeLaMigracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410122308241_optionalUserv2.cs" />
-    <Compile Include="Migrations\202410122308241_optionalUserv2.Designer.cs">
-      <DependentUpon>202410122308241_optionalUserv2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410132306013_addEstadoEmpleado.cs" />
-    <Compile Include="Migrations\202410132306013_addEstadoEmpleado.Designer.cs">
-      <DependentUpon>202410132306013_addEstadoEmpleado.cs</DependentUpon>
+    <Compile Include="Migrations\202410142237488_init.cs" />
+    <Compile Include="Migrations\202410142237488_init.Designer.cs">
+      <DependentUpon>202410142237488_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
@@ -129,6 +101,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\backups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\backups.Designer.cs">
+      <DependentUpon>backups.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\ModificarEmpleado.cs">
       <SubType>Form</SubType>
@@ -291,35 +269,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202410052057015_Start.resx">
-      <DependentUpon>202410052057015_Start.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410081741070_add_provedor.resx">
-      <DependentUpon>202410081741070_add_provedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410082326531_add_provedor-with-state.resx">
-      <DependentUpon>202410082326531_add_provedor-with-state.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410121639564_RolesDeLaMigracion.resx">
-      <DependentUpon>202410121639564_RolesDeLaMigracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410121650517_UsuariosDeLaMigracion.resx">
-      <DependentUpon>202410121650517_UsuariosDeLaMigracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410121840385_EmpleadoDeLaMigracion.resx">
-      <DependentUpon>202410121840385_EmpleadoDeLaMigracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410122308241_optionalUserv2.resx">
-      <DependentUpon>202410122308241_optionalUserv2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410132306013_addEstadoEmpleado.resx">
-      <DependentUpon>202410132306013_addEstadoEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410142237488_init.resx">
+      <DependentUpon>202410142237488_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\ModificarEmpleado.resx">
-      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ModificarCategoria.resx">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
