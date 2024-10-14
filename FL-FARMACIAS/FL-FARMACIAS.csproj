@@ -275,6 +275,9 @@
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\backups.resx">
+      <DependentUpon>backups.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ModificarCategoria.resx">
       <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
