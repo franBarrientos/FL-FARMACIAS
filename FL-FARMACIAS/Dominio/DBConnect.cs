@@ -60,9 +60,14 @@ namespace FL_FARMACIAS.Dominio
            .HasColumnName("id_rol");
 
             modelBuilder.Entity<UsuarioDominio>()
+                .Ignore(u => u.empleado);
+
+            modelBuilder.Entity<UsuarioDominio>()
              .HasRequired(c => c.rol)          // Relación opcional con 
              .WithMany()                        // Un Descuento puede estar relacionado con muchos Clientes
              .HasForeignKey(c => c.rolId);
+
+
 
             //CARGOS
             modelBuilder.Entity<CargoDominio>().ToTable("Cargos");
@@ -87,6 +92,7 @@ namespace FL_FARMACIAS.Dominio
             .HasOptional(e => e.usuario)          // Relación opcional con 
             .WithMany()                        // Un Descuento puede estar relacionado con muchos Clientes
             .HasForeignKey(e => e.idUsuario);
+
 
             modelBuilder.Entity<Empleadodominio>()
             .Property(e => e.idCargo)

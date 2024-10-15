@@ -43,12 +43,15 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.cerrar_sesion = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -86,7 +89,7 @@
             this.button2.Location = new System.Drawing.Point(16, 234);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 128);
+            this.button2.Size = new System.Drawing.Size(209, 128);
             this.button2.TabIndex = 2;
             this.button2.Text = "          PRODUCTOS \n          CATEGORIAS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,10 +101,10 @@
             this.p.BackColor = System.Drawing.Color.White;
             this.p.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.p.Location = new System.Drawing.Point(251, 60);
+            this.p.Location = new System.Drawing.Point(241, 60);
             this.p.Margin = new System.Windows.Forms.Padding(2);
             this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(216, 128);
+            this.p.Size = new System.Drawing.Size(226, 128);
             this.p.TabIndex = 3;
             this.p.Text = "  PROVEEDORES\n   PEDIDOS";
             this.p.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,10 +142,10 @@
             // 
             this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(379, 78);
+            this.pictureBox4.Location = new System.Drawing.Point(369, 78);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(78, 93);
+            this.pictureBox4.Size = new System.Drawing.Size(88, 93);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
@@ -233,6 +236,28 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Enabled = false;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(584, 80);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(108, 96);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 13;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Hola:";
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +266,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(722, 458);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.cerrar_sesion);
             this.Controls.Add(this.pictureBox6);
@@ -266,7 +293,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
             }
 
@@ -285,5 +314,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button cerrar_sesion;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label1;
     }
 }

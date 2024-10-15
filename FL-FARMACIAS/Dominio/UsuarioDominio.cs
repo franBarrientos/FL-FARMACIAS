@@ -30,6 +30,8 @@ namespace FL_FARMACIAS.Dominio
 
         public int rolId { set; get; }
         public int id { set; get; }
+
+        public Empleadodominio empleado { set; get; }
         public UsuarioDominio() { }
 
         public UsuarioDominio(string usuario, string clave, Rol rol)
@@ -47,6 +49,11 @@ namespace FL_FARMACIAS.Dominio
             this.clave = clave;
             this.rol = rol;
             this.rolId = rol.id;
+        }
+        public override string ToString()
+        {
+            return $"Usuario: {usuario}, Clave: {clave}, Activo: {activo}" + (rol != null ? $"rol ID: {rol.id}" : "No hay rol") + ", ID: {id}" +
+                   (empleado != null ? $", Empleado ID: {empleado.id}" : ", No hay empleado asociado.");
         }
 
     }
