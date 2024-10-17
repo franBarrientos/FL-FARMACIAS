@@ -22,7 +22,7 @@ namespace FL_FARMACIAS.Presentacion.Supervisor
         public MenuSupervisor(LoginForm loginForm)
         {
             InitializeComponent();
-            this.label1.Text = "Hola: " + (LoginForm.user.empleado != null ? LoginForm.user.empleado.nombre : LoginForm.user.rol.descripcion);
+            this.button6.Text = (LoginForm.user.empleado != null ? LoginForm.user.rol.descripcion.ToUpper() + " " + LoginForm.user.empleado.nombre.ToUpper() : LoginForm.user.rol.descripcion.ToUpper());
             this.loginForm = loginForm;
         }
 
