@@ -13,18 +13,35 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
-    public partial class AltaProveedor : Form
+    public partial class ModificarProveedor : Form
     {
 
         public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
         public ProveedoresSubMenu proveedorSubMenu { get; set; }
-        public AltaProveedor(ProveedoresSubMenu m)
+        public ProveedorDominio provedor {  get; set; }
+        public ModificarProveedor(ProveedoresSubMenu m, ProveedorDominio p)
         {
             InitializeComponent();
             this.proveedorSubMenu = m;
+            this.provedor = p;
             foreach (var prov in provArr)
             {
                 provincia_proveedor.Items.Add(prov.Key);
+            }
+            this.Tnombre_pedido.Text = p.nombre;
+            this.Tcuit_proveedor.Text = p.cuit;
+            this.provincia_proveedor.Text = p.provincia;
+            this.localidad_proveedor.Text = p.localidad;
+            this.direccion_proveedor.Text = p.direccion;
+            this.correo_proveedor.Text = p.correo;
+            this.telefono_proveedor.Text = p.telefono;
+            if(p.activo == true)
+            {
+                this.checkBox1.Checked = true;
+            }
+            else
+            {
+                this.checkBox2.Checked = true;
             }
         }
 
@@ -49,14 +66,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
             String nombre = Tnombre_pedido.Text.Trim();
             String cuit = Tcuit_proveedor.Text.Trim();
-            String dni = dni_proveedor.Text.Trim();
             String provincia = provincia_proveedor.Text.Trim();
             String localidad = localidad_proveedor.Text.Trim();
             String direccion = direccion_proveedor.Text.Trim();
             String correo = correo_proveedor.Text.Trim();
             String telefono = telefono_proveedor.Text.Trim();
             
-            if (nombre == "" || cuit == "" || dni == "" || provincia == "" || localidad == "" || direccion == "" || correo == "" || telefono == "")
+            if (nombre == "" || cuit == ""  || provincia == "" || localidad == "" || direccion == "" || correo == "" || telefono == "")
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -80,17 +96,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
-            if (!dni.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, ingrese solo números en el campo DNI.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (dni.Length != 8)
-            {
-                MessageBox.Show("Por favor, ingrese un DNI de 8 digitos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+     
             if (!telefono.All(char.IsDigit))
             {
                 MessageBox.Show("Por favor, ingrese solo números en el campo telefono.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -112,11 +118,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
 
 
-            if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "" && provincia != "" && localidad != "" && direccion != "" && ValidarGmail_proveedor(correo))
+            if (nombre != "" && cuit != "" && correo != "" && telefono != "" && provincia != "" && localidad != "" && direccion != "" && ValidarGmail_proveedor(correo))
             {
-                this.proveedorSubMenu.proveedorApp.AgregarProveedor(new ProveedorDominio(nombre, cuit, provincia, localidad, direccion, correo, telefono, true ));
+                this.proveedorSubMenu.proveedorApp.ActualizarProveedor(new ProveedorDominio(this.provedor.id, nombre, cuit, provincia, localidad, direccion, correo, telefono, this.checkBox1.Checked ));
                this.proveedorSubMenu.fullProvedores();
-                MessageBox.Show("El proveedor " + nombre + "," + "D.N.I:" + dni + "CUIT: " + cuit + "CORREO:" + correo + "TELEFONO:" + telefono + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El proveedor " + nombre + ","  + "CUIT: " + cuit + "CORREO:" + correo + "TELEFONO:" + telefono + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
@@ -132,17 +138,15 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
             String nombre = Tnombre_pedido.Text.Trim();
             String cuit = Tcuit_proveedor.Text.Trim();
-            String dni = dni_proveedor.Text.Trim();
             String provincia = provincia_proveedor.Text.Trim();
             String localidad = localidad_proveedor.Text.Trim();
             String direccion = direccion_proveedor.Text.Trim();
             String correo = correo_proveedor.Text.Trim();
             String telefono = telefono_proveedor.Text.Trim();
-            if (nombre != "" || cuit != "" || dni != "" || provincia != "" || localidad != "" || direccion != "" || correo != "" || telefono != "")
+            if (nombre != "" || cuit != "" || provincia != "" || localidad != "" || direccion != "" || correo != "" || telefono != "")
             {
                 Tnombre_pedido.Clear();
                 Tcuit_proveedor.Clear();
-                dni_proveedor.Clear();
                 provincia_proveedor.Text = " ";
                 localidad_proveedor.Text = " ";
                 direccion_proveedor.Clear();
@@ -153,6 +157,22 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             {
                 MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox1.Checked = false;
             }
         }
     }

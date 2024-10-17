@@ -34,17 +34,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(productoSubMenu));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGO_PROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LABORATORIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACTIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -60,13 +49,24 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO_PROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CATEGORIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LABORATORIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ACTIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCIONC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ELIMINARC = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICARC = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
@@ -101,92 +101,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 150;
-            // 
-            // CODIGO_PROD
-            // 
-            this.CODIGO_PROD.HeaderText = "CODIGO PRODUCTO";
-            this.CODIGO_PROD.MinimumWidth = 10;
-            this.CODIGO_PROD.Name = "CODIGO_PROD";
-            this.CODIGO_PROD.Width = 200;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.MinimumWidth = 10;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Width = 200;
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.MinimumWidth = 10;
-            this.PRECIO.Name = "PRECIO";
-            this.PRECIO.ReadOnly = true;
-            this.PRECIO.Width = 200;
-            // 
-            // STOCK
-            // 
-            this.STOCK.HeaderText = "STOCK";
-            this.STOCK.MinimumWidth = 10;
-            this.STOCK.Name = "STOCK";
-            this.STOCK.ReadOnly = true;
-            this.STOCK.Width = 200;
-            // 
-            // CATEGORIA
-            // 
-            this.CATEGORIA.HeaderText = "CATEGORIA";
-            this.CATEGORIA.MinimumWidth = 10;
-            this.CATEGORIA.Name = "CATEGORIA";
-            this.CATEGORIA.ReadOnly = true;
-            this.CATEGORIA.Width = 200;
-            // 
-            // MARCA
-            // 
-            this.MARCA.HeaderText = "MARCA";
-            this.MARCA.Name = "MARCA";
-            // 
-            // LABORATORIO
-            // 
-            this.LABORATORIO.HeaderText = "LABORATORIO";
-            this.LABORATORIO.Name = "LABORATORIO";
-            // 
-            // ACTIVO
-            // 
-            this.ACTIVO.HeaderText = "ESTADO";
-            this.ACTIVO.MinimumWidth = 10;
-            this.ACTIVO.Name = "ACTIVO";
-            this.ACTIVO.ReadOnly = true;
-            this.ACTIVO.Width = 200;
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Text = "ELIMINAR";
-            this.ELIMINAR.UseColumnTextForButtonValue = true;
-            this.ELIMINAR.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Text = "MODIFICAR";
-            this.MODIFICAR.UseColumnTextForButtonValue = true;
-            this.MODIFICAR.Width = 150;
             // 
             // button1
             // 
@@ -369,6 +283,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.textBox2.Placeholder = "INGRESE ID O DESCRIPCION";
             this.textBox2.Size = new System.Drawing.Size(221, 20);
             this.textBox2.TabIndex = 19;
+            this.textBox2.Text = "INGRESE ID O DESCRIPCION";
             // 
             // button3
             // 
@@ -422,46 +337,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
             // 
-            // IDC
-            // 
-            this.IDC.HeaderText = "ID";
-            this.IDC.MinimumWidth = 8;
-            this.IDC.Name = "IDC";
-            this.IDC.ReadOnly = true;
-            this.IDC.Width = 150;
-            // 
-            // DESCRIPCIONC
-            // 
-            this.DESCRIPCIONC.HeaderText = "DESCRIPCION";
-            this.DESCRIPCIONC.MinimumWidth = 8;
-            this.DESCRIPCIONC.Name = "DESCRIPCIONC";
-            this.DESCRIPCIONC.ReadOnly = true;
-            this.DESCRIPCIONC.Width = 150;
-            // 
-            // ESTADOC
-            // 
-            this.ESTADOC.HeaderText = "ESTADO";
-            this.ESTADOC.MinimumWidth = 8;
-            this.ESTADOC.Name = "ESTADOC";
-            this.ESTADOC.ReadOnly = true;
-            this.ESTADOC.Width = 150;
-            // 
-            // ELIMINARC
-            // 
-            this.ELIMINARC.HeaderText = "ELIMINAR";
-            this.ELIMINARC.MinimumWidth = 8;
-            this.ELIMINARC.Name = "ELIMINARC";
-            this.ELIMINARC.ReadOnly = true;
-            this.ELIMINARC.Width = 150;
-            // 
-            // MODIFICARC
-            // 
-            this.MODIFICARC.HeaderText = "MODIFICAR";
-            this.MODIFICARC.MinimumWidth = 8;
-            this.MODIFICARC.Name = "MODIFICARC";
-            this.MODIFICARC.ReadOnly = true;
-            this.MODIFICARC.Width = 150;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
@@ -495,6 +370,134 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 150;
+            // 
+            // CODIGO_PROD
+            // 
+            this.CODIGO_PROD.HeaderText = "CODIGO PRODUCTO";
+            this.CODIGO_PROD.MinimumWidth = 10;
+            this.CODIGO_PROD.Name = "CODIGO_PROD";
+            this.CODIGO_PROD.Width = 200;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.MinimumWidth = 10;
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            this.NOMBRE.Width = 200;
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.MinimumWidth = 10;
+            this.PRECIO.Name = "PRECIO";
+            this.PRECIO.ReadOnly = true;
+            this.PRECIO.Width = 200;
+            // 
+            // STOCK
+            // 
+            this.STOCK.HeaderText = "STOCK";
+            this.STOCK.MinimumWidth = 10;
+            this.STOCK.Name = "STOCK";
+            this.STOCK.ReadOnly = true;
+            this.STOCK.Width = 200;
+            // 
+            // CATEGORIA
+            // 
+            this.CATEGORIA.HeaderText = "CATEGORIA";
+            this.CATEGORIA.MinimumWidth = 10;
+            this.CATEGORIA.Name = "CATEGORIA";
+            this.CATEGORIA.ReadOnly = true;
+            this.CATEGORIA.Width = 200;
+            // 
+            // MARCA
+            // 
+            this.MARCA.HeaderText = "MARCA";
+            this.MARCA.Name = "MARCA";
+            // 
+            // LABORATORIO
+            // 
+            this.LABORATORIO.HeaderText = "LABORATORIO";
+            this.LABORATORIO.Name = "LABORATORIO";
+            // 
+            // ACTIVO
+            // 
+            this.ACTIVO.HeaderText = "ESTADO";
+            this.ACTIVO.MinimumWidth = 10;
+            this.ACTIVO.Name = "ACTIVO";
+            this.ACTIVO.ReadOnly = true;
+            this.ACTIVO.Visible = false;
+            this.ACTIVO.Width = 200;
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Text = "ELIMINAR";
+            this.ELIMINAR.UseColumnTextForButtonValue = true;
+            this.ELIMINAR.Width = 150;
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Text = "MODIFICAR";
+            this.MODIFICAR.UseColumnTextForButtonValue = true;
+            this.MODIFICAR.Width = 150;
+            // 
+            // IDC
+            // 
+            this.IDC.HeaderText = "ID";
+            this.IDC.MinimumWidth = 8;
+            this.IDC.Name = "IDC";
+            this.IDC.ReadOnly = true;
+            this.IDC.Visible = false;
+            this.IDC.Width = 150;
+            // 
+            // DESCRIPCIONC
+            // 
+            this.DESCRIPCIONC.HeaderText = "DESCRIPCION";
+            this.DESCRIPCIONC.MinimumWidth = 8;
+            this.DESCRIPCIONC.Name = "DESCRIPCIONC";
+            this.DESCRIPCIONC.ReadOnly = true;
+            this.DESCRIPCIONC.Width = 150;
+            // 
+            // ESTADOC
+            // 
+            this.ESTADOC.HeaderText = "ESTADO";
+            this.ESTADOC.MinimumWidth = 8;
+            this.ESTADOC.Name = "ESTADOC";
+            this.ESTADOC.ReadOnly = true;
+            this.ESTADOC.Width = 150;
+            // 
+            // ELIMINARC
+            // 
+            this.ELIMINARC.HeaderText = "ELIMINAR";
+            this.ELIMINARC.MinimumWidth = 8;
+            this.ELIMINARC.Name = "ELIMINARC";
+            this.ELIMINARC.ReadOnly = true;
+            this.ELIMINARC.Width = 150;
+            // 
+            // MODIFICARC
+            // 
+            this.MODIFICARC.HeaderText = "MODIFICAR";
+            this.MODIFICARC.MinimumWidth = 8;
+            this.MODIFICARC.Name = "MODIFICARC";
+            this.MODIFICARC.ReadOnly = true;
+            this.MODIFICARC.Width = 150;
             // 
             // productoSubMenu
             // 
@@ -541,11 +544,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private PlaceholderTextBox textBox1;
         private Label label1;
         private Label label3;
-        private DataGridViewTextBoxColumn IDC;
-        private DataGridViewTextBoxColumn DESCRIPCIONC;
-        private DataGridViewTextBoxColumn ESTADOC;
-        private DataGridViewButtonColumn ELIMINARC;
-        private DataGridViewButtonColumn MODIFICARC;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn CODIGO_PROD;
         private DataGridViewTextBoxColumn NOMBRE;
@@ -557,5 +555,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridViewTextBoxColumn ACTIVO;
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
+        private DataGridViewTextBoxColumn IDC;
+        private DataGridViewTextBoxColumn DESCRIPCIONC;
+        private DataGridViewTextBoxColumn ESTADOC;
+        private DataGridViewButtonColumn ELIMINARC;
+        private DataGridViewButtonColumn MODIFICARC;
     }
 }

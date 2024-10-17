@@ -78,7 +78,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
             if (AltaProveedor == null || AltaProveedor.IsDisposed)
             {
-                AltaProveedor = new AltaProveedor();
+                //AltaProveedor = new AltaProveedor(this);
                 AltaProveedor.Show();
             }
             else

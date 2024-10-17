@@ -355,6 +355,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.ESTADO.HeaderText = "ESTADO";
             this.ESTADO.Name = "ESTADO";
+            this.ESTADO.Visible = false;
             // 
             // USUARIO
             // 

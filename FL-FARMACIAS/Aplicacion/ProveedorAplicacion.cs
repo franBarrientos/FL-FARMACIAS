@@ -48,6 +48,28 @@ namespace FL_FARMACIAS.Aplicacion
             
         }
 
+        public ProveedorDominio BuscarProveedorId(int id)
+        {
+            using (var db = new DBConnect())
+            {
+                return db.Proveedor.FirstOrDefault(x => x.id == id);
+            }
+        }
+
+        public void EliminarProveedor(int id)
+        {
+            using (var db = new DBConnect())
+            {
+                var proveedorExistente = db.Proveedor.FirstOrDefault(x => x.id == id);
+
+                if (proveedorExistente != null)
+                {
+                proveedorExistente.activo = false;
+                db.SaveChanges();
+                }
+            }
+        }
+
         public List<ProveedorDominio> ObtenerTodosActivo()
         {
            

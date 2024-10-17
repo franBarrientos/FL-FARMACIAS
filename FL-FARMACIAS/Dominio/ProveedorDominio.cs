@@ -32,7 +32,7 @@ namespace FL_FARMACIAS.Dominio
             this.activo = activo;
         }
 
-        public ProveedorDominio(int id, string nombre, string cuit, string provincia, string localidad, string direccion, string correo, string telefono)
+        public ProveedorDominio(int id, string nombre, string cuit, string provincia, string localidad, string direccion, string correo, string telefono, bool activo)
         {
             this.id = id;
             this.nombre = nombre;
@@ -42,6 +42,7 @@ namespace FL_FARMACIAS.Dominio
             this.direccion = direccion;
             this.correo = correo;
             this.telefono = telefono;
+            this.activo = activo;
         }
     }
 }

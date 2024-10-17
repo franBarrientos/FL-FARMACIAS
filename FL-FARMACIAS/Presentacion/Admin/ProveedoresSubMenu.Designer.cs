@@ -35,6 +35,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresSubMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.button3w = new System.Windows.Forms.Button();
@@ -53,24 +54,24 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.placeholderTextBox2 = new PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
-            this.placeholderTextBox2 = new PlaceholderTextBox();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICARP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINARP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,6 +108,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PEDIDOS";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(13, 166);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE ID PEDIDO";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(330, 20);
+            this.placeholderTextBox1.TabIndex = 20;
+            this.placeholderTextBox1.Text = "INGRESE ID PEDIDO";
             // 
             // label4
             // 
@@ -331,6 +343,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.tabPage2.Text = "PROVEEDORES";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // placeholderTextBox2
+            // 
+            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox2.IsPassword = false;
+            this.placeholderTextBox2.Location = new System.Drawing.Point(382, 175);
+            this.placeholderTextBox2.Name = "placeholderTextBox2";
+            this.placeholderTextBox2.Placeholder = "INGRESE NOMBRE O CUIT";
+            this.placeholderTextBox2.Size = new System.Drawing.Size(236, 20);
+            this.placeholderTextBox2.TabIndex = 29;
+            this.placeholderTextBox2.Text = "INGRESE NOMBRE O CUIT";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -408,6 +431,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button5.Text = "BUSCAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView2
             // 
@@ -415,7 +439,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.IDP,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
@@ -423,8 +447,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewButtonColumn1,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewButtonColumn3});
+            this.ESTADO,
+            this.MODIFICARP,
+            this.ELIMINARP});
             this.dataGridView2.Location = new System.Drawing.Point(14, 226);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(64);
             this.dataGridView2.Name = "dataGridView2";
@@ -432,14 +457,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.RowTemplate.Height = 60;
             this.dataGridView2.Size = new System.Drawing.Size(1001, 309);
             this.dataGridView2.TabIndex = 19;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
             // 
-            // dataGridViewTextBoxColumn1
+            // IDP
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.IDP.HeaderText = "ID";
+            this.IDP.MinimumWidth = 8;
+            this.IDP.Name = "IDP";
+            this.IDP.ReadOnly = true;
+            this.IDP.Visible = false;
+            this.IDP.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -495,44 +523,31 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn1.MinimumWidth = 8;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewButtonColumn1.Width = 150;
             // 
-            // dataGridViewButtonColumn2
+            // ESTADO
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "ELIMINAR";
-            this.dataGridViewButtonColumn2.MinimumWidth = 8;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Width = 150;
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.Visible = false;
             // 
-            // dataGridViewButtonColumn3
+            // MODIFICARP
             // 
-            this.dataGridViewButtonColumn3.HeaderText = "MODIFICAR";
-            this.dataGridViewButtonColumn3.MinimumWidth = 8;
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.ReadOnly = true;
-            this.dataGridViewButtonColumn3.Width = 150;
+            this.MODIFICARP.HeaderText = "MODIFICAR";
+            this.MODIFICARP.MinimumWidth = 8;
+            this.MODIFICARP.Name = "MODIFICARP";
+            this.MODIFICARP.ReadOnly = true;
+            this.MODIFICARP.Width = 150;
             // 
-            // placeholderTextBox1
+            // ELIMINARP
             // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(13, 166);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE ID PEDIDO";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(330, 20);
-            this.placeholderTextBox1.TabIndex = 20;
-            // 
-            // placeholderTextBox2
-            // 
-            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox2.IsPassword = false;
-            this.placeholderTextBox2.Location = new System.Drawing.Point(382, 175);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.Placeholder = "INGRESE DNI O APELLIDO";
-            this.placeholderTextBox2.Size = new System.Drawing.Size(236, 20);
-            this.placeholderTextBox2.TabIndex = 29;
-            this.placeholderTextBox2.Text = "INGRESE DNI O APELLIDO";
+            this.ELIMINARP.HeaderText = "ELIMINAR";
+            this.ELIMINARP.MinimumWidth = 8;
+            this.ELIMINARP.Name = "ELIMINARP";
+            this.ELIMINARP.ReadOnly = true;
+            this.ELIMINARP.Width = 150;
             // 
             // ProveedoresSubMenu
             // 
@@ -588,19 +603,20 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridViewButtonColumn APROBAR;
         private DataGridViewButtonColumn ELIMINAR;
         private DataGridViewButtonColumn MODIFICAR;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private Label label4;
+        private Label label1;
+        private PlaceholderTextBox placeholderTextBox1;
+        private PlaceholderTextBox placeholderTextBox2;
+        private DataGridViewTextBoxColumn IDP;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private Label label4;
-        private Label label1;
-        private PlaceholderTextBox placeholderTextBox1;
-        private PlaceholderTextBox placeholderTextBox2;
+        private DataGridViewTextBoxColumn dataGridViewButtonColumn1;
+        private DataGridViewTextBoxColumn ESTADO;
+        private DataGridViewButtonColumn MODIFICARP;
+        private DataGridViewButtonColumn ELIMINARP;
     }
 }
