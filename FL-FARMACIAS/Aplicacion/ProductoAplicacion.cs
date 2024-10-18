@@ -101,6 +101,8 @@ namespace FL_FARMACIAS.Aplicacion
             }
         }
 
+      
+
         public List<MarcaDominio> ObtenerMarcas()
         {
             using (var db = new DBConnect())

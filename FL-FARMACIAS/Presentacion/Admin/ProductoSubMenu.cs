@@ -20,10 +20,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
     {
         private AgrerarProductoAdmi AltaProducto = null;
         private AltaCategoria AltaCategoria = null;
+        private AltaMarcas AltaMarca = null;
+        private AltaLaboratorio AltaLaboratorio = null;
         public ProductoAplicacion productoApp;
         public CategoriaAplicacion categoriaApp;
+   
 
-    
 
         public productoSubMenu()
         {
@@ -33,7 +35,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             fullProductos();
             fullCategorias();
-
+            fullMarcas(); //paso 1
+            fullLaboratorio();
             if (LoginForm.user.rol.descripcion == "Supervisor")
             {
                 button3w.Hide();
@@ -69,6 +72,34 @@ namespace FL_FARMACIAS.Presentacion.Admin
             }
 
         }
+
+
+        //paso 2
+        public void fullMarcas()
+        {
+            var marcas = this.productoApp.ObtenerMarcas();
+            dataGridView3.Rows.Clear();
+            foreach (var m in marcas)
+            {
+                this.dataGridView3.Rows.Add(m.id, m.nombre, "Modificar", "Eñiminar");
+
+            }
+
+        }
+
+        public void fullLaboratorio()
+        {
+            var laboratorios = this.productoApp.ObtenerLaboratorios();
+            dataGridView4.Rows.Clear();
+            foreach (var l in laboratorios)
+            {
+                this.dataGridView4.Rows.Add(l.id, l.nombre, "Modificar", "Eñiminar");
+
+            }
+
+        }
+
+
 
         public void fullCategorias()
         {
@@ -330,6 +361,48 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
-        
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void ShowAltaMarca()
+        {
+            if (AltaMarca == null || AltaMarca.IsDisposed)
+            {
+                AltaMarca = new AltaMarcas(this);
+                AltaMarca.Show();
+            }
+            else
+            {
+                AltaMarca.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ShowAltaMarca();
+        }
+
+        private void ShowAltaLab()
+        {
+            if (AltaLaboratorio == null || AltaLaboratorio.IsDisposed)
+            {
+                AltaLaboratorio = new AltaLaboratorio(this);
+                AltaLaboratorio.Show();
+            }
+            else
+            {
+                AltaLaboratorio.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ShowAltaLab();
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

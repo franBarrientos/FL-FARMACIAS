@@ -99,6 +99,18 @@
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\AltaLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaLaboratorio.Designer.cs">
+      <DependentUpon>AltaLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaMarcas.Designer.cs">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\ModificarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +286,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaLaboratorio.resx">
+      <DependentUpon>AltaLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaMarcas.resx">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
