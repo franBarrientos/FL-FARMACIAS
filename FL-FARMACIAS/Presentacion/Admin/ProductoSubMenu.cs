@@ -209,6 +209,51 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
+
+        private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var dataGridView2 = sender as DataGridView;
+                string id = dataGridView2.Rows[e.RowIndex].Cells["IDM"].Value.ToString();
+                string descripcion = dataGridView2.Rows[e.RowIndex].Cells["DESCRIPCIONM"].Value.ToString();
+
+                if (dataGridView2.Columns[e.ColumnIndex].Name == "ELIMINARM")
+                {
+
+                    DialogResult ask = MessageBox.Show(
+                   "Esta a punto de eliminar la Marca: " + descripcion,
+                   "Confirmar Eliminacion",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button2);
+
+                    if (ask == DialogResult.Yes)
+                    {
+                        try {
+                            this.productoApp.EliminarMarca(int.Parse(id));
+                            MessageBox.Show("La Marca " + descripcion + " ha sido eliminado con exito.", "Eliminacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.fullMarcas();
+                        }
+                        catch(Exception ex)
+                        {
+                              MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                       
+                    }
+                }
+
+                else if (dataGridView2.Columns[e.ColumnIndex].Name == "MODIFICARM")
+                {
+                   // new ModificarCategoria(this, new CategoriaDominio(int.Parse(id), descripcion, estado)).Show();
+                }
+
+            }
+
+        }
+
+
         private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             // Verificar si el valor de la celda es "INACTIVO"

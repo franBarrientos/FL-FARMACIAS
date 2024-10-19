@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,6 +119,43 @@ namespace FL_FARMACIAS.Aplicacion
             using (var db = new DBConnect())
             {
                 return db.Marca.First(m => m.nombre == marca);
+            }
+        }
+
+        public void EliminarMarca(int id)
+        {
+            try
+            {
+                using (var db = new DBConnect())
+                {
+                    var marca = db.Marca.Find(id);
+                    if (marca != null)
+                    {
+                        db.Marca.Remove(marca);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                // Captura la excepción de actualización
+                if (dbEx.InnerException?.InnerException is SqlException sqlEx && sqlEx.Number == 547)
+                {
+                    // El código 547 de SqlException indica que hubo una violación de clave foránea
+                    Console.WriteLine("No se puede eliminar la marca porque hay productos asociados a ella.");
+                    throw new ApplicationException("No se puede eliminar la marca porque hay productos asociados a ella.");
+                }
+                else
+                {
+                    Console.WriteLine("Error al eliminar la marca: " + dbEx.Message);
+                    throw new ApplicationException("Error al eliminar la marca.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo general de errores
+                Console.WriteLine("Ocurrió un error: " + ex.Message);
+                throw new ApplicationException("Error al eliminar la marca.");
             }
         }
 

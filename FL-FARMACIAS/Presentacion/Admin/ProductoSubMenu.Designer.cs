@@ -81,16 +81,16 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button9 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.IDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCIONM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICARM = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINARM = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PRODUCTOS.SuspendLayout();
             this.prodTab.SuspendLayout();
@@ -444,12 +444,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ESTADOC,
             this.ELIMINARC,
             this.MODIFICARC});
-            this.dataGridView2.Location = new System.Drawing.Point(109, 146);
+            this.dataGridView2.Location = new System.Drawing.Point(169, 146);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 60;
-            this.dataGridView2.Size = new System.Drawing.Size(818, 374);
+            this.dataGridView2.Size = new System.Drawing.Size(666, 374);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
@@ -565,10 +565,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
             this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(400, 121);
+            this.placeholderTextBox1.Location = new System.Drawing.Point(348, 122);
             this.placeholderTextBox1.Name = "placeholderTextBox1";
             this.placeholderTextBox1.Placeholder = "INGRESE ID O DESCRIPCION";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(321, 20);
+            this.placeholderTextBox1.Size = new System.Drawing.Size(235, 20);
             this.placeholderTextBox1.TabIndex = 36;
             this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
             // 
@@ -609,10 +609,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewButtonColumn1});
+            this.IDM,
+            this.DESCRIPCIONM,
+            this.MODIFICARM,
+            this.ELIMINARM});
             this.dataGridView3.Location = new System.Drawing.Point(283, 163);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
@@ -620,7 +620,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView3.RowTemplate.Height = 60;
             this.dataGridView3.Size = new System.Drawing.Size(529, 374);
             this.dataGridView3.TabIndex = 31;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_CellContentClick);
             // 
             // button7
             // 
@@ -629,7 +629,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(865, 110);
+            this.button7.Location = new System.Drawing.Point(717, 112);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(88, 40);
@@ -645,7 +645,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(755, 110);
+            this.button8.Location = new System.Drawing.Point(607, 112);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(90, 39);
@@ -738,79 +738,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewButtonColumn4,
             this.dataGridViewButtonColumn3});
-            this.dataGridView4.Location = new System.Drawing.Point(132, 153);
+            this.dataGridView4.Location = new System.Drawing.Point(289, 153);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.RowTemplate.Height = 60;
-            this.dataGridView4.Size = new System.Drawing.Size(818, 374);
+            this.dataGridView4.Size = new System.Drawing.Size(520, 374);
             this.dataGridView4.TabIndex = 38;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(710, 109);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(88, 40);
-            this.button10.TabIndex = 40;
-            this.button10.Text = "LIMPIAR";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(616, 110);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(90, 39);
-            this.button11.TabIndex = 39;
-            this.button11.Text = "BUSCAR";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "MODIFICAR";
-            this.dataGridViewButtonColumn2.MinimumWidth = 8;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Width = 150;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "ELIMINAR";
-            this.dataGridViewButtonColumn1.MinimumWidth = 8;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -844,6 +779,71 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Width = 150;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(710, 109);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(88, 40);
+            this.button10.TabIndex = 40;
+            this.button10.Text = "LIMPIAR";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(616, 110);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(90, 39);
+            this.button11.TabIndex = 39;
+            this.button11.Text = "BUSCAR";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // IDM
+            // 
+            this.IDM.HeaderText = "ID";
+            this.IDM.MinimumWidth = 8;
+            this.IDM.Name = "IDM";
+            this.IDM.ReadOnly = true;
+            this.IDM.Visible = false;
+            this.IDM.Width = 150;
+            // 
+            // DESCRIPCIONM
+            // 
+            this.DESCRIPCIONM.HeaderText = "DESCRIPCION";
+            this.DESCRIPCIONM.MinimumWidth = 8;
+            this.DESCRIPCIONM.Name = "DESCRIPCIONM";
+            this.DESCRIPCIONM.ReadOnly = true;
+            this.DESCRIPCIONM.Width = 150;
+            // 
+            // MODIFICARM
+            // 
+            this.MODIFICARM.HeaderText = "MODIFICAR";
+            this.MODIFICARM.MinimumWidth = 8;
+            this.MODIFICARM.Name = "MODIFICARM";
+            this.MODIFICARM.ReadOnly = true;
+            this.MODIFICARM.Width = 150;
+            // 
+            // ELIMINARM
+            // 
+            this.ELIMINARM.HeaderText = "ELIMINAR";
+            this.ELIMINARM.MinimumWidth = 8;
+            this.ELIMINARM.Name = "ELIMINARM";
+            this.ELIMINARM.ReadOnly = true;
+            this.ELIMINARM.Width = 150;
             // 
             // productoSubMenu
             // 
@@ -928,13 +928,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridView dataGridView4;
         private Button button10;
         private Button button11;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewButtonColumn dataGridViewButtonColumn4;
         private DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private DataGridViewTextBoxColumn IDM;
+        private DataGridViewTextBoxColumn DESCRIPCIONM;
+        private DataGridViewButtonColumn MODIFICARM;
+        private DataGridViewButtonColumn ELIMINARM;
     }
 }
