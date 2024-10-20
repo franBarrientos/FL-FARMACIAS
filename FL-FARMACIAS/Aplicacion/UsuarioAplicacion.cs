@@ -19,6 +19,11 @@ namespace FL_FARMACIAS.Aplicacion
                 if (userExistente != null){
                     var empleado = db.Empleado.FirstOrDefault(x => x.idUsuario == userExistente.id);
                     userExistente.empleado = empleado;
+                    if (userExistente.empleado != null && userExistente.empleado.estado == false)
+                    {
+                        throw new Exception("Usuario inactivo");
+                            
+                    }
                     Console.WriteLine(userExistente);
                     return userExistente; 
                 }else{

@@ -83,6 +83,7 @@
     <Compile Include="Aplicacion\ClienteAplicacion.cs" />
     <Compile Include="Aplicacion\ProductoAplicacion.cs" />
     <Compile Include="Aplicacion\UsuarioAplicacion.cs" />
+    <Compile Include="Aplicacion\VentasAplicacion.cs" />
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\DBConnect.cs" />
     <Compile Include="Dominio\DescuentoDominio.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Dominio\ProveedorDominio.cs" />
     <Compile Include="Dominio\ClienteDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
+    <Compile Include="Dominio\VentaDominio.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
@@ -206,6 +208,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\DetalleVentaForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\DetalleVentaForm .Designer.cs">
+      <DependentUpon>DetalleVentaForm .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\ModificarCliente.cs">
       <SubType>Form</SubType>
@@ -343,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\DetalleVentaForm .resx">
+      <DependentUpon>DetalleVentaForm .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\ModificarCliente.resx">
       <DependentUpon>ModificarCliente.cs</DependentUpon>

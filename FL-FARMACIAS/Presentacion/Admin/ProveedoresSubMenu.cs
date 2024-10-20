@@ -131,6 +131,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void button4_Click(object sender, EventArgs e)
         {
             this.placeholderTextBox2.Text = "";
+            this.placeholderTextBox2.ForeColor = Color.Black;
             fullProvedores();
         }
 

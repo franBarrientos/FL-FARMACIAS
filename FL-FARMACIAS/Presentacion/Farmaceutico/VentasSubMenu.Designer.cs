@@ -36,6 +36,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -50,12 +52,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUITAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.preciolb = new System.Windows.Forms.Label();
@@ -65,11 +61,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.CODP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STOCKP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESCOJERP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,30 +75,43 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PRODUCTOS_VENDIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeholderTextBox2 = new PlaceholderTextBox();
             this.placeholderTextBox1 = new PlaceholderTextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIOTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CANTIDADPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCTOS_VENDIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.placeholderTextBox4 = new PlaceholderTextBox();
+            this.placeholderTextBox3 = new PlaceholderTextBox();
+            this.IDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CANTIDADC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUITAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IDPROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STOCKP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESCOJERP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -119,7 +123,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -144,7 +147,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabControl1.Location = new System.Drawing.Point(2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1133, 630);
+            this.tabControl1.Size = new System.Drawing.Size(1256, 630);
             this.tabControl1.TabIndex = 30;
             // 
             // tabPage1
@@ -159,11 +162,36 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1125, 604);
+            this.tabPage1.Size = new System.Drawing.Size(1248, 604);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NUEVA VENTA";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Location = new System.Drawing.Point(12, 558);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(308, 40);
+            this.groupBox5.TabIndex = 56;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "MEDIO DE PAGO";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "CREDITO",
+            "DEBITO",
+            "EFECTIVO",
+            "TRANSFERENCIA"});
+            this.comboBox2.Location = new System.Drawing.Point(14, 13);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(288, 21);
+            this.comboBox2.TabIndex = 0;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -208,7 +236,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(230, 76);
+            this.label17.Location = new System.Drawing.Point(230, 103);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(100, 13);
             this.label17.TabIndex = 58;
@@ -224,6 +252,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label16
             // 
@@ -244,11 +273,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.Bagregar_categoria.Text = "ACEPTAR";
             this.Bagregar_categoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Bagregar_categoria.UseVisualStyleBackColor = true;
+            this.Bagregar_categoria.Click += new System.EventHandler(this.Bagregar_categoria_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 76);
+            this.label15.Location = new System.Drawing.Point(9, 80);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 13);
             this.label15.TabIndex = 56;
@@ -306,9 +336,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
+            this.IDC,
+            this.CODC,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.CANTIDADC,
             this.PRECIO,
             this.SUBTOTAL,
             this.QUITAR});
@@ -319,38 +350,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "COD";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "CANTIDAD";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            // 
-            // SUBTOTAL
-            // 
-            this.SUBTOTAL.HeaderText = "SUBTOTAL";
-            this.SUBTOTAL.Name = "SUBTOTAL";
-            // 
-            // QUITAR
-            // 
-            this.QUITAR.HeaderText = "QUITAR";
-            this.QUITAR.Name = "QUITAR";
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.preciolb);
             this.groupBox2.Controls.Add(this.button4);
@@ -445,6 +447,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPROD,
             this.CODP,
             this.DESCPP,
             this.PRECIOP,
@@ -456,31 +459,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView3.TabIndex = 48;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
-            // 
-            // CODP
-            // 
-            this.CODP.HeaderText = "COD";
-            this.CODP.Name = "CODP";
-            // 
-            // DESCPP
-            // 
-            this.DESCPP.HeaderText = "DESCRIPCION";
-            this.DESCPP.Name = "DESCPP";
-            // 
-            // PRECIOP
-            // 
-            this.PRECIOP.HeaderText = "PRECIO";
-            this.PRECIOP.Name = "PRECIOP";
-            // 
-            // STOCKP
-            // 
-            this.STOCKP.HeaderText = "STOCK";
-            this.STOCKP.Name = "STOCKP";
-            // 
-            // ESCOJERP
-            // 
-            this.ESCOJERP.HeaderText = "ESCOJER";
-            this.ESCOJERP.Name = "ESCOJERP";
             // 
             // groupBox1
             // 
@@ -603,21 +581,57 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
+            this.tabPage2.Controls.Add(this.placeholderTextBox4);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label3w);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.placeholderTextBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1125, 604);
+            this.tabPage2.Size = new System.Drawing.Size(1248, 604);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "MIS VENTAS";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(584, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Fecha hasta";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(378, 145);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 13);
+            this.label21.TabIndex = 50;
+            this.label21.Text = "Fecha desde";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(587, 162);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker2.TabIndex = 49;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(381, 162);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 48;
+            this.dateTimePicker1.Value = new System.DateTime(1970, 10, 19, 20, 19, 0, 0);
             // 
             // label3
             // 
@@ -640,37 +654,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.label3w.BackColor = System.Drawing.Color.Transparent;
             this.label3w.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label3w.ForeColor = System.Drawing.Color.Black;
-            this.label3w.Location = new System.Drawing.Point(474, 104);
+            this.label3w.Location = new System.Drawing.Point(531, 105);
             this.label3w.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
             this.label3w.Name = "label3w";
             this.label3w.Size = new System.Drawing.Size(77, 18);
             this.label3w.TabIndex = 45;
             this.label3w.Text = "FILTROS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(496, 162);
-            this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "OBRA SOCIAL";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PAMI",
-            "GALENO",
-            "SOS"});
-            this.comboBox1.Location = new System.Drawing.Point(582, 159);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1.TabIndex = 43;
-            this.comboBox1.Text = "Todos";
             // 
             // button2
             // 
@@ -687,6 +676,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -703,16 +693,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button1.Text = "BUSCAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(126, 160);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 20);
-            this.textBox1.TabIndex = 40;
-            this.textBox1.Text = "INGRESE DNI O APELLIDO";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -721,47 +702,73 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.PRECIOTOTAL,
-            this.CANTIDADPRODUCTO,
-            this.NOMBRE,
-            this.APELLIDO,
-            this.PRODUCTOS_VENDIDOS,
-            this.TELEFONO,
             this.FECHAINGRESO,
-            this.ELIMINAR,
-            this.MODIFICAR});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 206);
+            this.TOTAL,
+            this.DETALLE,
+            this.CLIENTE,
+            this.PRODUCTOS_VENDIDOS,
+            this.PAGO});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 207);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 60;
-            this.dataGridView1.Size = new System.Drawing.Size(1085, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(1227, 357);
             this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // groupBox5
+            // ID
             // 
-            this.groupBox5.Controls.Add(this.comboBox2);
-            this.groupBox5.Location = new System.Drawing.Point(12, 564);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(308, 34);
-            this.groupBox5.TabIndex = 56;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "MEDIO DE PAGO";
+            this.ID.HeaderText = "COD FACTURA";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // comboBox2
+            // FECHAINGRESO
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "CREDITO",
-            "DEBITO",
-            "EFECTIVO",
-            "TRANSFERENCIA"});
-            this.comboBox2.Location = new System.Drawing.Point(155, 7);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 0;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.FECHAINGRESO.HeaderText = "FECHA VENTA";
+            this.FECHAINGRESO.MinimumWidth = 8;
+            this.FECHAINGRESO.Name = "FECHAINGRESO";
+            this.FECHAINGRESO.ReadOnly = true;
+            this.FECHAINGRESO.Width = 159;
+            // 
+            // TOTAL
+            // 
+            this.TOTAL.HeaderText = "TOTAL VENTA";
+            this.TOTAL.Name = "TOTAL";
+            this.TOTAL.Width = 129;
+            // 
+            // DETALLE
+            // 
+            this.DETALLE.HeaderText = "PRODUCTOS";
+            this.DETALLE.Name = "DETALLE";
+            this.DETALLE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DETALLE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DETALLE.Width = 220;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.HeaderText = "CLIENTE";
+            this.CLIENTE.MinimumWidth = 8;
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            this.CLIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CLIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CLIENTE.Width = 300;
+            // 
+            // PRODUCTOS_VENDIDOS
+            // 
+            this.PRODUCTOS_VENDIDOS.HeaderText = "DESCUENTO %";
+            this.PRODUCTOS_VENDIDOS.Name = "PRODUCTOS_VENDIDOS";
+            this.PRODUCTOS_VENDIDOS.Width = 110;
+            // 
+            // PAGO
+            // 
+            this.PAGO.HeaderText = "METODO PAGO";
+            this.PAGO.MinimumWidth = 8;
+            this.PAGO.Name = "PAGO";
+            this.PAGO.ReadOnly = true;
+            this.PAGO.Width = 150;
             // 
             // placeholderTextBox2
             // 
@@ -789,83 +796,110 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.placeholderTextBox1.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             this.placeholderTextBox1.Leave += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
-            // ID
+            // placeholderTextBox4
             // 
-            this.ID.HeaderText = "COD FACTURA";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
+            this.placeholderTextBox4.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox4.IsPassword = false;
+            this.placeholderTextBox4.Location = new System.Drawing.Point(190, 159);
+            this.placeholderTextBox4.Name = "placeholderTextBox4";
+            this.placeholderTextBox4.Placeholder = "INGRESE DNI CLIENTE";
+            this.placeholderTextBox4.Size = new System.Drawing.Size(152, 20);
+            this.placeholderTextBox4.TabIndex = 52;
+            this.placeholderTextBox4.Text = "INGRESE DNI CLIENTE";
             // 
-            // PRECIOTOTAL
+            // placeholderTextBox3
             // 
-            this.PRECIOTOTAL.HeaderText = "PRECIO TOTAL $";
-            this.PRECIOTOTAL.Name = "PRECIOTOTAL";
+            this.placeholderTextBox3.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox3.IsPassword = false;
+            this.placeholderTextBox3.Location = new System.Drawing.Point(10, 159);
+            this.placeholderTextBox3.Name = "placeholderTextBox3";
+            this.placeholderTextBox3.Placeholder = "INGRESE COD FACTURA";
+            this.placeholderTextBox3.Size = new System.Drawing.Size(152, 20);
+            this.placeholderTextBox3.TabIndex = 47;
+            this.placeholderTextBox3.Text = "INGRESE COD FACTURA";
             // 
-            // CANTIDADPRODUCTO
+            // IDC
             // 
-            this.CANTIDADPRODUCTO.HeaderText = "PRODUCTOS";
-            this.CANTIDADPRODUCTO.Name = "CANTIDADPRODUCTO";
+            this.IDC.HeaderText = "IDC";
+            this.IDC.Name = "IDC";
+            this.IDC.Visible = false;
             // 
-            // NOMBRE
+            // CODC
             // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Width = 150;
+            this.CODC.HeaderText = "COD";
+            this.CODC.Name = "CODC";
             // 
-            // APELLIDO
+            // dataGridViewTextBoxColumn5
             // 
-            this.APELLIDO.HeaderText = "APELLIDO";
-            this.APELLIDO.MinimumWidth = 8;
-            this.APELLIDO.Name = "APELLIDO";
-            this.APELLIDO.ReadOnly = true;
-            this.APELLIDO.Width = 150;
+            this.dataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // PRODUCTOS_VENDIDOS
+            // CANTIDADC
             // 
-            this.PRODUCTOS_VENDIDOS.HeaderText = "OBRA SOCIAL";
-            this.PRODUCTOS_VENDIDOS.Name = "PRODUCTOS_VENDIDOS";
+            this.CANTIDADC.HeaderText = "CANTIDAD";
+            this.CANTIDADC.Name = "CANTIDADC";
             // 
-            // TELEFONO
+            // PRECIO
             // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.MinimumWidth = 8;
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            this.TELEFONO.Width = 150;
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
             // 
-            // FECHAINGRESO
+            // SUBTOTAL
             // 
-            this.FECHAINGRESO.HeaderText = "FECHA VENTA";
-            this.FECHAINGRESO.MinimumWidth = 8;
-            this.FECHAINGRESO.Name = "FECHAINGRESO";
-            this.FECHAINGRESO.ReadOnly = true;
-            this.FECHAINGRESO.Width = 150;
+            this.SUBTOTAL.HeaderText = "SUBTOTAL";
+            this.SUBTOTAL.Name = "SUBTOTAL";
             // 
-            // ELIMINAR
+            // QUITAR
             // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
+            this.QUITAR.HeaderText = "QUITAR";
+            this.QUITAR.Name = "QUITAR";
             // 
-            // MODIFICAR
+            // IDPROD
             // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
+            this.IDPROD.HeaderText = "IDPROD";
+            this.IDPROD.Name = "IDPROD";
+            this.IDPROD.Visible = false;
+            // 
+            // CODP
+            // 
+            this.CODP.HeaderText = "COD";
+            this.CODP.Name = "CODP";
+            // 
+            // DESCPP
+            // 
+            this.DESCPP.HeaderText = "DESCRIPCION";
+            this.DESCPP.Name = "DESCPP";
+            // 
+            // PRECIOP
+            // 
+            this.PRECIOP.HeaderText = "PRECIO";
+            this.PRECIOP.Name = "PRECIOP";
+            // 
+            // STOCKP
+            // 
+            this.STOCKP.HeaderText = "STOCK";
+            this.STOCKP.Name = "STOCKP";
+            // 
+            // ESCOJERP
+            // 
+            this.ESCOJERP.HeaderText = "ESCOJER";
+            this.ESCOJERP.Name = "ESCOJERP";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(138, 10);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 13);
+            this.label22.TabIndex = 61;
+            this.label22.Visible = false;
             // 
             // VentasSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
-            this.ClientSize = new System.Drawing.Size(1135, 633);
+            this.ClientSize = new System.Drawing.Size(1260, 633);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(64);
@@ -877,6 +911,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -892,7 +927,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -907,11 +941,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private TabPage tabPage2;
         private Label label3;
         private Label label3w;
-        private Label label2;
-        private ComboBox comboBox1;
         private Button button2;
         private Button button1;
-        private TextBox textBox1;
         private DataGridView dataGridView1;
         private Label label4;
         private DataGridView dataGridView2;
@@ -934,11 +965,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Label label10;
         private NumericUpDown numericUpDown1;
         private DataGridView dataGridView4;
-        private DataGridViewTextBoxColumn CODP;
-        private DataGridViewTextBoxColumn DESCPP;
-        private DataGridViewTextBoxColumn PRECIOP;
-        private DataGridViewTextBoxColumn STOCKP;
-        private DataGridViewButtonColumn ESCOJERP;
         private Label label17;
         private Label label16;
         private Label label15;
@@ -955,25 +981,36 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewTextBoxColumn OBRASOCIALV;
         private DataGridViewTextBoxColumn DESCPORCENTAJE;
         private DataGridViewButtonColumn ESCOJER;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn PRECIO;
-        private DataGridViewTextBoxColumn SUBTOTAL;
-        private DataGridViewButtonColumn QUITAR;
         private Label label19;
         private Label label20;
         private GroupBox groupBox5;
         private ComboBox comboBox2;
+        private PlaceholderTextBox placeholderTextBox3;
+        private Label label2;
+        private Label label21;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn PRECIOTOTAL;
-        private DataGridViewTextBoxColumn CANTIDADPRODUCTO;
-        private DataGridViewTextBoxColumn NOMBRE;
-        private DataGridViewTextBoxColumn APELLIDO;
-        private DataGridViewTextBoxColumn PRODUCTOS_VENDIDOS;
-        private DataGridViewTextBoxColumn TELEFONO;
         private DataGridViewTextBoxColumn FECHAINGRESO;
-        private DataGridViewButtonColumn ELIMINAR;
-        private DataGridViewButtonColumn MODIFICAR;
+        private DataGridViewTextBoxColumn TOTAL;
+        private DataGridViewButtonColumn DETALLE;
+        private DataGridViewButtonColumn CLIENTE;
+        private DataGridViewTextBoxColumn PRODUCTOS_VENDIDOS;
+        private DataGridViewTextBoxColumn PAGO;
+        private PlaceholderTextBox placeholderTextBox4;
+        private DataGridViewTextBoxColumn IDC;
+        private DataGridViewTextBoxColumn CODC;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn CANTIDADC;
+        private DataGridViewTextBoxColumn PRECIO;
+        private DataGridViewTextBoxColumn SUBTOTAL;
+        private DataGridViewButtonColumn QUITAR;
+        private DataGridViewTextBoxColumn IDPROD;
+        private DataGridViewTextBoxColumn CODP;
+        private DataGridViewTextBoxColumn DESCPP;
+        private DataGridViewTextBoxColumn PRECIOP;
+        private DataGridViewTextBoxColumn STOCKP;
+        private DataGridViewButtonColumn ESCOJERP;
+        private Label label22;
     }
 }

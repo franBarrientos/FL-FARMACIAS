@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Globalization;
+using FL_FARMACIAS.Presentacion.Login;
 
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
@@ -20,14 +21,20 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Timer productTimer;
         public ClienteAplicacion clienteApp;
         public ProductoAplicacion productoApp;
-      
+        public VentasAplicacion ventasApp;
+        public ClienteDominio clienteSeleccionado;
+
+
         public VentasSubMenu()
         {
             this.clienteApp = new ClienteAplicacion();
             this.productoApp = new ProductoAplicacion();
+            this.ventasApp = new VentasAplicacion();
+
             InitializeComponent();
             fullDataGridAllClients();
             fullDataGridAllProducts();
+            fullMetodosPago();
             //cliente
             searchTimer = new Timer();
             searchTimer.Interval = 500; // Intervalo de 500 ms
@@ -37,6 +44,62 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             productTimer.Interval = 500;
             productTimer.Tick += new EventHandler(OnProductTimerTick);
 
+            fullVentas();
+
+        }
+
+        public void fullVentas()
+        {
+            List<VentaDominioDominio> matcheds = this.ventasApp.ObtenerVentasPorEmpleado(LoginForm.user.empleado.id);
+            this.dataGridView1.Rows.Clear();
+            foreach (var d in matcheds)
+            {
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
+
+            }
+
+        }
+
+
+        //ventas
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+            var venta = this.ventasApp.ObtenerVentaPorId(id);
+            // Verificar que el clic fue en la columna de botones
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "DETALLE")
+            {
+                // Crear un DataTable y definir las columnas
+                DataTable detallesVenta = new DataTable();
+                detallesVenta.Columns.Add("Nombre Producto", typeof(string));
+                detallesVenta.Columns.Add("Cantidad", typeof(int));
+                detallesVenta.Columns.Add("Precio Venta", typeof(decimal));
+                detallesVenta.Columns.Add("Subtotal", typeof(decimal));
+
+                foreach (var d in venta.detalles)
+                {
+                    detallesVenta.Rows.Add(d.producto.nombre, d.cantidad, d.producto.precio, d.producto.precio * d.cantidad);
+                }
+
+                DetalleVentaForm detalleVentaForm = new DetalleVentaForm();
+                detalleVentaForm.CargarDetalles(detallesVenta); // Llenar el DataGridView con el DataTable
+                detalleVentaForm.ShowDialog(); // Mostrar el fo
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "CLIENTE") { 
+                MessageBox.Show("DNI: " + venta.cliente.dni + ", NOMBRES: " + venta.cliente.nombre + ", APELLIDOS: " + venta.cliente.apellido);
+                
+            }
+        }
+
+
+        public void fullMetodosPago()
+        {
+            List<MetodoPagoDominio> matcheds = this.ventasApp.ObtenerMetodosPagos();
+            this.comboBox2.Items.Clear();
+            foreach (var d in matcheds)
+            {
+                this.comboBox2.Items.Add(d.descripcion);
+            }
         }
 
         private void fullDataGridAllProducts()
@@ -47,7 +110,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             dataGridView3.Rows.Clear();
             foreach (var p in products)
             {
-                this.dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER");
+                this.dataGridView3.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER");
             }
         }
 
@@ -79,7 +142,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             {
                 if (p.codProducto.StartsWith(s, StringComparison.OrdinalIgnoreCase) || p.nombre.ToLower().Contains(s.ToLower()))
                 {
-                    dataGridView3.Rows.Add(p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER");
+                    dataGridView3.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, "ESCOJER");
                 }
             }
 
@@ -94,7 +157,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             foreach (var c in matcheds)
             {
-                this.dataGridView2.Rows.Add(c.apellido, c.nombre, c.dni, c.desc.descripcion, c.desc.porcentajeDescuento, "ESCOJER");
+                this.dataGridView2.Rows.Add(c.apellido, c.nombre, c.dni, (c.desc != null ? c.desc.descripcion : "NINGUNA"),(c.desc != null ? c.desc.porcentajeDescuento : 0) , "ESCOJER");
                 
             }
         }
@@ -166,6 +229,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 label6.Text = "OBRA SOCIAL: " + obraSocial;
                 label12.Text = "OBRA SOCIAL: " + obraSocial;
                 label17.Text = "% DESCUENTO: " + dataGridView2.Rows[e.RowIndex].Cells["DESCPORCENTAJE"].Value.ToString() + "%";
+
+                this.clienteSeleccionado = this.clienteApp.BuscarCliente(dni, null, true, null)[0];
 
                 if (label14.Text != "TOTAL:")
                 {
@@ -239,6 +304,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 // Obtener el valor de la fila seleccionada, por ejemplo, el nombre
                 string codP = dataGridView3.Rows[e.RowIndex].Cells["CODP"].Value.ToString();
                 string descp = dataGridView3.Rows[e.RowIndex].Cells["DESCPP"].Value.ToString();
+                string id = dataGridView3.Rows[e.RowIndex].Cells["IDPROD"].Value.ToString();
+                this.label22.Text = id;
+
               
 
                 // Mostrar un mensaje con la información del cliente seleccionado
@@ -306,6 +374,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             label12.Text = "OBRA SOCIAL: Ninguna";
             label17.Text = "% DESCUENTO: Ninguno";
 
+            this.clienteSeleccionado = this.clienteApp.ObtenerClienteConsumidorFinal();
+
             if (label14.Text != "TOTAL:")
             {
                 var total = calcularTotal();
@@ -339,7 +409,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 return;
             }
 
-            if (numericUpDown1.Value > Convert.ToInt32(stockAv))
+            var nuevoStockSeleccionado = Convert.ToInt32(numericUpDown1.Value);
+            var stockDisponible = Convert.ToInt32(stockAv);
+
+            if (nuevoStockSeleccionado > stockDisponible)
             {
                 MessageBox.Show("Por favor, seleccione un stock disponible");
                 return;
@@ -348,9 +421,38 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             var cod = label8.Text.Split(':')[1];
             var price = preciolb.Text.Split(':');
             var desc = label9.Text.Split(':')[1];
-            double sub = Math.Round(Convert.ToDouble(price[1]) * Convert.ToDouble(numericUpDown1.Value), 2);
+            var idP = label22.Text;
+            double sub = Math.Round(Convert.ToDouble(price[1]) * nuevoStockSeleccionado, 2);
 
-            this.dataGridView4.Rows.Add(cod, desc, numericUpDown1.Value.ToString(), price[1], sub, "QUITAR");
+            bool productoExistente = false;
+            foreach (DataGridViewRow row in dataGridView4.Rows)
+            {
+                if (row.Cells["CODC"].Value.ToString() == cod) // Asegúrate de que "Codigo" sea el nombre correcto de la columna
+                {
+                    int cantidadExistente = Convert.ToInt32(row.Cells["CANTIDADC"].Value); // Asegúrate de que "Cantidad" sea el nombre correcto de la columna
+
+                    // Verificar si la suma no supera el stock disponible
+                    if (cantidadExistente + nuevoStockSeleccionado > stockDisponible)
+                    {
+                        MessageBox.Show("La cantidad total supera el stock disponible.");
+                        return;
+                    }
+
+                    // Si el producto ya existe, actualizar la cantidad
+                    row.Cells["CANTIDADC"].Value = cantidadExistente + nuevoStockSeleccionado; // Actualiza la cantidad
+                    row.Cells["SUBTOTAL"].Value = Math.Round(Convert.ToDouble(row.Cells["PRECIO"].Value) * (cantidadExistente + nuevoStockSeleccionado), 2); // Actualiza el subtotal
+                    productoExistente = true;
+                    break; // Salir del bucle ya que encontramos el producto
+                }
+            }
+
+            // Si el producto no existe, añadir una nueva fila
+            if (!productoExistente)
+            {
+                this.dataGridView4.Rows.Add(idP, cod, desc, nuevoStockSeleccionado.ToString(), price[1], sub, "QUITAR");
+            }
+
+            //this.dataGridView4.Rows.Add(cod, desc, numericUpDown1.Value.ToString(), price[1], sub, "QUITAR");
 
             var total = calcularTotal();
             label14.Text = "TOTAL: " + total.ToString("C", CultureInfo.GetCultureInfo("es-AR"));
@@ -369,6 +471,132 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             label15.Text = "MEDIO DE PAGO: " + comboBox2.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            placeholderTextBox3.Text = "";
+            placeholderTextBox3.ForeColor = Color.Black;
+
+            placeholderTextBox4.Text = "";
+            placeholderTextBox4.ForeColor = Color.Black;
+
+            this.fullVentas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dni = null;
+            int? cod_factura = null;
+
+            if (!string.IsNullOrEmpty(placeholderTextBox3.Text) && placeholderTextBox3.Text != "INGRESE COD FACTURA"
+                && placeholderTextBox3.Text.All(char.IsDigit))
+            {
+                cod_factura = int.Parse(placeholderTextBox3.Text);
+            }
+
+            if (!string.IsNullOrEmpty(placeholderTextBox4.Text) && placeholderTextBox4.Text != "INGRESE DNI CLIENTE"
+               && placeholderTextBox4.Text.All(char.IsDigit))
+            {
+                dni = placeholderTextBox4.Text;
+            }
+
+            var matcheds = this.ventasApp.ObtenerVentasPorEmpleadoAndFiltros(LoginForm.user.empleado.id, dni, cod_factura, dateTimePicker1.Value, dateTimePicker2.Value);
+            this.dataGridView1.Rows.Clear();
+            foreach (var d in matcheds)
+            {
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bagregar_categoria_Click(object sender, EventArgs e)
+        
+            //  public void RegistrarVenta(int clienteId, int empleadoId, int metodoPagoId,
+         //   int? descuentoId, float porcentaje_descuento, List< VentaDetalleDominio > productosSeleccionados)
+        {
+            if(dataGridView4.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un producto");
+                return;
+            }
+
+            if(this.clienteSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente o consumidor final");
+                return; 
+            }
+
+            if(this.comboBox2.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un medio de pago");
+                return;
+            }
+
+
+            int metodoPagoId = this.ventasApp.ObtenerMetodoPagoId(this.comboBox2.Text);
+
+            int? descuentoId = null;
+            double porcentaje_descuento = 0;
+            if (this.clienteSeleccionado.desc != null)
+            {
+                descuentoId = this.clienteSeleccionado.desc.id;
+                porcentaje_descuento = this.clienteSeleccionado.desc.porcentajeDescuento;
+            }
+
+            var productosSeleccionados = new List<VentaDetalleDominio>();
+
+            foreach (DataGridViewRow row in this.dataGridView4.Rows)
+            {
+                // Verificar que las celdas no sean nulas o vacías
+                if (row.Cells["IDC"].Value != null &&
+                    !string.IsNullOrWhiteSpace(row.Cells["IDC"].Value.ToString()) &&
+                    row.Cells["CANTIDADC"].Value != null &&
+                    !string.IsNullOrWhiteSpace(row.Cells["CANTIDADC"].Value.ToString()) &&
+                    row.Cells["PRECIO"].Value != null &&
+                    !string.IsNullOrWhiteSpace(row.Cells["PRECIO"].Value.ToString()))
+                {
+                    try
+                    {
+                        var cod = row.Cells["IDC"].Value.ToString();
+                        var cantidad = row.Cells["CANTIDADC"].Value.ToString();
+
+                        // Aquí usamos row.Cells["PRECIO"].Value, que es el valor original sin formateo
+                        var precio = Convert.ToDecimal(row.Cells["PRECIO"].Value);
+
+                        productosSeleccionados.Add(new VentaDetalleDominio
+                        {
+                            id_producto = Convert.ToInt32(cod),
+                            cantidad = Convert.ToInt32(cantidad),
+                            precio_unitario = precio
+                        });
+                    }
+                    catch (FormatException ex)
+                    {
+                        // Mostrar el valor que causó el problema para depurar
+                        MessageBox.Show("Error al convertir valores. Revisa los datos en la fila: " +
+                                        row.Index + "\n" +
+                                        "CODC: " + row.Cells["CODC"].Value.ToString() + "\n" +
+                                        "CANTIDADC: " + row.Cells["CANTIDADC"].Value.ToString() + "\n" +
+                                        "PRECIO: " + row.Cells["PRECIO"].Value.ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Una de las celdas está vacía o contiene un valor nulo en la fila: " + row.Index);
+                }
+            }
+
+
+            this.ventasApp.RegistrarVenta(this.clienteSeleccionado.id, LoginForm.user.empleado.id, metodoPagoId, descuentoId, porcentaje_descuento, productosSeleccionados);
+            MessageBox.Show("VENTA REGISTRADA");
+            this.fullVentas();
+            
         }
     }
 }

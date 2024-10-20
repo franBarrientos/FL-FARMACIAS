@@ -47,6 +47,7 @@ namespace FL_FARMACIAS.Dominio
         public int? idUsuario { get; set; }
 
         public bool estado { get; set; } // estado
+
         public Empleadodominio() { }
 
         public Empleadodominio( string nombre, string apellido, bool sexo, string dni, string cuil, String telefono, CargoDominio cargo, float salario, DateTime fechaingreso, byte[] foto)// Image foto)

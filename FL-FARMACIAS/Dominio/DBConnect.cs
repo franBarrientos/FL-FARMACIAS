@@ -37,10 +37,17 @@ namespace FL_FARMACIAS.Dominio
 
         public DbSet<CargoDominio> Cargo { get; set; }
 
+        public DbSet<MetodoPagoDominio> MetodoPago { get; set; }
+        public DbSet<VentaDominioDominio> Ventas { get; set; }
+        public DbSet<VentaDetalleDominio> VentasDetalles { get; set; }
+
         // Configuración adicional para personalizar el mapeo
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+
+
             //ROL
             modelBuilder.Entity<Rol>().ToTable("Roles");
             modelBuilder.Entity<Rol>()
@@ -244,7 +251,56 @@ namespace FL_FARMACIAS.Dominio
                 .HasIndex(c => c.cuit)
                 .IsUnique();
 
-    
+            //Metodo de pago
+            modelBuilder.Entity<MetodoPagoDominio>().ToTable("Metodos_Pago");
+            modelBuilder.Entity<MetodoPagoDominio>()
+            .Property(c => c.id)
+            .HasColumnName("id_metodo_pago")
+            .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            //VENTAS
+
+            modelBuilder.Entity<VentaDominioDominio>().ToTable("Ventas");
+            modelBuilder.Entity<VentaDominioDominio>()
+              .HasKey(v => v.id_venta); // Clave primaria para Ventas
+
+            modelBuilder.Entity<VentaDetalleDominio>().ToTable("Ventas_Detalle");
+            
+            modelBuilder.Entity<VentaDetalleDominio>()
+                .HasKey(vd => new { vd.id_venta, vd.id_producto }); // Clave primaria compuesta para Ventas_Detalle
+
+
+            // Configuración de relaciones
+            modelBuilder.Entity<VentaDominioDominio>()
+                .HasOptional(v => v.descuento) // Con HasOptional, indicas que la relacion es opcional
+                .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en DescuentoDominio
+                .HasForeignKey(v => v.id_descuento);
+
+            modelBuilder.Entity<VentaDominioDominio>()
+                .HasMany(v => v.detalles)
+                .WithRequired(vd => vd.venta) // Con WithRequired, indicas que la relación es obligatoria
+                .HasForeignKey(vd => vd.id_venta);
+
+            modelBuilder.Entity<VentaDetalleDominio>()
+                .HasRequired(vd => vd.producto) // Asumiendo que un producto es requerido en el detalle de la venta
+                .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en ProductoDominio
+                .HasForeignKey(vd => vd.id_producto);
+
+            // Configuración de relaciones para Cliente y Método de Pago
+            modelBuilder.Entity<VentaDominioDominio>()
+                .HasRequired(v => v.cliente) // La venta requiere un cliente
+                .WithMany() // Asumiendo que un cliente puede tener múltiples ventas
+                .HasForeignKey(v => v.id_cliente);
+
+            modelBuilder.Entity<VentaDominioDominio>()
+                .HasRequired(v => v.metodoPago) // La venta requiere un método de pago
+                .WithMany() // Asumiendo que un método de pago puede estar en múltiples ventas
+                .HasForeignKey(v => v.id_metodo_pago);
+
+            modelBuilder.Entity<VentaDominioDominio>()
+                .HasRequired(v => v.empleado) // La venta requiere un empleado
+                .WithMany() // Asumiendo que un empleado puede tener múltiples ventas
+                .HasForeignKey(v => v.id_empleado);
         }
 
 

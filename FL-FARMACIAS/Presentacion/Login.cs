@@ -23,14 +23,6 @@ namespace FL_FARMACIAS.Presentacion.Login
         public static UsuarioDominio user { get; set; }
         public UsuarioAplicacion usuarioApp { get; set; }
 
-        private List<UsuarioDominio> defaultUsers = new List<UsuarioDominio>()
-        {
-            new UsuarioDominio(1,"admin", "admin", new Rol(1, "Admin")),
-            new UsuarioDominio(2,"supervisor", "supervisor", new Rol(2, "Supervisor")) ,
-            new UsuarioDominio(3, "farmaceutico", "farmaceutico", new Rol(3, "Farmaceutico")),
-        };
-        
-
         public LoginForm()
         {
             InitializeComponent();
