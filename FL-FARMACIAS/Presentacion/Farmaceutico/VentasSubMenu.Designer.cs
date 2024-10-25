@@ -111,7 +111,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.DESCUENTO_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.FACTURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FACTURA = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -910,6 +910,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // 
             this.FACTURA.HeaderText = "FACTURA";
             this.FACTURA.Name = "FACTURA";
+            this.FACTURA.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FACTURA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // VentasSubMenu
             // 
@@ -1031,6 +1033,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewTextBoxColumn DESCUENTO_NOMBRE;
         private DataGridViewTextBoxColumn PAGO;
         private DataGridViewButtonColumn DETALLE;
-        private DataGridViewTextBoxColumn FACTURA;
+        private DataGridViewButtonColumn FACTURA;
     }
 }

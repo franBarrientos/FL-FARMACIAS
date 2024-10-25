@@ -54,8 +54,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Rows.Clear();
             foreach (var d in matcheds)
             {
-                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
-
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, d.cliente.nombre, d.cliente.dni, d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
             }
 
         }
@@ -505,7 +504,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Rows.Clear();
             foreach (var d in matcheds)
             {
-                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
+//                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, d.cliente.nombre, d.cliente.dni, d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
 
             }
         }
