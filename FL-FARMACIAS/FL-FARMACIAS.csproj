@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aplicacion\EmpleadoAplicacion.cs" />
+    <Compile Include="Aplicacion\PedidosAplicacion.cs" />
     <Compile Include="Aplicacion\ProveedorAplicacion.cs" />
     <Compile Include="Aplicacion\CategoriaAplicacion.cs" />
     <Compile Include="Aplicacion\DescuentoAplicacion.cs" />
@@ -84,6 +85,8 @@
     <Compile Include="Aplicacion\ProductoAplicacion.cs" />
     <Compile Include="Aplicacion\UsuarioAplicacion.cs" />
     <Compile Include="Aplicacion\VentasAplicacion.cs" />
+    <Compile Include="Dominio\pedidoDominio.cs" />
+    <Compile Include="Dominio\PedidosDetalleDominio.cs" />
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\DBConnect.cs" />
     <Compile Include="Dominio\DescuentoDominio.cs" />

@@ -16,14 +16,27 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private AltaProveedor AltaProveedor = null;
         private pedidosAproveedor altaPedido = null;
         public ProveedorAplicacion proveedorApp;
+        public PedidosAplicacion pedidosApp;
 
 
         public PedidossSubMenu()
         {
             this.proveedorApp = new ProveedorAplicacion();
+            this.pedidosApp = new PedidosAplicacion();
             InitializeComponent();
+            fullPedidos();
             fullProveedores();
 
+        }
+
+        public void fullPedidos()
+        {
+            List<pedidoDominio> pedidos = this.pedidosApp.ObtenerTodos();
+            this.dataGridView1.Rows.Clear();
+            foreach(var p in pedidos)
+            {
+                this.dataGridView1.Rows.Add(p.Idpedido, p.Fechapedido, p.proveedor.nombre, p.proveedor.cuit, p.farmaceutico.nombre + ' '+ p.farmaceutico.apellido, p.farmaceutico.dni, "VER DETALLE", "ACTIVO");
+            }
         }
 
         public void fullProveedores()

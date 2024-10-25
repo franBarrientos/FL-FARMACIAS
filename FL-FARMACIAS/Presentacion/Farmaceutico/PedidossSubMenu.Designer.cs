@@ -35,7 +35,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidossSubMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.placeholderTextBox2 = new PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.button3w = new System.Windows.Forms.Button();
@@ -44,17 +43,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PUESTO = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APROBAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,6 +60,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.placeholderTextBox2 = new PlaceholderTextBox();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROVEEDOR_CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_SOLICITANTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PUESTO = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,17 +106,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PEDIDOS";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // placeholderTextBox2
-            // 
-            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox2.IsPassword = false;
-            this.placeholderTextBox2.Location = new System.Drawing.Point(37, 163);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.Placeholder = "INGRESE ID PEDIDO";
-            this.placeholderTextBox2.Size = new System.Drawing.Size(259, 20);
-            this.placeholderTextBox2.TabIndex = 20;
-            this.placeholderTextBox2.Text = "INGRESE ID PEDIDO";
             // 
             // label1
             // 
@@ -234,12 +222,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.ID,
             this.FECHAINGRESO,
             this.NOMBRE,
+            this.PROVEEDOR_CUIT,
             this.DNI,
+            this.DNI_SOLICITANTE,
             this.PUESTO,
-            this.SALARIO,
-            this.APROBAR,
-            this.ELIMINAR,
-            this.MODIFICAR});
+            this.SALARIO});
             this.dataGridView1.Location = new System.Drawing.Point(13, 228);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
             this.dataGridView1.Name = "dataGridView1";
@@ -247,81 +234,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(1001, 309);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID PEDIDO";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // FECHAINGRESO
-            // 
-            this.FECHAINGRESO.HeaderText = "FECHA ";
-            this.FECHAINGRESO.MinimumWidth = 8;
-            this.FECHAINGRESO.Name = "FECHAINGRESO";
-            this.FECHAINGRESO.ReadOnly = true;
-            this.FECHAINGRESO.Width = 150;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "PROVEEDOR";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NOMBRE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.NOMBRE.Width = 150;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "SOLICITANTE";
-            this.DNI.MinimumWidth = 8;
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DNI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DNI.Width = 150;
-            // 
-            // PUESTO
-            // 
-            this.PUESTO.HeaderText = "PRODUCTOS";
-            this.PUESTO.MinimumWidth = 8;
-            this.PUESTO.Name = "PUESTO";
-            this.PUESTO.ReadOnly = true;
-            this.PUESTO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PUESTO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.PUESTO.Width = 150;
-            // 
-            // SALARIO
-            // 
-            this.SALARIO.HeaderText = "ESTADO";
-            this.SALARIO.MinimumWidth = 8;
-            this.SALARIO.Name = "SALARIO";
-            this.SALARIO.ReadOnly = true;
-            this.SALARIO.Width = 150;
-            // 
-            // APROBAR
-            // 
-            this.APROBAR.HeaderText = "APROBAR";
-            this.APROBAR.Name = "APROBAR";
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
             // 
             // tabPage2
             // 
@@ -341,17 +253,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.tabPage2.Text = "PROVEEDORES";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(366, 180);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(236, 20);
-            this.placeholderTextBox1.TabIndex = 29;
-            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
             // 
             // label4
             // 
@@ -537,6 +438,90 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Width = 150;
             // 
+            // placeholderTextBox2
+            // 
+            this.placeholderTextBox2.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox2.IsPassword = false;
+            this.placeholderTextBox2.Location = new System.Drawing.Point(37, 163);
+            this.placeholderTextBox2.Name = "placeholderTextBox2";
+            this.placeholderTextBox2.Placeholder = "INGRESE ID PEDIDO";
+            this.placeholderTextBox2.Size = new System.Drawing.Size(259, 20);
+            this.placeholderTextBox2.TabIndex = 20;
+            this.placeholderTextBox2.Text = "INGRESE ID PEDIDO";
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox1.IsPassword = false;
+            this.placeholderTextBox1.Location = new System.Drawing.Point(366, 180);
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.Placeholder = "INGRESE DNI O APELLIDO";
+            this.placeholderTextBox1.Size = new System.Drawing.Size(236, 20);
+            this.placeholderTextBox1.TabIndex = 29;
+            this.placeholderTextBox1.Text = "INGRESE DNI O APELLIDO";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID PEDIDO";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 150;
+            // 
+            // FECHAINGRESO
+            // 
+            this.FECHAINGRESO.HeaderText = "FECHA ";
+            this.FECHAINGRESO.MinimumWidth = 8;
+            this.FECHAINGRESO.Name = "FECHAINGRESO";
+            this.FECHAINGRESO.ReadOnly = true;
+            this.FECHAINGRESO.Width = 150;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "PROVEEDOR";
+            this.NOMBRE.MinimumWidth = 8;
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            this.NOMBRE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NOMBRE.Width = 150;
+            // 
+            // PROVEEDOR_CUIT
+            // 
+            this.PROVEEDOR_CUIT.HeaderText = "CUIT PROVEEDOR";
+            this.PROVEEDOR_CUIT.Name = "PROVEEDOR_CUIT";
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "SOLICITANTE";
+            this.DNI.MinimumWidth = 8;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DNI.Width = 150;
+            // 
+            // DNI_SOLICITANTE
+            // 
+            this.DNI_SOLICITANTE.HeaderText = "DNI SOLICITANTE";
+            this.DNI_SOLICITANTE.Name = "DNI_SOLICITANTE";
+            // 
+            // PUESTO
+            // 
+            this.PUESTO.HeaderText = "PRODUCTOS";
+            this.PUESTO.MinimumWidth = 8;
+            this.PUESTO.Name = "PUESTO";
+            this.PUESTO.ReadOnly = true;
+            this.PUESTO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PUESTO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.PUESTO.Width = 150;
+            // 
+            // SALARIO
+            // 
+            this.SALARIO.HeaderText = "ESTADO";
+            this.SALARIO.MinimumWidth = 8;
+            this.SALARIO.Name = "SALARIO";
+            this.SALARIO.ReadOnly = true;
+            this.SALARIO.Width = 150;
+            // 
             // PedidossSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,15 +566,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private Button button4;
         private Button button5;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn FECHAINGRESO;
-        private DataGridViewButtonColumn NOMBRE;
-        private DataGridViewButtonColumn DNI;
-        private DataGridViewButtonColumn PUESTO;
-        private DataGridViewTextBoxColumn SALARIO;
-        private DataGridViewButtonColumn APROBAR;
-        private DataGridViewButtonColumn ELIMINAR;
-        private DataGridViewButtonColumn MODIFICAR;
         private Label label1;
         private Label label4;
         private PlaceholderTextBox placeholderTextBox1;
@@ -604,5 +580,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn FECHAINGRESO;
+        private DataGridViewTextBoxColumn NOMBRE;
+        private DataGridViewTextBoxColumn PROVEEDOR_CUIT;
+        private DataGridViewTextBoxColumn DNI;
+        private DataGridViewTextBoxColumn DNI_SOLICITANTE;
+        private DataGridViewButtonColumn PUESTO;
+        private DataGridViewTextBoxColumn SALARIO;
     }
 }

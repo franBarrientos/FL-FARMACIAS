@@ -12,7 +12,7 @@ namespace FL_FARMACIAS.Aplicacion
 
         public int Idpedido { get; set; }
 
-        public date Fechapedido { get; set; }
+        public DateTime Fechapedido { get; set; }
 
         public bool Estado { get; set; }
 
@@ -20,11 +20,15 @@ namespace FL_FARMACIAS.Aplicacion
 
         public Empleadodominio farmaceutico { get; set; } // objeto farmaceutico
 
-        public int idadmin { get; set; } //clave foranea
+        public int? idadmin { get; set; } //clave foranea
 
         public Empleadodominio administrador { get; set; } //objeto admin
 
-        public list<PedidosDetalleDominio> detalle { get; set; }// asocial el frame los detalles a pedido
+        public int idproveedor { get; set; } //clave foranea
+
+        public ProveedorDominio proveedor { get; set; } //objeto admin
+
+        public List<PedidosDetalleDominio> detalle { get; set; }// asocial el frame los detalles a pedido
 
     }
 }

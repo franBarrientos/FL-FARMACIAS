@@ -308,7 +308,6 @@ namespace FL_FARMACIAS.Dominio
             //PEDIDOS
 
 
-
             modelBuilder.Entity<pedidoDominio>().ToTable("Pedidos");
 
             modelBuilder.Entity<pedidoDominio>()
@@ -333,6 +332,14 @@ namespace FL_FARMACIAS.Dominio
 
             modelBuilder.Entity<pedidoDominio>()
 
+                .HasRequired(v => v.proveedor) // Con hasRequired seria el objeto, indicas que la relacion es opcional
+
+                .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en DescuentoDominio
+
+                .HasForeignKey(v => v.idproveedor);
+
+            modelBuilder.Entity<pedidoDominio>()
+
                 .HasRequired(v => v.farmaceutico) // Con hasRequired seria el objeto, indicas que la relacion es opcional
 
                 .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en DescuentoDominio
@@ -341,7 +348,7 @@ namespace FL_FARMACIAS.Dominio
 
             modelBuilder.Entity<pedidoDominio>()
 
-                            .HasRequired(v => v.administrador) // Con hasRequired seria el objeto, indicas que la relacion es opcional
+                            .HasOptional(v => v.administrador) // Con hasRequired seria el objeto, indicas que la relacion es opcional
 
                             .WithMany()
 
