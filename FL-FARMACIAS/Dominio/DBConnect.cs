@@ -309,7 +309,7 @@ namespace FL_FARMACIAS.Dominio
 
 
 
-            modelBuilder.Entity<pedidoDominio>().ToTable("Pedido—como se llama en la base de datos");
+            modelBuilder.Entity<pedidoDominio>().ToTable("Pedidos");
 
             modelBuilder.Entity<pedidoDominio>()
 
@@ -317,7 +317,7 @@ namespace FL_FARMACIAS.Dominio
 
 
 
-            modelBuilder.Entity<PedidosDetalleDominio>().ToTable("PedidosDetalleDominio ");
+            modelBuilder.Entity<PedidosDetalleDominio>().ToTable("DetallePedido");
 
 
 
