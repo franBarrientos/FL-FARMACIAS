@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Annotations;
+using FL_FARMACIAS.Aplicacion;
 
 
 namespace FL_FARMACIAS.Dominio
@@ -40,7 +41,9 @@ namespace FL_FARMACIAS.Dominio
         public DbSet<MetodoPagoDominio> MetodoPago { get; set; }
         public DbSet<VentaDominioDominio> Ventas { get; set; }
         public DbSet<VentaDetalleDominio> VentasDetalles { get; set; }
+        public DbSet<pedidoDominio> Pedidos { get; set; }
 
+        public DbSet<PedidosDetalleDominio> PedidoDetalle { get; set; }
         // Configuración adicional para personalizar el mapeo
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -301,6 +304,70 @@ namespace FL_FARMACIAS.Dominio
                 .HasRequired(v => v.empleado) // La venta requiere un empleado
                 .WithMany() // Asumiendo que un empleado puede tener múltiples ventas
                 .HasForeignKey(v => v.id_empleado);
+
+            //PEDIDOS
+
+
+
+            modelBuilder.Entity<pedidoDominio>().ToTable("Pedido—como se llama en la base de datos");
+
+            modelBuilder.Entity<pedidoDominio>()
+
+              .HasKey(p => p.Idpedido); // Clave primaria
+
+
+
+            modelBuilder.Entity<PedidosDetalleDominio>().ToTable("PedidosDetalleDominio ");
+
+
+
+            modelBuilder.Entity<PedidosDetalleDominio>()
+
+                .HasKey(pd => new { pd.Idpedido, pd.Idproducto }); // Clave primaria compuesta para detalle pedido
+
+
+
+
+
+            // Configuración de relaciones
+
+            modelBuilder.Entity<pedidoDominio>()
+
+                .HasRequired(v => v.farmaceutico) // Con hasRequired seria el objeto, indicas que la relacion es opcional
+
+                .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en DescuentoDominio
+
+                .HasForeignKey(v => v.idfarmaceutico);
+
+            modelBuilder.Entity<pedidoDominio>()
+
+                            .HasRequired(v => v.administrador) // Con hasRequired seria el objeto, indicas que la relacion es opcional
+
+                            .WithMany()
+
+                            .HasForeignKey(v => v.idadmin);
+
+
+
+
+
+            modelBuilder.Entity<pedidoDominio>()
+
+                .HasMany(v => v.detalle)
+
+                .WithRequired(vd => vd.Pedido) // ESTO SERIA DESDE DETALLE A PEDIDO
+
+                .HasForeignKey(vd => vd.Idpedido);
+
+
+
+            modelBuilder.Entity<PedidosDetalleDominio>()
+
+                .HasRequired(vd => vd.producto) // Asumiendo que un producto es requerido en el detalle de la venta
+
+                .WithMany() // Aquí no necesitas especificar con qué entidad se relaciona si no tienes una propiedad en ProductoDominio
+
+                .HasForeignKey(vd => vd.Idproducto);
         }
 
 
