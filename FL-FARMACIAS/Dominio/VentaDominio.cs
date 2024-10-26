@@ -15,6 +15,8 @@ namespace FL_FARMACIAS.Dominio
         }
     }
 
+    //agregado para los graficos
+   
 
     public class VentaDetalleDominio
     {
