@@ -62,7 +62,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prodIngr = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,8 +75,9 @@
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.button11 = new System.Windows.Forms.Button();
-            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.prodTorta = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button12 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -87,11 +88,11 @@
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodIngr)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodTorta)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -241,11 +242,11 @@
             // 
             this.Datos_estadisticos_farma.AutoSize = true;
             this.Datos_estadisticos_farma.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Datos_estadisticos_farma.Location = new System.Drawing.Point(146, 8);
+            this.Datos_estadisticos_farma.Location = new System.Drawing.Point(179, 9);
             this.Datos_estadisticos_farma.Name = "Datos_estadisticos_farma";
-            this.Datos_estadisticos_farma.Size = new System.Drawing.Size(743, 33);
+            this.Datos_estadisticos_farma.Size = new System.Drawing.Size(618, 33);
             this.Datos_estadisticos_farma.TabIndex = 0;
-            this.Datos_estadisticos_farma.Text = "CANTIDAD DE PRODUCTOS VENDIDOS POR MES";
+            this.Datos_estadisticos_farma.Text = "PRODUCTOS VENDIDOS POR CANTIDAD";
             // 
             // tabPage3
             // 
@@ -263,6 +264,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(15, 10);
             this.panel2.Name = "panel2";
@@ -275,9 +277,8 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1014, 33);
+            this.label3.Size = new System.Drawing.Size(0, 33);
             this.label3.TabIndex = 0;
-            this.label3.Text = "INGRESOS GENERADOS POR VENTA DE PRODUCTOS MENSUALES";
             // 
             // groupBox4
             // 
@@ -367,27 +368,27 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Snow;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.chart4);
+            this.panel4.Controls.Add(this.prodIngr);
             this.panel4.Location = new System.Drawing.Point(9, 93);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1057, 417);
             this.panel4.TabIndex = 4;
             // 
-            // chart4
+            // prodIngr
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea2);
+            this.prodIngr.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chart4.Legends.Add(legend2);
-            this.chart4.Location = new System.Drawing.Point(3, 12);
-            this.chart4.Name = "chart4";
+            this.prodIngr.Legends.Add(legend2);
+            this.prodIngr.Location = new System.Drawing.Point(3, 12);
+            this.prodIngr.Name = "prodIngr";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.chart4.Series.Add(series2);
-            this.chart4.Size = new System.Drawing.Size(1047, 380);
-            this.chart4.TabIndex = 0;
-            this.chart4.Text = "chart4";
+            this.prodIngr.Series.Add(series2);
+            this.prodIngr.Size = new System.Drawing.Size(1047, 380);
+            this.prodIngr.TabIndex = 0;
+            this.prodIngr.Text = "prodIngr";
             // 
             // tabPage4
             // 
@@ -432,7 +433,7 @@
             this.groupBox5.Controls.Add(this.dateTimePicker9);
             this.groupBox5.Controls.Add(this.dateTimePicker10);
             this.groupBox5.Controls.Add(this.button11);
-            this.groupBox5.Controls.Add(this.chart5);
+            this.groupBox5.Controls.Add(this.prodTorta);
             this.groupBox5.Controls.Add(this.button12);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(15, 87);
@@ -533,26 +534,26 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // chart5
+            // prodTorta
             // 
             chartArea3.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea3);
+            this.prodTorta.ChartAreas.Add(chartArea3);
             legend3.BackColor = System.Drawing.Color.White;
             legend3.Enabled = false;
             legend3.Name = "Legend1";
-            this.chart5.Legends.Add(legend3);
-            this.chart5.Location = new System.Drawing.Point(6, 136);
-            this.chart5.Name = "chart5";
-            this.chart5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.prodTorta.Legends.Add(legend3);
+            this.prodTorta.Location = new System.Drawing.Point(6, 136);
+            this.prodTorta.Name = "prodTorta";
+            this.prodTorta.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Legend = "Legend1";
             series3.Name = "Series1";
-            this.chart5.Series.Add(series3);
-            this.chart5.Size = new System.Drawing.Size(1064, 394);
-            this.chart5.TabIndex = 17;
-            this.chart5.Text = "chart5";
-            this.chart5.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+            this.prodTorta.Series.Add(series3);
+            this.prodTorta.Size = new System.Drawing.Size(1064, 394);
+            this.prodTorta.TabIndex = 17;
+            this.prodTorta.Text = "chart5";
+            this.prodTorta.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
             // 
             // button12
             // 
@@ -569,6 +570,15 @@
             this.button12.Text = "LIMPIAR";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(368, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(234, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "PRODUCTOS POR INGRESOS GENERADOS ";
             // 
             // EstadisticasSubMenu
             // 
@@ -596,13 +606,13 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodIngr)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodTorta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -631,7 +641,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prodIngr;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label9;
@@ -639,7 +649,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker9;
         private System.Windows.Forms.DateTimePicker dateTimePicker10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart prodTorta;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
@@ -648,5 +658,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

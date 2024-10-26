@@ -1,12 +1,17 @@
-﻿using System;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
@@ -15,6 +20,92 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         public EstadisticosFarmaceutico()
         {
             InitializeComponent();
+            
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var ventasAplicacion = new VentasAplicacion();
+            var datos = ventasAplicacion.ObtenerCantidadProductosVendidosPorEmpleado();
+
+            // Verifica si hay datos
+            if (datos == null || datos.Count == 0)
+            {
+                MessageBox.Show("No se encontraron datos para mostrar.");
+                return; // Salir si no hay datos
+            }
+
+            chart1.Series.Clear();
+            var series = new Series("Productos Vendidos");
+            series.ChartType = SeriesChartType.Bar;
+
+            foreach (var dato in datos)
+            {
+                Console.WriteLine(dato.empleadoNombre.ToString());
+                Console.WriteLine(dato.cantidadProductos.ToString());
+                series.Points.AddXY(dato.empleadoNombre, dato.cantidadProductos);
+            }
+
+            chart1.Series.Add(series);
+            chart1.ChartAreas[0].AxisX.Title = "Empleados";
+            chart1.ChartAreas[0].AxisY.Title = "Cantidad de Productos Vendidos";
+            chart1.Invalidate(); // Refresca el gráfico
+             DateTime desde = new DateTime(1970, 1, 1);
+         
+            CargarGrafico( desde, DateTime.Now);
+            CargarGraficoTorta();
+        }
+
+        //grafico 2
+        private void CargarGrafico(DateTime desde, DateTime hasta)
+        {
+            var ventasAplicacion = new VentasAplicacion();
+            var ingresos = ventasAplicacion.ObtenerIngresosPorEmpleado(desde, hasta);
+
+            chartIngresos.Series.Clear();
+            var serie = chartIngresos.Series.Add("Ingresos por Empleado");
+
+            foreach (var ingreso in ingresos)
+            {
+                serie.Points.AddXY(ingreso.Key, ingreso.Value);
+            }
+
+            // Configuración adicional del gráfico
+            chartIngresos.ChartAreas[0].AxisX.Title = "Empleados";
+            chartIngresos.ChartAreas[0].AxisY.Title = "Ingresos";
+        }
+
+        //grafico torta 
+        private void CargarGraficoTorta()
+        {
+            var ventasAplicacion = new VentasAplicacion();
+            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10);
+
+            chartVentas.Series.Clear();
+            var serie = chartVentas.Series.Add("Ventas por Empleado");
+
+            foreach (var empleado in topEmpleados)
+            {
+                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+            }
+
+            // Configuración adicional del gráfico
+            chartVentas.ChartAreas[0].AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje X
+            chartVentas.ChartAreas[0].AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje Y
+            serie.IsValueShownAsLabel = true; // Mostrar etiquetas de valores en el gráfico
+            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie; // Establecer tipo de gráfico a torta
+        }
+
+        private void chart4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CargarGrafico(dateTimePicker8.Value, dateTimePicker7.Value);
         }
     }
 }
