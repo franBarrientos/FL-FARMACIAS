@@ -17,7 +17,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public MenuAdmin(LoginForm loginForm)
         {
             InitializeComponent();
-            this.button6.Text = (LoginForm.user.empleado != null ? LoginForm.user.empleado.nombre.ToUpper() : LoginForm.user.rol.descripcion.ToUpper());
+            this.button6.Text = LoginForm.user.rol.descripcion.ToUpper() + " " + LoginForm.user.empleado.nombre.ToUpper();
             this.loginForm = loginForm;
         }
 

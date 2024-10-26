@@ -56,6 +56,16 @@ namespace FL_FARMACIAS.Aplicacion
             }
         }
 
+        public void IncrementarStock(int id, int cantidad)
+        {
+            using (var db = new DBConnect())
+            {
+                var o = db.Producto.First(g => g.id == id);
+                o.stock += cantidad;
+                db.SaveChanges();
+            }
+        }
+
         public void ActualizarProducto(ProductoDominio p)
         {
             using (var db = new DBConnect())

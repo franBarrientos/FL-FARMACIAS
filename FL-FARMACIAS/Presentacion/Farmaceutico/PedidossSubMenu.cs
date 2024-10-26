@@ -35,7 +35,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Rows.Clear();
             foreach(var p in pedidos)
             {
-                this.dataGridView1.Rows.Add(p.Idpedido, p.Fechapedido, p.proveedor.nombre, p.proveedor.cuit, p.farmaceutico.nombre + ' '+ p.farmaceutico.apellido, p.farmaceutico.dni, "VER DETALLE", "ACTIVO");
+                this.dataGridView1.Rows.Add(p.Idpedido, p.Fechapedido.ToString("yyyy-MM-dd"), p.proveedor.nombre, p.proveedor.cuit, p.farmaceutico.nombre + ' '+ p.farmaceutico.apellido, p.farmaceutico.dni, p.Estado, "VER DETALLE");
             }
         }
 
@@ -55,27 +55,28 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             {
                 var dataGridView = sender as DataGridView;
 
-                if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                if (dataGridView.Columns[e.ColumnIndex].Name == "DETALLE")
                 {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Eliminar"
-                    MessageBox.Show($"Eliminar fila {e.RowIndex}");
-                    // Ejemplo: eliminar la fila
-                    dataGridView.Rows.RemoveAt(e.RowIndex);
-                }
-                // Verifica si la columna clicada es "Modificar"
-                else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
-                {
-                    // Aquí colocas el código que se ejecuta al hacer clic en el botón "Modificar"
-                    MessageBox.Show($"Modificar fila {e.RowIndex}");
-                    // Ejemplo: mostrar detalles para modificar
-                    var nombre = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
-                    var apellido = dataGridView.Rows[e.RowIndex].Cells["APELLIDO"].Value.ToString();
-                    // Aquí podrías abrir un formulario de edición con estos datos, por ejemplo.
-                }
-                else if (dataGridView.Columns[e.ColumnIndex].Name == "USUARIO")
-                {
-                    //new CrearCuentaModal().Show();
+                    int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+                    var pedido = this.pedidosApp.BuscarPedidos(id)[0];
 
+
+                    DataTable detallesVenta = new DataTable();
+                    detallesVenta.Columns.Add("Cod Producto", typeof(string));
+                    detallesVenta.Columns.Add("Nombre Producto", typeof(string));
+                    detallesVenta.Columns.Add("Categoria", typeof(string));
+                    detallesVenta.Columns.Add("Marca", typeof(string));
+                    detallesVenta.Columns.Add("Laboratorio", typeof(string));
+                    detallesVenta.Columns.Add("Cantidad", typeof(int));
+
+                    foreach (var d in pedido.detalle)
+                    {
+                        detallesVenta.Rows.Add(d.producto.codProducto, d.producto.nombre, d.producto.categoria.descripcion, d.producto.marca.nombre, (d.producto.laboratorio != null ? d.producto.laboratorio.nombre : "Ninguno"), d.cantidadPedido);
+                    }
+
+                    DetalleVentaForm detalleVentaForm = new DetalleVentaForm();
+                    detalleVentaForm.CargarDetalles(detallesVenta); // Llenar el DataGridView con el DataTable
+                    detalleVentaForm.ShowDialog(); // Mostrar el fo
                 }
             }
 
@@ -107,24 +108,44 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            this.placeholderTextBox1.Text = "";
+            this.placeholderTextBox1.ForeColor = Color.Black;
+            this.fullProveedores();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            this.placeholderTextBox2.Text = "";
+            this.placeholderTextBox2.ForeColor = Color.Black;
 
+            this.dateTimePicker1.Value = new DateTime(1970, 1, 1);
+            this.dateTimePicker2.Value = DateTime.Now;
+ 
+            this.fullPedidos();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            int? cod_pedido = null;
+            if(this.placeholderTextBox2.Text != "" && this.placeholderTextBox2.Text != "INGRESE ID PEDIDO")
+            {
+                cod_pedido = int.Parse(this.placeholderTextBox2.Text);
+            }
 
+            var matcheds = this.pedidosApp.BuscarPedidos(cod_pedido, this.dateTimePicker1.Value, this.dateTimePicker2.Value);
+            this.dataGridView1.Rows.Clear();
+            foreach(var p in matcheds)
+            {
+                this.dataGridView1.Rows.Add(p.Idpedido, p.Fechapedido.ToString("yyyy-MM-dd"), p.proveedor.nombre, p.proveedor.cuit, p.farmaceutico.nombre + ' ' + p.farmaceutico.apellido, p.farmaceutico.dni, p.Estado, "VER DETALLE");
+
+            }
         }
 
         private void button3w_Click_1(object sender, EventArgs e)
         {
             if (altaPedido == null || altaPedido.IsDisposed)
             {
-                altaPedido = new pedidosAproveedor();
+                altaPedido = new pedidosAproveedor(null, this);
                 altaPedido.Show();
             }
             else
@@ -133,6 +154,35 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             }
         }
 
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView1.Rows[e.RowIndex].Cells["ESTADOP"].Value?.ToString();
+            if (estado == "RECIBIDO")
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo rojo suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+            else if (estado == "REALIZADO")
+            {
+                // Color de fondo y texto para filas activas
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;  // Fondo verde suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+            else if(estado == "CANCELADO")
+            {
+                // Color de fondo y texto para filas activas
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo verde suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+            else if( estado == "ESPERA DE APROBACION")
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;  // Fondo rojo suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+        }
+
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -140,7 +190,30 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (placeholderTextBox1.Text == "" || placeholderTextBox1.Text == null || placeholderTextBox1.Text == "INGRESE NOMBRE O CUIT")
+            {
+                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            string dni = null;
+            string nombre = null;
+
+            if (placeholderTextBox1.Text.All(char.IsDigit))
+            {
+                dni = placeholderTextBox1.Text;
+            }
+            else
+            {
+                nombre = placeholderTextBox1.Text;
+            }
+            var matched = this.proveedorApp.BuscarProveedor(dni, nombre);
+
+            this.dataGridView2.Rows.Clear();
+            foreach (var p in matched)
+            {
+                this.dataGridView2.Rows.Add(p.id, p.nombre, p.cuit, p.telefono, p.correo, p.direccion, p.localidad, p.provincia, p.activo == true ? "ACTIVO" : "INACTIVO", "MODIFICAR", "ELIMINAR");
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ using System.Windows.Forms;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
-    public partial class pedidosAproveedor : Form
+    public partial class pedidosAproveedorModificar : Form
     {
         private Timer proveedorTimer;
         private Timer productTimer;
@@ -25,12 +26,13 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public PedidossSubMenu pedidosSubMenu;
         public ProductoAplicacion productoApp;
         public ProveedorDominio provedorSeleccionado;
+        public pedidoDominio pedidoD;
 
 
-        public pedidosAproveedor(ProveedoresSubMenu pm, PedidossSubMenu ps)
+        public pedidosAproveedorModificar(ProveedoresSubMenu pm, PedidossSubMenu ps, pedidoDominio pedido)
         {
             InitializeComponent();
-
+            this.pedidoD = pedido;
             this.proveedorSubMenu = pm;
             this.pedidosSubMenu = ps;
 
@@ -47,8 +49,31 @@ namespace FL_FARMACIAS.Presentacion.Admin
             productTimer = new Timer();
             productTimer.Interval = 500;
             productTimer.Tick += new EventHandler(OnProductTimerTick);
+            fullData(pedido);
+            this.label1.Text = "FECHA DEL PEDIDO: " + pedido.Fechapedido.ToString("d", CultureInfo.CreateSpecificCulture("es-ES"));
+        }
 
-            this.label1.Text = "FECHA DEL PEDIDO: " + DateTime.Now.ToString("d", CultureInfo.CreateSpecificCulture("es-ES"));
+        public void fullData(pedidoDominio pedido)
+        {
+            label7.Text = "CUIT: " + pedido.proveedor.cuit;
+            label11.Text = "CUIT PROVEEDOR: " + pedido.proveedor.cuit;
+
+            label5.Text = "NOMBRE: " + pedido.proveedor.nombre;
+            label16.Text = "NOMBRE PROVEEDOR: " + pedido.proveedor.nombre;
+
+
+
+            label6.Text = "PROVINCIA: " + pedido.proveedor.provincia;
+            this.provedorSeleccionado = pedido.proveedor;
+
+            foreach (var p in pedido.detalle)
+            {
+
+                this.dataGridView4.Rows.Add(p.producto.id, p.producto.codProducto, p.producto.nombre, p.cantidadPedido, "QUITAR");
+            }
+            this.label12.Text = "CANTIDAD PRODUCTOS PEDIDOS: " + dataGridView4.Rows.Count.ToString();
+
+
         }
 
         private void fullDataGridAllProveedores()
@@ -303,7 +328,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             bool productoExistente = false;
             foreach (DataGridViewRow row in dataGridView4.Rows)
             {
-                if (row.Cells["CODC"].Value.ToString() == cod) // Asegúrate de que "Codigo" sea el nombre correcto de la columna
+                if (row.Cells["IDPC"].Value.ToString() == idPc.Trim()) // Asegúrate de que "Codigo" sea el nombre correcto de la columna
                 {
                     int cantidadExistente = Convert.ToInt32(row.Cells["CANTIDADC"].Value); // Asegúrate de que "Cantidad" sea el nombre correcto de la columna
                     row.Cells["CANTIDADC"].Value = cantidadExistente + nuevoStockSeleccionado; // Actualiza la cantidad
@@ -348,13 +373,15 @@ namespace FL_FARMACIAS.Presentacion.Admin
                       Idproducto = Convert.ToInt32(cod),
                       cantidadPedido = Convert.ToInt32(cantidad),
                   });
+                    Console.WriteLine("AXA     ID Prod: " + cod + " CANT: " + cantidad);
             }
 
 
             if(this.proveedorSubMenu != null)
             {
-                this.proveedorSubMenu.pedidosApp.RegistrarPedido(this.provedorSeleccionado.id, LoginForm.user.empleado.id, productosSeleccionados, "REALIZADO");
-                MessageBox.Show("PEDIDO REGISTRADO");
+
+                this.proveedorSubMenu.pedidosApp.ModificarPedido(this.provedorSeleccionado.id, pedidoD.Idpedido, productosSeleccionados);
+                MessageBox.Show("PEDIDO MODIFICADO");
                 this.proveedorSubMenu.fullPedidos();
                 this.Close();
             }

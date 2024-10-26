@@ -16,7 +16,11 @@ namespace FL_FARMACIAS.Aplicacion
         {
             using (var db = new DBConnect())
             {
-                return db.Empleado.Include(c => c.usuario).Include(c => c.cargo).ToList();
+                return db.Empleado
+                    .Include(c => c.usuario)
+                    .Include(c => c.cargo)
+                    .Where(c => c.usuario.rol.descripcion != "Admin")
+                    .ToList();
             }
         }
 

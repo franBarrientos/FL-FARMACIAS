@@ -14,7 +14,7 @@ namespace FL_FARMACIAS.Aplicacion
 
         public DateTime Fechapedido { get; set; }
 
-        public bool Estado { get; set; }
+        public string Estado { get; set; }
 
         public int idfarmaceutico { get; set; } // clave foranea
 

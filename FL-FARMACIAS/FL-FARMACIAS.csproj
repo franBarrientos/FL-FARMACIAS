@@ -194,6 +194,12 @@
     <Compile Include="Presentacion\Admin\DescuentosSubMenu.Designer.cs">
       <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\pedidosAproveedorModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\pedidosAproveedorModificar.Designer.cs">
+      <DependentUpon>pedidosAproveedorModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\pedidosAproveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\DescuentosSubMenu.resx">
       <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\pedidosAproveedorModificar.resx">
+      <DependentUpon>pedidosAproveedorModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\pedidosAproveedor.resx">
       <DependentUpon>pedidosAproveedor.cs</DependentUpon>

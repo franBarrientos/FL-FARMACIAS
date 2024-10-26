@@ -39,20 +39,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label4 = new System.Windows.Forms.Label();
             this.label3w = new System.Windows.Forms.Label();
             this.button3w = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PUESTO = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SALARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APROBAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.placeholderTextBox2 = new PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +61,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MODIFICARP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ELIMINARP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROVEEDOR_CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_SOLICITANTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADOP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.APROBAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RECIBIR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CANCELAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,12 +97,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::FL_FARMACIAS.Properties.Resources.bg;
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.dateTimePicker2);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.placeholderTextBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3w);
             this.tabPage1.Controls.Add(this.button3w);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -113,10 +120,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // 
             this.placeholderTextBox1.ForeColor = System.Drawing.Color.Gray;
             this.placeholderTextBox1.IsPassword = false;
-            this.placeholderTextBox1.Location = new System.Drawing.Point(13, 166);
+            this.placeholderTextBox1.Location = new System.Drawing.Point(22, 179);
             this.placeholderTextBox1.Name = "placeholderTextBox1";
             this.placeholderTextBox1.Placeholder = "INGRESE ID PEDIDO";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(330, 20);
+            this.placeholderTextBox1.Size = new System.Drawing.Size(264, 20);
             this.placeholderTextBox1.TabIndex = 20;
             this.placeholderTextBox1.Text = "INGRESE ID PEDIDO";
             // 
@@ -165,33 +172,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3w.UseVisualStyleBackColor = false;
             this.button3w.Click += new System.EventHandler(this.button3w_Click_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(422, 166);
-            this.label2.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "PUESTO";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todos",
-            "Farmaceutico",
-            "Supervisor",
-            "Gerente"});
-            this.comboBox1.Location = new System.Drawing.Point(494, 163);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 21);
-            this.comboBox1.TabIndex = 15;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
@@ -235,11 +215,14 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ID,
             this.FECHAINGRESO,
             this.NOMBRE,
+            this.PROVEEDOR_CUIT,
             this.DNI,
-            this.PUESTO,
-            this.SALARIO,
+            this.DNI_SOLICITANTE,
+            this.ESTADOP,
+            this.DETALLE,
             this.APROBAR,
-            this.ELIMINAR,
+            this.RECIBIR,
+            this.CANCELAR,
             this.MODIFICAR});
             this.dataGridView1.Location = new System.Drawing.Point(13, 228);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(64);
@@ -249,81 +232,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView1.Size = new System.Drawing.Size(1001, 309);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID PEDIDO";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // FECHAINGRESO
-            // 
-            this.FECHAINGRESO.HeaderText = "FECHA ";
-            this.FECHAINGRESO.MinimumWidth = 8;
-            this.FECHAINGRESO.Name = "FECHAINGRESO";
-            this.FECHAINGRESO.ReadOnly = true;
-            this.FECHAINGRESO.Width = 150;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "PROVEEDOR";
-            this.NOMBRE.MinimumWidth = 8;
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            this.NOMBRE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NOMBRE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.NOMBRE.Width = 150;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "SOLICITANTE";
-            this.DNI.MinimumWidth = 8;
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DNI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DNI.Width = 150;
-            // 
-            // PUESTO
-            // 
-            this.PUESTO.HeaderText = "PRODUCTOS";
-            this.PUESTO.MinimumWidth = 8;
-            this.PUESTO.Name = "PUESTO";
-            this.PUESTO.ReadOnly = true;
-            this.PUESTO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PUESTO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.PUESTO.Width = 150;
-            // 
-            // SALARIO
-            // 
-            this.SALARIO.HeaderText = "ESTADO";
-            this.SALARIO.MinimumWidth = 8;
-            this.SALARIO.Name = "SALARIO";
-            this.SALARIO.ReadOnly = true;
-            this.SALARIO.Width = 150;
-            // 
-            // APROBAR
-            // 
-            this.APROBAR.HeaderText = "APROBAR";
-            this.APROBAR.Name = "APROBAR";
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
+            this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
             // tabPage2
             // 
@@ -549,6 +458,129 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.ELIMINARP.ReadOnly = true;
             this.ELIMINARP.Width = 150;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID PEDIDO";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 150;
+            // 
+            // FECHAINGRESO
+            // 
+            this.FECHAINGRESO.HeaderText = "FECHA ";
+            this.FECHAINGRESO.MinimumWidth = 8;
+            this.FECHAINGRESO.Name = "FECHAINGRESO";
+            this.FECHAINGRESO.ReadOnly = true;
+            this.FECHAINGRESO.Width = 150;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "PROVEEDOR";
+            this.NOMBRE.MinimumWidth = 8;
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            this.NOMBRE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NOMBRE.Width = 150;
+            // 
+            // PROVEEDOR_CUIT
+            // 
+            this.PROVEEDOR_CUIT.HeaderText = "CUIT PROVEEDOR";
+            this.PROVEEDOR_CUIT.Name = "PROVEEDOR_CUIT";
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "SOLICITANTE";
+            this.DNI.MinimumWidth = 8;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DNI.Width = 150;
+            // 
+            // DNI_SOLICITANTE
+            // 
+            this.DNI_SOLICITANTE.HeaderText = "DNI SOLICITANTE";
+            this.DNI_SOLICITANTE.Name = "DNI_SOLICITANTE";
+            // 
+            // ESTADOP
+            // 
+            this.ESTADOP.HeaderText = "ESTADO";
+            this.ESTADOP.MinimumWidth = 8;
+            this.ESTADOP.Name = "ESTADOP";
+            this.ESTADOP.ReadOnly = true;
+            this.ESTADOP.Width = 150;
+            // 
+            // DETALLE
+            // 
+            this.DETALLE.HeaderText = "PRODUCTOS";
+            this.DETALLE.MinimumWidth = 8;
+            this.DETALLE.Name = "DETALLE";
+            this.DETALLE.ReadOnly = true;
+            this.DETALLE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DETALLE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DETALLE.Width = 150;
+            // 
+            // APROBAR
+            // 
+            this.APROBAR.HeaderText = "APROBAR";
+            this.APROBAR.Name = "APROBAR";
+            // 
+            // RECIBIR
+            // 
+            this.RECIBIR.HeaderText = "RECIBIR";
+            this.RECIBIR.Name = "RECIBIR";
+            this.RECIBIR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RECIBIR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // CANCELAR
+            // 
+            this.CANCELAR.HeaderText = "CANCELAR";
+            this.CANCELAR.MinimumWidth = 8;
+            this.CANCELAR.Name = "CANCELAR";
+            this.CANCELAR.ReadOnly = true;
+            this.CANCELAR.Width = 150;
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(529, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Fecha hasta";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(323, 163);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 13);
+            this.label21.TabIndex = 58;
+            this.label21.Text = "Fecha desde";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(532, 179);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker2.TabIndex = 57;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(326, 179);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 56;
+            this.dateTimePicker1.Value = new System.DateTime(1970, 10, 19, 20, 19, 0, 0);
+            // 
             // ProveedoresSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,8 +615,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private TabPage tabPage1;
         private Label label3w;
         private Button button3w;
-        private Label label2;
-        private ComboBox comboBox1;
         private Button button2;
         private Button button1;
         private DataGridView dataGridView1;
@@ -594,15 +624,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private Button button4;
         private Button button5;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn FECHAINGRESO;
-        private DataGridViewButtonColumn NOMBRE;
-        private DataGridViewButtonColumn DNI;
-        private DataGridViewButtonColumn PUESTO;
-        private DataGridViewTextBoxColumn SALARIO;
-        private DataGridViewButtonColumn APROBAR;
-        private DataGridViewButtonColumn ELIMINAR;
-        private DataGridViewButtonColumn MODIFICAR;
         private Label label4;
         private Label label1;
         private PlaceholderTextBox placeholderTextBox1;
@@ -618,5 +639,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private DataGridViewTextBoxColumn ESTADO;
         private DataGridViewButtonColumn MODIFICARP;
         private DataGridViewButtonColumn ELIMINARP;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn FECHAINGRESO;
+        private DataGridViewTextBoxColumn NOMBRE;
+        private DataGridViewTextBoxColumn PROVEEDOR_CUIT;
+        private DataGridViewTextBoxColumn DNI;
+        private DataGridViewTextBoxColumn DNI_SOLICITANTE;
+        private DataGridViewTextBoxColumn ESTADOP;
+        private DataGridViewButtonColumn DETALLE;
+        private DataGridViewButtonColumn APROBAR;
+        private DataGridViewButtonColumn RECIBIR;
+        private DataGridViewButtonColumn CANCELAR;
+        private DataGridViewButtonColumn MODIFICAR;
+        private Label label2;
+        private Label label21;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
     }
 }

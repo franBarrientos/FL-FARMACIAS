@@ -1,6 +1,6 @@
 ﻿namespace FL_FARMACIAS.Presentacion.Admin
 {
-    partial class pedidosAproveedor
+    partial class pedidosAproveedorModificar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pedidosAproveedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pedidosAproveedorModificar));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,6 +39,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -46,24 +47,23 @@
             this.placeholderTextBox2 = new PlaceholderTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.placeholderTextBox1 = new PlaceholderTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.IDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LABORATORIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESCOJERP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.placeholderTextBox1 = new PlaceholderTextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.nombre_proveedor_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit_prove_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provincia_prove_DG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESCOJER = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.IDPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -204,6 +204,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PRODUCTO";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(207, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 59;
+            this.label2.Visible = false;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(354, 52);
@@ -283,6 +292,37 @@
             this.dataGridView3.TabIndex = 48;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
+            // IDP
+            // 
+            this.IDP.HeaderText = "IDP";
+            this.IDP.Name = "IDP";
+            this.IDP.Visible = false;
+            // 
+            // CODP
+            // 
+            this.CODP.HeaderText = "COD";
+            this.CODP.Name = "CODP";
+            // 
+            // DESCPP
+            // 
+            this.DESCPP.HeaderText = "DESCRIPCION";
+            this.DESCPP.Name = "DESCPP";
+            // 
+            // MARCA
+            // 
+            this.MARCA.HeaderText = "MARCA";
+            this.MARCA.Name = "MARCA";
+            // 
+            // LABORATORIO
+            // 
+            this.LABORATORIO.HeaderText = "LABORATORIO";
+            this.LABORATORIO.Name = "LABORATORIO";
+            // 
+            // ESCOJERP
+            // 
+            this.ESCOJERP.HeaderText = "ESCOJER";
+            this.ESCOJERP.Name = "ESCOJERP";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -355,52 +395,6 @@
             this.dataGridView2.TabIndex = 48;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(366, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 41);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "REGISTRAR PEDIDOS";
-            // 
-            // IDP
-            // 
-            this.IDP.HeaderText = "IDP";
-            this.IDP.Name = "IDP";
-            this.IDP.Visible = false;
-            // 
-            // CODP
-            // 
-            this.CODP.HeaderText = "COD";
-            this.CODP.Name = "CODP";
-            // 
-            // DESCPP
-            // 
-            this.DESCPP.HeaderText = "DESCRIPCION";
-            this.DESCPP.Name = "DESCPP";
-            // 
-            // MARCA
-            // 
-            this.MARCA.HeaderText = "MARCA";
-            this.MARCA.Name = "MARCA";
-            // 
-            // LABORATORIO
-            // 
-            this.LABORATORIO.HeaderText = "LABORATORIO";
-            this.LABORATORIO.Name = "LABORATORIO";
-            // 
-            // ESCOJERP
-            // 
-            this.ESCOJERP.HeaderText = "ESCOJER";
-            this.ESCOJERP.Name = "ESCOJERP";
-            // 
             // nombre_proveedor_DG
             // 
             this.nombre_proveedor_DG.HeaderText = "NOMBRE";
@@ -421,14 +415,20 @@
             this.ESCOJER.HeaderText = "ESCOJER";
             this.ESCOJER.Name = "ESCOJER";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 59;
-            this.label2.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(366, 41);
+            this.label4.Margin = new System.Windows.Forms.Padding(64, 0, 64, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(369, 41);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "MODIFICAR PEDIDO";
             // 
             // IDPC
             // 
@@ -457,7 +457,7 @@
             this.QUITARC.HeaderText = "QUITAR";
             this.QUITARC.Name = "QUITARC";
             // 
-            // pedidosAproveedor
+            // pedidosAproveedorModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -470,7 +470,7 @@
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "pedidosAproveedor";
+            this.Name = "pedidosAproveedorModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos a Proveedores";
             this.Load += new System.EventHandler(this.pedidosAproveedor_Load);

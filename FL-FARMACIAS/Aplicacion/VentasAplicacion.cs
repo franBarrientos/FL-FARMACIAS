@@ -113,7 +113,10 @@ namespace FL_FARMACIAS.Aplicacion
         {
             using (var db = new DBConnect()) {
                 return db.Ventas
-                    .Include(x => x.detalles.Select(d => d.producto)) // Incluyendo detalles y sus productos
+                    .Include(x => x.detalles.Select(d => d.producto.marca))        // Incluye la marca del producto
+                    .Include(x => x.detalles.Select(d => d.producto.categoria))        // Incluye la marca del producto
+                    .Include(x => x.detalles.Select(d => d.producto.laboratorio))  // Incluye el laboratorio del producto
+                    .Include(x => x.detalles.Select(d => d.producto))
                     .Include(x => x.metodoPago).Include(x => x.descuento).Include(x => x.cliente).FirstOrDefault(x => x.id_venta == id);
             }
         }

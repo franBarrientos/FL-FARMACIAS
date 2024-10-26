@@ -44,6 +44,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             productTimer.Interval = 500;
             productTimer.Tick += new EventHandler(OnProductTimerTick);
 
+
+            if (dataGridView1.Columns.Contains("TOTAL"))
+            {
+                dataGridView1.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+                dataGridView1.Columns["TOTAL"].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("es-AR");
+            }
+
             fullVentas();
 
         }
@@ -54,7 +61,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.Rows.Clear();
             foreach (var d in matcheds)
             {
-                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, d.cliente.nombre, d.cliente.dni, d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha.ToString("yyyy-MM-dd"), d.total, d.cliente.nombre + d.cliente.apellido , (d.cliente.dni != "11111111" ? d.cliente.dni : "-"), d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
             }
 
         }
@@ -70,14 +77,18 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             {
                 // Crear un DataTable y definir las columnas
                 DataTable detallesVenta = new DataTable();
+                detallesVenta.Columns.Add("Cod Producto", typeof(string));
                 detallesVenta.Columns.Add("Nombre Producto", typeof(string));
+                detallesVenta.Columns.Add("Categoria", typeof(string));
+                detallesVenta.Columns.Add("Marca", typeof(string));
+                detallesVenta.Columns.Add("Laboratorio", typeof(string));
                 detallesVenta.Columns.Add("Cantidad", typeof(int));
                 detallesVenta.Columns.Add("Precio Venta", typeof(decimal));
                 detallesVenta.Columns.Add("Subtotal", typeof(decimal));
 
                 foreach (var d in venta.detalles)
                 {
-                    detallesVenta.Rows.Add(d.producto.nombre, d.cantidad, d.producto.precio, d.producto.precio * d.cantidad);
+                    detallesVenta.Rows.Add(d.producto.codProducto, d.producto.nombre, d.producto.categoria.descripcion,d.producto.marca.nombre, (d.producto.laboratorio != null? d.producto.laboratorio.nombre :"Ninguno"), d.cantidad, d.producto.precio, d.producto.precio * d.cantidad);
                 }
 
                 DetalleVentaForm detalleVentaForm = new DetalleVentaForm();
@@ -505,7 +516,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             foreach (var d in matcheds)
             {
 //                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, "VER DETALLE DE " + d.detalles.Count + (d.detalles.Count > 1 ? " PRODUCTOS" : " PRODUCTO"), "VER INFORMACION DEL CLIENTE CON DNI: " + d.cliente.dni, d.porcentaje_descuento, d.metodoPago.descripcion);
-                this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, d.cliente.nombre, d.cliente.dni, d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
+              //  this.dataGridView1.Rows.Add(d.id_venta, d.fecha, d.total, d.cliente.nombre, d.cliente.dni, d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
+                this.dataGridView1.Rows.Add(d.id_venta, d.fecha.ToString("yyyy-MM-dd"), d.total, d.cliente.nombre + d.cliente.apellido, (d.cliente.dni != "11111111" ? d.cliente.dni : "-"), d.porcentaje_descuento, (d.descuento != null ? d.descuento.descripcion : "NINGUNA"), d.metodoPago.descripcion, "VER DETALLE", "IMPRIMIR");
 
             }
         }
