@@ -43,7 +43,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             var updE = this.e;
             var rol = this.m.empleadoApp.ObtenerRoles().Where(x => x.descripcion == this.comboBox1.Text).FirstOrDefault();
-            updE.usuario = new UsuarioDominio(this.textBox1.Text, this.textBox2.Text, rol);
+            var pass = SimpleEncryption.Encrypt(this.textBox2.Text);
+            updE.usuario = new UsuarioDominio(this.textBox1.Text, pass, rol);
             this.m.empleadoApp.ActualizarEmpleado(updE);
             this.m.fullDefault();
             MessageBox.Show("Cuenta de usuario actualizada");

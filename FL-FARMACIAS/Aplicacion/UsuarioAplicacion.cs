@@ -1,4 +1,5 @@
 ﻿using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,6 +13,7 @@ namespace FL_FARMACIAS.Aplicacion
     {
         public UsuarioDominio ObtenerUsuarioPorUserPassw(string user, string passw)
         {
+            passw = SimpleEncryption.Encrypt(passw);
             using (var db = new DBConnect())
             {
                 var userExistente = db.Usuario.Include(u => u.rol).FirstOrDefault(x => x.usuario == user && x.clave == passw);

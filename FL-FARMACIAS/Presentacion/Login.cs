@@ -53,6 +53,7 @@ namespace FL_FARMACIAS.Presentacion.Login
             this.Hide();//oculta el formulario login
             try
             {
+                Console.WriteLine(SimpleEncryption.Encrypt("admin1"));
                 UsuarioDominio usuarioEncontrado = this.usuarioApp.ObtenerUsuarioPorUserPassw(usuario, clave);
                 LoginForm.user = usuarioEncontrado;
                 if (usuarioEncontrado.rol.descripcion == "Admin")
