@@ -32,12 +32,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -172,6 +172,7 @@
             this.button5.Text = "LIMPIAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -188,6 +189,7 @@
             this.button6.Text = "BUSCAR";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
             // 
@@ -325,6 +327,7 @@
             this.button3.Text = "LIMPIAR";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -355,16 +358,16 @@
             // 
             // chartIngresos
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartIngresos.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartIngresos.Legends.Add(legend8);
+            chartArea9.Name = "ChartArea1";
+            this.chartIngresos.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartIngresos.Legends.Add(legend9);
             this.chartIngresos.Location = new System.Drawing.Point(3, 3);
             this.chartIngresos.Name = "chartIngresos";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartIngresos.Series.Add(series8);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartIngresos.Series.Add(series9);
             this.chartIngresos.Size = new System.Drawing.Size(1035, 390);
             this.chartIngresos.TabIndex = 0;
             this.chartIngresos.Text = "chartIngresos";
@@ -498,20 +501,20 @@
             // 
             // chartVentas
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartVentas.ChartAreas.Add(chartArea9);
-            legend9.BackColor = System.Drawing.Color.White;
-            legend9.Enabled = false;
-            legend9.Name = "Legend1";
-            this.chartVentas.Legends.Add(legend9);
+            chartArea8.Name = "ChartArea1";
+            this.chartVentas.ChartAreas.Add(chartArea8);
+            legend8.BackColor = System.Drawing.Color.White;
+            legend8.Enabled = false;
+            legend8.Name = "Legend1";
+            this.chartVentas.Legends.Add(legend8);
             this.chartVentas.Location = new System.Drawing.Point(17, 150);
             this.chartVentas.Name = "chartVentas";
             this.chartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartVentas.Series.Add(series9);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartVentas.Series.Add(series8);
             this.chartVentas.Size = new System.Drawing.Size(1053, 388);
             this.chartVentas.TabIndex = 17;
             this.chartVentas.Text = "chart2";
@@ -532,6 +535,7 @@
             this.button1.Text = "LIMPIAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -548,6 +552,7 @@
             this.button2.Text = "BUSCAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 

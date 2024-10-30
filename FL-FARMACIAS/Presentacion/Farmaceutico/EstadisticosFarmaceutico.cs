@@ -17,17 +17,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 {
     public partial class EstadisticosFarmaceutico : Form
     {
+        public VentasAplicacion ventasAplicacion;
         public EstadisticosFarmaceutico()
         {
+            this.ventasAplicacion = new VentasAplicacion();
             InitializeComponent();
-            
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var ventasAplicacion = new VentasAplicacion();
+            
             var datos = ventasAplicacion.ObtenerCantidadProductosVendidosPorEmpleado();
 
             // Verifica si hay datos
@@ -106,6 +105,110 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void button4_Click(object sender, EventArgs e)
         {
             CargarGrafico(dateTimePicker8.Value, dateTimePicker7.Value);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CargarGrafico(new DateTime(1970, 1, 1), DateTime.Now);
+            dateTimePicker8.Value = new DateTime(1970, 1, 1);
+            dateTimePicker7.Value = DateTime.Now;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var datos = ventasAplicacion.ObtenerCantidadProductosVendidosPorEmpleado(dateTimePicker1.Value, dateTimePicker2.Value);
+
+            // Verifica si hay datos
+            if (datos == null || datos.Count == 0)
+            {
+                MessageBox.Show("No se encontraron datos para mostrar.");
+                return; // Salir si no hay datos
+            }
+
+            chart1.Series.Clear();
+            var series = new Series("Productos Vendidos");
+            series.ChartType = SeriesChartType.Bar;
+
+            foreach (var dato in datos)
+            {
+                Console.WriteLine(dato.empleadoNombre.ToString());
+                Console.WriteLine(dato.cantidadProductos.ToString());
+                series.Points.AddXY(dato.empleadoNombre, dato.cantidadProductos);
+            }
+
+            chart1.Series.Add(series);
+            chart1.ChartAreas[0].AxisX.Title = "Empleados";
+            chart1.ChartAreas[0].AxisY.Title = "Cantidad de Productos Vendidos";
+            chart1.Invalidate(); // Refresca el gráfico
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var datos = ventasAplicacion.ObtenerCantidadProductosVendidosPorEmpleado();
+            dateTimePicker1.Value = new DateTime(1970, 1, 1);
+            dateTimePicker2.Value = DateTime.Now;
+            // Verifica si hay datos
+            if (datos == null || datos.Count == 0)
+            {
+                MessageBox.Show("No se encontraron datos para mostrar.");
+                return; // Salir si no hay datos
+            }
+
+            chart1.Series.Clear();
+            var series = new Series("Productos Vendidos");
+            series.ChartType = SeriesChartType.Bar;
+
+            foreach (var dato in datos)
+            {
+                Console.WriteLine(dato.empleadoNombre.ToString());
+                Console.WriteLine(dato.cantidadProductos.ToString());
+                series.Points.AddXY(dato.empleadoNombre, dato.cantidadProductos);
+            }
+
+            chart1.Series.Add(series);
+            chart1.ChartAreas[0].AxisX.Title = "Empleados";
+            chart1.ChartAreas[0].AxisY.Title = "Cantidad de Productos Vendidos";
+            chart1.Invalidate(); // Refresca el gráfico
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10, dateTimePicker4.Value, dateTimePicker3.Value);
+
+            chartVentas.Series.Clear();
+            var serie = chartVentas.Series.Add("Ventas por Empleado");
+
+            foreach (var empleado in topEmpleados)
+            {
+                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+            }
+
+            // Configuración adicional del gráfico
+            chartVentas.ChartAreas[0].AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje X
+            chartVentas.ChartAreas[0].AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje Y
+            serie.IsValueShownAsLabel = true; // Mostrar etiquetas de valores en el gráfico
+            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie; // Establecer tipo de gráfico a torta
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10);
+            dateTimePicker3.Value = DateTime.Now;
+            dateTimePicker4.Value = new DateTime(1970, 1, 1);
+
+            chartVentas.Series.Clear();
+            var serie = chartVentas.Series.Add("Ventas por Empleado");
+
+            foreach (var empleado in topEmpleados)
+            {
+                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+            }
+
+            // Configuración adicional del gráfico
+            chartVentas.ChartAreas[0].AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje X
+            chartVentas.ChartAreas[0].AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje Y
+            serie.IsValueShownAsLabel = true; // Mostrar etiquetas de valores en el gráfico
+            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie; // Establecer tipo de gráfico a torta
         }
     }
 }

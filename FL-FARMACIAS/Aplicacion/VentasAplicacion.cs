@@ -123,13 +123,27 @@ namespace FL_FARMACIAS.Aplicacion
 
 
         //agregado para los graficos
-        public List<(string empleadoNombre, int cantidadProductos)> ObtenerCantidadProductosVendidosPorEmpleado()
+        public List<(string empleadoNombre, int cantidadProductos)> ObtenerCantidadProductosVendidosPorEmpleado(DateTime? desde = null, DateTime? hasta = null)
         {
             using (var db = new DBConnect())
             {
-                var result = db.Ventas
-                    .Include(v => v.detalles)
-                    .Include(v => v.empleado)
+
+                var query = db.Ventas
+                 .Include(v => v.detalles)
+                 .Include(v => v.empleado)
+                 .AsQueryable();
+
+                if (desde.HasValue)
+                {
+                    query = query.Where(v => v.fecha >= desde.Value);
+                }
+
+                if (hasta.HasValue)
+                {
+                    query = query.Where(v => v.fecha <= hasta.Value);
+                }
+
+                var result = query
                     .GroupBy(v => v.empleado.nombre + " " + v.empleado.apellido)
                     .Select(g => new
                     {
@@ -137,6 +151,7 @@ namespace FL_FARMACIAS.Aplicacion
                         cantidadProductos = g.Sum(v => v.detalles.Sum(d => d.cantidad))
                     })
                     .ToList();
+
 
                 // Depuración
                 if (result.Count == 0)
@@ -175,13 +190,26 @@ namespace FL_FARMACIAS.Aplicacion
             }
         }
         // grafico de torta
-        public List<(string EmpleadoNombre, decimal TotalVentas)> ObtenerTopEmpleadosPorVentas(int topN)
+        public List<(string EmpleadoNombre, decimal TotalVentas)> ObtenerTopEmpleadosPorVentas(int topN, DateTime? desde = null, DateTime? hasta = null)
         {
             using (var db = new DBConnect())
             {
-                return db.Ventas
+
+                 var query = db.Ventas
                     .Include(v => v.empleado)
-                    .GroupBy(v => v.empleado.nombre)
+                     .AsQueryable();
+
+                    if (desde.HasValue)
+                    {
+                        query = query.Where(v => v.fecha >= desde.Value);
+                    }
+
+                    if (hasta.HasValue)
+                    {
+                        query = query.Where(v => v.fecha <= hasta.Value);
+                    }
+
+                return query.GroupBy(v => v.empleado.nombre)
                     .Select(g => new
                     {
                         EmpleadoNombre = g.Key,
