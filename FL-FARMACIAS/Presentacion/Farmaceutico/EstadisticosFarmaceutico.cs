@@ -51,6 +51,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             chart1.ChartAreas[0].AxisX.Title = "Empleados";
             chart1.ChartAreas[0].AxisY.Title = "Cantidad de Productos Vendidos";
             chart1.Invalidate(); // Refresca el gráfico
+
              DateTime desde = new DateTime(1970, 1, 1);
          
             CargarGrafico( desde, DateTime.Now);
@@ -173,7 +174,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10, dateTimePicker4.Value, dateTimePicker3.Value);
+            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10, dateTimePicker2.Value, dateTimePicker3.Value);
 
             chartVentas.Series.Clear();
             var serie = chartVentas.Series.Add("Ventas por Empleado");
@@ -209,6 +210,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             chartVentas.ChartAreas[0].AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False; // Ocultar el eje Y
             serie.IsValueShownAsLabel = true; // Mostrar etiquetas de valores en el gráfico
             serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie; // Establecer tipo de gráfico a torta
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,7 @@
             this.Datos_estadisticos_farma = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,9 +68,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
@@ -77,7 +75,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.prodTorta = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button12 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -184,6 +181,7 @@
             this.button5.Text = "LIMPIAR";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -200,6 +198,7 @@
             this.button6.Text = "BUSCAR";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
             // 
@@ -270,6 +269,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1063, 56);
             this.panel2.TabIndex = 54;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(368, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(234, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "PRODUCTOS POR INGRESOS GENERADOS ";
             // 
             // label3
             // 
@@ -347,6 +355,7 @@
             this.button9.Text = "LIMPIAR";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -363,6 +372,7 @@
             this.button10.Text = "BUSCAR";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // panel4
             // 
@@ -425,9 +435,6 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox5.Controls.Add(this.button8);
-            this.groupBox5.Controls.Add(this.button7);
-            this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.dateTimePicker9);
@@ -443,52 +450,11 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Productos mas vendidos";
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(944, 16);
-            this.button8.Margin = new System.Windows.Forms.Padding(64);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 41);
-            this.button8.TabIndex = 35;
-            this.button8.Text = "LIMPIAR";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(944, 80);
-            this.button7.Margin = new System.Windows.Forms.Padding(64);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 39);
-            this.button7.TabIndex = 34;
-            this.button7.Text = "BUSCAR";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(675, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 21);
-            this.textBox1.TabIndex = 33;
-            this.textBox1.Text = "Ingrese el nombre del producto";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(360, 31);
+            this.label9.Location = new System.Drawing.Point(402, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 29;
@@ -498,7 +464,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(92, 31);
+            this.label10.Location = new System.Drawing.Point(6, 56);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 28;
@@ -506,14 +472,14 @@
             // 
             // dateTimePicker9
             // 
-            this.dateTimePicker9.Location = new System.Drawing.Point(273, 62);
+            this.dateTimePicker9.Location = new System.Drawing.Point(500, 50);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.Size = new System.Drawing.Size(236, 20);
             this.dateTimePicker9.TabIndex = 27;
             // 
             // dateTimePicker10
             // 
-            this.dateTimePicker10.Location = new System.Drawing.Point(21, 62);
+            this.dateTimePicker10.Location = new System.Drawing.Point(102, 50);
             this.dateTimePicker10.Name = "dateTimePicker10";
             this.dateTimePicker10.Size = new System.Drawing.Size(231, 20);
             this.dateTimePicker10.TabIndex = 26;
@@ -525,7 +491,7 @@
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(530, 80);
+            this.button11.Location = new System.Drawing.Point(770, 43);
             this.button11.Margin = new System.Windows.Forms.Padding(64);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(94, 39);
@@ -533,6 +499,7 @@
             this.button11.Text = "BUSCAR";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // prodTorta
             // 
@@ -562,7 +529,7 @@
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(533, 18);
+            this.button12.Location = new System.Drawing.Point(962, 43);
             this.button12.Margin = new System.Windows.Forms.Padding(64);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(91, 39);
@@ -570,15 +537,7 @@
             this.button12.Text = "LIMPIAR";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(368, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(234, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "PRODUCTOS POR INGRESOS GENERADOS ";
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // EstadisticasSubMenu
             // 
@@ -655,9 +614,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
     }
 }

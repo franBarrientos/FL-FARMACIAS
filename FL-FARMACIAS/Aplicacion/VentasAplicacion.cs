@@ -222,37 +222,159 @@ namespace FL_FARMACIAS.Aplicacion
                     .ToList();
             }
         }
+
+        //public Dictionary<string, int> ObtenerCantidadVendidaPorProducto(DateTime? desde = null, DateTime? hasta = null)
+        //{
+            //using (var db = new DBConnect())
+            //{
+                //return db.VentasDetalles
+                //    .Include(d => d.producto)
+              //      .GroupBy(d => d.producto.nombre)
+            //        .ToDictionary(g => g.Key, g => g.Sum(d => d.cantidad));
+          //  }
+        //}
         //graficos del ADMIN
-        public Dictionary<string, int> ObtenerCantidadVendidaPorProducto()
+        public Dictionary<string, int> ObtenerCantidadVendidaPorProducto(DateTime? desde = null, DateTime? hasta = null)
         {
             using (var db = new DBConnect())
             {
-                return db.VentasDetalles
+                // Start building the query with VentasDetalles
+                var query = db.VentasDetalles
                     .Include(d => d.producto)
+                    .AsQueryable();
+
+                // Apply date filters if provided
+                if (desde.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha >= desde.Value);
+                }
+
+                if (hasta.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha <= hasta.Value);
+                }
+
+                // Group by product name and calculate the total quantity sold
+                var result = query
                     .GroupBy(d => d.producto.nombre)
                     .ToDictionary(g => g.Key, g => g.Sum(d => d.cantidad));
+
+                // Debugging output
+                if (!result.Any())
+                {
+                    Console.WriteLine("No se encontraron ventas.");
+                }
+                else
+                {
+                    foreach (var item in result)
+                    {
+                        Console.WriteLine($"Producto: {item.Key}, Cantidad: {item.Value}");
+                    }
+                }
+
+                return result;
             }
         }
+
 
         // segundo grafico admin
-        public Dictionary<string, decimal> ObtenerIngresosPorProducto()
+        //public Dictionary<string, decimal> ObtenerIngresosPorProducto(DateTime? desde = null, DateTime? hasta = null)
+        //{
+        //  using (var db = new DBConnect())
+        //{
+        //  return db.VentasDetalles
+        //    .Include(d => d.producto)
+        //  .GroupBy(d => d.producto.nombre)
+        //.ToDictionary(g => g.Key, g => g.Sum(d => d.precio_unitario * d.cantidad));
+        //}
+        //}
+
+        public Dictionary<string, decimal> ObtenerIngresosPorProducto(DateTime? desde = null, DateTime? hasta = null)
         {
             using (var db = new DBConnect())
             {
-                return db.VentasDetalles
+                // Start building the query with VentasDetalles
+                var query = db.VentasDetalles
                     .Include(d => d.producto)
+                    .AsQueryable();
+
+                // Apply date filters if provided
+                if (desde.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha >= desde.Value);
+                }
+
+                if (hasta.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha <= hasta.Value);
+                }
+
+                // Group by product name and calculate total income
+                var result = query
                     .GroupBy(d => d.producto.nombre)
                     .ToDictionary(g => g.Key, g => g.Sum(d => d.precio_unitario * d.cantidad));
+
+                // Debugging output
+                if (!result.Any())
+                {
+                    Console.WriteLine("No se encontraron ventas.");
+                }
+                else
+                {
+                    foreach (var item in result)
+                    {
+                        Console.WriteLine($"Producto: {item.Key}, Ingresos: {item.Value:C}"); // Format as currency
+                    }
+                }
+
+                return result;
             }
         }
 
+
         //grafico torta admin
-        public List<(string NombreProducto, int Cantidad)> ObtenerTopProductosVendidos(int topN)
+        //  public List<(string NombreProducto, int Cantidad)> ObtenerTopProductosVendidos(int topN, DateTime? desde = null, DateTime? hasta = null)
+        //{
+        //using (var db = new DBConnect())
+        // {
+        // return db.VentasDetalles
+        // .Include(d => d.producto)
+        // .GroupBy(d => d.producto.nombre)
+        // .Select(g => new
+        //  {
+        //       NombreProducto = g.Key,
+        //      Cantidad = g.Sum(d => d.cantidad)
+        //    })
+        // .OrderByDescending(x => x.Cantidad)
+        //   .Take(topN)
+        //     .AsEnumerable() // Para materializar la consulta antes de convertir a lista
+        //       .Select(x => (x.NombreProducto, x.Cantidad))
+        //         .ToList();
+        //   }
+        // }
+
+        public List<(string NombreProducto, int Cantidad)> ObtenerTopProductosVendidos(int topN, DateTime? desde = null, DateTime? hasta = null)
         {
             using (var db = new DBConnect())
             {
-                return db.VentasDetalles
+                // Start building the query with VentasDetalles
+                var query = db.VentasDetalles
                     .Include(d => d.producto)
+                    .AsQueryable();
+
+                // Apply date filters if provided
+                if (desde.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha >= desde.Value);
+                }
+
+                if (hasta.HasValue)
+                {
+                    query = query.Where(d => d.venta.fecha <= hasta.Value);
+                }
+
+                // Group by product name, calculate total quantity, and order by quantity
+                var result = query
                     .GroupBy(d => d.producto.nombre)
                     .Select(g => new
                     {
@@ -261,12 +383,26 @@ namespace FL_FARMACIAS.Aplicacion
                     })
                     .OrderByDescending(x => x.Cantidad)
                     .Take(topN)
-                    .AsEnumerable() // Para materializar la consulta antes de convertir a lista
+                    .AsEnumerable() // Materialize the query
                     .Select(x => (x.NombreProducto, x.Cantidad))
                     .ToList();
+
+                // Debugging output
+                if (!result.Any())
+                {
+                    Console.WriteLine("No se encontraron productos vendidos.");
+                }
+                else
+                {
+                    foreach (var item in result)
+                    {
+                        Console.WriteLine($"Producto: {item.NombreProducto}, Cantidad: {item.Cantidad}");
+                    }
+                }
+
+                return result;
             }
         }
-
 
 
     }
