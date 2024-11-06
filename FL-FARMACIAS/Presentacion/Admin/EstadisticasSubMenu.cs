@@ -114,6 +114,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             // Configurar el gráfico
             chart1.Series.Clear();
+            chart1.Titles.Clear(); // Limpia los títulos anteriores para evitar duplicados
+
             var serie = new Series("Ventas")
             {
                 ChartType = SeriesChartType.Column
@@ -130,6 +132,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
             chart1.ChartAreas[0].AxisX.Title = "Productos";
             chart1.ChartAreas[0].AxisY.Title = "Cantidad Vendida";
             chart1.Titles.Add("Cantidad Vendida por Producto");
+            chart1.Invalidate(); // Refresca el gráfico
+
+
         }
 
         //limpiar
@@ -141,6 +146,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             // Configurar el gráfico
             chart1.Series.Clear();
+            chart1.Titles.Clear(); // Limpia los títulos anteriores para evitar duplicados
+
             var serie = new Series("Ventas")
             {
                 ChartType = SeriesChartType.Column
@@ -157,6 +164,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
             chart1.ChartAreas[0].AxisX.Title = "Productos";
             chart1.ChartAreas[0].AxisY.Title = "Cantidad Vendida";
             chart1.Titles.Add("Cantidad Vendida por Producto");
+            chart1.Invalidate(); // Refresca el gráfico
+
         }
 
         //buscar
@@ -168,6 +177,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             dateTimePicker2.Value = new DateTime(1970, 1, 1);
             // Configurar el gráfico
             prodIngr.Series.Clear();
+            prodIngr.Titles.Clear();
             var serie = new Series("Ingresos")
             {
                 ChartType = SeriesChartType.Column
@@ -193,6 +203,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             // Configurar el gráfico
             prodIngr.Series.Clear();
+            prodIngr.Titles.Clear();
             var serie = new Series("Ingresos")
             {
                 ChartType = SeriesChartType.Column
@@ -218,6 +229,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             // Configurar el gráfico
             prodTorta.Series.Clear();
+            prodTorta.Titles.Clear();
             var serie = new Series("Ventas")
             {
                 ChartType = SeriesChartType.Pie // Tipo de gráfico de torta
@@ -242,6 +254,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             dateTimePicker2.Value = new DateTime(1970, 1, 1);
             // Configurar el gráfico
             prodTorta.Series.Clear();
+            prodTorta.Titles.Clear();
             var serie = new Series("Ventas")
             {
                 ChartType = SeriesChartType.Pie // Tipo de gráfico de torta

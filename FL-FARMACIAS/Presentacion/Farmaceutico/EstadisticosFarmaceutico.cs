@@ -65,6 +65,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             var ingresos = ventasAplicacion.ObtenerIngresosPorEmpleado(desde, hasta);
 
             chartIngresos.Series.Clear();
+            chartIngresos.Titles.Clear();
             var serie = chartIngresos.Series.Add("Ingresos por Empleado");
 
             foreach (var ingreso in ingresos)
@@ -177,6 +178,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10, dateTimePicker2.Value, dateTimePicker3.Value);
 
             chartVentas.Series.Clear();
+            chartVentas.Titles.Clear();
+
             var serie = chartVentas.Series.Add("Ventas por Empleado");
 
             foreach (var empleado in topEmpleados)
@@ -198,6 +201,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             dateTimePicker4.Value = new DateTime(1970, 1, 1);
 
             chartVentas.Series.Clear();
+            chartVentas.Titles.Clear();
             var serie = chartVentas.Series.Add("Ventas por Empleado");
 
             foreach (var empleado in topEmpleados)
