@@ -66,42 +66,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         }
 
-
-        //ventas
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-            var venta = this.ventasApp.ObtenerVentaPorId(id);
-            // Verificar que el clic fue en la columna de botones
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "DETALLE")
-            {
-                // Crear un DataTable y definir las columnas
-                DataTable detallesVenta = new DataTable();
-                detallesVenta.Columns.Add("Cod Producto", typeof(string));
-                detallesVenta.Columns.Add("Nombre Producto", typeof(string));
-                detallesVenta.Columns.Add("Categoria", typeof(string));
-                detallesVenta.Columns.Add("Marca", typeof(string));
-                detallesVenta.Columns.Add("Laboratorio", typeof(string));
-                detallesVenta.Columns.Add("Cantidad", typeof(int));
-                detallesVenta.Columns.Add("Precio Venta", typeof(decimal));
-                detallesVenta.Columns.Add("Subtotal", typeof(decimal));
-
-                foreach (var d in venta.detalles)
-                {
-                    detallesVenta.Rows.Add(d.producto.codProducto, d.producto.nombre, d.producto.categoria.descripcion,d.producto.marca.nombre, (d.producto.laboratorio != null? d.producto.laboratorio.nombre :"Ninguno"), d.cantidad, d.producto.precio, d.producto.precio * d.cantidad);
-                }
-
-                DetalleVentaForm detalleVentaForm = new DetalleVentaForm();
-                detalleVentaForm.CargarDetalles(detallesVenta); // Llenar el DataGridView con el DataTable
-                detalleVentaForm.ShowDialog(); // Mostrar el fo
-            }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name == "CLIENTE") { 
-                MessageBox.Show("DNI: " + venta.cliente.dni + ", NOMBRES: " + venta.cliente.nombre + ", APELLIDOS: " + venta.cliente.apellido);
-                
-            }
-        }
-
-
         public void fullMetodosPago()
         {
             List<MetodoPagoDominio> matcheds = this.ventasApp.ObtenerMetodosPagos();
@@ -609,6 +573,44 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             MessageBox.Show("VENTA REGISTRADA");
             this.fullVentas();
             
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+            var venta = this.ventasApp.ObtenerVentaPorId(id);
+            // Verificar que el clic fue en la columna de botones
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "DETALLE")
+            {
+                // Crear un DataTable y definir las columnas
+                DataTable detallesVenta = new DataTable();
+                detallesVenta.Columns.Add("Cod Producto", typeof(string));
+                detallesVenta.Columns.Add("Nombre Producto", typeof(string));
+                detallesVenta.Columns.Add("Categoria", typeof(string));
+                detallesVenta.Columns.Add("Marca", typeof(string));
+                detallesVenta.Columns.Add("Laboratorio", typeof(string));
+                detallesVenta.Columns.Add("Cantidad", typeof(int));
+                detallesVenta.Columns.Add("Precio Venta", typeof(decimal));
+                detallesVenta.Columns.Add("Subtotal", typeof(decimal));
+
+                foreach (var d in venta.detalles)
+                {
+                    detallesVenta.Rows.Add(d.producto.codProducto, d.producto.nombre, d.producto.categoria.descripcion, d.producto.marca.nombre, (d.producto.laboratorio != null ? d.producto.laboratorio.nombre : "Ninguno"), d.cantidad, d.producto.precio, d.producto.precio * d.cantidad);
+                }
+
+                DetalleVentaForm detalleVentaForm = new DetalleVentaForm();
+                detalleVentaForm.CargarDetalles(detallesVenta); // Llenar el DataGridView con el DataTable
+                detalleVentaForm.ShowDialog(); // Mostrar el fo
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "CLIENTE")
+            {
+                MessageBox.Show("DNI: " + venta.cliente.dni + ", NOMBRES: " + venta.cliente.nombre + ", APELLIDOS: " + venta.cliente.apellido);
+
+            }else if (dataGridView1.Columns[e.ColumnIndex].Name == "FACTURA")
+            {
+                this.ventasApp.GenerarFacturaPDF(venta);
+            }
         }
     }
 }

@@ -101,7 +101,6 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.placeholderTextBox3 = new PlaceholderTextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHAINGRESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +111,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DETALLE = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FACTURA = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.placeholderTextBox3 = new PlaceholderTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -834,18 +834,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(1227, 357);
             this.dataGridView1.TabIndex = 39;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // placeholderTextBox3
-            // 
-            this.placeholderTextBox3.ForeColor = System.Drawing.Color.Gray;
-            this.placeholderTextBox3.IsPassword = false;
-            this.placeholderTextBox3.Location = new System.Drawing.Point(10, 159);
-            this.placeholderTextBox3.Name = "placeholderTextBox3";
-            this.placeholderTextBox3.Placeholder = "INGRESE COD FACTURA";
-            this.placeholderTextBox3.Size = new System.Drawing.Size(152, 20);
-            this.placeholderTextBox3.TabIndex = 47;
-            this.placeholderTextBox3.Text = "INGRESE COD FACTURA";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // ID
             // 
@@ -912,6 +901,17 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             this.FACTURA.Name = "FACTURA";
             this.FACTURA.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FACTURA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // placeholderTextBox3
+            // 
+            this.placeholderTextBox3.ForeColor = System.Drawing.Color.Gray;
+            this.placeholderTextBox3.IsPassword = false;
+            this.placeholderTextBox3.Location = new System.Drawing.Point(10, 159);
+            this.placeholderTextBox3.Name = "placeholderTextBox3";
+            this.placeholderTextBox3.Placeholder = "INGRESE COD FACTURA";
+            this.placeholderTextBox3.Size = new System.Drawing.Size(152, 20);
+            this.placeholderTextBox3.TabIndex = 47;
+            this.placeholderTextBox3.Text = "INGRESE COD FACTURA";
             // 
             // VentasSubMenu
             // 
