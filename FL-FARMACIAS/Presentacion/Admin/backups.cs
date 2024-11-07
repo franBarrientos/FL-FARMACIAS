@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -66,38 +67,61 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Ruta del archivo seleccionado
                     string backupFilePath = openFileDialog.FileName;
+                    string databaseName = "FarmaciaDB"; // Especifica el nombre de tu base de datos
 
-                    using (var context = new DBConnect())
+                    try
                     {
-                        try
+                        using (var connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True"))
                         {
-                            // Poner la base de datos en modo de recuperación (offline)
-                            string setOfflineCommand = $@"
-                        ALTER DATABASE [{context.Database.Connection.Database}] 
-                        SET SINGLE_USER WITH ROLLBACK IMMEDIATE";
-                            context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, setOfflineCommand);
+                            connection.Open();
 
-                            // Comando SQL para restaurar la base de datos
-                            string restoreCommand = $@"
-                        RESTORE DATABASE [{context.Database.Connection.Database}]
-                        FROM DISK = '{backupFilePath}'
-                        WITH REPLACE, RECOVERY, STATS = 10";
-                            context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, restoreCommand);
+                            var getSessionsCommand = new SqlCommand($@"
+                            SELECT request_session_id 
+                            FROM sys.dm_tran_locks 
+                            WHERE resource_database_id = DB_ID('{databaseName}')", connection);
 
-                            // Poner la base de datos de nuevo en modo multiusuario
-                            string setOnlineCommand = $@"
-                        ALTER DATABASE [{context.Database.Connection.Database}] 
-                        SET MULTI_USER";
-                            context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, setOnlineCommand);
+                            var sessionIds = new List<int>();
+                            using (var reader = getSessionsCommand.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    sessionIds.Add(reader.GetInt32(0));
+                                }
+                            } // El DataReader se cierra aquí
 
-                            MessageBox.Show($"Restauración de la base de datos completada con éxito desde: {backupFilePath}");
+                            // Ejecutar comando KILL para cada sesión
+                            foreach (int sessionId in sessionIds)
+                            {
+                                var killCommand = new SqlCommand($"KILL {sessionId}", connection);
+                                killCommand.ExecuteNonQuery();
+                            }
+
+                            // 1. Poner la base de datos en modo de usuario único y cerrar conexiones activas
+                            var setSingleUserCommand = new SqlCommand($@"
+                    ALTER DATABASE [{databaseName}]
+                    SET SINGLE_USER WITH ROLLBACK IMMEDIATE", connection);
+                            setSingleUserCommand.ExecuteNonQuery();
+
+                            // 2. Restaurar la base de datos desde el archivo .bak
+                            var restoreCommand = new SqlCommand($@"
+                    RESTORE DATABASE [{databaseName}]
+                    FROM DISK = '{backupFilePath}'
+                    WITH REPLACE, RECOVERY, STATS = 10", connection);
+                            restoreCommand.ExecuteNonQuery();
+
+                            // 3. Poner la base de datos de nuevo en modo multiusuario
+                            var setMultiUserCommand = new SqlCommand($@"
+                    ALTER DATABASE [{databaseName}]
+                    SET MULTI_USER", connection);
+                            setMultiUserCommand.ExecuteNonQuery();
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error al restaurar la base de datos: {ex.Message}");
-                        }
+
+                        MessageBox.Show($"Restauración de la base de datos completada con éxito desde: {backupFilePath}");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al restaurar la base de datos: {ex.Message}");
                     }
                 }
                 else
@@ -106,5 +130,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
             }
         }
+
     }
 }
