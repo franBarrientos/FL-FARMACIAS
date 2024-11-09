@@ -56,11 +56,13 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
          
             CargarGrafico( desde, DateTime.Now);
             CargarGraficoTorta();
+            CargarDatosEnGrid();
         }
 
         //grafico 2
         private void CargarGrafico(DateTime desde, DateTime hasta)
         {
+            
             var ventasAplicacion = new VentasAplicacion();
             var ingresos = ventasAplicacion.ObtenerIngresosPorEmpleado(desde, hasta);
 
@@ -84,6 +86,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             var ventasAplicacion = new VentasAplicacion();
             var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10);
 
+
             chartVentas.Series.Clear();
             var serie = chartVentas.Series.Add("Ventas por Empleado");
 
@@ -106,6 +109,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var ingresos = ventasAplicacion.ObtenerIngresosPorEmpleado(dateTimePicker8.Value, dateTimePicker7.Value);
+            if (ingresos == null || ingresos.Count == 0)
+            {
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir si no hay datos
+            }
             CargarGrafico(dateTimePicker8.Value, dateTimePicker7.Value);
         }
 
@@ -123,7 +132,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // Verifica si hay datos
             if (datos == null || datos.Count == 0)
             {
-                MessageBox.Show("No se encontraron datos para mostrar.");
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Salir si no hay datos
             }
 
@@ -152,7 +161,7 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             // Verifica si hay datos
             if (datos == null || datos.Count == 0)
             {
-                MessageBox.Show("No se encontraron datos para mostrar.");
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Salir si no hay datos
             }
 
@@ -176,6 +185,12 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         private void button2_Click(object sender, EventArgs e)
         {
             var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10, dateTimePicker2.Value, dateTimePicker3.Value);
+
+            if (topEmpleados == null || topEmpleados.Count == 0)
+            {
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir si no hay datos
+            }
 
             chartVentas.Series.Clear();
             chartVentas.Titles.Clear();
@@ -225,5 +240,48 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
 
         }
+
+        private void CargarDatosEnGrid()
+        {
+            var ventasAplicacion = new VentasAplicacion();
+            var topEmpleados = ventasAplicacion.ObtenerTopEmpleadosPorVentas(10);
+
+           
+             dataGridView1.Rows.Clear();
+
+           
+            foreach (var empleado in topEmpleados)
+            {
+                dataGridView1.Rows.Add(empleado.EmpleadoNombre, empleado.TotalVentas);
+            }
+        }
+       
+
+        private void chartVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfigurarDataGridView()
+        {
+            
+            dataGridView1.Columns.Add("nombre_empleado", "Nombre del Empleado");
+            dataGridView1.Columns.Add("ventas_acumulado", "Ventas Acumuladas");
+
+            dataGridView1.Columns["ventas_acumulado"].DefaultCellStyle.Format = "C2"; 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                var nombreEmpleado = dataGridView1.Rows[e.RowIndex].Cells["nombre_empleado"].Value.ToString();
+                var ventasAcumulado = dataGridView1.Rows[e.RowIndex].Cells["ventas_acumulado"].Value.ToString();
+
+                MessageBox.Show($"Empleado: {nombreEmpleado}, Ventas Acumuladas: {ventasAcumulado}");
+            }
+        }
+
     }
 }

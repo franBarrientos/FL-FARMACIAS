@@ -25,7 +25,10 @@ namespace FL_FARMACIAS.Presentacion.Admin
             CargarGrafico(desde, DateTime.Now);
             CargarGrafico2(desde, DateTime.Now);
             CargarGraficoTorta(desde, DateTime.Now);
-           
+         
+            DateTime hasta = DateTime.Now;  // Hasta la fecha actual
+            CargarDatosEnGrid(desde, hasta);
+
         }
 
         private void CargarGrafico(DateTime desde, DateTime hasta)
@@ -112,6 +115,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // Obtener datos de ventas por producto
             var datosVentas = VentasAplicacion.ObtenerCantidadVendidaPorProducto(dateTimePicker2.Value, dateTimePicker1.Value);
 
+            if (datosVentas == null || datosVentas.Count == 0)
+            {
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir si no hay datos
+            }
+
             // Configurar el gráfico
             chart1.Series.Clear();
             chart1.Titles.Clear(); // Limpia los títulos anteriores para evitar duplicados
@@ -173,6 +182,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             // Obtener datos de ingresos por producto
             var datosIngresos = VentasAplicacion.ObtenerIngresosPorProducto(dateTimePicker8.Value, dateTimePicker7.Value);
+            if (datosIngresos == null || datosIngresos.Count == 0)
+            {
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir si no hay datos
+            }
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = new DateTime(1970, 1, 1);
             // Configurar el gráfico
@@ -227,6 +241,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             // Obtener los 20 productos más vendidos
             var topProductos = VentasAplicacion.ObtenerTopProductosVendidos(20, dateTimePicker10.Value, dateTimePicker9.Value);
 
+            if (topProductos == null || topProductos.Count == 0)
+            {
+                MessageBox.Show("No se encontro ningin dato, Por favor ingrese otro rango de fechas.", "Fechas invalidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir si no hay datos
+            }
+
             // Configurar el gráfico
             prodTorta.Series.Clear();
             prodTorta.Titles.Clear();
@@ -269,6 +289,52 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
             // Opcional: Personalizar el gráfico
             prodTorta.Titles.Add("Top 20 Productos Más Vendidos");
+        }
+
+        private void CargarDatosEnGrid(DateTime desde, DateTime hasta)
+        {
+            // Obtener los productos más vendidos
+            var topProductos = VentasAplicacion.ObtenerTopProductosVendidos(20, desde, hasta);
+
+            // Limpiar las filas existentes del DataGridView antes de agregar nuevos datos
+            dataGridView1.Rows.Clear();
+
+            // Agregar los datos a las filas del DataGridView
+            foreach (var producto in topProductos)
+            {
+                dataGridView1.Rows.Add(producto.NombreProducto, producto.Cantidad);
+            }
+        }
+
+        private void ConfigurarDataGridView()
+        {
+            // Asegúrate de que el DataGridView tiene las columnas necesarias
+            if (dataGridView1.Columns.Count == 0)
+            {
+                dataGridView1.Columns.Add("producto_nombre", "Nombre del Producto");
+                dataGridView1.Columns.Add("cantidad_vendida", "Cantidad Vendida");
+            }
+            // Establecer formato si es necesario
+            dataGridView1.Columns["cantidad_vendida"].DefaultCellStyle.Format = "N0"; // Para mostrar la cantidad sin decimales
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener el nombre del producto y la cantidad vendida de la fila seleccionada
+                var nombreProducto = dataGridView1.Rows[e.RowIndex].Cells["producto_nombre"].Value.ToString();
+                var cantidadVendida = dataGridView1.Rows[e.RowIndex].Cells["cantidad_vendida"].Value.ToString();
+
+                // Realizar una acción con los valores obtenidos, por ejemplo, mostrar un mensaje
+                MessageBox.Show($"Producto: {nombreProducto}\nCantidad Vendida: {cantidadVendida}");
+            }
+        }
+
+        private void prodTorta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

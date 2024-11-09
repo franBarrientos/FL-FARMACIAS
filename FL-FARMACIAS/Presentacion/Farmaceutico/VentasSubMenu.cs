@@ -408,7 +408,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                     // Verificar si la suma no supera el stock disponible
                     if (cantidadExistente + nuevoStockSeleccionado > stockDisponible)
                     {
-                        MessageBox.Show("La cantidad total supera el stock disponible.");
+                        MessageBox.Show("Advertencia: La cantidad solicitada excede el stock disponible. Por favor, ajuste la cantidad.", "Advertencia de Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         return;
                     }
 
@@ -498,19 +499,19 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
         {
             if(dataGridView4.Rows.Count == 0)
             {
-                MessageBox.Show("Debe agregar al menos un producto");
+                MessageBox.Show("Por favor, ingrese al menos un producto.", "No posee Productos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if(this.clienteSeleccionado == null)
             {
-                MessageBox.Show("Debe seleccionar un cliente o consumidor final");
+                MessageBox.Show("Por favor, debe seleccionar un consumidor final o cliente.", " Falta clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
 
             if(this.comboBox2.Text == "")
             {
-                MessageBox.Show("Debe seleccionar un medio de pago");
+                MessageBox.Show("Por favor, Ingrese un Metodo de Pago.", "Falta un Metodo de Pago", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -570,7 +571,8 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
 
             this.ventasApp.RegistrarVenta(this.clienteSeleccionado.id, LoginForm.user.empleado.id, metodoPagoId, descuentoId, porcentaje_descuento, productosSeleccionados);
-            MessageBox.Show("VENTA REGISTRADA");
+            MessageBox.Show("La venta se ha registrado correctamente.", "Confirmación de Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             this.fullVentas();
             
         }

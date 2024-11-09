@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstadisticosFarmaceutico));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,6 +74,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventas_acumulado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +92,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -200,17 +204,17 @@
             // 
             // chart1
             // 
-            chartArea10.Name = "ChartArea0";
-            this.chart1.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chart1.Legends.Add(legend10);
+            chartArea13.Name = "ChartArea0";
+            this.chart1.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chart1.Legends.Add(legend13);
             this.chart1.Location = new System.Drawing.Point(4, 6);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series10.ChartArea = "ChartArea0";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chart1.Series.Add(series10);
+            series13.ChartArea = "ChartArea0";
+            series13.Legend = "Legend1";
+            series13.Name = "Series1";
+            this.chart1.Series.Add(series13);
             this.chart1.Size = new System.Drawing.Size(1070, 409);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -230,7 +234,7 @@
             // 
             this.Datos_estadisticos_farma.AutoSize = true;
             this.Datos_estadisticos_farma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Datos_estadisticos_farma.Location = new System.Drawing.Point(132, 7);
+            this.Datos_estadisticos_farma.Location = new System.Drawing.Point(116, 17);
             this.Datos_estadisticos_farma.Name = "Datos_estadisticos_farma";
             this.Datos_estadisticos_farma.Size = new System.Drawing.Size(809, 25);
             this.Datos_estadisticos_farma.TabIndex = 0;
@@ -356,16 +360,16 @@
             // 
             // chartIngresos
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chartIngresos.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartIngresos.Legends.Add(legend12);
+            chartArea15.Name = "ChartArea1";
+            this.chartIngresos.ChartAreas.Add(chartArea15);
+            legend15.Name = "Legend1";
+            this.chartIngresos.Legends.Add(legend15);
             this.chartIngresos.Location = new System.Drawing.Point(3, 3);
             this.chartIngresos.Name = "chartIngresos";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chartIngresos.Series.Add(series12);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Series1";
+            this.chartIngresos.Series.Add(series15);
             this.chartIngresos.Size = new System.Drawing.Size(1035, 390);
             this.chartIngresos.TabIndex = 0;
             this.chartIngresos.Text = "chartIngresos";
@@ -406,6 +410,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
@@ -455,24 +460,25 @@
             // 
             // chartVentas
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chartVentas.ChartAreas.Add(chartArea11);
-            legend11.BackColor = System.Drawing.Color.White;
-            legend11.Enabled = false;
-            legend11.Name = "Legend1";
-            this.chartVentas.Legends.Add(legend11);
+            chartArea14.Name = "ChartArea1";
+            this.chartVentas.ChartAreas.Add(chartArea14);
+            legend14.BackColor = System.Drawing.Color.White;
+            legend14.Enabled = false;
+            legend14.Name = "Legend1";
+            this.chartVentas.Legends.Add(legend14);
             this.chartVentas.Location = new System.Drawing.Point(17, 150);
             this.chartVentas.Name = "chartVentas";
             this.chartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chartVentas.Series.Add(series11);
-            this.chartVentas.Size = new System.Drawing.Size(1053, 388);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chartVentas.Series.Add(series14);
+            this.chartVentas.Size = new System.Drawing.Size(661, 388);
             this.chartVentas.TabIndex = 17;
             this.chartVentas.Text = "chart2";
             this.chartVentas.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+            this.chartVentas.Click += new System.EventHandler(this.chartVentas_Click);
             // 
             // button1
             // 
@@ -528,6 +534,28 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "EMPLEADOS CON MAS VENTAS";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre_empleado,
+            this.ventas_acumulado});
+            this.dataGridView1.Location = new System.Drawing.Point(694, 159);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(243, 132);
+            this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // nombre_empleado
+            // 
+            this.nombre_empleado.HeaderText = "Empleado";
+            this.nombre_empleado.Name = "nombre_empleado";
+            // 
+            // ventas_acumulado
+            // 
+            this.ventas_acumulado.HeaderText = "Acumulado";
+            this.ventas_acumulado.Name = "ventas_acumulado";
+            // 
             // EstadisticosFarmaceutico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -604,5 +633,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventas_acumulado;
     }
 }

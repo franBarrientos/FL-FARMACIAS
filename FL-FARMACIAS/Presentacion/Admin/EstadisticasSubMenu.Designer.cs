@@ -53,7 +53,6 @@
             this.Datos_estadisticos_farma = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,6 +74,10 @@
             this.button11 = new System.Windows.Forms.Button();
             this.prodTorta = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button12 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.producto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad_vendida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -90,6 +93,7 @@
             this.panel5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prodTorta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -263,21 +267,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(15, 10);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1063, 56);
             this.panel2.TabIndex = 54;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(368, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(234, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "PRODUCTOS POR INGRESOS GENERADOS ";
             // 
             // label3
             // 
@@ -435,6 +430,7 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.dateTimePicker9);
@@ -517,10 +513,11 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.prodTorta.Series.Add(series3);
-            this.prodTorta.Size = new System.Drawing.Size(1064, 394);
+            this.prodTorta.Size = new System.Drawing.Size(717, 394);
             this.prodTorta.TabIndex = 17;
             this.prodTorta.Text = "chart5";
             this.prodTorta.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+            this.prodTorta.Click += new System.EventHandler(this.prodTorta_Click);
             // 
             // button12
             // 
@@ -538,6 +535,38 @@
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(152, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(658, 33);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "PRODUCTOS POR INGRESOS GENERADOS";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.producto_nombre,
+            this.Cantidad_vendida});
+            this.dataGridView1.Location = new System.Drawing.Point(757, 137);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(243, 393);
+            this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // producto_nombre
+            // 
+            this.producto_nombre.HeaderText = "Producto";
+            this.producto_nombre.Name = "producto_nombre";
+            // 
+            // Cantidad_vendida
+            // 
+            this.Cantidad_vendida.HeaderText = "Cantidad Vendida";
+            this.Cantidad_vendida.Name = "Cantidad_vendida";
             // 
             // EstadisticasSubMenu
             // 
@@ -572,6 +601,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prodTorta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,6 +644,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad_vendida;
     }
 }
