@@ -84,7 +84,15 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
             if (nombre != "" && apellido != "" && dni != "" && telefono != "" && DFalta_obrasocial.Text != "")
             {
                 DescuentoDominio descuento = this.cMenu.descuentoApp.ObtenerDescuentoPorDescripcion(DFalta_obrasocial.Text);
-                this.cMenu.clienteApp.AgregarCliente(new ClienteDominio(nombre, apellido, dni, telefono, true,descuento));
+                try
+                {
+                    this.cMenu.clienteApp.AgregarCliente(new ClienteDominio(nombre, apellido, dni, telefono, true, descuento));
+                }
+                catch (ApplicationException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al insertar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 this.cMenu.fullDefaults();
                 MessageBox.Show("El cliente " + nombre + " " + apellido + " " + "numero de DNI: " + dni + "obra social: " + DFalta_obrasocial.Text + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

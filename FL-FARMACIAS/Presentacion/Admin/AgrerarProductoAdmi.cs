@@ -1,4 +1,5 @@
-﻿using FL_FARMACIAS.Dominio;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,49 +18,54 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class AgrerarProductoAdmi : Form
     {
         private productoSubMenu productoSubMenu;
+
         public AgrerarProductoAdmi(productoSubMenu productoSubMenu)
         {
-            InitializeComponent();
+            InitializeComponent();            
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.productoSubMenu = productoSubMenu;
+            fullComboBoxes();
+
         }
 
-        private void vaciar_productos_Click(object sender, EventArgs e)
+        public void fullComboBoxes()
+        {
+            //CATEGORIA
+            List<CategoriaDominio> categorias = this.productoSubMenu.categoriaApp.ObtenerTodosActivo();
+            CB_productocat.Items.Clear();
+            foreach (var cat in categorias)
+            {
+                CB_productocat.Items.Add(cat.descripcion);
+            }
+
+            //MARCA
+            List<MarcaDominio> marcas = this.productoSubMenu.productoApp.ObtenerMarcas();
+            CB_MARCA.Items.Clear();
+            foreach (var mar in marcas)
+            {
+                CB_MARCA.Items.Add(mar.nombre);
+            }    
+
+            //LABORATORIO
+            List<LaboratorioDominio> laboratorios = this.productoSubMenu.productoApp.ObtenerLaboratorios();
+            CB_LABORATORIO.Items.Clear();
+            CB_LABORATORIO.Items.Add("-");
+            foreach (var lab in laboratorios)
+            {
+                CB_LABORATORIO.Items.Add(lab.nombre);
+            }
+            
+
+        }
+
+          private void botonAgregarProducto_Click(object sender, EventArgs e)
         {
             String nombre = TP_nombre.Text.Trim();
             String codigo = TP_codproducto.Text.Trim();
             String categoria = CB_productocat.Text.Trim();
+            String marca = CB_MARCA.Text.Trim();
+            String laboratorio = CB_LABORATORIO.Text.Trim();
             String stock = TP_stock.Text.Trim();
-            String descripcion = TP_descripcion.Text.Trim();
-            String precio = TP_precio.Text.Trim();
-            String marca = Tmarca_produ.Text.Trim();
-            String laboratorio = Tlaboratorio_prod.Text.Trim();
-            if (nombre != "" || codigo != "" || descripcion != "" || stock != "" || categoria != "" || precio != "" || laboratorio != "" || marca != "")
-            {
-                TP_nombre.Clear();
-                TP_codproducto.Clear();
-                TP_stock.Clear();
-                TP_descripcion.Clear();
-                TP_precio.Clear();
-                Tmarca_produ.Clear();
-                Tlaboratorio_prod.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Los campos se encuentran vacios.", "No hay elementos que vaciar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
-
-        private void botonAgregarProducto_Click(object sender, EventArgs e)
-        {
-            String nombre = TP_nombre.Text.Trim();
-            String codigo = TP_codproducto.Text.Trim();
-            String categoria = CB_productocat.Text.Trim();
-            String marca = Tmarca_produ.Text.Trim();
-            String laboratorio = Tlaboratorio_prod.Text.Trim();
-            String stock = TP_stock.Text.Trim();
-            String descripcion = TP_descripcion.Text.Trim();
             String codigocompara = @"^[A-Za-z]{3}_\d{5}$";
             String precio = TP_precio.Text.Trim();
             precio = precio.Replace(",", ".");
@@ -70,28 +76,22 @@ namespace FL_FARMACIAS.Presentacion.Admin
             bool espositivo = int.TryParse(stock, out numero) && numero >= 0;
             bool preciopositivo = float.TryParse(precio, out numeroprecio) && numeroprecio > 0;
 
-            if (nombre == "" || codigo == "" || descripcion == "" || stock == "" || categoria == "" || precio == "" || marca == "" || laboratorio == "" || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
+            if (nombre == "" || codigo == "" ||  stock == "" || categoria == "" || precio == "" || marca == ""  || (CBP_inactivo.Checked == false && CBP_activo.Checked == false) || (CBP_inactivo.Checked == true && CBP_activo.Checked == true))
             {
                 MessageBox.Show("Por favor, rellene todos los campos.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
 
-            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(c => char.IsLetter(c) || c == ' '))
+            if (string.IsNullOrWhiteSpace(nombre))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Nombre de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(marca) || !marca.All(c => char.IsLetter(c) || c == ' '))
+            if (string.IsNullOrWhiteSpace(marca))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Marca de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(laboratorio) || !laboratorio.All(c => char.IsLetter(c) || c == ' '))
-            {
-                MessageBox.Show("Por favor, ingrese solo letras en el campo de Laboratorio de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -119,35 +119,34 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            //if (!espositivo)
-            //{
-            //    MessageBox.Show("Por favor, ingrese solo números positivos en el campo stock.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            //if (!preciopositivo)
-            //{
-            //    MessageBox.Show("Por favor, ingrese solo números positivos en el campo precio.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            if (nombre != "" && codigo != "" && categoria != "" && precio != "" && marca != "" && descripcion != "" && laboratorio != "" && stock != "" && Regex.IsMatch(codigo, codigocompara))
-            {
-                MessageBox.Show("El prducto " + nombre + "Marca:"+ marca + "con el codigo " + codigo + " " + "de categoria: " + categoria + "precio: $ " + precio + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
             //convierte el precio en string a float para mostrar
             float preciomostrar = Convert.ToSingle(precio);
 
             // convierte el string del stock en int
             int stockmostrar = Convert.ToInt32(stock);
 
-            CategoriaDominio categoria_obje = new CategoriaDominio(1, categoria, true);
-            ProductoDominio producto_obj = new ProductoDominio(1, codigo, nombre, preciomostrar, stockmostrar, categoria_obje, true);
+            CategoriaDominio categoriaDominio = this.productoSubMenu.categoriaApp.ObtenerPorDescripcion(categoria);
+            MarcaDominio marcaDominio = this.productoSubMenu.productoApp.ObtenerMarcaPorNombre(marca);
+            LaboratorioDominio laboratorioDominio = null;
+            if (laboratorio == "" || laboratorio == null || laboratorio == "-")
+            {
+                laboratorioDominio = null;
+            }
+            else
+            {
+                laboratorioDominio = this.productoSubMenu.productoApp.ObtenerLaboratorioPorNombre(laboratorio);
+            }
+            ProductoDominio producto_obj = new ProductoDominio(codigo, nombre, preciomostrar, stockmostrar, categoriaDominio, marcaDominio, laboratorioDominio, CBP_activo.Checked);
+            Console.WriteLine(producto_obj);
+            this.productoSubMenu.productoApp.AgregarProducto(producto_obj);
+            this.productoSubMenu.fullProductos();
+           // if (nombre != "" && codigo != "" && categoria != "" && precio != "" && marca != "" && descripcion != "" && stock != "" && Regex.IsMatch(codigo, codigocompara))
+            //{
+             //   MessageBox.Show("El prducto " + nombre + "Marca:" + marca + "con el codigo " + codigo + " " + "de categoria: " + categoria + "precio: $ " + precio + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            this.productoSubMenu.insertProduct(producto_obj);
-            // this.productoSubMenu.insertProduct(new object[] { 6, "P006", "Producto 6", 10.5, 100, "Perfumeria", true, });
+           // }
+            this.Close();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -161,19 +160,17 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String codigo = TP_codproducto.Text.Trim();
             String categoria = CB_productocat.Text.Trim();
             String stock = TP_stock.Text.Trim();
-            String descripcion = TP_descripcion.Text.Trim();
             String precio = TP_precio.Text.Trim();
-            String marca = Tmarca_produ.Text.Trim();
-            String laboratorio = Tlaboratorio_prod.Text.Trim();
-            if (nombre != "" || codigo != "" || descripcion != "" || stock != "" || categoria != "" || precio != "" || laboratorio != "" || marca != "")
+            String marca = CB_MARCA.Text.Trim();
+            String laboratorio = CB_LABORATORIO.Text.Trim();
+            if (nombre != "" || codigo != "" ||  stock != "" || categoria != "" || precio != "" || laboratorio != "" || marca != "")
             {
                 TP_nombre.Clear();
                 TP_codproducto.Clear();
                 TP_stock.Clear();
-                TP_descripcion.Clear();
                 TP_precio.Clear();
-                Tmarca_produ.Clear();
-                Tlaboratorio_prod.Clear();
+                CB_MARCA.Text = "";
+                CB_LABORATORIO.Text = "";
             }
             else
             {

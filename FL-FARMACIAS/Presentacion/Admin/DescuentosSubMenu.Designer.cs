@@ -37,12 +37,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -50,6 +44,12 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.placeholderTextBox1 = new PlaceholderTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PORCENTAJE_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,52 +103,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.dataGridView2.Size = new System.Drawing.Size(918, 374);
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
-            // 
-            // DESCRIPCION
-            // 
-            this.DESCRIPCION.HeaderText = "DESCRIPCION";
-            this.DESCRIPCION.MinimumWidth = 8;
-            this.DESCRIPCION.Name = "DESCRIPCION";
-            this.DESCRIPCION.ReadOnly = true;
-            this.DESCRIPCION.Width = 150;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.MinimumWidth = 8;
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            this.ESTADO.Width = 150;
-            // 
-            // PORCENTAJE_DESCUENTO
-            // 
-            this.PORCENTAJE_DESCUENTO.HeaderText = "PORCENTAJE DESCUENTO %";
-            this.PORCENTAJE_DESCUENTO.Name = "PORCENTAJE_DESCUENTO";
-            this.PORCENTAJE_DESCUENTO.ReadOnly = true;
-            // 
-            // MODIFICAR
-            // 
-            this.MODIFICAR.HeaderText = "MODIFICAR";
-            this.MODIFICAR.MinimumWidth = 8;
-            this.MODIFICAR.Name = "MODIFICAR";
-            this.MODIFICAR.ReadOnly = true;
-            this.MODIFICAR.Width = 150;
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.MinimumWidth = 8;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.ReadOnly = true;
-            this.ELIMINAR.Width = 150;
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
             // 
             // button4
             // 
@@ -244,6 +199,53 @@ namespace FL_FARMACIAS.Presentacion.Admin
             this.placeholderTextBox1.Size = new System.Drawing.Size(252, 20);
             this.placeholderTextBox1.TabIndex = 28;
             this.placeholderTextBox1.Text = "INGRESE ID O DESCRIPCION";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 150;
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.MinimumWidth = 8;
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
+            this.DESCRIPCION.Width = 150;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.MinimumWidth = 8;
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            this.ESTADO.Visible = false;
+            this.ESTADO.Width = 150;
+            // 
+            // PORCENTAJE_DESCUENTO
+            // 
+            this.PORCENTAJE_DESCUENTO.HeaderText = "PORCENTAJE DESCUENTO %";
+            this.PORCENTAJE_DESCUENTO.Name = "PORCENTAJE_DESCUENTO";
+            this.PORCENTAJE_DESCUENTO.ReadOnly = true;
+            // 
+            // MODIFICAR
+            // 
+            this.MODIFICAR.HeaderText = "MODIFICAR";
+            this.MODIFICAR.MinimumWidth = 8;
+            this.MODIFICAR.Name = "MODIFICAR";
+            this.MODIFICAR.ReadOnly = true;
+            this.MODIFICAR.Width = 150;
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.MinimumWidth = 8;
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
+            this.ELIMINAR.Width = 150;
             // 
             // DescuentosSubMenu
             // 

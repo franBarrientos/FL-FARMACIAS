@@ -157,9 +157,9 @@
             this.Lpuesto_farmaceutico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Lpuesto_farmaceutico.Location = new System.Drawing.Point(15, 224);
             this.Lpuesto_farmaceutico.Name = "Lpuesto_farmaceutico";
-            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(63, 20);
+            this.Lpuesto_farmaceutico.Size = new System.Drawing.Size(56, 20);
             this.Lpuesto_farmaceutico.TabIndex = 6;
-            this.Lpuesto_farmaceutico.Text = "Puesto:";
+            this.Lpuesto_farmaceutico.Text = "Cargo:";
             // 
             // Tnombre_emple
             // 
@@ -241,9 +241,6 @@
             // 
             this.Cpuesto_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cpuesto_empleado.FormattingEnabled = true;
-            this.Cpuesto_empleado.Items.AddRange(new object[] {
-            "Farmacuetico",
-            "Supervisor"});
             this.Cpuesto_empleado.Location = new System.Drawing.Point(149, 223);
             this.Cpuesto_empleado.Name = "Cpuesto_empleado";
             this.Cpuesto_empleado.Size = new System.Drawing.Size(281, 21);

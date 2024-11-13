@@ -1,22 +1,41 @@
-﻿using FL_FARMACIAS.Presentacion.Login;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion.Login;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 
 namespace FL_FARMACIAS.Presentacion.Admin
 {
     public partial class AltaEmpleado : Form
     {
-        public AltaEmpleado()
+        public EmpleadoSubMenu empleadoSubMenu;
+        public AltaEmpleado(EmpleadoSubMenu e)
         {
             InitializeComponent();
+            this.empleadoSubMenu = e;
+            fullCargos();
+        }
+
+        private void fullCargos()
+        {
+            List<CargoDominio> matcheds = this.empleadoSubMenu.empleadoApp.ObtenerCargos();
+            matcheds.RemoveAll(cargo => cargo.descripcion == "Admin");
+            this.Cpuesto_empleado.Items.Clear();
+            foreach (var e in matcheds)
+            {
+                 this.Cpuesto_empleado.Items.Add(e.descripcion);
+            }
         }
 
         private void Bagregar_empleado_Click(object sender, EventArgs e)
@@ -185,7 +204,6 @@ namespace FL_FARMACIAS.Presentacion.Admin
             String puesto = Cpuesto_empleado.Text.Trim();
             String salario = Tsalario_empleado.Text.Trim();
 
-
             float numerosalario;
             bool preciopositivo = float.TryParse(salario, out numerosalario) && numerosalario > 0;
 
@@ -248,18 +266,30 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            // Verificar si hay una imagen en el PictureBox
-            if (fotoempleado.Image == null)
+
+            // Cargar la imagen y convertirla a un byte[]
+            byte[] fotoEmpleadoB;
+            using (var memoryStream = new MemoryStream())
             {
-               
-                MessageBox.Show("No hay ninguna imagen para vaciar.");
+                using (var image = fotoempleado.Image)
+                {
+                    image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg); // Guardar como JPEG
+                    fotoEmpleadoB = memoryStream.ToArray(); // Convertir a byte[]
+                }
             }
+            
+            CargoDominio cd = this.empleadoSubMenu.empleadoApp.ObtenerCargoPorDescripcion(puesto);
+            Empleadodominio em = new Empleadodominio(nombre, apellido, Cmujer.Checked, dni, cuil, telefono, cd, (float)numerosalario, new DateTime(2024, 10, 12), fotoEmpleadoB);
+            this.empleadoSubMenu.empleadoApp.AgregarEmpleado(em);
+            this.empleadoSubMenu.fullDefault();
 
             if (nombre != "" && apellido != "" && dni != "" && cuil != "" && puesto != "" && fotoempleado.Image != null && telefono != "" && salario != "")
             {
                 MessageBox.Show("El empleado " + nombre + ","+ apellido + "D.N.I:" + dni + "CUIL: " +cuil  +"PUESTO:"+ puesto+" ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            this.Close();
+
         }
 
         private void Vaciar_campos_nuevo_farmaceutico_Click_1(object sender, EventArgs e)

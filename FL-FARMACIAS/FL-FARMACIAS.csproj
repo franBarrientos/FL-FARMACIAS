@@ -36,11 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -76,26 +82,69 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\EmpleadoAplicacion.cs" />
+    <Compile Include="Aplicacion\PedidosAplicacion.cs" />
+    <Compile Include="Aplicacion\ProveedorAplicacion.cs" />
+    <Compile Include="Aplicacion\CategoriaAplicacion.cs" />
     <Compile Include="Aplicacion\DescuentoAplicacion.cs" />
     <Compile Include="Aplicacion\ClienteAplicacion.cs" />
+    <Compile Include="Aplicacion\ProductoAplicacion.cs" />
+    <Compile Include="Aplicacion\UsuarioAplicacion.cs" />
+    <Compile Include="Aplicacion\VentasAplicacion.cs" />
+    <Compile Include="Dominio\pedidoDominio.cs" />
+    <Compile Include="Dominio\PedidosDetalleDominio.cs" />
     <Compile Include="Dominio\CategoriaDominio.cs" />
     <Compile Include="Dominio\DBConnect.cs" />
     <Compile Include="Dominio\DescuentoDominio.cs" />
+    <Compile Include="Dominio\Empleadodominio.cs" />
     <Compile Include="Dominio\ProductoDominio.cs" />
     <Compile Include="Dominio\StaticBD.cs" />
     <Compile Include="Dominio\ProveedorDominio.cs" />
     <Compile Include="Dominio\ClienteDominio.cs" />
     <Compile Include="Dominio\UsuarioDominio.cs" />
-    <Compile Include="Migrations\202409282338020_Inicial.cs" />
-    <Compile Include="Migrations\202409282338020_Inicial.Designer.cs">
-      <DependentUpon>202409282338020_Inicial.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Dominio\VentaDominio.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\AgrerarProductoAdmi.Designer.cs">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaLaboratorio.Designer.cs">
+      <DependentUpon>AltaLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\AltaMarcas.Designer.cs">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarProveedor.Designer.cs">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\backups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\backups.Designer.cs">
+      <DependentUpon>backups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarEmpleado.Designer.cs">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\ModificarCategoria.Designer.cs">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EstadisticasSubMenu.cs">
       <SubType>Form</SubType>
@@ -133,11 +182,11 @@
     <Compile Include="Presentacion\Admin\AltaEmpleado.Designer.cs">
       <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\CategoriaAdmi.cs">
+    <Compile Include="Presentacion\Admin\AltaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\CategoriaAdmi.Designer.cs">
-      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    <Compile Include="Presentacion\Admin\AltaCategoria.Designer.cs">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\CrearCuentaModal.cs">
       <SubType>Form</SubType>
@@ -150,6 +199,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\DescuentosSubMenu.Designer.cs">
       <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\pedidosAproveedorModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\pedidosAproveedorModificar.Designer.cs">
+      <DependentUpon>pedidosAproveedorModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\pedidosAproveedor.cs">
       <SubType>Form</SubType>
@@ -168,6 +223,12 @@
     </Compile>
     <Compile Include="Presentacion\Admin\ProductoSubMenu.Designer.cs">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\DetalleVentaForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Farmaceutico\DetalleVentaForm .Designer.cs">
+      <DependentUpon>DetalleVentaForm .cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Farmaceutico\ModificarCliente.cs">
       <SubType>Form</SubType>
@@ -232,6 +293,7 @@
     <Compile Include="Presentacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\SimpleEncryptation.cs" />
     <Compile Include="Presentacion\Supervisor\MenuSupervisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,11 +308,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202409282338020_Inicial.resx">
-      <DependentUpon>202409282338020_Inicial.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\AgrerarProductoAdmi.resx">
       <DependentUpon>AgrerarProductoAdmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaLaboratorio.resx">
+      <DependentUpon>AltaLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\AltaMarcas.resx">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarProveedor.resx">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\backups.resx">
+      <DependentUpon>backups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\ModificarCategoria.resx">
+      <DependentUpon>ModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EmpleadoSubMenu.resx">
       <DependentUpon>EmpleadoSubMenu.cs</DependentUpon>
@@ -273,14 +350,17 @@
     <EmbeddedResource Include="Presentacion\Admin\AltaEmpleado.resx">
       <DependentUpon>AltaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\CategoriaAdmi.resx">
-      <DependentUpon>CategoriaAdmi.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\AltaCategoria.resx">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\CrearCuentaModal.resx">
       <DependentUpon>CrearCuentaModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\DescuentosSubMenu.resx">
       <DependentUpon>DescuentosSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\pedidosAproveedorModificar.resx">
+      <DependentUpon>pedidosAproveedorModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\pedidosAproveedor.resx">
       <DependentUpon>pedidosAproveedor.cs</DependentUpon>
@@ -290,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\ProductoSubMenu.resx">
       <DependentUpon>ProductoSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Farmaceutico\DetalleVentaForm .resx">
+      <DependentUpon>DetalleVentaForm .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Farmaceutico\ModificarCliente.resx">
       <DependentUpon>ModificarCliente.cs</DependentUpon>

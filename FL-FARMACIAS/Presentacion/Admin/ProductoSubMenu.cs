@@ -1,10 +1,12 @@
-﻿using FL_FARMACIAS.Dominio;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using FL_FARMACIAS.Presentacion.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,51 +19,102 @@ namespace FL_FARMACIAS.Presentacion.Admin
     public partial class productoSubMenu : Form
     {
         private AgrerarProductoAdmi AltaProducto = null;
-        private Vaciar_campos_categoria AltaCategoria = null;
+        private AltaCategoria AltaCategoria = null;
+        private AltaMarcas AltaMarca = null;
+        private AltaLaboratorio AltaLaboratorio = null;
+        public ProductoAplicacion productoApp;
+        public CategoriaAplicacion categoriaApp;
+   
 
-        private List<CategoriaDominio> orgCategories = new List<CategoriaDominio>
-        {
-            new CategoriaDominio( 1, "Perfumeria", true ),
-            new CategoriaDominio( 1, "Medicamentos", true )
-        };
 
-        private List<ProductoDominio> orgProducts = new List<ProductoDominio>
-        {
-            new ProductoDominio(1, "P001", "Producto 1", 10.5, 100, new CategoriaDominio( 1, "Perfumeria", true ) , true),
-            new ProductoDominio(2, "P002", "Producto 2", 20.0, 50, new CategoriaDominio( 2, "Medicamentos", true ) , false),
-            new ProductoDominio(3, "P003", "Producto 3", 15.0, 200, new CategoriaDominio( 2, "Medicamentos", true ) , true),
-            new ProductoDominio(4, "P004", "Producto 4", 25.75, 150, new CategoriaDominio( 2, "Medicamentos", true ) , true),
-            new ProductoDominio(5, "P005", "Producto 5", 5.0, 300, new CategoriaDominio( 2, "Medicamentos", true ) , false)
-        };
-
-     
-
-        public void insertProduct(ProductoDominio p)
-        {
-            this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio.ToString("F2"), p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
-            this.orgProducts.Add(p);
-        }
         public productoSubMenu()
         {
             InitializeComponent();
+            this.productoApp = new ProductoAplicacion();
+            this.categoriaApp = new CategoriaAplicacion();
 
-            foreach (var p in this.orgProducts)
-            {
-                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
-
-            }
-
-            foreach (var row in this.orgCategories)
-            {
-                this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
-            }
-
-
-            if (LoginForm.user.rol == Rol.Supervisor)
+            fullProductos();
+            fullCategorias();
+            fullMarcas(); //paso 1
+            fullLaboratorio();
+            if (LoginForm.user.rol.descripcion == "Supervisor")
             {
                 button3w.Hide();
                 button3.Hide();
             }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Suponiendo que la columna 1 (index 0) es la columna de precios
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "PRECIO" && e.Value != null)
+            {
+                double precio;
+                // Intentamos convertir el valor a double
+                if (Double.TryParse(e.Value.ToString(), out precio))
+                {
+                    // Mostramos el precio con el símbolo de moneda, sin modificar el valor real
+                    e.Value = precio.ToString("C", CultureInfo.GetCultureInfo("es-AR")); // o tu formato de moneda preferido
+                    e.FormattingApplied = true;
+                }
+
+            }
+        }
+
+        public void fullProductos()
+        {
+            var productos = this.productoApp.ObtenerTodos();
+            dataGridView1.Rows.Clear();
+            foreach (var p in productos)
+            {
+                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.marca.nombre, p.laboratorio != null ? p.laboratorio.nombre : "", p.estado == true ? "ACTIVO" : "NO ACTIVO");
+
+            }
+
+        }
+
+
+        //paso 2
+        public void fullMarcas()
+        {
+            var marcas = this.productoApp.ObtenerMarcas();
+            dataGridView3.Rows.Clear();
+            foreach (var m in marcas)
+            {
+                this.dataGridView3.Rows.Add(m.id, m.nombre, "Modificar", "Eñiminar");
+
+            }
+
+        }
+
+        public void fullLaboratorio()
+        {
+            var laboratorios = this.productoApp.ObtenerLaboratorios();
+            dataGridView4.Rows.Clear();
+            foreach (var l in laboratorios)
+            {
+                this.dataGridView4.Rows.Add(l.id, l.nombre, "Modificar", "Eñiminar");
+
+            }
+
+        }
+
+
+
+        public void fullCategorias()
+        {
+           
+            var categorias = this.categoriaApp.ObtenerTodos();
+            dataGridView2.Rows.Clear();
+            this.comboBox1.Items.Clear();
+            this.comboBox1.Items.Add("Todos");
+            this.comboBox1.SelectedIndex = 0;
+            foreach (var c in categorias)
+            {
+                this.comboBox1.Items.Add(c.descripcion);
+                this.dataGridView2.Rows.Add(c.id, c.descripcion, c.estado == true ? "ACTIVO" : "NO ACTIVO", "ELIMINAR", "MODIFICAR");
+            }
+
         }
 
 
@@ -72,12 +125,21 @@ namespace FL_FARMACIAS.Presentacion.Admin
             {
                 var dataGridView = sender as DataGridView;
                 string productName = dataGridView.Rows[e.RowIndex].Cells["NOMBRE"].Value.ToString();
+                string codigo = dataGridView.Rows[e.RowIndex].Cells["CODIGO_PROD"].Value.ToString();
                 string idName = dataGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                bool estado = dataGridView.Rows[e.RowIndex].Cells["ACTIVO"].Value.ToString() == "ACTIVO";
 
-                ProductoDominio product = this.orgProducts.Where(x => x.id.ToString() == idName).FirstOrDefault();
+                ProductoDominio product = this.productoApp.BuscarProductos(codigo, null, null).First();
 
                 if (dataGridView.Columns[e.ColumnIndex].Name == "ELIMINAR")
                 {
+                    if (!estado)
+                    {
+                        MessageBox.Show("El producto: " + productName + " ya no esta activo.", "Producto inactivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+
                     DialogResult ask = MessageBox.Show(
                    "Esta a punto de eliminar el Poducto: " + productName,
                    "Confirmar Eliminacion",
@@ -87,68 +149,175 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
                     if (ask == DialogResult.Yes)
                     {
-
+                        product.estado = false;
+                        this.productoApp.ActualizarProducto(product);
                         MessageBox.Show("El producto " + productName + " ha sido eliminado con exito.", "Eliminacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dataGridView.Rows.RemoveAt(e.RowIndex);
+                        this.fullProductos();
                     }
                 }
 
                 else if (dataGridView.Columns[e.ColumnIndex].Name == "MODIFICAR")
                 {
-                    new ModificarProductoAdmi(product).Show();
+                    new ModificarProductoAdmi(this, product).Show();
                 }
                 
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (textBox1.Text == " " && comboBox1.Text == " ")
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                MessageBox.Show("Por favor, ingrese el Nombre del producto o Cod_producto que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                var dataGridView2 = sender as DataGridView;
+                string id = dataGridView2.Rows[e.RowIndex].Cells["IDC"].Value.ToString();
+                string descripcion = dataGridView2.Rows[e.RowIndex].Cells["DESCRIPCIONC"].Value.ToString();
+                bool estado = dataGridView2.Rows[e.RowIndex].Cells["ESTADOC"].Value.ToString() == "ACTIVO" ? true : false;
+
+                if (dataGridView2.Columns[e.ColumnIndex].Name == "ELIMINARC")
+                {
+
+                    if (!estado)
+                    {
+                        MessageBox.Show("La Categoria: " + descripcion + " ya no esta activa.", "Categoria inactiva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    DialogResult ask = MessageBox.Show(
+                   "Esta a punto de eliminar la Categoria: " + descripcion ,
+                   "Confirmar Eliminacion",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button2);
+
+                    if (ask == DialogResult.Yes)
+                    {
+                        this.categoriaApp.ActualizarCategoria(new CategoriaDominio( int.Parse(id), descripcion, false));
+                        MessageBox.Show("La Categoria " + descripcion + " ha sido eliminado con exito.", "Eliminacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.fullCategorias();
+                    }
+                }
+
+                else if (dataGridView2.Columns[e.ColumnIndex].Name == "MODIFICARC")
+                {
+                    new ModificarCategoria(this, new CategoriaDominio(int.Parse(id), descripcion, estado)).Show();
+                }
+
             }
 
-            ProductoDominio[] matched;
-            if (textBox1.Text == "INGRESE NOMBRE O COD PRODUCTO" && comboBox1.Text == "Todos")
+        }
+
+
+        private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                matched = this.orgProducts
-                           .ToArray(); // Convertir a un array de object[][]
+                var dataGridView2 = sender as DataGridView;
+                string id = dataGridView2.Rows[e.RowIndex].Cells["IDM"].Value.ToString();
+                string descripcion = dataGridView2.Rows[e.RowIndex].Cells["DESCRIPCIONM"].Value.ToString();
+
+                if (dataGridView2.Columns[e.ColumnIndex].Name == "ELIMINARM")
+                {
+
+                    DialogResult ask = MessageBox.Show(
+                   "Esta a punto de eliminar la Marca: " + descripcion,
+                   "Confirmar Eliminacion",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Exclamation,
+                   MessageBoxDefaultButton.Button2);
+
+                    if (ask == DialogResult.Yes)
+                    {
+                        try {
+                            this.productoApp.EliminarMarca(int.Parse(id));
+                            MessageBox.Show("La Marca " + descripcion + " ha sido eliminado con exito.", "Eliminacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.fullMarcas();
+                        }
+                        catch(Exception ex)
+                        {
+                              MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                       
+                    }
+                }
+
+                else if (dataGridView2.Columns[e.ColumnIndex].Name == "MODIFICARM")
+                {
+                   // new ModificarCategoria(this, new CategoriaDominio(int.Parse(id), descripcion, estado)).Show();
+                }
+
             }
-            else if (textBox1.Text == "INGRESE NOMBRE O COD PRODUCTO" && comboBox1.Text != "Todos")
+
+        }
+
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView1.Rows[e.RowIndex].Cells["ACTIVO"].Value?.ToString();
+            if (estado != "ACTIVO")
             {
-                matched = this.orgProducts
-                           .Where(x => x.categoria.descripcion.ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text == "Todos") && (textBox1.Text != "INGRESE NOMBRE O COD PRODUCTO"))
-            {
-                matched = this.orgProducts
-                       .Where(x => x.nombre.ToString().Contains(textBox1.Text) ||
-                                   x.codProducto.ToString().Contains(textBox1.Text))
-                           .ToArray(); // Convertir a un array de object[][]
-            }
-            else if ((comboBox1.Text != "Todos") && (textBox1.Text != "INGRESE NOMBRE O COD PRODUCTO"))
-            {
-                matched = this.orgProducts
-                       .Where(x => x.codProducto.ToString().Contains(textBox1.Text) ||
-                                   x.nombre.ToString().Contains(textBox1.Text) &&
-                                    x.categoria.descripcion.ToString() == comboBox1.Text)
-                           .ToArray(); // Convertir a un array de object[][]
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo rojo suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
             }
             else
             {
-                matched = this.orgProducts
-                       .ToArray(); // Convertir a un array de object[][]
+                // Color de fondo y texto para filas activas
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo verde suave
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+            }
+        }
+
+        private void dataGridView2_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            // Verificar si el valor de la celda es "INACTIVO"
+            var estado = dataGridView2.Rows[e.RowIndex].Cells["ESTADOC"].Value?.ToString();
+            if (estado != "ACTIVO")
+                {
+                dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;  // Fondo rojo suave
+                 dataGridView2.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+                }
+                else
+                {
+                    // Color de fondo y texto para filas activas
+                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;  // Fondo verde suave
+                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;       // Texto negro
+                }
+           }
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+  
+            String codigocompara = @"^[A-Za-z]{3}_\d{5}$";
+
+            string codCompra = null;
+            string nombre = null;
+            string categoria = null;
+
+            if (Regex.IsMatch(textBox1.Text, codigocompara))
+            {
+                codCompra = textBox1.Text;
+            }
+            else if (textBox1.Text != "" && textBox1.Text != "INGRESE NOMBRE O COD PRODUCTO")
+            {
+                nombre = textBox1.Text;
             }
 
+            if (comboBox1.Text != "Todos")
+            {
+                categoria = comboBox1.Text;
+            }
 
+            List<ProductoDominio> matched = this.productoApp.BuscarProductos(codCompra, nombre, categoria);
             this.dataGridView1.Rows.Clear();
-
             foreach (var p in matched)
             {
-                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
+                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.marca.nombre, p.laboratorio != null ? p.laboratorio.nombre : "", p.estado == true ? "ACTIVO" : "NO ACTIVO");
+
             }
 
         }
@@ -156,14 +325,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void button2_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
+            this.textBox1.ForeColor = Color.Black;
             this.comboBox1.Text = "Todos";
-            this.dataGridView1.Rows.Clear();
-
-            foreach (var p in this.orgProducts)
-            {
-                this.dataGridView1.Rows.Add(p.id, p.codProducto, p.nombre, p.precio, p.stock, p.categoria.descripcion, p.estado == true ? "ACTIVO" : "NO ACTIVO");
-            }
-
+           fullProductos();
         }
 
         private void ShowAltaProducto()
@@ -186,32 +350,27 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == " ")
+            if (textBox2.Text.Trim() == "" || textBox2.Text == "INGRESE ID O DESCRIPCION")
             {
                 MessageBox.Show("Por favor, ingrese el ID o Descripcion que desea buscar.", "No hay elementos para buscar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            CategoriaDominio[] matched;
-            if (textBox2.Text != "INGRESE ID O DESCRIPCION")
-            {
-                matched = this.orgCategories
-                    .Where(x => x.id.ToString().Contains(textBox2.Text)
-                    || x.descripcion.ToString().Contains(textBox2.Text))
-                           .ToArray();
+            int? idD = null;
+            string nombreD = null;
+            if (int.TryParse(textBox2.Text, out int parsedId)) { 
+                idD = parsedId;
             }
             else
             {
-                matched = this.orgCategories
-                       .ToArray();
+                nombreD = textBox2.Text;
             }
 
-
+            List<CategoriaDominio> matched = this.categoriaApp.BuscarCategorias(idD, nombreD);
             this.dataGridView2.Rows.Clear();
-
-            foreach (var row in matched)
+            foreach (var r in matched)
             {
-                this.dataGridView2.Rows.Add(row);
+                this.dataGridView2.Rows.Add(r.id, r.descripcion, r.estado == true ? "ACTIVO" : "NO ACTIVO", "ELIMINAR", "MODIFICAR");
             }
 
 
@@ -221,7 +380,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
             if (AltaCategoria == null || AltaCategoria.IsDisposed)
             {
-                AltaCategoria = new Vaciar_campos_categoria();
+                AltaCategoria = new AltaCategoria(this);
                 AltaCategoria.Show();
             }
             else
@@ -237,14 +396,9 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.textBox2.Text = "";
-            this.dataGridView2.Rows.Clear();
-
-            foreach (var row in this.orgCategories)
-            {
-                this.dataGridView2.Rows.Add(row.id, row.descripcion, row.estado == true ? "ACTIVO" : "NO ACTIVO");
-            }
-
+                   fullCategorias();
+                    this.textBox2.Text = "";
+                    this.textBox2.ForeColor = Color.Black;
         }
 
         private void prodTab_Click(object sender, EventArgs e)
@@ -252,6 +406,48 @@ namespace FL_FARMACIAS.Presentacion.Admin
 
         }
 
-        
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void ShowAltaMarca()
+        {
+            if (AltaMarca == null || AltaMarca.IsDisposed)
+            {
+                AltaMarca = new AltaMarcas(this);
+                AltaMarca.Show();
+            }
+            else
+            {
+                AltaMarca.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ShowAltaMarca();
+        }
+
+        private void ShowAltaLab()
+        {
+            if (AltaLaboratorio == null || AltaLaboratorio.IsDisposed)
+            {
+                AltaLaboratorio = new AltaLaboratorio(this);
+                AltaLaboratorio.Show();
+            }
+            else
+            {
+                AltaLaboratorio.BringToFront(); // Trae el formulario existente al frente
+            }
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ShowAltaLab();
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

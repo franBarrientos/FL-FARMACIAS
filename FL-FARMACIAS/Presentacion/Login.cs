@@ -1,4 +1,5 @@
-﻿using FL_FARMACIAS.Dominio;
+﻿using FL_FARMACIAS.Aplicacion;
+using FL_FARMACIAS.Dominio;
 using FL_FARMACIAS.Presentacion.Admin;
 using FL_FARMACIAS.Presentacion.Farmaceutico;
 using FL_FARMACIAS.Presentacion.Supervisor;
@@ -20,18 +21,12 @@ namespace FL_FARMACIAS.Presentacion.Login
         //        private LoginForm loginmenu = null;
 
         public static UsuarioDominio user { get; set; }
-
-        private List<UsuarioDominio> defaultUsers = new List<UsuarioDominio>()
-        {
-            new UsuarioDominio("admin", "admin", Rol.Admin),
-            new UsuarioDominio("supervisor", "supervisor", Rol.Supervisor),
-            new UsuarioDominio("farmaceutico", "farmaceutico", Rol.Farmaceutico),
-        };
-        
+        public UsuarioAplicacion usuarioApp { get; set; }
 
         public LoginForm()
         {
             InitializeComponent();
+            this.usuarioApp = new UsuarioAplicacion();
             WarmUpDatabaseConnection();
 
         }
@@ -55,45 +50,44 @@ namespace FL_FARMACIAS.Presentacion.Login
         {
             string usuario = usuario_login.Text;
             string clave = contraseña_login.Text;
-     
             this.Hide();//oculta el formulario login
-              
-            UsuarioDominio usuarioEncontrado = this.defaultUsers.FirstOrDefault(x => x.usuario.Equals(usuario) && x.clave.Equals(clave));
-
-            if (usuarioEncontrado == null)
+            try
             {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Beliminar_login_Click(sender,e);
+                Console.WriteLine(SimpleEncryption.Encrypt("admin1"));
+                UsuarioDominio usuarioEncontrado = this.usuarioApp.ObtenerUsuarioPorUserPassw(usuario, clave);
+                LoginForm.user = usuarioEncontrado;
+                if (usuarioEncontrado.rol.descripcion == "Admin")
+                {
+                    new MenuAdmin(this).Show(this);
+                    this.Beliminar_login_Click(sender, e);
+                    this.Hide();
+                    return;
+
+                }
+
+                if (usuarioEncontrado.rol.descripcion == "Farmaceutico")
+                {
+                    new MenuFarmaceutico(this).Show(this);
+                    this.Beliminar_login_Click(sender, e);
+                    this.Hide();
+                    return;
+                }
+
+                if (usuarioEncontrado.rol.descripcion == "Supervisor")
+                {
+                    new MenuSupervisor(this).Show(this);
+                    this.Beliminar_login_Click(sender, e);
+                    this.Hide();
+                    return;
+                }
+            }
+            catch (Exception ex) {
+                 MessageBox.Show("Error: " + ex.Message);
+                this.Beliminar_login_Click(sender, e);
                 this.Show();
                 return;
             }
-
-            LoginForm.user = usuarioEncontrado;
-
-            if (usuarioEncontrado.rol == Rol.Admin)
-            {
-                new MenuAdmin(this).Show(this);
-                this.Beliminar_login_Click(sender, e);
-                this.Hide();
-                return;
-               
-            }
-
-            if (usuarioEncontrado.rol == Rol.Farmaceutico)
-            {
-                new MenuFarmaceutico(this).Show(this);
-                this.Beliminar_login_Click(sender, e);
-                this.Hide();
-                return;
-            }
-
-            if (usuarioEncontrado.rol == Rol.Supervisor)
-            {
-                new MenuSupervisor(this).Show(this);
-                this.Beliminar_login_Click(sender, e);
-                this.Hide();
-                return;
-            }
+            
 
         }
         

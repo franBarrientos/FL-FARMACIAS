@@ -1,4 +1,5 @@
 ﻿using FL_FARMACIAS.Dominio;
+using FL_FARMACIAS.Presentacion.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,11 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
     {
 
         public Dictionary<string, List<string>> provArr = StaticBD.provinciasYLocalidades;
-
-        public AltaProveedor()
+        public ProveedoresSubMenu proveedorSubMenu { get; set; }
+        public AltaProveedor(ProveedoresSubMenu m)
         {
             InitializeComponent();
+            this.proveedorSubMenu = m;
             foreach (var prov in provArr)
             {
                 provincia_proveedor.Items.Add(prov.Key);
@@ -106,10 +108,16 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
                 MessageBox.Show("El correo no es válido. Asegúrate de que sea un correo de Gmail.");
             }
 
+
+
+
+
             if (nombre != "" && cuit != "" && dni != "" && correo != "" && telefono != "" && provincia != "" && localidad != "" && direccion != "" && ValidarGmail_proveedor(correo))
             {
+                this.proveedorSubMenu.proveedorApp.AgregarProveedor(new ProveedorDominio(nombre, cuit, provincia, localidad, direccion, correo, telefono, true ));
+               this.proveedorSubMenu.fullProvedores();
                 MessageBox.Show("El proveedor " + nombre + "," + "D.N.I:" + dni + "CUIT: " + cuit + "CORREO:" + correo + "TELEFONO:" + telefono + " ha sido insertado con exito.", "Insercion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
             }
         }
 

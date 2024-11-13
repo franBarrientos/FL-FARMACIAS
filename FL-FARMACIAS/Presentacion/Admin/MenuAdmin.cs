@@ -17,6 +17,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         public MenuAdmin(LoginForm loginForm)
         {
             InitializeComponent();
+            this.button6.Text = LoginForm.user.rol.descripcion.ToUpper() + " " + LoginForm.user.empleado.nombre.ToUpper();
             this.loginForm = loginForm;
         }
 
@@ -89,6 +90,11 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 }
 
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu<backups>();
         }
     }
 }
