@@ -70,6 +70,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         {
 
             List<CargoDominio> matcheds = this.empleadoApp.ObtenerCargos();
+            matcheds.RemoveAll(cargo => cargo.descripcion == "Admin");
             this.comboBox1.Items.Clear();
             this.comboBox1.Items.Add("Todos");
             foreach (var e in matcheds)
@@ -186,7 +187,8 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 cargo = comboBox1.Text;
             }
 
-            List<Empleadodominio> matcheds = this.empleadoApp.BuscarEmpleados(dni, apellido, cargo, desde, hasta); 
+            List<Empleadodominio> matcheds = this.empleadoApp.BuscarEmpleados(dni, apellido, cargo, desde, hasta);
+            matcheds.RemoveAll(em => em.cargo.descripcion == "Admin");
             this.dataGridView1.Rows.Clear();
             foreach (var em in matcheds)
             {

@@ -92,7 +92,9 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             foreach (var empleado in topEmpleados)
             {
-                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                //serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                int puntoIndex = serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                serie.Points[puntoIndex].Label = $"{empleado.EmpleadoNombre}: {empleado.TotalVentas}";
             }
 
             // Configuración adicional del gráfico
@@ -199,7 +201,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             foreach (var empleado in topEmpleados)
             {
-                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+               // serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                //serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                int puntoIndex = serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                serie.Points[puntoIndex].Label = $"{empleado.EmpleadoNombre}: {empleado.TotalVentas}";
             }
 
             // Configuración adicional del gráfico
@@ -221,7 +226,10 @@ namespace FL_FARMACIAS.Presentacion.Farmaceutico
 
             foreach (var empleado in topEmpleados)
             {
-                serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                //serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                //serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                int puntoIndex = serie.Points.AddXY(empleado.EmpleadoNombre, empleado.TotalVentas);
+                serie.Points[puntoIndex].Label = $"{empleado.EmpleadoNombre}: {empleado.TotalVentas}";
             }
 
             // Configuración adicional del gráfico

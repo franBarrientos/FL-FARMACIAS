@@ -89,7 +89,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(marca) || !marca.All(c => char.IsLetter(c) || c == ' '))
+            if (string.IsNullOrWhiteSpace(marca))
             {
                 MessageBox.Show("Por favor, ingrese solo letras en el campo de Marca de Producto.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

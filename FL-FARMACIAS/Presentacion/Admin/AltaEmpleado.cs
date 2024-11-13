@@ -30,6 +30,7 @@ namespace FL_FARMACIAS.Presentacion.Admin
         private void fullCargos()
         {
             List<CargoDominio> matcheds = this.empleadoSubMenu.empleadoApp.ObtenerCargos();
+            matcheds.RemoveAll(cargo => cargo.descripcion == "Admin");
             this.Cpuesto_empleado.Items.Clear();
             foreach (var e in matcheds)
             {
